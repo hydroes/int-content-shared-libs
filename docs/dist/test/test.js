@@ -1,0 +1,1 @@
+(function(dust){dust.register("test",body_0);function body_0(chk,ctx){return chk.w("<div class=\"bauer-web-component-test\"><h1 id=\"bauer-web-component-test\">Hello ").f(ctx.get(["name"], false),ctx,"h").w("</h1></div>");}body_0.__dustBody=!0;return body_0}(dust));

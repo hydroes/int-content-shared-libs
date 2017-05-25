@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bauer shared components</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="../dist/" rel="stylesheet"> -->
+    <script src="dist/dust-full.js"></script>
+    <script src="dist/script.min.js"></script>
+
+  </head>
+  <body>
+    <h1>Shared components</h1>
+
+
+    <!-- precompiled templates -->
+    <div id="output" style="border: 1px solid red;"></div>
+    <script src="dist/script.min.js"></script>
+    <script src="dist/test/test.js"></script>
+
+    <script type="text/javascript">
+    // The templates are already registered, so we are ready to render!
+    dust.render('test', { name: "Sunshine" }, function(err, out) {
+      document.getElementById('output').innerHTML = out;
+
+      if (err) {
+        console.log('dust err: ', err)
+      }
+    })
+    </script>
+
+  </body>
+</html>

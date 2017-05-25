@@ -1,0 +1,70 @@
+{
+  "author": {
+    "name": "Brian Gouws",
+    "email": "briangouws@hotmail.com",
+    "url": "lifeofbrian.info"
+  },
+  "bugs": {
+    "url": "https://github.com/hydroes/bauer-web-templates/issues"
+  },
+  "dependencies": {},
+  "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-dust": "^3.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
+    "precommit-hook": "^3.0.0",
+    "standard": "^9.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "01db19932feec9c885d77bbc685cffab23bc38c4",
+    "tarball": "https://registry.npmjs.org/bauer-shared-web-components/-/bauer-shared-web-components-0.2.6.tgz"
+  },
+  "gitHead": "4057858b6ee8259006853e5acd17f593f23a9aaf",
+  "homepage": "https://github.com/hydroes/bauer-web-templates#readme",
+  "keywords": [
+    "bauer",
+    "shared",
+    "templates"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "bdawg",
+      "email": "briangouws@hotmail.com"
+    }
+  ],
+  "name": "bauer-shared-web-components",
+  "optionalDependencies": {},
+  "pre-commit": [
+    "validate"
+  ],
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BauerXcel/shared-templates.git"
+  },
+  "scripts": {
+    "lint": "jshint .",
+    "start": "gulp",
+    "test": "standard",
+    "validate": "standard"
+  },
+  "standard": {
+    "ignore": [
+      "dist/**",
+      "docs/**"
+    ]
+  },
+  "version": "0.2.6"
+}
