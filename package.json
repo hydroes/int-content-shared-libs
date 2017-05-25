@@ -24,13 +24,6 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "directories": {},
-  "dist": {
-    "shasum": "01db19932feec9c885d77bbc685cffab23bc38c4",
-    "tarball": "https://registry.npmjs.org/bauer-shared-web-components/-/bauer-shared-web-components-0.2.6.tgz"
-  },
-  "gitHead": "4057858b6ee8259006853e5acd17f593f23a9aaf",
-  "homepage": "https://github.com/hydroes/bauer-web-templates#readme",
   "keywords": [
     "bauer",
     "shared",
@@ -45,7 +38,6 @@
     }
   ],
   "name": "bauer-shared-web-components",
-  "optionalDependencies": {},
   "pre-commit": [
     "validate"
   ],
