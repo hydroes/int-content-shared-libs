@@ -7,31 +7,31 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bauer shared components</title>
 
-    <!-- Bootstrap -->
-    <!-- <link href="../dist/" rel="stylesheet"> -->
-    <script src="dist/dust-full.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="bower_components/dustjs-linkedin/dist/dust-full.js"></script>
     <script src="dist/script.min.js"></script>
 
   </head>
   <body>
-    <h1>Shared components</h1>
+    <h1>Bauer styleguide</h1>
 
 
     <!-- precompiled templates -->
     <div id="output" style="border: 1px solid red;"></div>
-    <script src="dist/script.min.js"></script>
     <script src="dist/test/test.js"></script>
+    <!-- <script src="dist/test/index.js"></script> -->
 
     <script type="text/javascript">
     // The templates are already registered, so we are ready to render!
-    dust.render('test', { name: "Sunshine" }, function(err, out) {
-      document.getElementById('output').innerHTML = out;
+    dust.render('test', { "title": 'Press me' }, function(err, out) { // eslint-disable-line
+      document.getElementById('output').innerHTML = out
 
       if (err) {
         console.log('dust err: ', err)
       }
     })
     </script>
+    <script src="dist/script.min.js"></script>
 
   </body>
 </html>
