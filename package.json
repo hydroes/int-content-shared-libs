@@ -12,6 +12,7 @@
   },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {
+    "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -60,5 +61,5 @@
       "docs/**"
     ]
   },
-  "version": "0.2.7"
+  "version": "0.2.8"
 }
