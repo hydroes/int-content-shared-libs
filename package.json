@@ -7,9 +7,7 @@
   "bugs": {
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
-  "dependencies": {
-    "bootstrap": "^3.3.7"
-  },
+  "dependencies": {},
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {
     "browser-sync": "^2.18.12",

@@ -3,6 +3,9 @@
 Shared bauer shared components npm module
 This npm module is meant to be included in a dadi web front end instance.
 
+The shared components can be previewed here:
+[shared components](https://bauerxcel.github.io/int-content-shared-libs/)
+
 ## Project structure
 - components (each directory within is an individual component)
 - dist (stores the compiled dust/js/sass that are pulled into other projects)
