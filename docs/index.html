@@ -10,16 +10,27 @@
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="dist/style.min.css" rel="stylesheet">
     <script src="bower_components/dustjs-linkedin/dist/dust-full.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="dist/helpers.min.js"></script>
+    <script>
+      /* global dust, $ */
+      dust.debugLevel = 'DEBUG'
+      // partial template loader
+      dust.onLoad = function (templateName, callback) {
+        $.get('dist/partials/' + templateName + '.js', function (data) {
+          callback(null, data)
+        })
+      }
+    </script>
 
   </head>
   <body>
     <h1>Bauer styleguide</h1>
 
 
-    <!-- precompiled templates -->
     <div id="output"></div>
+    <!-- precompiled templates -->
     <script src="dist/test/test.js"></script>
-    <!-- <script src="dist/test/index.js"></script> -->
 
     <script type="text/javascript">
     // The templates are already registered, so we are ready to render!
