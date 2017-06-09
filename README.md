@@ -19,6 +19,7 @@ npm install
 Run:
 npm start
 
+# components
 When modifying templates/js/sass they are automatically compiled to templates/dist
 a component in its entirety lives in a aptly named folder in the components dir.
 
@@ -26,6 +27,11 @@ A component needs at a minimium to have 3 files within its folder:
 - index.js (js stored here and can be required)
 - style.scss (sass file)
 - dust template file named after the parent folder
+
+# helpers
+- helpers are stored in the helpers folder
+- 1 helper should be contained in 1 file in the helpers folder
+
 
 ## Deployment
 - Update the version number in the package.json ([SemVer](http://semver.org/))
