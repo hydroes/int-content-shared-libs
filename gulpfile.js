@@ -30,7 +30,7 @@ gulp.task('remove-dist', function () {
 gulp.task('compile-dust', function () {
   // pre-compile dust templates for speed
   // Endless stream mode
-  return watch('components/**/*.dust', { ignoreInitial: false })
+  return watch(['components/**/*.dust'], { ignoreInitial: false })
         .pipe(dust())
         .pipe(gulp.dest('docs/dist/'))
 })

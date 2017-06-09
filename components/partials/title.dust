@@ -1,0 +1,5 @@
+    {#_layout}
+      {@eq key=type value="title"}
+      <p><a href="{@primarySyndicate urls=urls channel=params.channel /}">{content}</a></p>
+      {/eq}
+    {/_layout}
