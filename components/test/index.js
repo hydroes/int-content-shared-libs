@@ -1,10 +1,14 @@
 'use strict'
 
 module.exports = function () {
-  var header = document.getElementById('bauer-web-component-test')
-  if (typeof header === 'object' && header !== null) {
-    header.addEventListener('click', function () {
-      header.style.backgroundColor = 'red'
+  var btn = document.getElementById('bauer-web-component-test-btn')
+  if (typeof btn === 'object' && btn !== null) {
+    btn.addEventListener('click', function () {
+      if (btn.style.backgroundColor === 'red') {
+        btn.style.backgroundColor = 'white  '
+      } else {
+        btn.style.backgroundColor = 'red'
+      }
     })
   }
 }

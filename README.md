@@ -3,6 +3,9 @@
 Shared bauer shared components npm module
 This npm module is meant to be included in a dadi web front end instance.
 
+The shared components can be previewed here:
+[shared components](https://bauerxcel.github.io/int-content-shared-libs/)
+
 ## Project structure
 - components (each directory within is an individual component)
 - dist (stores the compiled dust/js/sass that are pulled into other projects)
@@ -22,7 +25,7 @@ a component in its entirety lives in a aptly named folder in the components dir.
 A component needs at a minimium to have 3 files within its folder:
 - index.js (js stored here and can be required)
 - style.scss (sass file)
--
+- dust template file named after the parent folder
 
 ## Deployment
 - Update the version number in the package.json ([SemVer](http://semver.org/))
@@ -39,14 +42,21 @@ var templatesShare = require('bauer-shared-templates').Templates(dust)
 /**
  * Shared template component helper
  */
-dust.helpers.templateComponent = function (chunk, context, bodies, params) {
+'use strict'
+
+var dust = require('@dadi/web').Dust
+var templatesShare = require('bauer-shared-web-components').Templates(dust)
+
+dust.getEngine().helpers.testy = function (chunk, context, bodies, params) {
   var template = templatesShare.get('test', {'name': 'Brian'})
+
   return chunk.map(function (chunk) {
     template.then(function (res) {
       return chunk.end(res)
     })
   })
 }
+
 ```
 
 
