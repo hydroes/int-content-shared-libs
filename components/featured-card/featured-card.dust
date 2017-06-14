@@ -1,5 +1,6 @@
 <article>
     <div class="featured-card">
+        <p>Featured Card dust</p>
         {@ne key=primarySyndicatePosition value=""}
 
         <a href="{@primarySyndicate urls=urls channel=params.channel /}" class="featured-card__link">

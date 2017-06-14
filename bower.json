@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "dustjs-linkedin": "^2.7.5"
+    "dustjs-linkedin": "^2.7.5",
+    "jquery": "^3.2.1"
   }
 }

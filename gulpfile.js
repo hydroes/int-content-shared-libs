@@ -12,7 +12,15 @@ const concat = require('gulp-concat')
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js').bundle()
-  .pipe(source('script.min.js'))
+    .pipe(source('script.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest('docs/dist/'))
+})
+
+gulp.task('compile-helpers', function () {
+  return gulp.src('./helpers/*.js')
+    .pipe(concat('helpers.min.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('docs/dist/'))
@@ -20,7 +28,7 @@ gulp.task('compile-js', function () {
 
 // create a task that ensures the `js` task is complete before
 // reloading browsers
-gulp.task('js-watch', ['compile-js'], function (done) {
+gulp.task('js-watch', ['compile-js', 'compile-helpers'], function (done) {
   browserSync.reload()
   done()
 })
@@ -47,6 +55,7 @@ gulp.task('sass-watch', ['compile-sass'], function (done) {
   done()
 })
 
+// Compile sass
 gulp.task('compile-sass', function () {
   // pre-compile dust templates for speed
   return gulp.src('components/**/style.scss', { ignoreInitial: false })
@@ -60,6 +69,7 @@ gulp.task('compile-sass', function () {
         .pipe(gulp.dest('docs/dist/'))
 })
 
+// Task to remove any cached dist files
 gulp.task('remove-dist', function () {
   var deleteFolderRecursive = function (path) {
     if (fs.existsSync(path)) {
@@ -78,7 +88,7 @@ gulp.task('remove-dist', function () {
 })
 
 // use default task to launch Browsersync and watch JS files
-gulp.task('default', ['remove-dist', 'compile-js', 'compile-dust', 'compile-sass'], function () {
+gulp.task('default', ['remove-dist', 'compile-js', 'compile-helpers', 'compile-dust', 'compile-sass'], function () {
     // Serve files from the root of this project
   browserSync.init({
     server: {
@@ -90,5 +100,7 @@ gulp.task('default', ['remove-dist', 'compile-js', 'compile-dust', 'compile-sass
   // all browsers reload after tasks are complete.
   gulp.watch('components/**/index.js', ['js-watch'])
   gulp.watch('components/**/*.dust', ['dust-watch'])
+  gulp.watch('helpers/*.js', ['js-watch'])
   gulp.watch('components/**/style.scss', ['sass-watch'])
+  gulp.watch('docs/index.html', [])
 })
