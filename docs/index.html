@@ -8,6 +8,7 @@
     <title>Bauer shared components</title>
 
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/guide.css" rel="stylesheet">
     <link href="dist/style.min.css" rel="stylesheet">
     <script src="bower_components/dustjs-linkedin/dist/dust-full.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -28,30 +29,28 @@
      dust.debugLevel = 'DEBUG'
    </script>
   </head>
-  <body style="background-color: #f5f5f5; color: #223B70;">
-    <div class="main-container" style="padding: 1rem;">
-      <header>
-        <div class="row">
+  <body>
+    <div class="main-container">
+      <header class="row header">
           <div class="col-xs-2">
             <img src="http://www.bauermedia.co.uk/images/logo-bauer.png"/>
-            <div style="margin-top: 2rem;">v 0.2.9</div>
+            <div class="header__version">v 0.2.9</div>
           </div>
           <div class="col-xs-10">
-            <h1 style="margin-top: 0; margin-left: 2rem;">Bauer styleguide</h1>
+            <h1 class="header__title">Bauer styleguide</h1>
           </div>
-        </div>
       </header>
-      <div class="container-fluid" style="clear:both; margin-top: 2rem; display: block;">
+      <div class="container-fluid">
         <div class="style-guide">
-            <div class="row style-guide__item" style="margin-bottom: 1rem; border: 1px solid #DEE2E6; padding: 2rem; border-radius: 4px; background-color: white;">
-              <div class="col-md-6">
+            <div class="row style-guide__item">
+              <div class="col-sm-6">
                 <div class="style-guide__item__label" style=""><h2>Test Component</h2></div>
               </div>
-              <div class="col-md-6" style="">
+              <div class="col-sm-6" style="">
                 <div id="output"></div>
               </div>
             </div>
-            <div class="row style-guide__item" style="margin-bottom: 1rem; border: 1px solid #DEE2E6; padding: 2rem; border-radius:4px; background-color: white;">
+            <div class="row style-guide__item">
               <div class="col-md-6">
                 <div class="style-guide__item__label" style=""><h2>Featured Card</h2></div>
               </div>
