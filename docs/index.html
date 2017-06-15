@@ -89,8 +89,54 @@
 
     <script type="text/javascript">
     // The templates are already registered, so we are ready to render!
-    dust.render('featured-card', { 'primarySyndicatePosition': '' }, function(err, out) { // eslint-disable-line
-      document.getElementById('featured-card').innerHTML += out
+    dust.render("featured-card", { 
+                "primarySyndicatePosition": "0",
+                "urls": ["key/local/news/remembering-victims-manchester-terror-attack/",
+                        "cfm/local/news/remembering-victims-manchester-terror-attack/",
+                        "city-talk/local/news/remembering-victims-manchester-terror-attack/",
+                        "clyde/local/news/remembering-victims-manchester-terror-attack/",
+                        "clyde-2/local/news/remembering-victims-manchester-terror-attack/",
+                        "clyde-3/local/news/remembering-victims-manchester-terror-attack/",
+                        "cool-fm/local/news/remembering-victims-manchester-terror-attack/"],
+                  "params":{
+                        "channel": "key"
+                  },
+                  "furl": "",
+                  "categories": [
+                                  {
+                                    "_id": "587cb5c980222c9e7266baf4",
+                                    "parent": {
+                                      "_id": "587cb5c980222c9e7266baed",
+                                      "name": "Entertainment",
+                                      "furl": "entertainment"
+                                    },
+                                    "name": "Movies",
+                                    "furl": "movies",
+                                    "composed": {
+                                      "parent": "587cb5c980222c9e7266baed"
+                                    }
+                                  }
+                                ],
+                  "heroImage": [
+                                  {
+                                    "_id": "5927e9da32003fcc58a95fd7",
+                                    "altText": "Dan Stevens CGI",
+                                    "image": {
+                                    "name": "Dan-Stevens-Beauty-Beast-1.jpg",
+                                    "fileName": "Dan-Stevens-Beauty-Beast-1.jpg",
+                                    "mimeType": "image/jpeg",
+                                    "width": 800,
+                                    "height": 418,
+                                    "fileSize": 43445,
+                                    "path": "one/media/5927/e9da/3200/3fcc/58a9/5fd7"
+                                  },
+                                    "caption": "",
+                                    "credits": "BEAUTY AND THE BEAST"
+                                  }
+                                ] 
+                }, function(err, out) { // eslint-disable-line
+
+                document.getElementById('featured-card').innerHTML += out
 
       if (err) {
         console.log('dust err: ', err)

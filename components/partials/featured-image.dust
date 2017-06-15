@@ -10,4 +10,4 @@
 	</picture>
 {:else}
   {> "partials/grid-item-no-image" /}
-{/heroImage}
+{/heroImage} 

@@ -1,25 +1,25 @@
 <article>
     <div class="featured-card">
-        <p>Featured Card dust</p>
         {@ne key=primarySyndicatePosition value=""}
 
         <a href="{@primarySyndicate urls=urls channel=params.channel /}" class="featured-card__link">
-            {>"partials/featured-image" /}{~n}
+            {>"featured-image" /}{~n}
         </a>
-        <div class="featured-card__info">
+       {! <div class="featured-card__info">
             {>"partials/title" titleUrls=urls /}{~n}
             {>"partials/grid-item-syndicate-time" /}{~n}
-        </div>
+        </div>!}
 
         {:else}
 
         <a href="{@link article=. channel=params.channel /}/" class="featured-card__link">
-            {>"partials/featured-image" /}{~n}
+            {!{>"partials/featured-image" /}{~n}!}
         </a>
+        {! 
         <div class="featured-card__info">
             {>"partials/title" titleUrls=urls /}{~n}
             {>"partials/grid-item-syndicate-time" channel=params.channel /}{~n}
-        </div>
+        </div>!}
         {/ne}
     </div>
 </article>
