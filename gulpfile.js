@@ -18,9 +18,15 @@ gulp.task('compile-js', function () {
     .pipe(gulp.dest('docs/dist/'))
 })
 
-gulp.task('compile-helpers', function () {
+gulp.task('pre-compile-helpers', function () {
   return gulp.src('./helpers/*.js')
     .pipe(concat('helpers.min.js'))
+    .pipe(gulp.dest('docs/dist/'))
+})
+
+gulp.task('compile-helpers', ['pre-compile-helpers'], function () {
+  return browserify('./docs/dist/helpers.min.js').bundle()
+    . pipe(source('helpers.min.js'))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('docs/dist/'))
