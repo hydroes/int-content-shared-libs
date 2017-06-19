@@ -1,0 +1,17 @@
+{?listenapi_initdadi}
+
+
+<picture class="article-missing-image brand-background-color" style="background-image: url('{listenapi_initdadi.stationHeaderLogoSVG}');">
+  <source type="" srcset="/assets/img/default_placeholder_image.gif" media="(min-width: 439px)">
+    <img srcset="/assets/img/small_placeholder_image.png" alt="{altText}" title="{altText}">
+</picture>
+
+{:else}
+{!} This should occur on the hub page {!}
+
+<picture class="hub-missing-image">
+  <source type="" srcset="/assets/img/default_placeholder_image.gif" media="(min-width: 439px)">
+  <img srcset="/assets/img/small_placeholder_image.png" alt="{altText}" title="{altText}">
+</picture>
+
+{/listenapi_initdadi}

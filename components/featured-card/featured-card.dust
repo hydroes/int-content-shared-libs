@@ -5,21 +5,21 @@
         <a href="{@primarySyndicate urls=urls channel=params.channel /}" class="featured-card__link">
             {>"featured-image" /}{~n}
         </a>
-       {! <div class="featured-card__info">
-            {>"partials/title" titleUrls=urls /}{~n}
-            {>"partials/grid-item-syndicate-time" /}{~n}
-        </div>!}
+        <div class="featured-card__info">
+            {>"title" titleUrls=urls /}{~n}
+            {>"syndicate-time" /}{~n}
+        </div>
 
         {:else}
 
         <a href="{@link article=. channel=params.channel /}/" class="featured-card__link">
-            {!{>"partials/featured-image" /}{~n}!}
+            {>"featured-image" /}{~n}
         </a>
-        {! 
+         
         <div class="featured-card__info">
-            {>"partials/title" titleUrls=urls /}{~n}
-            {>"partials/grid-item-syndicate-time" channel=params.channel /}{~n}
-        </div>!}
+            {>"title" titleUrls=urls /}{~n}
+            {>"syndicate-time" channel=params.channel /}{~n}
+        </div>
         {/ne}
     </div>
 </article>

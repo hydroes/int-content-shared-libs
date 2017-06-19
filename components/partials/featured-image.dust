@@ -9,5 +9,5 @@
 		<img srcset="{@imgcdn asset=heroImage[0].image width="600" ratio="16-9" resizeStyle="aspectfill" cropData=heroImageThumbLandscape cropType="heroImageThumbLandscape"/}" alt="{title}" title="{title}">
 	</picture>
 {:else}
-  {> "partials/grid-item-no-image" /}
+  {> "featured-no-image" /}
 {/heroImage} 
