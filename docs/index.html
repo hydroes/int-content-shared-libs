@@ -12,6 +12,7 @@
     <script src="bower_components/dustjs-linkedin/dist/dust-full.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="dist/helpers.min.js"></script>
+    <script src="dist/templates.min.js"></script>
     <script>
       /* global dust, $ */
       dust.debugLevel = 'DEBUG'
@@ -27,11 +28,8 @@
   <body>
     <h1>Bauer styleguide</h1>
 
-
+    <!-- test template -->
     <div id="output"></div>
-    <!-- precompiled templates -->
-    <script src="dist/test/test.js"></script>
-
     <script type="text/javascript">
     // The templates are already registered, so we are ready to render!
     dust.render('test', { "title": 'Press me' }, function(err, out) { // eslint-disable-line

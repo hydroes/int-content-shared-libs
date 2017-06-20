@@ -33,17 +33,31 @@ gulp.task('js-watch', ['compile-js', 'compile-helpers'], function (done) {
   done()
 })
 
-gulp.task('compile-dust', function () {
+// backend templates are be comiled and stored separatly so that they can be
+// loaded as needed, this is done to increase performance
+gulp.task('compile-dust-for-backend', function () {
   // pre-compile dust templates for speed
-  // Endless stream mode
   return gulp.src('components/**/*.dust', { ignoreInitial: false })
         .pipe(dust())
         .pipe(gulp.dest('docs/dist/'))
 })
 
+// front end templates are compiled and stored all together in one file
+// this is done to ease development
+gulp.task('compile-dust-for-frontend', function () {
+  // pre-compile dust templates for speed
+  // Endless stream mode
+  return gulp.src('components/**/*.dust', { ignoreInitial: false })
+        .pipe(dust())
+        .pipe(concat('templates.min.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('docs/dist/'))
+})
+
 // create a task that ensures the `dust` task is complete before
 // reloading browsers
-gulp.task('dust-watch', ['compile-dust'], function (done) {
+gulp.task('dust-watch', ['compile-dust-for-backend', 'compile-dust-for-frontend'], function (done) {
   browserSync.reload()
   done()
 })
@@ -58,11 +72,11 @@ gulp.task('sass-watch', ['compile-sass'], function (done) {
 // Compile sass
 gulp.task('compile-sass', function () {
   // pre-compile dust templates for speed
-  return gulp.src('components/**/style.scss', { ignoreInitial: false })
-        .pipe(concat('style.min.css'))
+  return gulp.src('components/includes.scss', { ignoreInitial: false })
         // .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(minifyCSS())
+        .pipe(concat('style.min.css'))
         // .pipe(rename({suffix: '.min'}))
         // .pipe(rename('style.min.css'))
         // .pipe(sourcemaps.write('.'))
@@ -88,19 +102,27 @@ gulp.task('remove-dist', function () {
 })
 
 // use default task to launch Browsersync and watch JS files
-gulp.task('default', ['remove-dist', 'compile-js', 'compile-helpers', 'compile-dust', 'compile-sass'], function () {
+gulp.task('default',
+  [
+    'remove-dist',
+    'compile-js',
+    'compile-helpers',
+    'compile-dust-for-frontend',
+    'compile-dust-for-backend',
+    'compile-sass'
+  ], function () {
     // Serve files from the root of this project
-  browserSync.init({
-    server: {
-      baseDir: './docs/'
-    }
-  })
+    browserSync.init({
+      server: {
+        baseDir: './docs/'
+      }
+    })
 
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
-  gulp.watch('components/**/index.js', ['js-watch'])
-  gulp.watch('components/**/*.dust', ['dust-watch'])
-  gulp.watch('helpers/*.js', ['js-watch'])
-  gulp.watch('components/**/style.scss', ['sass-watch'])
-  gulp.watch('docs/index.html', [])
-})
+    gulp.watch('components/**/*.js', ['js-watch'])
+    gulp.watch('components/**/*.dust', ['dust-watch'])
+    gulp.watch('helpers/*.js', ['js-watch'])
+    gulp.watch('components/**/*.scss', ['sass-watch'])
+    gulp.watch('docs/index.html', [])
+  })
