@@ -1,21 +1,21 @@
-  {@ne key=primarySyndicatePosition value=""}
+  {@ne key=data.primarySyndicatePosition value=""}
 
     <p class="grid-published">
-    	<a href="{@syndicateCategoryLink article=. channel=channel /}" class="brand-color">{@syndicateCategory article=. channel=channel displayField="name" /}</a>&nbsp;
+    	<a href="{@syndicateCategoryLink article=data channel=settings.channel /}" class="brand-color">{@syndicateCategory article=data channel=settings.channel displayField="name" /}</a>&nbsp;
     	 |
-    	 {?lastModifiedAt}
-    	 	{@relativeTimeUTC timestamp="{lastModifiedAt}"/}
+    	 {?data.lastModifiedAt}
+    	 	{@relativeTimeUTC timestamp="{data.lastModifiedAt}"/}
     	 {:else}
-    	 	{@relativeTimeUTC timestamp="{publicationDate}"/}
-    	 {/lastModifiedAt}
+    	 	{@relativeTimeUTC timestamp="{data.publicationDate}"/}
+    	 {/data.lastModifiedAt}
     </p>
   {:else}
     <p class="grid-published">
-    	<a href="/{urls}/" class="brand-color">{categories[0].name}</a> |
-    	 {?lastModifiedAt}
-    	 	{@relativeTimeUTC timestamp="{lastModifiedAt}"/}
+    	<a href="/{data.syndicateUrls}/" class="brand-color">{data.categories[0].name}</a> |
+    	 {?data.lastModifiedAt}
+    	 	{@relativeTimeUTC timestamp="{data.lastModifiedAt}"/}
     	 {:else}
-    	 	{@relativeTimeUTC timestamp="{publicationDate}"/}
-    	 {/lastModifiedAt}
+    	 	{@relativeTimeUTC timestamp="{data.publicationDate}"/}
+    	 {/data.lastModifiedAt}
     </p>
   {/ne}

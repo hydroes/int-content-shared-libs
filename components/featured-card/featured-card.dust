@@ -1,24 +1,24 @@
 <article>
     <div class="featured-card">
-        {@ne key=primarySyndicatePosition value=""}
+        {@ne key=data.primarySyndicatePosition value=""}
 
-        <a href="{@primarySyndicate urls=urls channel=params.channel /}" class="featured-card__link">
+        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}" class="featured-card__link">
             {>"featured-image" /}{~n}
         </a>
         <div class="featured-card__info">
-            {>"title" titleUrls=urls /}{~n}
+            {>"title" /}{~n}
             {>"syndicate-time" /}{~n}
         </div>
 
         {:else}
 
-        <a href="{@link article=. channel=params.channel /}/" class="featured-card__link">
+        <a href="{@link article=data channel=settings.channel /}/" class="featured-card__link">
             {>"featured-image" /}{~n}
         </a>
          
         <div class="featured-card__info">
-            {>"title" titleUrls=urls /}{~n}
-            {>"syndicate-time" channel=params.channel /}{~n}
+            {>"title" /}{~n}
+            {>"syndicate-time" channel=settings.channel /}{~n}
         </div>
         {/ne}
     </div>

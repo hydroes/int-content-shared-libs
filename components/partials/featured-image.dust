@@ -1,13 +1,13 @@
-{?heroImage}
+{?data.cardImage}
 	<picture>
 		<source{~s}
-			 type="{heroImage[0].mimeType}"{~s}
-			 srcset="{@imgcdn asset=heroImage[0].image width="305" devicePixelRatio="2" cropData=heroImageThumbLandscape cropType="heroImageThumbLandscape" ratio="16-9" resizeStyle="aspectfill" quality="50" /}"{~s}
+			 type="{data.cardImage.image.mimeType}"{~s}
+			 srcset="{@imgcdn asset=data.cardImage.image width="305" devicePixelRatio="2" cropData=data.heroImageThumbLandscape cropType="data.heroImageThumbLandscape" ratio="16-9" resizeStyle="aspectfill" quality="50" /}"{~s}
 			 media="(max-width: 439px)"
 		>
 
-		<img srcset="{@imgcdn asset=heroImage[0].image width="600" ratio="16-9" resizeStyle="aspectfill" cropData=heroImageThumbLandscape cropType="heroImageThumbLandscape"/}" alt="{title}" title="{title}">
+		<img srcset="{@imgcdn asset=data.cardImage.image width="600" ratio="16-9" resizeStyle="aspectfill" cropData=data.heroImageThumbLandscape cropType="data.heroImageThumbLandscape"/}" alt="{data.title}" title="{data.title}">
 	</picture>
 {:else}
   {> "featured-no-image" /}
-{/heroImage} 
+{/data.cardImage} 

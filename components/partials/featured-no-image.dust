@@ -1,9 +1,9 @@
-{?listenapi_initdadi}
+{?settings.stationHeaderLogoSVG}
 
 
-<picture class="article-missing-image brand-background-color" style="background-image: url('{listenapi_initdadi.stationHeaderLogoSVG}');">
+<picture class="article-missing-image brand-background-color" style="background-image: url('{settings.stationHeaderLogoSVG}');">
   <source type="" srcset="/assets/img/default_placeholder_image.gif" media="(min-width: 439px)">
-    <img srcset="/assets/img/small_placeholder_image.png" alt="{altText}" title="{altText}">
+    <img srcset="/assets/img/small_placeholder_image.png" alt="{settings.placeholderAltText}" title="{settings.placeholderAltText}">
 </picture>
 
 {:else}
@@ -11,7 +11,7 @@
 
 <picture class="hub-missing-image">
   <source type="" srcset="/assets/img/default_placeholder_image.gif" media="(min-width: 439px)">
-  <img srcset="/assets/img/small_placeholder_image.png" alt="{altText}" title="{altText}">
+  <img srcset="/assets/img/small_placeholder_image.png" alt="{settings.placeholderAltText}" title="{settings.placeholderAltText}">
 </picture>
 
-{/listenapi_initdadi}
+{/settings.stationHeaderLogoSVG}

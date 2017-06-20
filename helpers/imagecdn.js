@@ -17,9 +17,9 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
 
   // domain and quality (including other defaults) can be set in
   // config/config.{env}.json
-  var protocol = context.get('global.protocol')
-  var domain = context.get('global.images.domain')
-  var quality = context.get('global.images.quality')
+  var protocol = context.get('settings.protocol')
+  var domain = context.get('settings.imageDomain')
+  var quality = context.get('settings.imageQuality')
   var asset = context.resolve(params.asset)
 
   var template = '{protocol}{domain}/{path}/{fileName}'
