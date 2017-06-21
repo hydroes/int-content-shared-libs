@@ -1,0 +1,16 @@
+// Extra Extra small screen / phone
+$screen-xxs:                  1px !default;
+$screen-xxs-min:              $screen-xxs !default;
+$screen-small-phone:          $screen-xxs-min !default;
+
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+$screen-xxs-max:			($screen-xs-min - 1) !default;
+
+$grid-gutter-width:         30px !default;
+
+$container-phone:             (420px + $grid-gutter-width) !default;
+$container-xs:                 $container-phone !default;

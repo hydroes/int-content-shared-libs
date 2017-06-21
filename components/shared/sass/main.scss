@@ -1,1 +1,8 @@
+@import "bauer-bootstrap/variables";
 @import "bauer-bootstrap/bootstrap";
+@import "bauer-bootstrap/grid";
+@import "bauer-bootstrap/mixins/grid";
+@import "bauer-bootstrap/mixins/grid-framework";
+@import "bauer-bootstrap/responsive-utilities";
+
+@import "../../featured-card/style";

@@ -1,5 +1,20 @@
+@media (min-width: $screen-xxs) {
+	h2{
+	  color: red;
+	}
+}
+
+@media (min-width: $screen-xs) {
+	h2{
+	  color: pink;
+	}
+}
+
+
 .featured-card
 {
+	background-color: $brand-success;
+
 	img
 	{
 		max-width: 100%;
