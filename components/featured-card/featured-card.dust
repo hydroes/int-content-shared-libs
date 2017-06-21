@@ -1,0 +1,25 @@
+<article>
+    <div class="featured-card">
+        {@ne key=data.primarySyndicatePosition value=""}
+
+        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}" class="featured-card__link">
+            {>"featured-image" /}{~n}
+        </a>
+        <div class="featured-card__info">
+            {>"title" /}{~n}
+            {>"syndicate-time" /}{~n}
+        </div>
+
+        {:else}
+
+        <a href="{@link article=data channel=settings.channel /}/" class="featured-card__link">
+            {>"featured-image" /}{~n}
+        </a>
+         
+        <div class="featured-card__info">
+            {>"title" /}{~n}
+            {>"syndicate-time" channel=settings.channel /}{~n}
+        </div>
+        {/ne}
+    </div>
+</article>
