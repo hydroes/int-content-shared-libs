@@ -1,8 +1,8 @@
   {@ne key=data.primarySyndicatePosition value=""}
 
-    <p class="grid-published">
+    <p class="paragraph paragraph--published">
     	<a href="{@syndicateCategoryLink article=data channel=settings.channel /}" class="brand-color">{@syndicateCategory article=data channel=settings.channel displayField="name" /}</a>&nbsp;
-    	 |
+    	 |&nbsp;
     	 {?data.lastModifiedAt}
     	 	{@relativeTimeUTC timestamp="{data.lastModifiedAt}"/}
     	 {:else}
@@ -10,9 +10,10 @@
     	 {/data.lastModifiedAt}
     </p>
   {:else}
-    <p class="grid-published">
-    	<a href="/{data.syndicateUrls}/" class="brand-color">{data.categories[0].name}</a> |
-    	 {?data.lastModifiedAt}
+    <p class="paragraph paragraph--published">
+    	<a href="/{data.syndicateUrls}/" class="brand-color">{data.categories[0].name}</a>&nbsp;
+			|&nbsp;
+			 {?data.lastModifiedAt}
     	 	{@relativeTimeUTC timestamp="{data.lastModifiedAt}"/}
     	 {:else}
     	 	{@relativeTimeUTC timestamp="{data.publicationDate}"/}

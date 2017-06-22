@@ -5,7 +5,6 @@ dust.helpers.syndicateCategoryLink = function (chunk, context, bodies, params) {
   var article = context.resolve(params.article)
   var channel = context.resolve(params.channel)
   var displaySyndicate = context.resolve(params.displaySyndicate) || false
-
     // Logic flow:
     // find the publication position for the given category (publications)
     // use position in composed.categories to get the category id

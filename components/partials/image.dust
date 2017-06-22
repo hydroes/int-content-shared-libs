@@ -1,0 +1,14 @@
+{?heroImage}
+	<picture>
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
+		<source{~s}
+			 type="{heroImage[0].image.mimeType}"{~s}
+			 srcset="{@imgcdn asset=heroImage[0].image width="120"  devicePixelRatio="2" ratio="1-1" resizeStyle="aspectfill" cropData=heroImageThumb cropType="heroImageThumb" quality="50" /}"{~s}
+			 media="(max-width: 439px)"
+		>
+		<!--[if IE 9]></video><![endif]-->
+		<img srcset="{@imgcdn asset=heroImage[0].image width="420"  ratio="16-9" resizeStyle="aspectfill" cropData=heroImageThumbLandscape cropType="heroImageThumbLandscape" /}" alt="{title}" title="{title}">
+	</picture>
+{:else}
+  {> "no-image" /}
+{/heroImage}

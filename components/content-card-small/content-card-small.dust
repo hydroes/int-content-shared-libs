@@ -1,0 +1,26 @@
+<article class="content__card__small">
+    <div class="tile-style">
+        {! TODO - add basic notes on syndication !}
+        {@ne key=primarySyndicatePosition value=""}
+
+        <a href="{@primarySyndicate urls=urls channel=settings.channel/}" class="thumb-wrap">
+            {>"image" /}{~n}
+        </a>
+        <div>
+            {>"title" titleUrls=urls /}{~n}
+            {>"syndicate-time" /}{~n}
+        </div>
+
+        {:else}
+
+        <a href="{@link article=. channel=settings.channel/}/" class="thumb-wrap">
+            {>"image" /}{~n}
+        </a>
+        <div>
+            {>"title" titleUrls=urls /}{~n}
+            {>"syndicate-time" channel=settings.channel/}{~n}
+        </div>
+
+        {/ne}
+    </div>
+</article>
