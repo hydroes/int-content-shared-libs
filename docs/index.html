@@ -28,19 +28,31 @@
   </head>
   <body>
     <div class="main-container">
-      <header class="row header">
-          <div class="col-xs-2">
-            <img src="http://www.bauermedia.co.uk/images/logo-bauer.png"/>
-            <div class="header__version">v 0.2.9</div>
+      <header class="header">
+          <div class="row">
+            <div class="col-xs-2">
+              <img src="http://www.bauermedia.co.uk/images/logo-bauer.png"/>
+              <div class="header__version">v 0.2.9</div>
+            </div>
+            <div class="col-xs-10">
+              <h1 class="header__title">Bauer styleguide</h1>
+            </div>
           </div>
-          <div class="col-xs-10">
-            <h1 class="header__title">Bauer styleguide</h1>
+            <div class="row">
+            <div class="col-xs-12">
+            <div class="visible-xs">XS</div>
+            <div class="visible-sm">SM</div>
+            <div class="visible-md">MD</div>
+            <div class="visible-lg">LG</div>
+            <div class="visible-xl">XL</div>
+            </div>
           </div>
       </header>
+
       <div class="container-fluid">
         <div class="style-guide">
             <div class="row style-guide__item">
-              <div class="col-xxs-6">
+              <div class="col-xs-6">
                 <div class="style-guide__item__label" style="">
                   <h2>Test Component</h2>
                   <div>
@@ -48,12 +60,12 @@
                   </div>  
                 </div>
               </div>
-              <div class="col-xxs-6" style="">
+              <div class="col-xs-6" style="">
                 <div id="output"></div>
               </div>
             </div>
             <div class="row style-guide__item">
-              <div class="col-md-6">
+              <div class="col-sm-6 col-xl-4">
                 <div class="style-guide__item__label" style="">
                   <h2>Featured Card</h2>
                   <div>
@@ -61,7 +73,7 @@
                   </div> 
                 </div>
               </div>
-              <div class="col-md-6" style="">
+              <div class="col-sm-6 col-xl-8" style="">
                 <div id="featured-card"></div>
               </div>
             </div>

@@ -1,9 +1,4 @@
 <article>
-    <div class="visible-xxs">XXS</div>
-    <div class="visible-xs">XS</div>
-    <div class="visible-sm">SM</div>
-    <div class="visible-md">MD</div>
-    <div class="visible-lg">LG</div>
     <div class="featured-card">
         {@ne key=data.primarySyndicatePosition value=""}
 
