@@ -26,21 +26,17 @@ article.content__card__small {
         font-size: 18px;
         font-weight: 500;
     }
-
-    .paragraph {
-        max-height: 108px;
-        font-size: 18px;
-        line-height: 1.35;
-        overflow: hidden;
-        letter-spacing: -.01em;
-        &__title {
-            padding: 10px 10px 0;
-        }
-        &--black {
-            color: $color-black;
-        }
-        &--published {
-            padding: 0px 10px;
+    .article__info__container {
+        padding: 10px 10px 0;
+        .title__container, .syndicate__time  {
+            max-height: 108px;
+            font-size: 18px;
+            line-height: 1.35;
+            overflow: hidden;
+            letter-spacing: -.01em;
+            &__link {
+                color: $color-black;
+            }
         }
     }
 }

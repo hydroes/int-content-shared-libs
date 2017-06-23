@@ -1,3 +1,5 @@
     {#data}
-    <p class="paragraph paragraph__title"><a class="paragraph paragraph--black" href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a></p>
+    <span class="title__container">
+        <a class="title__container title__container__link" href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a>
+    </span>
     {/data}

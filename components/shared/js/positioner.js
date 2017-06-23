@@ -2,14 +2,14 @@
 /* global $ */
 // Equal height columns on article grid / Equal height related station album art
 var refArts = [
-  '.grid.home-latest article:nth-child(1)',
-  '.grid.lander-main article:nth-child(1)',
-  '.grid.listen-again-featured article:nth-child(1)'
+  '.grid.home-latest article.content__card__small:nth-child(1)',
+  '.grid.lander-main article.content__card__small:nth-child(1)',
+  '.grid.listen-again-featured article.content__card__small:nth-child(1)'
 ]
 var tarArts = [
-  '.grid.home-latest article:nth-child(2)',
-  '.grid.lander-main article:nth-child(2)',
-  '.grid.listen-again-featured article:nth-child(2)'
+  '.grid.home-latest article.content__card__small:nth-child(2)',
+  '.grid.lander-main article.content__card__small:nth-child(2)',
+  '.grid.listen-again-featured article.content__card__small:nth-child(2)'
 ]
 
 var $win = null

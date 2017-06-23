@@ -9,5 +9,5 @@
 		<img srcset="{@imgcdn asset=data.cardImage.image width="600" ratio="16-9" resizeStyle="aspectfill" cropData=data.heroImageThumbLandscape cropType="data.heroImageThumbLandscape"/}" alt="{data.title}" title="{data.title}">
 	</picture>
 {:else}
-  {> "featured-no-image" /}
+  {> "card-no-image" /}
 {/data.cardImage} 

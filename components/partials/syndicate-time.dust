@@ -1,6 +1,6 @@
   {@ne key=data.primarySyndicatePosition value=""}
 
-    <p class="paragraph paragraph--published">
+    <p class="syndicate__time">
     	<a href="{@syndicateCategoryLink article=data channel=settings.channel /}" class="brand-color">{@syndicateCategory article=data channel=settings.channel displayField="name" /}</a>&nbsp;
     	 |&nbsp;
     	 {?data.lastModifiedAt}
@@ -10,7 +10,7 @@
     	 {/data.lastModifiedAt}
     </p>
   {:else}
-    <p class="paragraph paragraph--published">
+    <p class="syndicate__time">
     	<a href="/{data.syndicateUrls}/" class="brand-color">{data.categories[0].name}</a>&nbsp;
 			|&nbsp;
 			 {?data.lastModifiedAt}

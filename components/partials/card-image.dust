@@ -10,5 +10,5 @@
 		<img srcset="{@imgcdn asset=heroImage[0].image width="420"  ratio="16-9" resizeStyle="aspectfill" cropData=heroImageThumbLandscape cropType="heroImageThumbLandscape" /}" alt="{title}" title="{title}">
 	</picture>
 {:else}
-  {> "no-image" /}
+  {> "card-no-image" /}
 {/heroImage}
