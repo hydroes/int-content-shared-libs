@@ -1,22 +1,22 @@
 <article>
-    <div class="featured-card">
+    <div class="large-content-card">
         {@ne key=data.primarySyndicatePosition value=""}
 
-        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}" class="featured-card__link">
+        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}" class="large-content-card__link">
             {>"featured-image" /}{~n}
         </a>
-        <div class="featured-card__info">
+        <div class="large-content-card__info">
             {>"title" /}{~n}
             {>"syndicate-time" /}{~n}
         </div>
 
         {:else}
 
-        <a href="{@link article=data channel=settings.channel /}/" class="featured-card__link">
+        <a href="{@link article=data channel=settings.channel /}/" class="large-content-card__link">
             {>"featured-image" /}{~n}
         </a>
          
-        <div class="featured-card__info">
+        <div class="large-content-card__info">
             {>"title" /}{~n}
             {>"syndicate-time" channel=settings.channel /}{~n}
         </div>
