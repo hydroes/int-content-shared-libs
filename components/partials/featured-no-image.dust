@@ -1,7 +1,7 @@
 {?settings.stationHeaderLogoSVG}
 
 
-<picture class="article-missing-image brand-background-color" style="background-image: url('{settings.stationHeaderLogoSVG}');">
+<picture class="missing-image brand-background-color" style="background-image: url('{settings.stationHeaderLogoSVG}');">
   <source type="" srcset="{settings.placeholderImage}" media="(min-width: 439px)">
     <img srcset="{settings.placeholderImageSmall}" alt="{settings.placeholderAltText}" title="{settings.placeholderAltText}">
 </picture>
@@ -9,7 +9,7 @@
 {:else}
 {!} This should occur on the hub page {!}
 
-<picture class="hub-missing-image">
+<picture class="missing-image missing-image--hub" style="background-image: url('{settings.missingHubImage}');">
   <source type="" srcset="{settings.placeholderImage}" media="(min-width: 439px)">
   <img srcset="{settings.placeholderImageSmall}" alt="{settings.placeholderAltText}" title="{settings.placeholderAltText}">
 </picture>
