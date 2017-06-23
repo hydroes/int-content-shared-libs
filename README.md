@@ -13,6 +13,7 @@ The shared components can be previewed here:
 
 ## Installation
 npm install
+bower install
 
 
 ## Development

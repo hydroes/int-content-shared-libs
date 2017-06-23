@@ -44,7 +44,7 @@
   "pre-commit": [
     "validate"
   ],
-  "readme": "ERROR: No README data found!",
+  "readme": "README.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BauerXcel/shared-templates.git"

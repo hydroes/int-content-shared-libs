@@ -77,7 +77,6 @@ gulp.task('sass-watch', ['compile-sass'], function (done) {
 
 // Compile sass
 gulp.task('compile-sass', function () {
-  // pre-compile dust templates for speed
   return gulp.src('components/includes.scss', { ignoreInitial: false })
         // .pipe(sourcemaps.init())
         .pipe(sass())
