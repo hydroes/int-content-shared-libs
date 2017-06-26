@@ -1,5 +1,5 @@
 
-article.content__card__small {
+.small-content-card {
     border-bottom: 1px solid $color-border;
     background-color: $color-white;
 
@@ -8,25 +8,7 @@ article.content__card__small {
         height: auto;
     }
 
-    h1, h2 {
-        margin: 0.75em 0;
-        font-size: 22px;
-        line-height: 1.4;
-        font-weight: 500;
-        letter-spacing: -0.03em;
-    }
-
-    h2 {
-        font-size: 18px;
-        color: $color-black;
-    }
-
-    h6 {
-        margin-top: 1em;
-        font-size: 18px;
-        font-weight: 500;
-    }
-    .article__info__container {
+    &__info {
         padding: 10px 10px 0;
         .title__container, .syndicate__time  {
             max-height: 108px;
@@ -43,7 +25,7 @@ article.content__card__small {
 
 
 @media (min-width: $break1) {
-    article.content__card__small {
+    article.small-content-card {
         display: inline-block;
         width: 50%;
         vertical-align: top;

@@ -1,22 +1,22 @@
-<article class="content__card__small">
+<article class="small-content-card">
     <div class="tile-style">
         {! TODO - add basic notes on syndication !}
         {@ne key=data.primarySyndicatePosition value=""}
 
-        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}" class="thumb-wrap">
+        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}">
             {>"card-image" /}{~n}
         </a>
-        <div class="article__info__container">
+        <div class="small-content-card__info">
             {>"title" titleUrls=data.syndicateUrls /}{~n}
             {>"syndicate-time" /}{~n}
         </div>
 
-        {:else}
+        {:else}   
 
         <a href="{@link article=data channel=settings.channel/}/">
             {>"card-image" /}{~n}
         </a>
-        <div class="article__info__container">
+        <div class="small-content-card__info">
             {>"title" titleUrls=data.syndicateUrls /}{~n}
             {>"syndicate-time" channel=settings.channel/}{~n}
         </div>

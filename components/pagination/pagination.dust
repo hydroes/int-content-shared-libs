@@ -1,0 +1,6 @@
+<div class="pagination">
+    {>"partials/paginate" 
+    totalPages=metadata.totalPages currentPage=metadata.page 
+    paramsPage=1
+    path='' /}
+</div>
