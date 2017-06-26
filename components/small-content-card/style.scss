@@ -2,21 +2,16 @@
 .small-content-card {
     border-bottom: 1px solid $border-color;
     background-color: $white-color;
+    display: inline-block;
+    vertical-align: top;
 
     img {
         max-width: 100%;
         height: auto;
     }
-}
 
-@media (min-width: $screen-xs) {
-    article.small-content-card {
-        display: inline-block;
-        width: 50%;
-        vertical-align: top;
-        .tile-style {
+    .tile-style {
             height: 100%;
             box-shadow: $box-shadow-color 1px 1px 2px;
-        }
     }
 }
