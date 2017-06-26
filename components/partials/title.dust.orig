@@ -1,9 +1,0 @@
-    {#data}
-<<<<<<< HEAD
-    <span class="title__container">
-        <a class="title__container title__container__link" href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a>
-    </span>
-=======
-    <span class="title"><a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a></span>
->>>>>>> develop
-    {/data}
