@@ -1,5 +1,5 @@
     {#data}
-    <span class="title__container">
-        <a class="title__container title__container__link" href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a>
+    <span class="title">
+    	<a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a>
     </span>
     {/data}

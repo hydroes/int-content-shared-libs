@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Bauer shared components</title>
-
-  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cloud.typography.com/777534/6275952/css/fonts.css" media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" /><noscript><link rel="stylesheet" href="https://cloud.typography.com/777534/6275952/css/fonts.css"></noscript>
   <link href="/guide.css" rel="stylesheet">
   <link href="dist/style.min.css" rel="stylesheet">
   <script src="bower_components/dustjs-linkedin/dist/dust-full.js"></script>
@@ -32,19 +31,31 @@
 <body>
   <!-- all the testing elements -->
   <div class="main-container">
-    <header class="row header">
-      <div class="col-xs-2">
-        <img src="http://www.bauermedia.co.uk/images/logo-bauer.png" />
-        <div class="header__version">v 0.2.9</div>
+      <header class="header">
+          <div class="row">
+            <div class="col-xs-4 col-sm-2">
+              <img src="http://www.bauermedia.co.uk/images/logo-bauer.png" class="header-logo" />
+            <div class="header__version">v 0.2.9</div>
+          </div>
+            <div class="col-xs-8 col-sm-10">
+            <h1 class="header__title">Bauer styleguide</h1>
+            </div>
       </div>
-      <div class="col-xs-10">
-        <h1 class="header__title">Bauer styleguide</h1>
-      </div>
+            <div class="row">
+            <div class="col-xs-12">
+            <div class="visible-xs">XS</div>
+            <div class="visible-sm">SM</div>
+            <div class="visible-md">MD</div>
+            <div class="visible-lg">LG</div>
+            <div class="visible-xl">XL</div>
+            </div>
+          </div>
     </header>
+
     <div class="container-fluid">
       <div class="style-guide">
         <div class="row style-guide__item">
-          <div class="col-sm-6">
+              <div class="col-md-6">
             <div class="style-guide__item__label" style="">
               <h2>Test Component</h2>
               <div>
@@ -52,21 +63,21 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6" style="">
+              <div class="col-md-6" style="">
             <div id="output"></div>
           </div>
         </div>
         <div class="row style-guide__item">
           <div class="col-md-6">
             <div class="style-guide__item__label" style="">
-              <h2>Featured Card</h2>
+                  <h2>Large Content Card</h2>
               <div>
                 <h3><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
               </div>
             </div>
           </div>
           <div class="col-md-6" style="">
-            <div id="featured-card"></div>
+                <div id="large-content-card"></div>
           </div>
         </div>
         <div class="row style-guide__item">
@@ -79,11 +90,9 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-10 col-xs-7 col-sm-6">
-                <div id="content-card-small-test"></div>
-              </div>
-            </div>
+                <div id="content-card-small-test">
+
+                </div>
           </div>
           <div class="col-md-12">
 
@@ -129,6 +138,31 @@
         "placeholderImageSmall": "http://localhost:8000/assets/img/small_placeholder_image.png"
       },
       "data": {
+        "title": "WATCH: Chris Pratt reveals what it was like putting on the Star-Lord costume again",
+      "heroImagePortrait": [
+        null
+        ],
+        "heroImageThumb": [
+          null
+        ],
+        "heroImageThumbLandscape": [
+          null
+        ],
+        "cardImage": {
+          "_id": "58ff222d7dd91b024f925a0b",
+          "altText": "Chris Pratt in Guardians of the Galaxy Vol. 2",
+          "image": {
+            "name": "guardiansgalaxy.jpg",
+            "fileName": "guardiansgalaxy.jpg",
+            "mimeType": "image/jpeg",
+            "width": 778,
+            "height": 436,
+            "fileSize": 114022,
+            "path": "radio/media/58ff/222d/7dd9/1b02/4f92/5a0b"
+          },
+          "caption": "Chris Pratt in Guardians of the Galaxy Vol. 2",
+          "credits": "Chris Pratt Â© 2016 MVLFFLLC. TM & Â© 2016 Marvel. All Rights Reserved."
+        },
         "composed": {
           "heroImage": [
             "58ff222d7dd91b024f925a0b"
@@ -190,7 +224,6 @@
           "key-3/entertainment/movies/watch-chris-pratt-reveals-like-putting-star-lord-costume/",
           "magic/entertainment/movies/watch-chris-pratt-reveals-like-putting-star-lord-costume/"]
       },
-      "title": "WATCH: Chris Pratt reveals what it was like putting on the Star-Lord costume again",
       "subtitle": "The film is out this week",
       "content": [
         "Chris Pratt was in London last night for the premiere of **Guardians of the Galaxy Vol. 2** and he revealed what it was like getting his Star-Lord costume on again.",
@@ -213,37 +246,13 @@
         "_id": "587ce1db339fc98f272f59c2",
         "fullname": "Anna Sky Hulton"
       },
-      "heroImage": [{
-        "_id": "58ff222d7dd91b024f925a0b",
-        "altText": "Chris Pratt in Guardians of the Galaxy Vol. 2",
-        "image": {
-          "name": "guardiansgalaxy.jpg",
-          "fileName": "guardiansgalaxy.jpg",
-          "mimeType": "image/jpeg",
-          "width": 778,
-          "height": 436,
-          "fileSize": 114022,
-          "path": "radio/media/58ff/222d/7dd9/1b02/4f92/5a0b"
-        },
-        "caption": "Chris Pratt in Guardians of the Galaxy Vol. 2",
-        "credits": "Chris Pratt Â© 2016 MVLFFLLC. TM & Â© 2016 Marvel. All Rights Reserved."
-      }],
       "apiVersion": "1.0",
       "createdAt": 1493115472951,
       "createdBy": "publish",
       "v": 10,
-      "furl": "watch-chris-pratt-reveals-like-putting-star-lord-costume",
+      "url": "watch-chris-pratt-reveals-like-putting-star-lord-costume",
       "lastModifiedBy": "publish",
       "heroImageLandscape": [
-        null
-      ],
-      "heroImagePortrait": [
-        null
-      ],
-      "heroImageThumb": [
-        null
-      ],
-      "heroImageThumbLandscape": [
         null
       ],
       "composed": {
@@ -252,7 +261,6 @@
         ]
       }
     }
-
     renderToInnerHtml('small-content-card', smallCard, document.getElementById('content-card-small-test'));
   </script>
 
@@ -260,16 +268,17 @@
 <script type="text/javascript">
 
     // The templates are already registered, so we are ready to render!
-    dust.render("featured-card", {
+    dust.render("large-content-card",{
       "settings": {
         "protocol": "http://",
         "imageQuality": "80",
         "imageDomain": "mediatest.planetradio.co.uk",
         "channel": "magic",
         "stationHeaderLogoSVG": "https://assets.planetradio.co.uk/img/ConfigWebHeaderLogoSVGImageUrl/26.svg?ver=1463741185",
-        "placeholderAltText": "ross",
-        "placeholderImage": "http://localhost:8000/assets/img/default_placeholder_image.gif",
-        "placeholderImageSmall": "http://localhost:8000/assets/img/small_placeholder_image.png"
+                      "missingHubImage": "https:test.planetradio.co.uk/assets/img/bauer-planet-radio-logo.svg",
+                      "placeholderAltText": "placeholder alt text",
+                      "placeholderImage": "http://test.planetradio.co.uk/assets/img/default_placeholder_image.gif",
+                      "placeholderImageSmall": "http:///assets/img/small_placeholder_image.png"
       },
       "data": {
         "primarySyndicatePosition": "",
@@ -340,7 +349,7 @@
       }
     }, function (err, out) { // eslint-disable-line
 
-      document.getElementById('featured-card').innerHTML += out
+                document.getElementById('large-content-card').innerHTML += out
 
       if (err) {
         console.log('dust err: ', err)

@@ -1,0 +1,14 @@
+// IMPORTS REQUIRED FOR OUR OVERRIDE OF BOOTSTRAP
+// TO CREATE AN EXTRA BREAKPOINT
+@import "bauer-bootstrap/variables";
+@import "bauer-bootstrap/bootstrap";
+@import "bauer-bootstrap/mixins/grid-framework";
+@import "bauer-bootstrap/mixins/grid";
+@import "bauer-bootstrap/grid";
+@import "bauer-bootstrap/responsive-utilities";
+
+// STYLES REQUIRED FOR THE COMPONENTS
+@import "shared-variables";
+@import "partials";
+@import "../../large-content-card/style";
+@import "../../small-content-card/style";

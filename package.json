@@ -58,7 +58,8 @@
   "standard": {
     "ignore": [
       "dist/**",
-      "docs/**"
+      "docs/**",
+      "components/shared/sass/bootstrap-sass-3.3.7"
     ]
   },
   "version": "0.2.9"
