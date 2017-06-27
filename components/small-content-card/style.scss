@@ -10,7 +10,7 @@
         padding: 0px;
     }
     img {
-        max-width: 115%;
+        max-width: 100%;
         height: auto;
     }
 
@@ -22,15 +22,13 @@
     &__info {
         height: inherit;
         overflow: hidden;
+        padding: 0px;
     }
 }
 
 @media (min-width: $screen-sm) {
     .small-content-card {
         padding: 10px 10px 0;
-        &__info {
-            padding: 0px;
-        }
         img {
             max-width: 100%;
         }

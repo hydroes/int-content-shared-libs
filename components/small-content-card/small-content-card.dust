@@ -4,20 +4,20 @@
             {! TODO - add basic notes on syndication !}
             {@ne key=data.primarySyndicatePosition value=""}
 
-            <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}" class="img-container col-xs-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}" class="img-container col-xs-4 col-sm-12">
                 {>"small-card-image" /}{~n}
             </a>
-            <div class="small-content-card__info col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="small-content-card__info col-xs-8 col-sm-12">
                 {>"title" titleUrls=data.syndicateUrls /}{~n}
                 {>"syndicate-time" /}{~n}
             </div>
 
             {:else}   
 
-            <a href="{@link article=data channel=settings.channel/}/" class="img-container col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <a href="{@link article=data channel=settings.channel/}/" class="img-container col-xs-8 col-sm-12">
                 {>"small-card-image" /}{~n}
             </a>
-            <div class="small-content-card__info col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="small-content-card__info col-xs-8 col-sm-12">
                 {>"title" titleUrls=data.syndicateUrls /}{~n}
                 {>"syndicate-time" channel=settings.channel/}{~n}
             </div>
