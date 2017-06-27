@@ -62,7 +62,7 @@
             <div class="style-guide__item__label" style="">
               <h2>Test Component</h2>
               <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
+                <h3><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
             <div class="style-guide__item__label" style="">
               <h2>Large Content Card</h2>
               <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
+                <h3><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
               </div>
             </div>
           </div>
@@ -83,11 +83,21 @@
             <div id="large-content-card"></div>
           </div>
         </div>
+        <div class="row style-guide__item">
+          <div class="col-md-6">
+            <div class="style-guide__item__label" style="">
+              <h2>Pagination</h2>
+              <div>
+                <h3><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="">
+            <div id="pagination"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div id="pagination"></div>
   </div>
 
   <script type="text/javascript">
@@ -193,10 +203,13 @@
   </script>
   <script>
     dust.render('pagination', {
-      "currentPage": 3,
-      "totalPages": 53,
-      "pathNoPage": "/kiss/",
-      "path": "l/3f/db9a0/f9364/b5216/319a5/b09d7/d836b"
+      "seetings": {},
+      "data": {
+        "currentPage": 1,
+        "totalPages": 53,
+        "pathNoPage": "/kiss/",
+        "path": "l/3f/db9a0/f9364/b5216/319a5/b09d7/d836b"
+      }
     }, function (err, out) {
       document.getElementById('pagination').innerHTML += out
       if (err) {

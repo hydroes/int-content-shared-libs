@@ -1,17 +1,11 @@
-// Varibles
-$type-color: #000000;
+// --------------------------------------------------
+// Local Variables
 $border-radius-default: 0;
-// Mixins
-@mixin border-radius($radius) {
-  	border-radius: $radius;
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-}
 // --------------------------------------------------
 .pagination {
   li {
     a {
-      color: $type-color;
+      color: $black-color;
       margin-right: 2px;
     }
   }
