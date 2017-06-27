@@ -1,7 +1,0 @@
-<div class="bauer-web-component-test">
-  <h2>Test component</h2>
-
-  <button type="button" class="btn btn-default btn-lg" id="bauer-web-component-test-btn">
-    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>{title}
-  </button>
-</div>

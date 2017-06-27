@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const dust = require('gulp-dust')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
 const minifyCSS = require('gulp-minify-css')
@@ -18,52 +17,21 @@ gulp.task('compile-js', function () {
     .pipe(gulp.dest('docs/dist/'))
 })
 
-gulp.task('pre-compile-helpers', function () {
-  return gulp.src('./helpers/*.js')
-    .pipe(concat('helpers.min.js'))
-    .pipe(gulp.dest('docs/dist/'))
-})
-
-gulp.task('compile-helpers', ['pre-compile-helpers'], function () {
-  return browserify('./docs/dist/helpers.min.js').bundle()
-    .pipe(source('helpers.min.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest('docs/dist/'))
-})
-
 // create a task that ensures the `js` task is complete before
 // reloading browsers
-gulp.task('js-watch', ['compile-js', 'compile-helpers'], function (done) {
+gulp.task('js-watch', ['compile-js'], function (done) {
   browserSync.reload()
   done()
 })
 
-// backend templates are be comiled and stored separatly so that they can be
-// loaded as needed, this is done to increase performance
-gulp.task('compile-dust-for-backend', function () {
-  // pre-compile dust templates for speed
-  return gulp.src('components/**/*.dust', { ignoreInitial: false })
-        .pipe(dust())
-        .pipe(gulp.dest('docs/dist/'))
-})
-
 // front end templates are compiled and stored all together in one file
 // this is done to ease development
-gulp.task('compile-dust-for-frontend', function () {
-  // pre-compile dust templates for speed
-  // Endless stream mode
-  return gulp.src('components/**/*.dust', { ignoreInitial: false })
-        .pipe(dust())
-        .pipe(concat('templates.min.js'))
-        .pipe(buffer())
-        .pipe(uglify())
+gulp.task('copy-pug-templates', function () {
+  return gulp.src('components/**/*.pug')
         .pipe(gulp.dest('docs/dist/'))
 })
 
-// create a task that ensures the `dust` task is complete before
-// reloading browsers
-gulp.task('dust-watch', ['compile-dust-for-backend', 'compile-dust-for-frontend'], function (done) {
+gulp.task('pug-watch', ['copy-pug-templates'], function (done) {
   browserSync.reload()
   done()
 })
@@ -111,9 +79,7 @@ gulp.task('default',
   [
     'remove-dist',
     'compile-js',
-    'compile-helpers',
-    'compile-dust-for-frontend',
-    'compile-dust-for-backend',
+    'copy-pug-templates',
     'compile-sass'
   ], function () {
     // Serve files from the root of this project
@@ -126,8 +92,7 @@ gulp.task('default',
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
     gulp.watch('components/**/*.js', ['js-watch'])
-    gulp.watch('components/**/*.dust', ['dust-watch'])
-    gulp.watch('helpers/*.js', ['js-watch'])
+    gulp.watch('components/**/*.pug', ['pug-watch'])
     gulp.watch('components/**/*.scss', ['sass-watch'])
     gulp.watch('docs/index.html', [])
   })
