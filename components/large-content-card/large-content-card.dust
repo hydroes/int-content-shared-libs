@@ -3,7 +3,7 @@
         {@ne key=data.primarySyndicatePosition value=""}
 
         <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}" class="large-content-card__link">
-            {>"card-image" /}{~n}
+            {>"large-card-image" /}{~n}
         </a>
         <div class="large-content-card__info">
             {>"title" /}{~n}
@@ -13,7 +13,7 @@
         {:else}
 
         <a href="{@link article=data channel=settings.channel /}/" class="large-content-card__link">
-            {>"card-image" /}{~n}
+            {>"large-card-image" /}{~n}
         </a>
          
         <div class="large-content-card__info">

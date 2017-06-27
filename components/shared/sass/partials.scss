@@ -11,7 +11,7 @@ body
     text-transform: none;
     color: $grey-color;
     white-space: nowrap;
-    padding: 10px;
+    padding: 10px 10px 0px;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -28,8 +28,6 @@ body
 	    	margin: 0.2rem;
 	    }
 	}
-
-
 }
 
 .title
@@ -62,6 +60,16 @@ body
     display: inline-block;
     background-color: $black-color;
 }
+.title {
+	word-wrap: break-word;
+    font-size: 16px;
+	padding: 10px 10px 0;
+    height: 100%;
+	a {
+		margin: 0px;            
+		height: inherit;
+	}
+}
 
 @media screen and (min-width: $screen-sm)
 {
@@ -69,18 +77,4 @@ body
 	{
 		font-size: 18px;
 	}
-}
-
-
-@media (max-width: $screen-sm) {
-    .title {
-        word-wrap: break-word;
-        font-size: 16px;
-        padding: 10px 10px 0;
-        height: 100%;
-        a {
-            margin: 0px;
-            height: inherit;
-        }
-    }
 }

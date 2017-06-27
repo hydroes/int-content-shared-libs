@@ -1,26 +1,28 @@
-<article class="small-content-card">
-    <div class="tile-style">
-        {! TODO - add basic notes on syndication !}
-        {@ne key=data.primarySyndicatePosition value=""}
+<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    <article class="small-content-card container">
+        <div class="tile-style row">
+            {! TODO - add basic notes on syndication !}
+            {@ne key=data.primarySyndicatePosition value=""}
 
-        <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}">
-            {>"card-image" /}{~n}
-        </a>
-        <div class="small-content-card__info">
-            {>"title" titleUrls=data.syndicateUrls /}{~n}
-            {>"syndicate-time" /}{~n}
+            <a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel/}" class="img-container col-xs-4 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                {>"small-card-image" /}{~n}
+            </a>
+            <div class="small-content-card__info col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                {>"title" titleUrls=data.syndicateUrls /}{~n}
+                {>"syndicate-time" /}{~n}
+            </div>
+
+            {:else}   
+
+            <a href="{@link article=data channel=settings.channel/}/" class="img-container col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                {>"small-card-image" /}{~n}
+            </a>
+            <div class="small-content-card__info col-xs-8 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                {>"title" titleUrls=data.syndicateUrls /}{~n}
+                {>"syndicate-time" channel=settings.channel/}{~n}
+            </div>
+
+            {/ne}
         </div>
-
-        {:else}   
-
-        <a href="{@link article=data channel=settings.channel/}/">
-            {>"card-image" /}{~n}
-        </a>
-        <div class="small-content-card__info">
-            {>"title" titleUrls=data.syndicateUrls /}{~n}
-            {>"syndicate-time" channel=settings.channel/}{~n}
-        </div>
-
-        {/ne}
-    </div>
-</article>
+    </article>
+</div>
