@@ -1,2 +1,9 @@
 @import 'shared/sass/main';
 @import 'test/style';
+
+// STYLES REQUIRED FOR THE COMPONENTS
+@import "shared/sass/shared-variables";
+@import "shared/sass/mixins";
+@import "shared/sass/partials";
+@import "large-content-card/style";
+@import "pagination/style";
