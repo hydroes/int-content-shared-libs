@@ -1,0 +1,66 @@
+# Uppercase with hash prefix and suffix is replaced by sed command
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: #KUBE_NAME#
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: #KUBE_NAME#
+  minReplicas: #MIN_REPLICAS#
+  maxReplicas: #MAX_REPLICAS#
+  targetCPUUtilizationPercentage: 50
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: #KUBE_NAME#
+  labels:
+    app: #KUBE_NAME#
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: #KUBE_NAME#
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: #KUBE_NAME#
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: #KUBE_NAME#
+    spec:
+      imagePullSecrets:
+        - name: dockerprivateregistry
+      containers:
+      - name: #KUBE_NAME#
+        image: 841059140795.dkr.ecr.eu-west-1.amazonaws.com/#IMAGE_NAME#:#IMAGE_TAG#
+        env:
+          - name: NODE_ENV
+            value: #CONFIG_ENVIRONMENT#
+        resources:
+          requests:
+            cpu: "200m"
+          limits:
+            cpu: "400m"
+        ports:
+        - containerPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: #KUBE_NAME#
+spec:
+  rules:
+  - host: #HOST_NAME#
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: #KUBE_NAME#
+          servicePort: 80
