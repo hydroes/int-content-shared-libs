@@ -13,7 +13,6 @@ The shared components can be previewed here:
 
 ## Installation
 npm install
-bower install
 
 
 ## Development
@@ -52,7 +51,7 @@ var templatesShare = require('bauer-shared-templates').Templates(dust)
 'use strict'
 
 var dust = require('@dadi/web').Dust
-var templatesShare = require('bauer-shared-web-components').Templates(dust)
+var templatesShare = require('bauer-shared-web-components').Templates()
 
 dust.getEngine().helpers.testy = function (chunk, context, bodies, params) {
   var template = templatesShare.get('test', {'name': 'Brian'})
