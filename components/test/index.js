@@ -1,5 +1,7 @@
 'use strict'
-/* global $ */
+
+const $ = require('jquery')
+
 module.exports = function () {
   $(function () {
     var btn = document.getElementById('bauer-web-component-test-btn')

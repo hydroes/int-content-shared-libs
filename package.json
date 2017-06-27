@@ -7,16 +7,17 @@
   "bugs": {
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "pug": "^2.0.0-rc.2"
+  },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-dust": "^3.0.0",
     "gulp-minify-css": "^1.2.4",
-    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
