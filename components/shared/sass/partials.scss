@@ -42,8 +42,7 @@ body
 	{
 		color: $black-color;
 		display: inline-block;
-		margin: 1rem 0;
-
+		padding: 0;    
 		&:hover
 		{
 			text-decoration: none;
@@ -60,16 +59,8 @@ body
     display: inline-block;
     background-color: $black-color;
 }
-.title {
-	word-wrap: break-word;
-    font-size: 16px;
-	padding: 10px 10px 0;
-    height: 100%;
-	a {
-		margin: 0px;            
-		height: inherit;
-	}
-}
+
+
 
 @media screen and (min-width: $screen-sm)
 {
