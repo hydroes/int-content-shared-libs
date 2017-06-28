@@ -38,6 +38,5 @@ dust.helpers.syndicateCategory = function (chunk, context, bodies, params) {
       return article.categories[n][displayField]
     }
   }
-
   return ''
 }

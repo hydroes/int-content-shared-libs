@@ -11,11 +11,9 @@ body
     text-transform: none;
     color: $grey-color;
     white-space: nowrap;
-    padding: 10px;
+    padding: 10px 10px 0px;
     overflow: hidden;
     text-overflow: ellipsis;
-    position: absolute;
-    bottom: 0;
 
     a {
     	&:hover
@@ -30,8 +28,6 @@ body
 	    	margin: 0.2rem;
 	    }
 	}
-
-
 }
 
 .title
@@ -46,8 +42,7 @@ body
 	{
 		color: $black-color;
 		display: inline-block;
-		margin: 1rem 0;
-
+		padding: 0;    
 		&:hover
 		{
 			text-decoration: none;
@@ -64,6 +59,8 @@ body
     display: inline-block;
     background-color: $black-color;
 }
+
+
 
 @media screen and (min-width: $screen-sm)
 {

@@ -5,5 +5,8 @@
 @import "shared/sass/shared-variables";
 @import "shared/sass/mixins";
 @import "shared/sass/partials";
+
+// COMPONENTS STYLES
 @import "large-content-card/style";
+@import 'small-content-card/style';
 @import "pagination/style";

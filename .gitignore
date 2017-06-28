@@ -1,2 +1,4 @@
 node_modules
 yarn.lock
+*.orig
+docs/bower_components

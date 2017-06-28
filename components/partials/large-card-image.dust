@@ -3,11 +3,13 @@
 		<source{~s}
 			 type="{data.cardImage.image.mimeType}"{~s}
 			 srcset="{@imgcdn asset=data.cardImage.image width="305" devicePixelRatio="2" cropData=data.heroImageThumbLandscape cropType="data.heroImageThumbLandscape" ratio="16-9" resizeStyle="aspectfill" quality="50" /}"{~s}
-			 media="(max-width: 439px)"
+			 media="(max-width: 480px)"
 		>
 
 		<img srcset="{@imgcdn asset=data.cardImage.image width="600" ratio="16-9" resizeStyle="aspectfill" cropData=data.heroImageThumbLandscape cropType="data.heroImageThumbLandscape"/}" alt="{data.title}" title="{data.title}">
 	</picture>
 {:else}
   {> "card-no-image" /}
-{/data.cardImage} 
+{/data.cardImage}
+
+
