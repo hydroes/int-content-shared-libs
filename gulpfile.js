@@ -8,6 +8,8 @@ const buffer = require('vinyl-buffer')
 const fs = require('fs')
 const browserSync = require('browser-sync').create()
 const concat = require('gulp-concat')
+const pug = require('pug')
+const path = require('path')
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js').bundle()
@@ -26,12 +28,40 @@ gulp.task('js-watch', ['compile-js'], function (done) {
 
 // front end templates are compiled and stored all together in one file
 // this is done to ease development
-gulp.task('copy-pug-templates', function () {
+gulp.task('compile-pug-templates', function () {
+  function ensureDirectoryExistence (filePath) {
+    var dirname = path.dirname(filePath)
+    if (fs.existsSync(dirname)) {
+      return true
+    }
+    ensureDirectoryExistence(dirname)
+    fs.mkdirSync(dirname)
+  }
+
   return gulp.src('components/**/*.pug')
-        .pipe(gulp.dest('docs/dist/'))
+    .on('data', function (file) {
+      let filePath = file.path.replace('/components/', '/docs/dist/')
+      let methodName = filePath.slice(0, -4)
+      let dirname = '/docs/dist/'
+      let start = methodName.indexOf(dirname)
+      methodName = methodName.substring(start + dirname.length)
+      methodName = methodName.replace('/', '')
+
+      let options = {
+        'name': `${methodName}`
+      }
+
+      // @todo: add option.filters here once they have been converted
+
+      let jsString = pug.compileFileClient(file.path, options)
+
+      filePath = filePath.slice(0, -4) + '.js'
+      ensureDirectoryExistence(filePath)
+      fs.writeFileSync(filePath, jsString)
+    })
 })
 
-gulp.task('pug-watch', ['copy-pug-templates'], function (done) {
+gulp.task('pug-watch', ['compile-pug-templates'], function (done) {
   browserSync.reload()
   done()
 })
@@ -79,7 +109,7 @@ gulp.task('default',
   [
     'remove-dist',
     'compile-js',
-    'copy-pug-templates',
+    'compile-pug-templates',
     'compile-sass'
   ], function () {
     // Serve files from the root of this project

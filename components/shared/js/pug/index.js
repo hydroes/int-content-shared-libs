@@ -1,20 +1,6 @@
 'use strict'
 
-const pug = require('pug')
 const $ = require('jquery')
-
-/**
-* Retrieves a pug template from the dist folder
-* @param templatePath string Path of template pug file to retrieve
-* @return string Raw pug template
-*/
-function getTemplate (templatePath) {
-  return $.get('dist/' + templatePath, function (response) {
-    return response
-  })
-}
-
-// @todo include filters here
 
 var bauerPug = {
   /**
@@ -26,18 +12,34 @@ var bauerPug = {
   * @return A promise that can be used to get the rendered into a string
   */
   render: function (templatePath, templateData, elementIdToRenderInto) {
-    var deferred = $.Deferred()
-    var templateRequest = getTemplate(templatePath)
+    // build compiled template path
+    var baseDir = 'dist/'
+    var compiledTemplatePath = baseDir + templatePath
+    compiledTemplatePath = compiledTemplatePath.replace('.pug', '.js')
 
-    templateRequest.done(function (rawTemplate) {
-      var template = pug.render(rawTemplate, templateData)
+    // retieve compiled template & execute it
+    $.getScript(compiledTemplatePath, function (script, textStatus, jqxhr) {
+      if (jqxhr.status !== 200) {
+        console.log('Compiled template not found: ', compiledTemplatePath)
+      }
 
-      $('#' + elementIdToRenderInto).html(template)
+      window.tempTemplateData = templateData
 
-      deferred.resolve(template)
+      // build compiled template method name
+      var templateMethodName = templatePath.split('/')
+      templateMethodName = templateMethodName.join('')
+      templateMethodName = templateMethodName.slice(0, -4)
+      templateMethodName = templateMethodName + '(window.tempTemplateData)'
+
+      templateMethodName = 'window.namespacedTemplateMethod = ' + templateMethodName
+
+      // namespaced methods need to run as follows
+      eval(templateMethodName.toString()) // eslint-disable-line
+      $('#' + elementIdToRenderInto).html(window.namespacedTemplateMethod)
+
+      window.tempTemplateData = {}
+      window.namespacedTemplateMethod = ''
     })
-
-    return deferred.promise()
   }
 }
 
