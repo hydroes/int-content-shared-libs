@@ -40,12 +40,12 @@ gulp.task('compile-pug-templates', function () {
 
   return gulp.src('components/**/*.pug')
     .on('data', function (file) {
-      let filePath = file.path.replace('/components/', '/docs/dist/')
-      let methodName = filePath.slice(0, -4)
       let dirname = '/docs/dist/'
+      let filePath = file.path.replace('/components/', dirname)
+      let methodName = filePath.slice(0, -4)
       let start = methodName.indexOf(dirname)
       methodName = methodName.substring(start + dirname.length)
-      methodName = methodName.replace('/', '')
+      methodName = methodName.replace('/', '_')
 
       let options = {
         'name': `${methodName}`

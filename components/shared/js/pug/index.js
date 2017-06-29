@@ -23,21 +23,19 @@ var bauerPug = {
         console.log('Compiled template not found: ', compiledTemplatePath)
       }
 
-      window.tempTemplateData = templateData
-
-      // build compiled template method name
+      // build compiled template method name & data
       var templateMethodName = templatePath.split('/')
-      templateMethodName = templateMethodName.join('')
+      templateMethodName = templateMethodName.join('_')
       templateMethodName = templateMethodName.slice(0, -4)
-      templateMethodName = templateMethodName + '(window.tempTemplateData)'
+      templateMethodName = templateMethodName + '(' + JSON.stringify(templateData) + ')'
 
       templateMethodName = 'window.namespacedTemplateMethod = ' + templateMethodName
 
       // namespaced methods need to run as follows
-      eval(templateMethodName.toString()) // eslint-disable-line
-      $('#' + elementIdToRenderInto).html(window.namespacedTemplateMethod)
+      $('#' + elementIdToRenderInto).html(
+        eval(templateMethodName.toString()) // eslint-disable-line
+      )
 
-      window.tempTemplateData = {}
       window.namespacedTemplateMethod = ''
     })
   }
