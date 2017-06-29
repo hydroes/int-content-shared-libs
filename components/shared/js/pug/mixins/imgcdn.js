@@ -3,8 +3,8 @@ var _ = require('underscore')
 
 module.exports = function (settings, data) {
   var result = ''
-  var settings = settings || {}
-  var data = data || {}
+  var settings = settings || {} // eslint-disable-line
+  var data = data || {} // eslint-disable-line
 
   if (!data.asset) {
     return result
