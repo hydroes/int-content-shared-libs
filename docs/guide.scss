@@ -106,19 +106,19 @@ body
 
 .style-guide
 {
-	h2
-	{
-		margin: 0;
-		font-size: 1rem;
-		font-weight: 100;
-	}
-	
 	.section-header
 	{
 		background-color: #FFAA37;
     	padding: 1rem;
     	color: white;
     	margin: 0 -2rem 1rem -2rem;
+
+    	h2
+		{
+			margin: 0;
+			font-size: 1rem;
+			font-weight: 100;
+		}
 	}
 
 	&__item
@@ -128,6 +128,13 @@ body
 		padding: 2rem; 
 		border-radius: rem-calc(4); 
 		background-color: white;
+
+		&__label h2
+		{
+			margin: 0;
+			font-size: 1rem;
+			font-weight: 100;
+		}
 	}
 }
 
