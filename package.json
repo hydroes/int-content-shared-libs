@@ -57,7 +57,7 @@
     "start": "gulp",
     "test": "standard",
     "validate-js-standard": "standard",
-    "commitmsg": "validate-commit-msg"
+    "commitmsg": "validate-commit-msg -p eslint"
   },
   "standard": {
     "ignore": [
