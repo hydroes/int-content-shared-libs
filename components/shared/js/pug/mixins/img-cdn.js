@@ -1,10 +1,10 @@
 'use strict'
 var _ = require('underscore')
 
-module.exports = function (settings, data) {
+module.exports = function (data, settings) {
   var result = ''
-  var settings = settings || {} // eslint-disable-line
-  var data = data || {} // eslint-disable-line
+  settings = settings || {}
+  data = data || {}
 
   if (!data.asset) {
     return result

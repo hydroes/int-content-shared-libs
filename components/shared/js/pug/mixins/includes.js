@@ -1,9 +1,11 @@
 'use strict'
 
-var imgcdn = require('./imgcdn')
+var imgCdn = require('./img-cdn')
 var paginate = require('./paginate')
+var primarySyndicate = require('./primary-syndicate')
 
 module.exports = {
-  'imgcdn': imgcdn,
-  'paginate': paginate
+  'imgCdn': imgCdn,
+  'paginate': paginate,
+  'primarySyndicate': primarySyndicate
 }
