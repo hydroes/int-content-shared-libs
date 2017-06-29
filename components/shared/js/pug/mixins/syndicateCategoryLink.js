@@ -1,10 +1,10 @@
 'use strict'
-/* global dust */
 
-dust.helpers.syndicateCategoryLink = function (chunk, context, bodies, params) {
-  var article = context.resolve(params.article)
-  var channel = context.resolve(params.channel)
-  var displaySyndicate = context.resolve(params.displaySyndicate) || false
+module.exports = function (data) {
+  data = data || {}
+  var article = data.article || false
+  var channel = data.channel
+  var displaySyndicate = data.displaySyndicate || false
     // Logic flow:
     // find the publication position for the given category (publications)
     // use position in composed.categories to get the category id
@@ -35,15 +35,4 @@ dust.helpers.syndicateCategoryLink = function (chunk, context, bodies, params) {
         article.categories[n].furl + '/'
     }
   }
-
-    // var categoryId = article.composed.categories[article.primarySyndicatePosition];
-
-    // for (var n in article.categories) {
-    //     if (article.categories[n]._id === categoryId) {
-    //         // /{params.channel}/{categories[0].parent.furl}/{categories[0].furl}/
-    //         return '/' + channel + '/' + article.categories[n].parent.furl + '/'
-    //             + article.categories[n].furl + '/';
-
-    //     }
-    // }
 }
