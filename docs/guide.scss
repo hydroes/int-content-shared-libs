@@ -168,3 +168,14 @@ body
 {
 	background-image: url('desktop.svg');
 }
+
+@media screen and (min-width: 480px)
+{
+	.navbar
+	{
+		&-collapse.in, &-collapse.collapsing
+		{
+			background-color: #223B70;
+		}
+	}
+}
