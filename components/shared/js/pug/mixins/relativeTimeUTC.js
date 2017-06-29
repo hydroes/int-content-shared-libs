@@ -1,5 +1,4 @@
 'use strict'
-/* global dust */
 
 var moment = require('moment')
 
@@ -13,11 +12,11 @@ var moment = require('moment')
  * @example: {@relativeTimeUTC timestamp="2016-03-04T14:29:11.000Z" /}
  * @return string
  */
-dust.helpers.relativeTimeUTC = function (chunk, context, bodies, params) {
+module.exports = function (data) {
   var result = ''
 
   try {
-    var timestamp = parseInt(context.resolve(params.timestamp))
+    var timestamp = data.timestamps
 
         // as timestamps are given from various api with or without milliseconds
         // check whether this timestamp needs miliiseconds added to it

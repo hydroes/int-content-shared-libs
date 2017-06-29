@@ -1,11 +1,10 @@
 'use strict'
-
-var imgCdn = require('./img-cdn')
-var paginate = require('./paginate')
-var primarySyndicate = require('./primary-syndicate')
-
+// bootstrap file for mixin logic
 module.exports = {
-  'imgCdn': imgCdn,
-  'paginate': paginate,
-  'primarySyndicate': primarySyndicate
+  'imgCdn': require('./imgCdn'),
+  'paginate': require('./paginate'),
+  'primarySyndicate': require('./primarySyndicate'),
+  'relativeTimeUTC': require('./relativeTimeUTC'),
+  'syndicateCategory': require('./syndicateCategory'),
+  'syndicateCategoryLink': require('./syndicateCategoryLink')
 }

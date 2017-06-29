@@ -1,4 +1,6 @@
 mixin link(data)
-  - var href = data.href || ''
-  - var title = data.title || ''
-  a(href=href) #{title}
+  -
+    var href = data.href || ''
+    var title = data.title || ''
+
+  a(href=data.href) #{data.title}
