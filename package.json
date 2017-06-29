@@ -25,6 +25,7 @@
     "moment": "^2.18.1",
     "precommit-hook": "^3.0.0",
     "standard": "^9.0.1",
+    "validate-commit": "^3.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
@@ -43,7 +44,8 @@
   ],
   "name": "bauer-shared-web-components",
   "pre-commit": [
-    "validate"
+    "validate-js-standard",
+    "commitmsg"
   ],
   "readme": "README.md",
   "repository": {
@@ -54,7 +56,8 @@
     "lint": "jshint .",
     "start": "gulp",
     "test": "standard",
-    "validate": "standard"
+    "validate-js-standard": "standard",
+    "commitmsg": "validate-commit-msg"
   },
   "standard": {
     "ignore": [
