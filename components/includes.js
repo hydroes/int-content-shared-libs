@@ -8,5 +8,5 @@ require('./test')(window)
 
 // bootstrap bauerSharedLibs
 window.bauerSharedLibs = window.bauerSharedLibs || {}
-window.bauerSharedLibs.pug = require('./shared/js/pug')
+window.bauerSharedLibs.pug = require('./shared/js/pug/pug')
 window.bauerSharedLibs.version = require('../package').version

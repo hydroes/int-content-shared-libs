@@ -1,26 +1,23 @@
 'use strict'
-/* global dust */
-
 var _ = require('underscore')
 
-/**
- * Returns the DADI's CDN url for an image with options
- */
-dust.helpers.imgcdn = function (chunk, context, bodies, params) {
+module.exports = function (settings, data) {
   var result = ''
+  var settings = settings || {}
+  var data = data || {}
 
-  if (!params.asset) {
-    return chunk.write(result)
+  if (!data.asset) {
+    return result
   }
 
   // See: https://github.com/dadi/cdn/blob/docs/docs/workingWithImages.md
 
   // domain and quality (including other defaults) can be set in
   // config/config.{env}.json
-  var protocol = context.get('settings.protocol')
-  var domain = context.get('settings.imageDomain')
-  var quality = context.get('settings.imageQuality')
-  var asset = context.resolve(params.asset)
+  var protocol = settings.protocol
+  var domain = settings.imageDomain
+  var quality = settings.imageQuality
+  var asset = data.asset
 
   var template = '{protocol}{domain}/{path}/{fileName}'
   template = template.replace('{protocol}', protocol)
@@ -50,15 +47,15 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
 
   var cropDimensions
   // check of there is crop data associated with this image
-  if (params.cropData && params.cropType) {
+  if (data.cropData && data.cropType) {
     // workout which crop 'tag' to use
-    var searchCriteria = {'_field': params['cropType']}
-    var cropInfo = _.findWhere(params['cropData'], searchCriteria)
+    var searchCriteria = {'_field': data['cropType']}
+    var cropInfo = _.findWhere(data['cropData'], searchCriteria)
 
     // crop data can be passed directly to this method as it comes from different
     // formats from the api
     if (!cropInfo) {
-      var potentialImageData = _.first(params['cropData'])
+      var potentialImageData = _.first(data['cropData'])
       if (potentialImageData && potentialImageData['_image']) {
         cropInfo = potentialImageData
       }
@@ -77,7 +74,7 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
     }
   }
 
-  // if this is set, then only params that are set are in put in the image url
+  // if this is set, then only data that are set are in put in the image url
   // eg if width is set then the url built will be:
   // http://cdn.example.com/path/to/file.jpg?width=100
 
@@ -86,7 +83,7 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
   var len = options.length
 
   for (var i = 0; i < len; i++) {
-    var option = context.resolve(params[options[i]])
+    var option = data[options[i]]
 
       // basically if crop data exists then add it and dont overwrite the orig
       // option if it was passed
@@ -124,8 +121,8 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
 -     '&trimFuzz={trimFuzz}' +          // 0-1
 -     '&width={width}' +              // (pixels) integer
 -     '&height={height}' +            // (pixels) integer
--     // '&crop-x={crop-x}' +              removed because params obsolete
--     // '&crop-y={crop-y}' +             // removed because params obsolete
+-     // '&crop-x={crop-x}' +              removed because data obsolete
+-     // '&crop-y={crop-y}' +             // removed because data obsolete
 -     '&ratio={ratio}' +              // e.g. 1-1, 4-3, 16-9, 21-9
 -     '&devicePixelRatio={devicePixelRatio}' +  // 0, 1, 2, 3
 -     '&gravity={gravity}' +            // [all compass bearings], center, none
@@ -140,5 +137,5 @@ dust.helpers.imgcdn = function (chunk, context, bodies, params) {
   http://bauer.radio.test.cdn.dadi.technology//?format=jpg&quality=80&trim=0&trimFuzz=0&width=0&height=0&crop-x=0&crop-y=0&ratio=0&devicePixelRatio={devicePixelRatio}&gravity=0&filter=0&blur=0&strip=0&rotate=0&flip=0&srcData={srcData}
   */
 
-  return chunk.write(result)
+  return result
 }
