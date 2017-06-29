@@ -44,76 +44,81 @@
             <div class="collapse navbar-collapse" id="navbar">
               <ul class="nav navbar-nav">
                 <li>
-                  <a href="#">Cards</a>
+                  <a href="#cards">Cards</a>
                 </li>
                 <li>
-                  <a href="#">Collections</a>
+                  <a href="#collections">Collections</a>
                 </li>
                 <li>
-                  <a href="#">Gallery</a>
+                  <a href="#gallery">Gallery</a>
                 </li>
                 <li>
-                  <a href="#">Miscellaneous</a>
+                  <a href="#misc">Miscellaneous</a>
                 </li>
               
               </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-      </header>
-    <div class="main-container">
+  </header>
+  <div class="main-container">
     <div class="container-fluid">
       <div class="style-guide">
         <div class="row style-guide__item">
           <div class="col-md-6">
             <div class="style-guide__item__label" style="">
               <h2>Test Component</h2>
-              <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</p>
-              </div>
             </div>
           </div>
           <div class="col-md-6" style="">
             <div id="output"></div>
           </div>
         </div>
-        <div class="row style-guide__item">
-          <div class="col-md-6">
-            <div class="style-guide__item__label" style="">
-              <h2>Large Content Card</h2>
-              <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</p>
+        <section id="cards">
+          <div class="section-header">
+            <h2>Cards</h2>
+          </div>
+          <div class="row style-guide__item">
+            <div class="col-md-6">
+              <div class="style-guide__item__label" style="">
+                <h2>Large Content Card</h2>
               </div>
             </div>
-          </div>
-          <div class="col-md-6" style="">
-            <div id="large-content-card"></div>
-          </div>
-        </div>
-        <div class="row style-guide__item">
-          <div class="col-md-6">
-            <div class="style-guide__item__label" style="">
-              <h2>Pagination</h2>
-              <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</p>
-              </div>
+            <div class="col-md-6" style="">
+              <div id="large-content-card"></div>
             </div>
           </div>
-          <div class="col-md-6" style="">
-            <div id="pagination"></div>
-          </div>
-        </div>
-        <div class="row style-guide__item">
-          <div class="col-md-6">
-            <div class="style-guide__item__label">
-              <h2>Content Card Small</h2>
-              <div>
-                <p><span class="style-guide__item__label__availabilty">Available from:</span> v 0.2.9</p>
+         
+          <div class="row style-guide__item">
+            <div class="col-md-6">
+              <div class="style-guide__item__label">
+                <h2>Small Content Card</h2>
               </div>
             </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2" id="content-card-small-test">
+            </div>
           </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2" id="content-card-small-test">
+        </section>
+        <section id="collections" class="section-header">
+          <h2>Collections</h2>
+        </section>
+        <section id="gallery" class="section-header">
+          <h2>Gallery</h2>
+        </section>
+        <section id="misc">
+          <div class="section-header">
+            <h2>Miscallaneous</h2>
           </div>
-        </div>
+          <div class="row style-guide__item">
+            <div class="col-md-6">
+              <div class="style-guide__item__label" style="">
+                <h2>Pagination</h2>
+              </div>
+            </div>
+            <div class="col-md-6" style="">
+              <div id="pagination"></div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
