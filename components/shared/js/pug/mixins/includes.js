@@ -1,7 +1,9 @@
 'use strict'
 
 var imgcdn = require('./imgcdn')
+var paginate = require('./paginate')
 
 module.exports = {
-  'imgcdn': imgcdn
+  'imgcdn': imgcdn,
+  'paginate': paginate
 }
