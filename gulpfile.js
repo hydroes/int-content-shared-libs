@@ -101,5 +101,6 @@ gulp.task('default',
     gulp.watch('components/**/*.js', ['js-watch'])
     gulp.watch('components/**/*.pug', ['pug-watch'])
     gulp.watch('components/**/*.scss', ['sass-watch'])
+    gulp.watch('docs/guide.scss', ['sass-watch'])
     gulp.watch('docs/index.html', [])
   })
