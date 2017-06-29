@@ -44,7 +44,7 @@ gulp.task('sass-watch', ['compile-sass'], function (done) {
 })
 
 // Compile sass
-gulp.task('compile-sass', function () {
+gulp.task('compile-sass', ['compile-development-sass'], function () {
   return gulp.src('components/includes.scss', { ignoreInitial: false })
         // .pipe(sourcemaps.init())
         .pipe(sass())
@@ -54,6 +54,13 @@ gulp.task('compile-sass', function () {
         // .pipe(rename('style.min.css'))
         // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('docs/dist/'))
+})
+
+gulp.task('compile-development-sass', function () {
+  return gulp.src('docs/guide.scss')
+         .pipe(sass())
+         .pipe(concat('guide.css'))
+         .pipe(gulp.dest('docs/'))
 })
 
 // Task to remove any cached dist files
