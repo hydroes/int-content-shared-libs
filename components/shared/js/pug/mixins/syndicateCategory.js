@@ -1,11 +1,11 @@
 'use strict'
-/* global dust */
 
-dust.helpers.syndicateCategory = function (chunk, context, bodies, params) {
-  var article = context.resolve(params.article)
-  var channel = context.resolve(params.channel)
-  var displayField = context.resolve(params.displayField) || 'name'
-  var displaySyndicate = context.resolve(params.displaySyndicate) || false
+module.exports = function (data) {
+  data = data || {}
+  var article = data.article || false
+  var channel = data.channel || ''
+  var displayField = data.displayField || 'name'
+  var displaySyndicate = data.displaySyndicate || false
 
     // Logic flow:
     // find the publication position for the given category (publications)
