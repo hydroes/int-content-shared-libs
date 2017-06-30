@@ -1,0 +1,25 @@
+include ../mixins/imgCdn.pug
+
+- 
+	var imageCdnData = {
+		asset: data.cardImage.image,
+		width: 305,
+		devicePixelRatio: 2,
+		cropType: data.heroImageThumbLandscape,
+		cropData: data.heroImageThumbLandscape,
+		ratio: '16-9',
+		resizeStyle: 'aspectfill',
+		quality: '50'
+	}
+	var imageCdnSettings = {
+		protocol: settings.protocol,
+		domain: settings.imageDomain,
+	    quality: settings.imageQuality
+	}
+
+if data.cardImage
+	picture
+		source(type=data.cardImage.image.mimeType, srcset=+imgCdn(imageCdnData, imageCdnSettings), media='max-width: 480px')
+		img(alt=data.title, title=data.title, srcset=+imgCdn(imageCdnData, imageCdnSettings))
+else
+	include card-no-image.pug

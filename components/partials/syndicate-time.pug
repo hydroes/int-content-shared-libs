@@ -1,0 +1,32 @@
+include ../mixins/relativeTimeUTC.pug
+include ../mixins/syndicateCategory.pug
+include ../mixins/syndicateCategoryLink.pug
+
+-
+    var syndicateCategoryLinkData = {
+        article: data.article,
+        channel: settings.channel,
+        displaySyndicate: data.displaySyndicate
+    }
+
+    var syndicateCategoryData = {
+        article: data.article,
+        channel: settings.channel,
+        displaySyndicate: data.displaySyndicate,
+        displayField: 'name'
+    }
+
+if data.primarySyndicatePosition != ''
+    span.hidden-xs.modified-container
+        a.brand-color(href=+syndicateCategoryLink(syndicateCategoryLinkData)) +syndicateCategory(syndicateCategoryData)
+        if data.lastModifiedAt
+            +relativeTimeUTC(data.lastModifiedAt)
+        else
+            +relativeTimeUTC(data.publicationDate)
+else
+    span.hidden-xs.modified-container
+        a.brand-color(href='/'+data.syndicateUrls+'/') data.categories[0].name
+        if data.lastModifiedAt
+            +relativeTimeUTC(data.lastModifiedAt)
+        else
+            +relativeTimeUTC(data.publicationDate)

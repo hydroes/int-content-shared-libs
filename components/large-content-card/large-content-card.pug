@@ -1,0 +1,22 @@
+include ../mixins/primarySyndicate.pug
+
+-	
+	var primarySyndicateData = {
+		channel: settings.channel,
+		urls: data.syndicateUrls
+	}
+
+article
+	.large-content-card
+		if (data.primarySyndicatePosition != '')
+			a.large-content-card__link(href=+primarySyndicate(primarySyndicateData))
+				include ../partials/large-card-image.pug
+			.large-content-card__info
+				include ../partials/title.pug
+				include ../partials/syndicate-time.pug
+		else
+			a.large-content-card__link(href='')
+				include ../partials/large-card-image.pug
+			.large-content-card__info
+				include ../partials/title.pug
+				include ../partials/syndicate-time.pug

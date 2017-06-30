@@ -1,0 +1,10 @@
+include ../mixins/primarySyndicate.pug
+-	
+	var primarySyndicateData = {
+		channel: settings.channel,
+		urls: data.syndicateUrls
+	}
+
+if data
+	span.title
+		a(href=+primarySyndicate(primarySyndicateData)) #{title}
