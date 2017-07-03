@@ -21,13 +21,7 @@ gulp.task('compile-js', function () {
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('docs/dist/'))
-})
-
-// create a task that ensures the `js` task is complete before
-// reloading browsers
-gulp.task('js-watch', ['compile-js'], function (done) {
-  browserSync.reload()
-  done()
+    .pipe(browserSync.reload({'stream': true}))
 })
 
 // front end templates are compiled and stored all together in one file
@@ -70,24 +64,22 @@ gulp.task('pug-watch', ['compile-pug-templates'], function (done) {
   done()
 })
 
-// create a task that ensures the `js` task is complete before
-// reloading browsers
-gulp.task('sass-watch', ['compile-sass'], function (done) {
-  browserSync.reload()
-  done()
-})
-
 // Compile sass
 gulp.task('compile-sass', ['compile-development-sass'], function () {
   return gulp.src('components/includes.scss', { ignoreInitial: false })
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass().on('error', function (Error) {
+          console.error('sass error occurred: ', Error.message)
+          browserSync.notify(Error.message, 3000) // Display error in the browser
+          this.emit('end') // Prevent gulp from catching the error and exiting the watch process
+        }))
         .pipe(minifyCSS())
         .pipe(concat('style.min.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(rename('style.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('docs/dist/'))
+        .pipe(browserSync.reload({'stream': true}))
 })
 
 gulp.task('compile-development-sass', function () {
@@ -132,9 +124,9 @@ gulp.task('default',
 
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
-    gulp.watch('components/**/*.js', ['js-watch'])
+    gulp.watch('components/**/*.js', ['compile-js'])
     gulp.watch('components/**/*.pug', ['pug-watch'])
-    gulp.watch('components/**/*.scss', ['sass-watch'])
-    gulp.watch('docs/guide.scss', ['sass-watch'])
+    gulp.watch('components/**/*.scss', ['compile-sass'])
+    gulp.watch('docs/guide.scss', ['compile-sass'])
     gulp.watch('docs/index.html', [])
   })
