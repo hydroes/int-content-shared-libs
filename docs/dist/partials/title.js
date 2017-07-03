@@ -9,18 +9,24 @@ function pug_rethrow(n,e,r,t){if(!(n instanceof Error))throw n;if(!("undefined"=
 
 
 
+
+
+
+
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 var primarySyndicateData = {
 	channel: settings.channel,
 	urls: data.syndicateUrls
 }
 
-;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
+var href = primarySyndicate(primarySyndicateData)
+
+;pug_debug_line = 10;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 if (data) {
-;pug_debug_line = 9;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
+;pug_debug_line = 11;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 pug_html = pug_html + "\u003Cspan class=\"title\"\u003E";
-;pug_debug_line = 10;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
-pug_html = pug_html + "\u003Ca" + (pug_attr("href", +primarySyndicate(primarySyndicateData), true, false)) + "\u003E";
-;pug_debug_line = 10;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
+;pug_debug_line = 12;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
+pug_html = pug_html + "\u003Ca" + (pug_attr("href", href, true, false)) + "\u003E";
+;pug_debug_line = 12;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fspan\u003E";
 }}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"primarySyndicate" in locals_for_with?locals_for_with.primarySyndicate:typeof primarySyndicate!=="undefined"?primarySyndicate:undefined,"settings" in locals_for_with?locals_for_with.settings:typeof settings!=="undefined"?settings:undefined,"title" in locals_for_with?locals_for_with.title:typeof title!=="undefined"?title:undefined));} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}

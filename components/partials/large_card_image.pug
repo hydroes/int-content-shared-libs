@@ -17,9 +17,11 @@ include ../mixins/imgCdn.pug
 	    quality: settings.imageQuality
 	}
 
+	var img = imgCdn(imageCdnData, imageCdnSettings)
+
 if data.cardImage
 	picture
-		source(type=data.cardImage.image.mimeType, srcset=+imgCdn(imageCdnData, imageCdnSettings), media='max-width: 480px')
-		img(alt=data.title, title=data.title, srcset=+imgCdn(imageCdnData, imageCdnSettings))
+		source(type=data.cardImage.image.mimeType, srcset=img, media='max-width: 480px')
+		img(alt=data.title, title=data.title, srcset=img)
 else
-	include card-no-image.pug
+	include card_no_image.pug

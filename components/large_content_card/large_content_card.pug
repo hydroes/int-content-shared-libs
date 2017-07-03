@@ -10,13 +10,13 @@ article
 	.large-content-card
 		if (data.primarySyndicatePosition != '')
 			a.large-content-card__link(href=+primarySyndicate(primarySyndicateData))
-				include ../partials/large-card-image.pug
+				include ../partials/large_card_image.pug
 			.large-content-card__info
 				include ../partials/title.pug
-				include ../partials/syndicate-time.pug
+				include ../partials/syndicate_time.pug
 		else
-			a.large-content-card__link(href='')
-				include ../partials/large-card-image.pug
+			a.large-content-card__link(href=+link({href: data.url}))
+				include ../partials/large_card_image.pug
 			.large-content-card__info
 				include ../partials/title.pug
-				include ../partials/syndicate-time.pug
+				include ../partials/syndicate_time.pug

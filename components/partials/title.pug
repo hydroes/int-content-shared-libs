@@ -5,6 +5,8 @@ include ../mixins/primarySyndicate.pug
 		urls: data.syndicateUrls
 	}
 
+	var href = primarySyndicate(primarySyndicateData)
+
 if data
 	span.title
-		a(href=+primarySyndicate(primarySyndicateData)) #{title}
+		a(href=href) #{title}

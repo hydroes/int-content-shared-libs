@@ -1,6 +1,6 @@
 'use strict'
 
-window.bauerSharedLibs.pug.render('large-content-card/large-content-card.pug', {'settings': {
+window.bauerSharedLibs.pug.render('large_content_card/large_content_card.pug', {'settings': {
   'protocol': 'http://',
   'imageQuality': '80',
   'imageDomain': 'mediatest.planetradio.co.uk',
