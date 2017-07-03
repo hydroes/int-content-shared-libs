@@ -10,12 +10,16 @@ const browserSync = require('browser-sync').create()
 const concat = require('gulp-concat')
 const pug = require('pug')
 const path = require('path')
+const rename = require('gulp-rename')
+const sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js').bundle()
     .pipe(source('script.min.js'))
     .pipe(buffer())
+    .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('docs/dist/'))
 })
 
@@ -76,13 +80,13 @@ gulp.task('sass-watch', ['compile-sass'], function (done) {
 // Compile sass
 gulp.task('compile-sass', ['compile-development-sass'], function () {
   return gulp.src('components/includes.scss', { ignoreInitial: false })
-        // .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(minifyCSS())
         .pipe(concat('style.min.css'))
-        // .pipe(rename({suffix: '.min'}))
-        // .pipe(rename('style.min.css'))
-        // .pipe(sourcemaps.write('.'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(rename('style.min.css'))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('docs/dist/'))
 })
 
