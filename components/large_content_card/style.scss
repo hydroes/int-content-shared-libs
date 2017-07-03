@@ -11,11 +11,13 @@
 	{
 		height: 142px;
 		display: inline-block;
+		position: relative;
 	}
 
 	.modified-container
 	{
 		position: absolute;
     	bottom: 0;
+    	left: 0;
 	}
 }

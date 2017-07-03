@@ -4,3 +4,6 @@
       button#bauer-web-component-test-btn.btn.btn-default.btn-lg(type='button')
         span.glyphicon.glyphicon-wrench(aria-hidden='true')
         | #{title}
+      br
+    - var time = window.bauerSharedLibs.pug.helpers.relativeTimeUTC(new Date().getTime() - 360000)
+    span Example helper (formatting relative time): #{time}

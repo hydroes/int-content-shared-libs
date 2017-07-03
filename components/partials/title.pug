@@ -1,5 +1,6 @@
-include ../mixins/primarySyndicate.pug
--	
+-
+	var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
+
 	var primarySyndicateData = {
 		channel: settings.channel,
 		urls: data.syndicateUrls
@@ -9,4 +10,4 @@ include ../mixins/primarySyndicate.pug
 
 if data
 	span.title
-		a(href=href) #{title}
+		a(href=primarySyndicate(primarySyndicateData)) #{data.title}

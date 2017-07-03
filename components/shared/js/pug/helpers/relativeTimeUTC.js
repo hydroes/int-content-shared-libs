@@ -12,11 +12,11 @@ var moment = require('moment')
  * @example: {@relativeTimeUTC timestamp="2016-03-04T14:29:11.000Z" /}
  * @return string
  */
-module.exports = function (data) {
+module.exports = function (timestamp) {
   var result = ''
 
   try {
-    var timestamp = data.timestamps
+    timestamp = timestamp || ''
 
         // as timestamps are given from various api with or without milliseconds
         // check whether this timestamp needs miliiseconds added to it

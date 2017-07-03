@@ -12,7 +12,7 @@ window.bauerSharedLibs.pug.render('large_content_card/large_content_card.pug', {
   'placeholderImageSmall': 'http:///assets/img/small_placeholder_image.png'
 },
   'data': {
-    'primarySyndicatePosition': '',
+    'primarySyndicatePosition': '1',
     'url': 'captain-america-chris-evans-bedtime-stories',
     'title': 'Captain America Chris Evans is the next bedtime story reader on CBeebies',
     'syndicateUrls': [

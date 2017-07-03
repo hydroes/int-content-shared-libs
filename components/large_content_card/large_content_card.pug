@@ -1,21 +1,26 @@
-include ../mixins/primarySyndicate.pug
-
 -	
+	var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
+	var link = window.bauerSharedLibs.pug.helpers.link
+
 	var primarySyndicateData = {
 		channel: settings.channel,
 		urls: data.syndicateUrls
 	}
 
+	var linkData = {
+		article: data, 
+		channel: settings.channel
+	}
 article
 	.large-content-card
 		if (data.primarySyndicatePosition != '')
-			a.large-content-card__link(href=+primarySyndicate(primarySyndicateData))
+			a.large-content-card__link(href=primarySyndicate(primarySyndicateData))
 				include ../partials/large_card_image.pug
 			.large-content-card__info
 				include ../partials/title.pug
 				include ../partials/syndicate_time.pug
 		else
-			a.large-content-card__link(href=+link({href: data.url}))
+			a.large-content-card__link(href=link(linkData))
 				include ../partials/large_card_image.pug
 			.large-content-card__info
 				include ../partials/title.pug
