@@ -10,6 +10,7 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "pug": "^2.0.0-rc.2",
+    "moment": "^2.18.1",
     "underscore": "^1.8.3"
   },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
@@ -22,8 +23,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
-    "moment": "^2.18.1",
     "precommit-hook": "^3.0.0",
+    "pug-lint": "^2.4.0",
     "standard": "^9.0.1",
     "validate-commit": "^3.2.1",
     "vinyl-buffer": "^1.0.0",
@@ -45,6 +46,7 @@
   "name": "bauer-shared-web-components",
   "pre-commit": [
     "validate-js-standard",
+    "validate-pug",
     "validate-commitmsg"
   ],
   "readme": "README.md",
@@ -57,6 +59,7 @@
     "start": "gulp",
     "test": "standard",
     "validate-js-standard": "standard",
+    "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate": "npm ls"
   },
