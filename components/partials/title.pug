@@ -1,0 +1,13 @@
+-
+	var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
+
+	var primarySyndicateData = {
+		channel: settings.channel,
+		urls: data.syndicateUrls
+	}
+
+	var href = primarySyndicate(primarySyndicateData)
+
+if data
+	span.title
+		a(href=primarySyndicate(primarySyndicateData)) #{data.title}

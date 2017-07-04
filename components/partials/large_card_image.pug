@@ -1,0 +1,27 @@
+if data.cardImage
+
+	- 
+		var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn
+		var imageCdnData = {
+			asset: data.cardImage.image,
+			width: 305,
+			devicePixelRatio: 2,
+			cropType: data.heroImageThumbLandscape,
+			cropData: data.heroImageThumbLandscape,
+			ratio: '16-9',
+			resizeStyle: 'aspectfill',
+			quality: '50'
+		}
+		var imageCdnSettings = {
+			protocol: settings.protocol,
+			imageDomain: settings.imageDomain,
+			imageQuality: settings.imageQuality
+		}
+
+		var img = imgCdn(imageCdnData, imageCdnSettings)
+
+	picture
+		source(type=data.cardImage.image.mimeType, srcset=img, media='max-width: 480px')
+		img(alt=data.title, title=data.title, srcset=img)
+else
+	include card_no_image.pug
