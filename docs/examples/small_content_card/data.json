@@ -1,0 +1,143 @@
+{
+    "settings": {
+        "channel": "magic",
+        "protocol": "http://",
+        "imageDomain": "mediatest.planetradio.co.uk",
+        "imageQuality": "80",
+        "stationHeaderLogoSVG": "https://assets.planetradio.co.uk/img/ConfigWebHeaderLogoSVGImageUrl/26.svg?ver=1463741185",
+        "placeholderAltText": "chris pratt",
+        "placeholderImage": "http://localhost:8000/assets/img/default_placeholder_image.gif",
+        "placeholderImageSmall": "http://localhost:8000/assets/img/small_placeholder_image.png"
+    },
+    "data": {
+        "cropData": [
+            {
+                
+            }
+        ],
+        "displaySyndicate": true,
+        "article": {
+            "primarySyndicatePosition": 0,
+            "publications":
+            [
+                {
+                    "_id": "587cb65980222c9e7266c7c3",
+                    "furl": "magic",
+                    "hostname": null,
+                    "language": "en",
+                    "name": "Magic Radio",
+                    "preview": null,
+                    "stationCode": "mag",
+                    "composed": {
+                        "hostname": null,
+                        "preview": null
+                    }
+                }
+            ],
+            "categories":
+            [
+                {
+                    "_id": "587cb5c980222c9e7266baf4",
+                    "parent": {
+                        "_id": "587cb5c980222c9e7266baed",
+                        "name": "Entertainment",
+                        "furl": "entertainment"
+                    },
+                    "name": "Movies",
+                    "furl": "movies",
+                    "composed": {
+                        "parent": "587cb5c980222c9e7266baed"
+                    }
+                },
+                {
+                    "_id": "587cb5c980222c9e7266baf4",
+                    "parent": {
+                        "_id": "587cb5c980222c9e7266baed",
+                        "name": "Entertainment",
+                        "furl": "entertainment"
+                    },
+                    "name": "Movies",
+                    "furl": "movies",
+                    "composed": {
+                        "parent": "587cb5c980222c9e7266baed"
+                    }
+                }
+            ],
+            "composed": {
+                "heroImage": [
+                    "58ff222d7dd91b024f925a0b"
+                ],
+                "author": "587ce1db339fc98f272f59c2",
+                "categories": [
+                    "587cb5c980222c9e7266baf4"
+                ]
+            }
+        },
+        "channel": "magic",
+        "title": "WATCH: Chris Pratt reveals what it was like putting on the Star-Lord costume again",
+        "heroImagePortrait": [
+            null
+        ],
+        "primarySyndicatePosition": 0,
+        "heroImageThumb": [
+            null
+        ],
+        "asset": {
+            "_id": "58ff222d7dd91b024f925a0b",
+            "altText": "Chris Pratt in Guardians of the Galaxy Vol. 2",
+            "path": "radio/media/58ff/222d/7dd9/1b02/4f92/5a0b",
+            "fileName": "guardiansgalaxy.jpg",
+            "image": {
+                "name": "guardiansgalaxy.jpg",
+                "fileName": "guardiansgalaxy.jpg",
+                "mimeType": "image/jpeg",
+                "width": 778,
+                "height": 436,
+                "fileSize": 114022
+            },
+            "caption": "Chris Pratt in Guardians of the Galaxy Vol. 2",
+            "credits": "Chris Pratt Â© 2016 MVLFFLLC. TM & Â© 2016 Marvel. All Rights Reserved."
+        },
+        "lastModifiedAt": 1493129278354,
+        "publicationDate": 1493116445000,
+        "urls": [
+            "key-3/entertainment/movies/watch-chris-pratt-reveals-like-putting-star-lord-costume/",
+            "magic/entertainment/movies/watch-chris-pratt-reveals-like-putting-star-lord-costume/"]
+    },
+    "subtitle": "The film is out this week",
+    "content": [
+        "Chris Pratt was in London last night for the premiere of **Guardians of the Galaxy Vol. 2** and he revealed what it was like getting his Star-Lord costume on again.",
+        "\"I put on a wardrobe that felt tailored, it fit perfect and it felt really nice\" he told us while he was on the *blue* carpet.",
+        "The sequel to the 2014 blockbuster **Guardians of the Galaxy **has already become a hit with the critics and Chris said he \"knew it would\", explaining he wasn't surprised as when he saw the film, he was really thrilled and excited by it.",
+        "The 37-year-old actor was clearly very happy with his latest film, as he explained how seeing the finished product for the first time \"swept\" him away.  He put this down to the amount of animation used in the film, explaining so much of it wasn't there when they filmed it.",
+        "**WATCH: The full interview with Chris Pratt below >>>**",
+        "**Guardians of the Galaxy Vol. 2** continues the teamâ€™s adventures as they cross the outer reaches of the cosmos. The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quillâ€™s true parentage.",
+        "**WATCH: The trailer for Guardians of the Galaxy Vol. 2 >>>**",
+        "**Guardians of the Galaxy Vol.2 is in cinemas from the 28th of April 2017.**"
+    ],
+    "published": {
+        "state": "published",
+        "wasPublished": true,
+        "scheduledStart": 1493118565,
+        "scheduledEnd": null
+    },
+    "pageTemplate": "article",
+    "author": {
+        "_id": "587ce1db339fc98f272f59c2",
+        "fullname": "Anna Sky Hulton"
+    },
+    "apiVersion": "1.0",
+    "createdAt": 1493115472951,
+    "createdBy": "publish",
+    "v": 10,
+    "url": "watch-chris-pratt-reveals-like-putting-star-lord-costume",
+    "lastModifiedBy": "publish",
+    "heroImageLandscape": [
+        null
+    ],
+    "composed": {
+        "heroImage": [
+            "58ff222d7dd91b024f925a0b"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+if window.bauerSharedLibs._.has(data, 'asset')
+    - var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(data,settings)
+    picture
+        source(
+             type=data.asset.image.mimeType
+             srcset=imgSrc
+             media="(max-width: 480px)"
+        )
+    img(
+        srcset=imgSrc
+    )
+else
+    include card_no_image

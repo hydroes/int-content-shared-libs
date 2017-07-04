@@ -1,0 +1,17 @@
+article.small-content-card.container 
+    .tile-style.row
+    - var primaryLink = window.bauerSharedLibs.pug.helpers.primarySyndicate(data)
+    if !data.primarySyndicatePosition.length
+        a.img-container.col-xs-4.col-sm-12(href=primaryLink)
+            include ../partials/small_card_image
+        .small-content-card__info.col-xs-8.col-sm-12
+            include ../partials/title
+            include ../partials/syndicate_time
+    else
+        - var primaryLink = window.bauerSharedLibs.pug.helpers.primarySyndicateLink(data)
+        a.img-container.col-xs-8.col-sm-12(href=primaryLink) 
+            include ../partials/small_card_image
+        .small-content-card__info.col-xs-8.col-sm-12
+            include ../partials/title
+            .hidden-xs
+                include ../partials/syndicate_time

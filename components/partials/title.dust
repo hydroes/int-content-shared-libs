@@ -1,5 +1,0 @@
-    {#data}
-    <span class="title">
-    	<a href="{@primarySyndicate urls=data.syndicateUrls channel=settings.channel /}">{title}</a>
-    </span>
-    {/data}
