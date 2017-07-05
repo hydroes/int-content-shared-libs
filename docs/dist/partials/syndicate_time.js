@@ -10,7 +10,6 @@ var relativeTimeUTC = window.bauerSharedLibs.pug.helpers.relativeTimeUTC(data)
 pug_html = pug_html + (pug_escape(null == (pug_interp = relativeTimeUTC) ? "" : pug_interp));
 };
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
-var relativeTimeUTC = window.bauerSharedLibs.pug.helpers.relativeTimeUTC
 var syndicateCategory = window.bauerSharedLibs.pug.helpers.syndicateCategory
 var syndicateCategoryLink = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink
 
@@ -39,39 +38,39 @@ var syndicateCategoryData = {
 
 var category = syndicateCategory(syndicateCategoryData)
 
-;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 32;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.primarySyndicatePosition != '') {
-;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", syndicateCategoryLink(syndicateCategoryLinkData), true, false)) + "\u003E";
-;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = category) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 37;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 39;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 38;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
 }
 else {
-;pug_debug_line = 41;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 40;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 41;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", '/'+data.syndicateUrls+'/', true, false)) + "\u003E";
-;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 41;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = data.categories[0].name) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 43;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 44;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 43;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 46;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 45;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
