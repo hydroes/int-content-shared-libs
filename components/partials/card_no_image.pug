@@ -1,7 +1,7 @@
 if settings.stationHeaderLogoSVG
     picture.missing-image.brand-background-color(
         style={
-            'background-image' : 'url('+settings.stationHeaderLogoSVG+')'
+            'background-image' : 'url('+data.stationHeaderLogoSVG+')'
         }
     )
         source(
@@ -9,22 +9,20 @@ if settings.stationHeaderLogoSVG
             media="(min-width: 439px)"
         )
         img(
-            srcset=settings.placeholderImageSmall
-            alt=settings.placeholderAltText 
-            title=settings.placeholderAltText
+            src=data.placeholderImageSmall
+            alt=data.placeholderAltText 
         )
 else
     picture.missing-image.missing-image--hub(
         style={
-            'background-image': 'url('+settings.missingHubImage+')'
+            'background-image': 'url('+data.missingHubImage+')'
         }
     )
         source(
-            srcset=settings.placeholderImage
+            srcset=data.placeholderImage
             media="(min-width: 439px)"
         )
         img(
-            srcset=settings.placeholderImageSmall
-            alt=settings.placeholderAltText
-            title=settings.placeholderAltText
+            src=data.placeholderImageSmall
+            alt=data.placeholderAltText
         )

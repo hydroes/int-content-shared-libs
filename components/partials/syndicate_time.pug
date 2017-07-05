@@ -1,11 +1,12 @@
-- var syndicateTime = window.bauerSharedLibs.pug.helpers.getRelativeTime(data)
+- 
+  var syndicateTime = window.bauerSharedLibs.pug.helpers.relativeTimeUTC(data.lastModifiedAt)
 span.hidden-xs.modified-container
-    if data.primarySyndicatePosition
-        - var url = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink(data)
-        - var category = window.bauerSharedLibs.pug.helpers.syndicateCategory(data)
-        a(href=url) #{category}
-    else 
-        - var url = data.urls[0]
-        - var category = data.article.categories[0].name
-        a.brand-color(href=url) #{category} 
-    | #{syndicateTime}
+  if data.primarySyndicatePosition
+    - var url = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink(data)
+    - var category = window.bauerSharedLibs.pug.helpers.syndicateCategory(data)
+    a(href=url) #{category}
+  else 
+    - var url = data.urls[0]
+    - var category = data.categories[0].name
+    a.brand-color(href=url) #{category} 
+  | #{syndicateTime}

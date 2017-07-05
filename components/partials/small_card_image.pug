@@ -9,25 +9,27 @@ if data.asset
                 cropData: data.heroImageThumbLandscape,
                 ratio: '1-1',
                 resizeStyle: 'aspectfill',
-                quality: '50'
+                quality: '50',
+                altText: data.asset.altText
             },
             settings: {
-                protocol: settings.protocol,
-                imageDomain: settings.imageDomain,
-                imageQuality: settings.imageQuality
+                protocol: data.protocol,
+                imageDomain: data.imageDomain,
+                imageQuality: data.imageQuality
             }
         }
-
-    - var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(data,settings)
+        
+        var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(imageConfig.data,imageConfig.settings)
         
     picture
         source(
-             type=data.asset.image.mimeType
+             type=imageConfig.data.asset.image.mimeType
              srcset=imgSrc
              media="(max-width: 480px)"
         )
     img(
         srcset=imgSrc
+        alt=imageConfig.data.altText
     )
 else
     include card_no_image
