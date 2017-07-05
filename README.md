@@ -26,12 +26,24 @@ a component in its entirety lives in a aptly named folder in the components dir.
 A component needs at a minimium to have 3 files within its folder:
 - index.js (js stored here and can be required)
 - style.scss (sass file)
-- dust template file named after the parent folder
+- pug template file named after the parent folder
 
 # helpers
 - helpers are stored in the helpers folder
 - 1 helper should be contained in 1 file in the helpers folder
 
+# commits must follow the following es standard:
+([commit message standard]) https://github.com/willsoto/validate-commit/blob/master/conventions/eslint.md
+
+## Testing
+Testing and qa in the project encompass unit and e2e tests.
+Tests can be found in the tests directory.
+Test reports can be found in the tests/reports directory.
+
+- To run e2e tests:
+npm run e2e-tests
+- To run unit tests:
+npm run unit-tests
 
 ## Deployment
 - Update the version number in the package.json ([SemVer](http://semver.org/))
@@ -41,28 +53,7 @@ A component needs at a minimium to have 3 files within its folder:
 
 To include a template create a helper for it in the FE project:
 ```
-# sampleHelper.js
-var dust = require('dustjs-linkedin')
-var templatesShare = require('bauer-shared-templates').Templates(dust)
-
-/**
- * Shared template component helper
- */
-'use strict'
-
-var dust = require('@dadi/web').Dust
-var templatesShare = require('bauer-shared-web-components').Templates()
-
-dust.getEngine().helpers.testy = function (chunk, context, bodies, params) {
-  var template = templatesShare.get('test', {'name': 'Brian'})
-
-  return chunk.map(function (chunk) {
-    template.then(function (res) {
-      return chunk.end(res)
-    })
-  })
-}
-
+@todo: this needs to be refactored as we are now using pug templates
 ```
 
 
