@@ -3,13 +3,16 @@
 	var link = window.bauerSharedLibs.pug.helpers.link
 
 	var primarySyndicateData = {
-		channel: settings.channel,
+		channel: data.channel,
 		urls: data.syndicateUrls
 	}
 
 	var linkData = {
-		article: data, 
-		channel: settings.channel
+		article: {
+			categories: data.categories,
+			url: data.url
+		}, 
+		channel: data.channel
 	}
 article
 	.large-content-card

@@ -3,7 +3,7 @@ if data.cardImage
 	- 
 		var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn
 		var imageCdnData = {
-			asset: data.cardImage.image,
+			asset: data.imageData.image,
 			width: 305,
 			devicePixelRatio: 2,
 			cropType: data.heroImageThumbLandscape,
@@ -13,15 +13,15 @@ if data.cardImage
 			quality: '50'
 		}
 		var imageCdnSettings = {
-			protocol: settings.protocol,
-			imageDomain: settings.imageDomain,
-			imageQuality: settings.imageQuality
+			protocol: data.protocol,
+			imageDomain: data.imageDomain,
+			imageQuality: data.imageQuality
 		}
 
 		var img = imgCdn(imageCdnData, imageCdnSettings)
 
 	picture
-		source(type=data.cardImage.image.mimeType, srcset=img, media='max-width: 480px')
+		source(type=data.imageData.image.mimeType, srcset=img, media='max-width: 480px')
 		img(alt=data.title, title=data.title, srcset=img)
 else
 	include card_no_image.pug

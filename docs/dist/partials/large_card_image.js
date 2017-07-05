@@ -8,7 +8,7 @@ if (data.cardImage) {
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn
 var imageCdnData = {
-	asset: data.cardImage.image,
+	asset: data.imageData.image,
 	width: 305,
 	devicePixelRatio: 2,
 	cropType: data.heroImageThumbLandscape,
@@ -18,9 +18,9 @@ var imageCdnData = {
 	quality: '50'
 }
 var imageCdnSettings = {
-	protocol: settings.protocol,
-	imageDomain: settings.imageDomain,
-	imageQuality: settings.imageQuality
+	protocol: data.protocol,
+	imageDomain: data.imageDomain,
+	imageQuality: data.imageQuality
 }
 
 var img = imgCdn(imageCdnData, imageCdnSettings)
@@ -28,7 +28,7 @@ var img = imgCdn(imageCdnData, imageCdnSettings)
 ;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
 ;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.cardImage.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.imageData.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
 ;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", data.title, true, false)+pug_attr("title", data.title, true, false)+pug_attr("srcset", img, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
@@ -36,18 +36,18 @@ else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 if (settings.stationHeaderLogoSVG) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ settings.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ data.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ settings.missingHubImage + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ data.missingHubImage + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 7;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 }}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined,"settings" in locals_for_with?locals_for_with.settings:typeof settings!=="undefined"?settings:undefined,"window" in locals_for_with?locals_for_with.window:typeof window!=="undefined"?window:undefined));} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}

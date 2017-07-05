@@ -8,28 +8,31 @@ var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
 var link = window.bauerSharedLibs.pug.helpers.link
 
 var primarySyndicateData = {
-	channel: settings.channel,
+	channel: data.channel,
 	urls: data.syndicateUrls
 }
 
 var linkData = {
-	article: data, 
-	channel: settings.channel
+	article: {
+		categories: data.categories,
+		url: data.url
+	}, 
+	channel: data.channel
 }
-;pug_debug_line = 14;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-pug_html = pug_html + "\u003Carticle\u003E";
-;pug_debug_line = 15;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"large-content-card\"\u003E";
-;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-if ((data.primarySyndicatePosition != '')) {
 ;pug_debug_line = 17;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+pug_html = pug_html + "\u003Carticle\u003E";
+;pug_debug_line = 18;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+pug_html = pug_html + "\u003Cdiv class=\"large-content-card\"\u003E";
+;pug_debug_line = 19;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+if ((data.primarySyndicatePosition != '')) {
+;pug_debug_line = 20;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"large-content-card__link\""+pug_attr("href", primarySyndicate(primarySyndicateData), true, false)) + "\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 if (data.cardImage) {
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn
 var imageCdnData = {
-	asset: data.cardImage.image,
+	asset: data.imageData.image,
 	width: 305,
 	devicePixelRatio: 2,
 	cropType: data.heroImageThumbLandscape,
@@ -39,9 +42,9 @@ var imageCdnData = {
 	quality: '50'
 }
 var imageCdnSettings = {
-	protocol: settings.protocol,
-	imageDomain: settings.imageDomain,
-	imageQuality: settings.imageQuality
+	protocol: data.protocol,
+	imageDomain: data.imageDomain,
+	imageQuality: data.imageQuality
 }
 
 var img = imgCdn(imageCdnData, imageCdnSettings)
@@ -49,7 +52,7 @@ var img = imgCdn(imageCdnData, imageCdnSettings)
 ;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
 ;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.cardImage.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.imageData.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
 ;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", data.title, true, false)+pug_attr("title", data.title, true, false)+pug_attr("srcset", img, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
@@ -57,29 +60,29 @@ else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 if (settings.stationHeaderLogoSVG) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ settings.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ data.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ settings.missingHubImage + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ data.missingHubImage + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 7;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
-;pug_debug_line = 19;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+;pug_debug_line = 22;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"large-content-card__info\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
 
 var primarySyndicateData = {
-	channel: settings.channel,
+	channel: data.channel,
 	urls: data.syndicateUrls
 }
 
@@ -108,53 +111,63 @@ var syndicateCategory = window.bauerSharedLibs.pug.helpers.syndicateCategory
 var syndicateCategoryLink = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink
 
 var syndicateCategoryLinkData = {
-    article: data,
-    channel: settings.channel,
+    article: {
+        categories: data.categories,
+        publications: data.publications,
+        composed: data.composed,
+        primarySyndicatePosition: data.primarySyndicatePosition
+    },
+    channel: data.channel,
     displaySyndicate: data.displaySyndicate
 }
 
 var syndicateCategoryData = {
-    article: data,
-    channel: settings.channel,
+    article: {
+        categories: data.categories,
+        publications: data.publications,
+        composed: data.composed,
+        primarySyndicatePosition: data.primarySyndicatePosition
+    },
+    channel: data.channel,
     displaySyndicate: data.displaySyndicate,
     displayField: 'name'
 }
 
 var category = syndicateCategory(syndicateCategoryData)
 
-;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.primarySyndicatePosition != '') {
-;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", syndicateCategoryLink(syndicateCategoryLinkData), true, false)) + "\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = category) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 26;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 27;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 37;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 29;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 39;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
 }
 else {
-;pug_debug_line = 31;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 41;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 32;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", '/'+data.syndicateUrls+'/', true, false)) + "\u003E";
-;pug_debug_line = 32;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = data.categories[0].name) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 43;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 44;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 46;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
@@ -162,14 +175,14 @@ pug_html = pug_html + "\u003C\u002Fspan\u003E";
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 }
 else {
-;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+;pug_debug_line = 26;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"large-content-card__link\""+pug_attr("href", link(linkData), true, false)) + "\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 if (data.cardImage) {
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn
 var imageCdnData = {
-	asset: data.cardImage.image,
+	asset: data.imageData.image,
 	width: 305,
 	devicePixelRatio: 2,
 	cropType: data.heroImageThumbLandscape,
@@ -179,9 +192,9 @@ var imageCdnData = {
 	quality: '50'
 }
 var imageCdnSettings = {
-	protocol: settings.protocol,
-	imageDomain: settings.imageDomain,
-	imageQuality: settings.imageQuality
+	protocol: data.protocol,
+	imageDomain: data.imageDomain,
+	imageQuality: data.imageQuality
 }
 
 var img = imgCdn(imageCdnData, imageCdnSettings)
@@ -189,7 +202,7 @@ var img = imgCdn(imageCdnData, imageCdnSettings)
 ;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
 ;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.cardImage.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.imageData.image.mimeType, true, false)+pug_attr("srcset", img, true, false)+" media=\"max-width: 480px\"") + "\u002F\u003E";
 ;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", data.title, true, false)+pug_attr("title", data.title, true, false)+pug_attr("srcset", img, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
@@ -197,29 +210,29 @@ else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 if (settings.stationHeaderLogoSVG) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ settings.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style("background-image: url('"+ data.stationHeaderLogoSVG + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ settings.missingHubImage + "')"), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image missing-image--hub\""+pug_attr("style", pug_style("background-image: url('"+ data.missingHubImage + "')"), true, false)) + "\u003E";
 ;pug_debug_line = 7;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", settings.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (" type=\"\""+pug_attr("srcset", data.placeholderImage, true, false)+" media=\"(min-width: 439px\"") + "\u002F\u003E";
 ;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("title", settings.placeholderAltText, true, false)+pug_attr("alt", settings.placeholderAltText, true, false)+pug_attr("srcset", settings.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("title", data.placeholderAltText, true, false)+pug_attr("alt", data.placeholderAltText, true, false)+pug_attr("srcset", data.placeholderImageSmall, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+;pug_debug_line = 28;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"large-content-card__info\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
 
 var primarySyndicateData = {
-	channel: settings.channel,
+	channel: data.channel,
 	urls: data.syndicateUrls
 }
 
@@ -248,53 +261,63 @@ var syndicateCategory = window.bauerSharedLibs.pug.helpers.syndicateCategory
 var syndicateCategoryLink = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink
 
 var syndicateCategoryLinkData = {
-    article: data,
-    channel: settings.channel,
+    article: {
+        categories: data.categories,
+        publications: data.publications,
+        composed: data.composed,
+        primarySyndicatePosition: data.primarySyndicatePosition
+    },
+    channel: data.channel,
     displaySyndicate: data.displaySyndicate
 }
 
 var syndicateCategoryData = {
-    article: data,
-    channel: settings.channel,
+    article: {
+        categories: data.categories,
+        publications: data.publications,
+        composed: data.composed,
+        primarySyndicatePosition: data.primarySyndicatePosition
+    },
+    channel: data.channel,
     displaySyndicate: data.displaySyndicate,
     displayField: 'name'
 }
 
 var category = syndicateCategory(syndicateCategoryData)
 
-;pug_debug_line = 23;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.primarySyndicatePosition != '') {
-;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", syndicateCategoryLink(syndicateCategoryLinkData), true, false)) + "\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = category) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 26;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 27;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 37;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 29;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 39;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
 }
 else {
-;pug_debug_line = 31;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 41;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Cspan class=\"hidden-xs modified-container\"\u003E";
-;pug_debug_line = 32;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", '/'+data.syndicateUrls+'/', true, false)) + "\u003E";
-;pug_debug_line = 32;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = data.categories[0].name) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
-;pug_debug_line = 33;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 43;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 if (data.lastModifiedAt) {
-;pug_debug_line = 34;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 44;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.lastModifiedAt);
 }
 else {
-;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
+;pug_debug_line = 46;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsyndicate_time.pug";
 pug_mixins["relativeTimeUTC"](data.publicationDate);
 }
 pug_html = pug_html + "\u003C\u002Fspan\u003E";
