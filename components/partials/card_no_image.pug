@@ -1,11 +1,11 @@
-if settings.stationHeaderLogoSVG
+if data.stationHeaderLogoSVG
     picture.missing-image.brand-background-color(
         style={
             'background-image' : 'url('+data.stationHeaderLogoSVG+')'
         }
     )
         source(
-            srcset=settings.placeholderImage
+            srcset=data.placeholderImage
             media="(min-width: 439px)"
         )
         img(
