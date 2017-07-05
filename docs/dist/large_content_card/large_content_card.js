@@ -39,7 +39,7 @@ var imageCdnData = {
 	cropData: data.heroImageThumbLandscape,
 	ratio: '16-9',
 	resizeStyle: 'aspectfill',
-	quality: '50'
+	quality: '80'
 }
 var imageCdnSettings = {
 	protocol: data.protocol,
@@ -188,7 +188,7 @@ var imageCdnData = {
 	cropData: data.heroImageThumbLandscape,
 	ratio: '16-9',
 	resizeStyle: 'aspectfill',
-	quality: '50'
+	quality: '80'
 }
 var imageCdnSettings = {
 	protocol: data.protocol,
