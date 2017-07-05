@@ -1,17 +1,11 @@
-mixin getSyndicateTime(data)
-    if window.bauerSharedLibs._.has(data,'lastModifiedAt')
-        return #{window.bauerSharedLibs.pug.helpers.relativeTimeUTC(data.lastModifiedAt)}
-    else
-        return #{window.bauerSharedLibs.pug.helpers.relativeTimeUTC(data.publicationDate)}
-        
+- var syndicateTime = window.bauerSharedLibs.pug.helpers.getRelativeTime(data)
 span.hidden-xs.modified-container
-    if window.bauerSharedLibs._.has(data,'primarySyndicatePosition')
+    if data.primarySyndicatePosition
         - var url = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink(data)
         - var category = window.bauerSharedLibs.pug.helpers.syndicateCategory(data)
         a(href=url) #{category}
-        +getSyndicateTime(data)
     else 
         - var url = data.urls[0]
-        - var category = data.categories[0].name
-        a.brand-color(href=url) #{category}
-        +getSyndicateTime(data)
+        - var category = data.article.categories[0].name
+        a.brand-color(href=url) #{category} 
+    | #{syndicateTime}

@@ -5,9 +5,9 @@ const templateLocation = {
     data: 'data.json'
 }
 
-var folderPath = filePath.replace('{folder}', templateLocation.folder)
-var dataPath = 'examples/'+folderPath.replace('{file}',templateLocation.data)
-var pugTemplateUrl = folderPath.replace('{file}',templateLocation.pug)
+var folderPath = filePath.replace('{folder}', templateLocation.folder),
+dataPath = 'examples/'+folderPath.replace('{file}',templateLocation.data),
+pugTemplateUrl = folderPath.replace('{file}',templateLocation.pug)
 
 
 jQuery.getJSON(dataPath,function (json, status) {

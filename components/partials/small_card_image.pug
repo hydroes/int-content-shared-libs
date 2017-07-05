@@ -1,5 +1,25 @@
-if window.bauerSharedLibs._.has(data, 'asset')
+if data.asset
+    - 
+        var imageConfig = {
+            data: {
+                asset: data.asset,
+                width: 120,
+                devicePixelRatio: 2,
+                cropType: data.heroImageThumbLandscape,
+                cropData: data.heroImageThumbLandscape,
+                ratio: '1-1',
+                resizeStyle: 'aspectfill',
+                quality: '50'
+            },
+            settings: {
+                protocol: settings.protocol,
+                imageDomain: settings.imageDomain,
+                imageQuality: settings.imageQuality
+            }
+        }
+
     - var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(data,settings)
+        
     picture
         source(
              type=data.asset.image.mimeType
