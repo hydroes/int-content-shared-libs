@@ -1,19 +1,28 @@
 include ../mixins/relativeTimeUTC.pug
 
 -
-    var relativeTimeUTC = window.bauerSharedLibs.pug.helpers.relativeTimeUTC
     var syndicateCategory = window.bauerSharedLibs.pug.helpers.syndicateCategory
     var syndicateCategoryLink = window.bauerSharedLibs.pug.helpers.syndicateCategoryLink
 
     var syndicateCategoryLinkData = {
-        article: data,
-        channel: settings.channel,
+        article: {
+            categories: data.categories,
+            publications: data.publications,
+            composed: data.composed,
+            primarySyndicatePosition: data.primarySyndicatePosition
+        },
+        channel: data.channel,
         displaySyndicate: data.displaySyndicate
     }
 
     var syndicateCategoryData = {
-        article: data,
-        channel: settings.channel,
+        article: {
+            categories: data.categories,
+            publications: data.publications,
+            composed: data.composed,
+            primarySyndicatePosition: data.primarySyndicatePosition
+        },
+        channel: data.channel,
         displaySyndicate: data.displaySyndicate,
         displayField: 'name'
     }

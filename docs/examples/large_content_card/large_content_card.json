@@ -1,16 +1,14 @@
 {
-  "settings": {
-  "protocol": "http://",
-  "imageQuality": "80",
-  "imageDomain": "mediatest.planetradio.co.uk",
-  "channel": "magic",
-  "stationHeaderLogoSVG": "https://assets.planetradio.co.uk/img/ConfigWebHeaderLogoSVGImageUrl/26.svg?ver=1463741185",
-  "missingHubImage": "https:test.planetradio.co.uk/assets/img/bauer-planet-radio-logo.svg",
-  "placeholderAltText": "placeholder alt text",
-  "placeholderImage": "http://test.planetradio.co.uk/assets/img/default_placeholder_image.gif",
-  "placeholderImageSmall": "http:///assets/img/small_placeholder_image.png"
-},
   "data": {
+    "protocol": "http://",
+    "imageQuality": "80",
+    "imageDomain": "mediatest.planetradio.co.uk",
+    "channel": "magic",
+    "stationHeaderLogoSVG": "https://assets.planetradio.co.uk/img/ConfigWebHeaderLogoSVGImageUrl/26.svg?ver=1463741185",
+    "missingHubImage": "https:test.planetradio.co.uk/assets/img/bauer-planet-radio-logo.svg",
+    "placeholderAltText": "placeholder alt text",
+    "placeholderImage": "http://test.planetradio.co.uk/assets/img/default_placeholder_image.gif",
+    "placeholderImageSmall": "http:///assets/img/small_placeholder_image.png",
     "primarySyndicatePosition": "1",
     "url": "captain-america-chris-evans-bedtime-stories",
     "title": "Captain America Chris Evans is the next bedtime story reader on CBeebies",
@@ -20,7 +18,7 @@
       "clyde/entertainment/television/captain-america-chris-evans-bedtime-stories/",
       "clyde-2/entertainment/television/captain-america-chris-evans-bedtime-stories/"
     ],
-    "cardImage":
+    "imageData":
     {
       "altText": "Chris Evans",
       "image": {
