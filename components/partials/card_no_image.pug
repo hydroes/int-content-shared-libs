@@ -1,8 +1,0 @@
-if data.stationHeaderLogoSVG
-	picture.missing-image.brand-background-color(style="background-image: url('"+ data.stationHeaderLogoSVG + "')")
-		source(type="", srcset=data.placeholderImage, media="(min-width: 439px")
-		img(title=data.placeholderAltText, alt=data.placeholderAltText, srcset=data.placeholderImageSmall)
-else
-	picture.missing-image.missing-image--hub(style="background-image: url('"+ data.missingHubImage + "')")
-		source(type="", srcset=data.placeholderImage, media="(min-width: 439px")
-		img(title=data.placeholderAltText, alt=data.placeholderAltText, srcset=data.placeholderImageSmall)
