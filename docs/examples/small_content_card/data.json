@@ -1,66 +1,28 @@
 {
-    "data": {
-        "protocol": "http://",
-        "imageDomain": "mediatest.planetradio.co.uk",
-        "displaySyndicate": true,
-        "imageQuality": "80",
-        "stationHeaderLogoSVG": "https://assets.planetradio.co.uk/img/ConfigWebHeaderLogoSVGImageUrl/26.svg?ver=1463741185",
-        "placeholderAltText": "chris pratt",
-        "placeholderImage": "http://localhost:8000/assets/img/default_placeholder_image.gif",
-        "placeholderImageSmall": "http://localhost:8000/assets/img/small_placeholder_image.png",
-        "primarySyndicatePosition": 0,
-        "publications": [
-            {
-                "_id": "587cb65980222c9e7266c7c3",
-                "furl": "magic"
-            }
-        ],
-        "categories": [
-            {
-                "_id": "587cb65980222c9e7266c7c3",
-                "parent": {
-                    "_id": "587cb5c980222c9e7266baed",
-                    "name": "Entertainment",
-                    "furl": "entertainment"
-                },
-                "name": "Movies",
-                "furl": "movies",
-                "composed": {
-                    "parent": "587cb5c980222c9e7266baed"
-                }
-            }
-        ],
-        "composed": {
-            "categories": ["587cb65980222c9e7266c7c3"],
-            "heroImage": [
-                "58ff222d7dd91b024f925a0b"
-            ]
+    "image": {
+        "xs": {
+            "url": "http://via.placeholder.com/240x240",
+            "mimeType": "image/jpeg"
         },
-        "channel": "magic",
-        "title": "WATCH: Chris Pratt reveals what it was like putting on the Star-Lord costume again",
-        "heroImageThumb": [
-            null
-        ],
-        "asset": {
-            "altText": "Chris Pratt in Guardians of the Galaxy Vol. 2",
-            "path": "radio/media/58ff/222d/7dd9/1b02/4f92/5a0b",
-            "fileName": "guardiansgalaxy.jpg",
-            "image": {
-                "name": "guardiansgalaxy.jpg",
-                "fileName": "guardiansgalaxy.jpg",
-                "mimeType": "image/jpeg",
-                "width": 778,
-                "height": 436,
-                "fileSize": 114022
-            }
+        "sm": {
+            "url": "http://via.placeholder.com/420x236",
+            "mimeType": "image/jpeg"
         },
-        "lastModifiedAt": 1493129278354,
-        "urls": [
-            "magic/entertainment/movies/watch-chris-pratt-reveals-like-putting-star-lord-costume/"
-        ]
+        "altText":"lorem ipsum dolor sit amet"
     },
-    "lastModifiedBy": "publish",
-    "heroImageLandscape": [
-        null
-    ]
+    "noImage": {
+        "sm": {
+            "url": "http://via.placeholder.com/240x240"
+        },
+        "lg": {
+            "url": "http://via.placeholder.com/420x236"
+        }
+    },
+    "url": "https://planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",
+    "title": "We asked the Love Island narrator everything you want to know about the show",
+    "category": {
+        "url": "https://planetradio.co.uk/kiss/entertainment/television/",
+        "name": "TV"
+    },
+    "date" : "17 minutes ago"
 }

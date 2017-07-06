@@ -1,26 +1,8 @@
 article.small-content-card.container 
     .tile-style.row
-    - 
-      var helpers = window.bauerSharedLibs.pug.helpers,
-      linkData = {
-        channel: data.channel,
-        urls: data.urls
-      },
-      primaryLink = helpers.primarySyndicate(linkData)
-
-    if !data.primarySyndicatePosition.length
-        a.img-container.col-xs-4.col-sm-12(href=primaryLink)
-            include ../partials/small_card_image
-        .small-content-card__info.col-xs-8.col-sm-12
-            include ../partials/title
-            include ../partials/syndicate_time
-    else
-        -
-            var categoryData = helpers.getCategoryConfig(data),
-            primaryLink = helpers.syndicateCategoryLink(categoryData)
-        a.img-container.col-xs-8.col-sm-12(href=primaryLink) 
+        a.img-container.col-xs-4.col-sm-12(href=url) 
             include ../partials/small_card_image
         .small-content-card__info.col-xs-8.col-sm-12
             include ../partials/title
             .hidden-xs
-                include ../partials/syndicate_time
+               include ../partials/syndicate_time
