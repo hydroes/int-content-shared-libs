@@ -4,7 +4,7 @@ if data.asset
       data: {
         small: {
           asset: data.asset,
-          width: 120,
+          width: 150,
           devicePixelRatio: 2,
           cropType: data.heroImageThumbLandscape,
           cropData: data.heroImageThumbLandscape,
@@ -37,7 +37,7 @@ if data.asset
     source(
       type=data.asset.image.mimeType
       srcset=imgXs
-      media="(max-width: 480px)"
+      media="(max-width: 479px)"
     )
     img(
       src=imgSm

@@ -9,10 +9,9 @@ module.exports = function (data) {
     displaySyndicate: data.displaySyndicate,
     article: {
       primarySyndicatePosition: data.primarySyndicatePosition,
-      composed: {
-        categories: data.categories
-      },
-      publications: data.publications
+      composed: data.composed,
+      publications: data.publications,
+      categories: data.categories
     }
   }
 }

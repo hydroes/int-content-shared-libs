@@ -10,7 +10,7 @@ var imageConfig = {
   data: {
     small: {
       asset: data.asset,
-      width: 120,
+      width: 150,
       devicePixelRatio: 2,
       cropType: data.heroImageThumbLandscape,
       cropData: data.heroImageThumbLandscape,
@@ -42,7 +42,7 @@ imgSm = imgCdn(imageConfig.data.standard,imageConfig.settings)
 ;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
 ;pug_debug_line = 37;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.asset.image.mimeType, true, false)+pug_attr("srcset", imgXs, true, false)+" media=\"(max-width: 480px)\"") + "\u002F\u003E";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.asset.image.mimeType, true, false)+pug_attr("srcset", imgXs, true, false)+" media=\"(max-width: 479px)\"") + "\u002F\u003E";
 ;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 pug_html = pug_html + "\u003Cimg" + (pug_attr("src", imgSm, true, false)+pug_attr("alt", data.asset.altText, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
