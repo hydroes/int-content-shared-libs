@@ -1,6 +1,12 @@
 article.small-content-card.container 
     .tile-style.row
-    - var primaryLink = window.bauerSharedLibs.pug.helpers.primarySyndicate(data)
+    - 
+      var linkData = {
+        channel: data.channel,
+        urls: data.urls
+      }
+      var primaryLink = window.bauerSharedLibs.pug.helpers.primarySyndicate(linkData)
+
     if !data.primarySyndicatePosition.length
         a.img-container.col-xs-4.col-sm-12(href=primaryLink)
             include ../partials/small_card_image

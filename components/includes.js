@@ -10,6 +10,5 @@ require('./test')(window)
 
 // bootstrap bauerSharedLibs
 window.bauerSharedLibs = window.bauerSharedLibs || {}
-window.bauerSharedLibs._ = require('underscore')
 window.bauerSharedLibs.pug = require('./shared/js/pug/pug')
 window.bauerSharedLibs.version = require('../package').version

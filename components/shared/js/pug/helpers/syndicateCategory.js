@@ -2,7 +2,7 @@
 
 module.exports = function (data) {
   data = data || {}
-  var article = data || false
+  var article = data.article || false
   var channel = data.channel || ''
   var displayField = data.displayField || 'name'
   var displaySyndicate = data.displaySyndicate || false

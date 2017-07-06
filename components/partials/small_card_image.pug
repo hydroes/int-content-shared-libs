@@ -1,35 +1,47 @@
 if data.asset
-    - 
-        var imageConfig = {
-            data: {
-                asset: data.asset,
-                width: 120,
-                devicePixelRatio: 2,
-                cropType: data.heroImageThumbLandscape,
-                cropData: data.heroImageThumbLandscape,
-                ratio: '1-1',
-                resizeStyle: 'aspectfill',
-                quality: '50',
-                altText: data.asset.altText
-            },
-            settings: {
-                protocol: data.protocol,
-                imageDomain: data.imageDomain,
-                imageQuality: data.imageQuality
-            }
+  - 
+    var imageConfig = {
+      data: {
+        small: {
+          asset: data.asset,
+          width: 120,
+          devicePixelRatio: 2,
+          cropType: data.heroImageThumbLandscape,
+          cropData: data.heroImageThumbLandscape,
+          ratio: '1-1',
+          resizeStyle: 'aspectfill',
+          quality: '50'
+        },
+        standard: {
+          asset: data.asset,
+          width: 600,
+          devicePixelRatio: 2,
+          cropType: data.heroImageThumbLandscape,
+          cropData: data.heroImageThumbLandscape,
+          ratio: '16-9',
+          resizeStyle: 'aspectfill',
+          quality: '50'
         }
+      },
+      settings: {
+        protocol: data.protocol,
+        imageDomain: data.imageDomain,
+        imageQuality: data.imageQuality
+      }
+    }
+    var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn,
+    imgXs = imgCdn(imageConfig.data.small,imageConfig.settings),
+    imgSm = imgCdn(imageConfig.data.standard,imageConfig.settings)
         
-        var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(imageConfig.data,imageConfig.settings)
-        
-    picture
-        source(
-             type=imageConfig.data.asset.image.mimeType
-             srcset=imgSrc
-             media="(max-width: 480px)"
-        )
+  picture
+    source(
+      type=data.asset.image.mimeType
+      srcset=imgXs
+      media="(max-width: 480px)"
+    )
     img(
-        srcset=imgSrc
-        alt=imageConfig.data.altText
+      src=imgSm
+      alt=data.asset.altText
     )
 else
     include card_no_image

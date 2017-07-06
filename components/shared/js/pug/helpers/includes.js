@@ -6,5 +6,6 @@ module.exports = {
   'primarySyndicate': require('./primarySyndicate'),
   'relativeTimeUTC': require('./relativeTimeUTC'),
   'syndicateCategory': require('./syndicateCategory'),
-  'syndicateCategoryLink': require('./syndicateCategoryLink')
+  'syndicateCategoryLink': require('./syndicateCategoryLink'),
+  'getCategoryConfig': require('./getCategoryConfig')
 }

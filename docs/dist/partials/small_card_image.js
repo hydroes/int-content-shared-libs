@@ -7,32 +7,44 @@ function pug_style(r){if(!r)return"";if("object"==typeof r){var t="";for(var e i
 if (data.asset) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 var imageConfig = {
-    data: {
-        asset: data.asset,
-        width: 120,
-        devicePixelRatio: 2,
-        cropType: data.heroImageThumbLandscape,
-        cropData: data.heroImageThumbLandscape,
-        ratio: '1-1',
-        resizeStyle: 'aspectfill',
-        quality: '50',
-        altText: data.asset.altText
+  data: {
+    small: {
+      asset: data.asset,
+      width: 120,
+      devicePixelRatio: 2,
+      cropType: data.heroImageThumbLandscape,
+      cropData: data.heroImageThumbLandscape,
+      ratio: '1-1',
+      resizeStyle: 'aspectfill',
+      quality: '50'
     },
-    settings: {
-        protocol: data.protocol,
-        imageDomain: data.imageDomain,
-        imageQuality: data.imageQuality
+    standard: {
+      asset: data.asset,
+      width: 600,
+      devicePixelRatio: 2,
+      cropType: data.heroImageThumbLandscape,
+      cropData: data.heroImageThumbLandscape,
+      ratio: '16-9',
+      resizeStyle: 'aspectfill',
+      quality: '50'
     }
+  },
+  settings: {
+    protocol: data.protocol,
+    imageDomain: data.imageDomain,
+    imageQuality: data.imageQuality
+  }
 }
-
-var imgSrc = window.bauerSharedLibs.pug.helpers.imgCdn(imageConfig.data,imageConfig.settings)
-
-;pug_debug_line = 24;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+var imgCdn = window.bauerSharedLibs.pug.helpers.imgCdn,
+imgXs = imgCdn(imageConfig.data.small,imageConfig.settings),
+imgSm = imgCdn(imageConfig.data.standard,imageConfig.settings)
+    
+;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
-;pug_debug_line = 25;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", imageConfig.data.asset.image.mimeType, true, false)+pug_attr("srcset", imgSrc, true, false)+" media=\"(max-width: 480px)\"") + "\u002F\u003E\u003C\u002Fpicture\u003E";
-;pug_debug_line = 30;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("srcset", imgSrc, true, false)+pug_attr("alt", imageConfig.data.altText, true, false)) + "\u002F\u003E";
+;pug_debug_line = 37;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.asset.image.mimeType, true, false)+pug_attr("srcset", imgXs, true, false)+" media=\"(max-width: 480px)\"") + "\u002F\u003E";
+;pug_debug_line = 42;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("src", imgSm, true, false)+pug_attr("alt", data.asset.altText, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
