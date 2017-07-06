@@ -1,13 +1,13 @@
-if image
+if images
   picture
     source(
-      type=image.sm.mimeType
-      srcset=image.sm.url
+      type=images.sm.mimeType
+      srcset=images.sm.url
       media="(min-width: 480px)"
     )
     img(
-      src=image.xs.url
-      alt=image.altText
+      src=images.xs.url
+      alt=images.altText
     )
 else
     include card_no_image
