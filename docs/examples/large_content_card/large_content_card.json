@@ -1,7 +1,7 @@
 {
     "images": {
         "xs": {
-            "url": "http://via.placeholder.com/305x150",
+            "url": "http://via.placeholder.com/350x150",
             "mimeType": "image/png"
         },
         "sm": {
@@ -12,7 +12,7 @@
     },
     "noImage": {
         "sm": {
-            "url": "http://via.placeholder.com/305"
+            "url": "http://via.placeholder.com/350"
         },
         "lg": {
             "url": "http://via.placeholder.com/900x350"
