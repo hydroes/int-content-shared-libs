@@ -22,43 +22,44 @@
 
 <body>
   <header class="header">
-        <div class="header__items">
-           <img src="http://www.bauermedia.co.uk/images/logo-bauer.png" class="header-logo" />
-           <h1>Styleguide <span id="header__version"></span></h1>
-           <script>
-              document.getElementById('header__version').innerHTML = 'v'+window.bauerSharedLibs.version
-            </script>
-        </div>
-        <nav class="navbar row">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+    <div class="header__items">
+      <img src="http://www.bauermedia.co.uk/images/logo-bauer.png" class="header-logo" />
+      <h1>Styleguide <span id="header__version"></span></h1>
+      <script>
+        document.getElementById('header__version').innerHTML = 'v' + window.bauerSharedLibs.version
+      </script>
+    </div>
+    <nav class="navbar row">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-            </div>
+      </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar">
-              <ul class="nav navbar-nav">
-                <li>
-                  <a href="#cards">Cards</a>
-                </li>
-                <li>
-                  <a href="#collections">Collections</a>
-                </li>
-                <li>
-                  <a href="#gallery">Gallery</a>
-                </li>
-                <li>
-                  <a href="#misc">Miscellaneous</a>
-                </li>
-              
-              </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#cards">Cards</a>
+          </li>
+          <li>
+            <a href="#collections">Collections</a>
+          </li>
+          <li>
+            <a href="#gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="#misc">Miscellaneous</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
   </header>
   <div class="main-container">
     <div class="container-fluid">
@@ -87,23 +88,22 @@
               <div id="large-content-card"></div>
             </div>
           </div>
-         
-          <div class="row style-guide__item">
-            <div class="col-md-6">
-              <div class="style-guide__item__label">
-                <h2>Small (Narrow) Content Card</h2>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-2 col-xl-2 content-card-small-test">
-            </div>
-          </div>
           <div class="row style-guide__item">
             <div class="col-md-6">
               <div class="style-guide__item__label">
                 <h2>Small Content Card</h2>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3 content-card-small-test">
+            <div class="col-sm-6 col-md-4 col-xl-3 content-card-small-test">
+            </div>
+          </div>
+          <div class="row style-guide__item">
+            <div class="col-md-6">
+              <div class="style-guide__item__label">
+                <h2>Small (Narrow) Content Card</h2>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-xl-2 content-card-small-test">
             </div>
           </div>
           <div class="row style-guide__item">
@@ -112,7 +112,7 @@
                 <h2>Small (tiny) Content Card</h2>
               </div>
             </div>
-            <div class="col-sm-6 col-md-3 content-card-small-test">
+            <div class="col-sm-5 col-md-2 col-xl-1 content-card-small-test">
             </div>
           </div>
         </section>
@@ -145,17 +145,17 @@
 
   <!-- small content card js -->
   <script type="text/javascript" src="examples/small_content_card/main.js"></script>
-  
+
   <!-- large content card js -->
   <script type="text/javascript" src="examples/large_content_card/main.js"></script>
 
- <div class="device-view">
-   <div class="visible-xs device phone"></div>
-   <div class="visible-sm device tablet"></div>
-   <div class="visible-md device tablet"></div>
-   <div class="visible-lg device desktop"></div>
-   <div class="visible-xl device desktop"></div>
- </div>
+  <div class="device-view">
+    <div class="visible-xs device phone"></div>
+    <div class="visible-sm device tablet"></div>
+    <div class="visible-md device tablet"></div>
+    <div class="visible-lg device desktop"></div>
+    <div class="visible-xl device desktop"></div>
+  </div>
 
 </body>
 

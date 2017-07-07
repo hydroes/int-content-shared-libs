@@ -12,9 +12,7 @@ body
     color: $grey-color;
     white-space: nowrap;
     padding: 10px 10px 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
+	@include text-overflow-hidden(nowrap,block);
     a {
     	&:hover
     	{
@@ -32,12 +30,11 @@ body
 
 .title
 {
+	@include text-overflow-hidden(normal,block);
 	padding: 10px 10px 0;
 	font-size: 16px;
 	line-height: 1.35;
-	overflow: hidden;
 	letter-spacing: -.01em;
-	display: inline-block;
 	a 
 	{
 		color: $black-color;
