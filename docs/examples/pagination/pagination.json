@@ -1,17 +1,14 @@
 {
-  "settings": {},
-  "data": {
-    "path": "/entertainment/",
-    "metadata": {
-      "limit": 6,
-      "page": 1,
-      "sort": {
-        "publicationDate": -1
-      },
-      "offset": 0,
-      "totalCount": 44,
-      "totalPages": 700,
-      "nextPage": 700
-    }
+  "path": "/entertainment/",
+  "metadata": {
+    "limit": 6,
+    "page": 1,
+    "sort": {
+      "publicationDate": -1
+    },
+    "offset": 0,
+    "totalCount": 44,
+    "totalPages": 700,
+    "nextPage": 700
   }
 }
