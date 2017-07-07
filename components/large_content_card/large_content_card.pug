@@ -1,30 +1,7 @@
--	
-	var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
-	var link = window.bauerSharedLibs.pug.helpers.link
-
-	var primarySyndicateData = {
-		channel: data.channel,
-		urls: data.syndicateUrls
-	}
-
-	var linkData = {
-		article: {
-			categories: data.categories,
-			url: data.url
-		}, 
-		channel: data.channel
-	}
 article
 	.large-content-card
-		if (data.primarySyndicatePosition != '')
-			a.large-content-card__link(href=primarySyndicate(primarySyndicateData))
+			a.large-content-card__link(href=url)
 				include ../partials/large_card_image.pug
 			.large-content-card__info
 				include ../partials/title.pug
-				include ../partials/syndicate_time.pug
-		else
-			a.large-content-card__link(href=link(linkData))
-				include ../partials/large_card_image.pug
-			.large-content-card__info
-				include ../partials/title.pug
-				include ../partials/syndicate_time.pug
+				include ../partials/card_date_time.pug
