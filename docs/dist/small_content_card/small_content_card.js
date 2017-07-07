@@ -25,7 +25,7 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", images.sm.url, true, false)
 else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-background-color\""+pug_attr("style", pug_style({
-    'background-image' : 'url('+noImage.sm+')'
+    'background-image' : 'url('+noImage.sm.url+')'
     }), true, false)) + "\u003E";
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Frosspickerill\u002FDocuments\u002FGit\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 pug_html = pug_html + "\u003Csource" + (pug_attr("srcset", noImage.sm.url, true, false)+" media=\"(max-width: 439px)\"") + "\u002F\u003E";
