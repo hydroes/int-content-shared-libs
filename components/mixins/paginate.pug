@@ -1,7 +1,6 @@
-mixin pagination
+mixin pagination(paginateData)
   -
-    const paginateData = data.metadata
-    let prev = --paginateData.page
+    let prev = paginateData.page
     let path = ''
     let main = {
       limit : 7,
@@ -21,26 +20,28 @@ mixin pagination
     getNextPagination = current => current + main.limit
     isAtLimit = current => (current + main.limit) >= main.totalPages
     counterOffset = () => main.totalPages - main.limit
+    isActive = isThisPage => isThisPage === main.current ? 'pagination__link--active' : 'pagination__link'
 
   ul.pagination
+    - let counter = data.metadata.page
     - let numbers = getNextPagination(main.current)
     if main.current > 1
       li
-        a(class=nextprev href=main.parsePath(prev, main.path)) &lt;
+        a(class="pagination__link" href=main.parsePath(--prev, main.path)) &lt;
     if main.current > 10
       li
-        a(href=main.parsePath(1, main.path)) 1
-    - let counter = main.current
-    if isAtLimit(main.current) 
+        a(class="pagination__link" href=main.parsePath(1, main.path)) 1
+    if isAtLimit(main.current)
       - let limitCounter = counterOffset()
       while limitCounter < main.totalPages
         li
-          a(href=main.parsePath(limitCounter, main.path)) #{limitCounter++}
+          a(class=isActive(limitCounter) href=main.parsePath(limitCounter, main.path)) #{limitCounter++}
     else
       while counter <= numbers
         li
-          a(href=main.parsePath(counter, main.path)) #{counter++}
+          a(class=isActive(counter) href=main.parsePath(counter, main.path)) #{counter++}
     li 
-      a(href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
-    li
-      a(class=nextprev href=main.parsePath(main.next, main.path)) &gt;
+      a(class=isActive(main.totalPages) href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
+    if main.current < main.totalPages
+      li
+        a(class="pagination__link" href=main.parsePath(main.next, main.path)) &gt;

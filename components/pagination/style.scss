@@ -1,12 +1,17 @@
 // --------------------------------------------------
 .pagination {
-  .active {
-    background: #dddddd;
-  }
   li {
-    a {
-      color: $black-color;
-      margin-right: 2px;
+  a {
+      &.pagination {
+      &__link {
+        color: $black-color;
+        margin-right: 2px;
+        &--active {
+          color: $black-color;
+          background: #eee;
+          }
+        }
+      }
     }
   }
   li:first-child,
