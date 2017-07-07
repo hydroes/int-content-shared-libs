@@ -8,40 +8,33 @@ mixin pagination(paginateData)
       totalPages: paginateData.totalPages,
       next: paginateData.nextPage,
       path: data.path,
-      parsePath (current, path) {
-        if (current === 1) {
-          return path
-        } else {
-          return path + current
-        }
-      },
+      parsePath : (current, path) => current === 1 ? path : path + current,
+      getNextPagination : current => current + main.limit,
+      isAtLimit : current => (current + main.limit) >= main.totalPages,
+      counterOffset : () => main.totalPages - main.limit,
+      isActive : isThisPage => isThisPage === main.current ? 'pagination__link--active' : 'pagination__link',
     }
-
-    getNextPagination = current => current + main.limit
-    isAtLimit = current => (current + main.limit) >= main.totalPages
-    counterOffset = () => main.totalPages - main.limit
-    isActive = isThisPage => isThisPage === main.current ? 'pagination__link--active' : 'pagination__link'
 
   ul.pagination
     - let counter = data.metadata.page
-    - let numbers = getNextPagination(main.current)
+    - let numbers = main.getNextPagination(main.current)
     if main.current > 1
       li
         a(class="pagination__link" href=main.parsePath(--prev, main.path)) &lt;
     if main.current > 10
       li
         a(class="pagination__link" href=main.parsePath(1, main.path)) 1
-    if isAtLimit(main.current)
-      - let limitCounter = counterOffset()
+    if main.isAtLimit(main.current)
+      - let limitCounter = main.counterOffset()
       while limitCounter < main.totalPages
         li
-          a(class=isActive(limitCounter) href=main.parsePath(limitCounter, main.path)) #{limitCounter++}
+          a(class=main.isActive(limitCounter) href=main.parsePath(limitCounter, main.path)) #{limitCounter++}
     else
       while counter <= numbers
         li
-          a(class=isActive(counter) href=main.parsePath(counter, main.path)) #{counter++}
+          a(class=main.isActive(counter) href=main.parsePath(counter, main.path)) #{counter++}
     li 
-      a(class=isActive(main.totalPages) href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
+      a(class=main.isActive(main.totalPages) href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
     if main.current < main.totalPages
       li
         a(class="pagination__link" href=main.parsePath(main.next, main.path)) &gt;
