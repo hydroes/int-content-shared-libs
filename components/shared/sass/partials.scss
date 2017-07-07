@@ -30,8 +30,8 @@ body {
 .title {
     @include text-overflow-hidden(normal, inline-block);
 
-  	padding: rem-calc(10) rem-calc(10) 0;
-  	font-size: 1rem;
+    padding: rem-calc(10) rem-calc(10) 0;
+    font-size: 1rem;
     line-height: 1.35;
     letter-spacing: -.01em;
 
@@ -57,6 +57,6 @@ body {
 
 @media screen and (min-width: $screen-sm) {
     .title {
-		font-size: rem-calc(18);
+      font-size: rem-calc(18);
     }
 }
