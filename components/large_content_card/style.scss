@@ -1,6 +1,6 @@
 .large-content-card
 {
-	box-shadow: $box-shadow-color 1px 1px 2px;
+	box-shadow: $box-shadow-color rem-calc(1) rem-calc(1) rem-calc(12);
 
 	img
 	{
@@ -9,7 +9,7 @@
 
 	&__info
 	{
-		height: 142px;
+		height: rem-calc(142);
 		display: inline-block;
 		position: relative;
 	}

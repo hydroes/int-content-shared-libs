@@ -6,12 +6,12 @@ body
 .modified-container
 {
 	max-width: 100%;
-    font-size: 12px;
+    font-size: rem-calc(12);
     font-weight: 400;
     text-transform: none;
     color: $grey-color;
     white-space: nowrap;
-    padding: 10px 10px 0px;
+    padding: rem-calc(10) rem-calc(10) 0;
     overflow: hidden;
     text-overflow: ellipsis;
 
@@ -32,8 +32,8 @@ body
 
 .title
 {
-	padding: 10px 10px 0;
-	font-size: 16px;
+	padding: rem-calc(10) rem-calc(10) 0;
+	font-size: 1rem;
 	line-height: 1.35;
 	overflow: hidden;
 	letter-spacing: -.01em;
@@ -66,6 +66,6 @@ body
 {
 	.title
 	{
-		font-size: 18px;
+		font-size: rem-calc(18);
 	}
 }
