@@ -5,7 +5,7 @@
             "mimeType": "image/jpeg"
         },
         "sm": {
-            "url": "http://via.placeholder.com/420x236",
+            "url": "http://via.placeholder.com/450x236",
             "mimeType": "image/jpeg"
         },
         "altText":"lorem ipsum dolor sit amet"
@@ -15,7 +15,7 @@
             "url": "http://via.placeholder.com/240x240"
         },
         "lg": {
-            "url": "http://via.placeholder.com/420x236"
+            "url": "http://via.placeholder.com/450x236"
         }
     },
     "url": "https://planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",

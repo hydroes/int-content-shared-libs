@@ -1,21 +1,21 @@
 {
     "images": {
         "xs": {
-            "url": "http://via.placeholder.com/305x150",
+            "url": "http://via.placeholder.com/350x150",
             "mimeType": "image/png"
         },
         "sm": {
-            "url": "http://via.placeholder.com/700x350",
+            "url": "http://via.placeholder.com/900x350",
             "mimeType": "image/png"
         },
         "altText":"lorem ipsum dolor sit amet"
     },
     "noImage": {
         "sm": {
-            "url": "http://via.placeholder.com/305"
+            "url": "http://via.placeholder.com/350"
         },
         "lg": {
-            "url": "http://via.placeholder.com/700x350"
+            "url": "http://via.placeholder.com/900x350"
         }
     },
     "url": "http://www.google.com",

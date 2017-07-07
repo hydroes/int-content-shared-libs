@@ -1,6 +1,5 @@
-body
-{
-	font-family: "Gotham A","Gotham B","helvetica neue",arial,helvetica,sans-serif;
+body {
+    font-family: "Gotham A","Gotham B","helvetica neue",arial,helvetica,sans-serif;
 }
 
 .modified-container
@@ -12,46 +11,42 @@ body
     color: $grey-color;
     white-space: nowrap;
     padding: rem-calc(10) rem-calc(10) 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    @include text-overflow-hidden(nowrap, block);
 
     a {
-    	&:hover
-    	{
-    		text-decoration: none;
-    	}
+        &:hover {
+            text-decoration: none;
+        }
 
-	    &:after
-	    {
-	    	color: $grey-color;
-	    	content: " | ";
-	    	margin: 0.2rem;
-	    }
-	}
+        &:after {
+            color: $grey-color;
+            content: " | ";
+            margin: 0.2rem;
+        }
+    }
 }
 
-.title
-{
+.title {
+    @include text-overflow-hidden(normal, inline-block);
+
 	padding: rem-calc(10) rem-calc(10) 0;
 	font-size: 1rem;
-	line-height: 1.35;
-	overflow: hidden;
-	letter-spacing: -.01em;
-	display: inline-block;
-	a 
-	{
-		color: $black-color;
-		display: inline-block;
-		padding: 0;    
-		&:hover
-		{
-			text-decoration: none;
-		}
-	}
+    line-height: 1.35;
+    letter-spacing: -.01em;
+
+    a {
+        color: $black-color;
+        display: inline-block;
+        padding: 0;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
-.missing-image
-{
+.missing-image {
     background-repeat: no-repeat;
     background-size: 60%;
     background-position: 50% 50%;
@@ -60,12 +55,8 @@ body
     background-color: $black-color;
 }
 
-
-
-@media screen and (min-width: $screen-sm)
-{
-	.title
-	{
+@media screen and (min-width: $screen-sm) {
+    .title {
 		font-size: rem-calc(18);
-	}
+    }
 }
