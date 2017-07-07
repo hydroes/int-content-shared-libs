@@ -11,6 +11,6 @@ pugTemplateUrl = folderPath.replace('{file}',templateLocation.pug)
 
 jQuery.getJSON(dataPath,function (json, status) {
     if (status === 'success') {
-         window.bauerSharedLibs.pug.render(pugTemplateUrl, json, 'content-card-small-test')
+         window.bauerSharedLibs.pug.render(pugTemplateUrl, json, '.content-card-small-test')
     }
 })
