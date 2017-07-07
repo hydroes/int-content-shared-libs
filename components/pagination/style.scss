@@ -1,5 +1,8 @@
 // --------------------------------------------------
 .pagination {
+  .active {
+    background: #dddddd;
+  }
   li {
     a {
       color: $black-color;

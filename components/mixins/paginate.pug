@@ -1,0 +1,46 @@
+mixin pagination
+  -
+    const paginateData = data.metadata
+    let prev = --paginateData.page
+    let path = ''
+    let main = {
+      limit : 7,
+      current: paginateData.page,
+      totalPages: paginateData.totalPages,
+      next: paginateData.nextPage,
+      path: data.path,
+      parsePath (current, path) {
+        if (current === 1) {
+          return (path || '').replace(/1\/?$/, '')
+        } else {
+          return path + current
+        }
+      },
+    }
+
+    getNextPagination = current => current + main.limit
+    isAtLimit = current => (current + main.limit) >= main.totalPages
+    counterOffset = () => main.totalPages - main.limit
+
+  ul.pagination
+    - let numbers = getNextPagination(main.current)
+    if main.current > 1
+      li
+        a(class=main.path + nextprev href=main.parsePath(prev, main.path)) &lt;
+    if main.current > 10
+      li
+        a(href=main.parsePath(1, main.path)) 1
+    - let counter = main.current
+    if isAtLimit(main.current) 
+      - let limitCounter = counterOffset()
+      while limitCounter < main.totalPages
+        li
+          a(href=main.parsePath(limitCounter, main.path)) #{limitCounter++}
+    else
+      while counter <= numbers
+        li
+          a(href=main.parsePath(counter, main.path)) #{counter++}
+    li 
+      a(href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
+    li
+      a(class=nextprev href=main.parsePath(main.next, main.path)) &gt;

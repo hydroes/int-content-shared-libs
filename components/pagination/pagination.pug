@@ -1,17 +1,3 @@
--
-    const paginateData = window.bauerSharedLibs.pug.helpers.paginate(data)
-    let current = paginateData.page
-    let prev = --paginateData.page
+include ../mixins/paginate.pug
 
-ul.pagination
-    if current > 1
-        li
-            a(class=nextprev href=prev) <
-    while current <= paginateData.limit
-        li
-            a(href=current) #{current++}
-    if paginateData.totalPages > paginateData.limit        
-        li 
-            a(href=paginateData.totalPages) #{paginateData.totalPages}
-    li
-        a(class=nextprev href=paginateData.nextPage) >
++pagination
