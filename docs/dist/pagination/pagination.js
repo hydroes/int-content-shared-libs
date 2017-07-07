@@ -19,7 +19,7 @@ let main = {
   path: data.path,
   parsePath (current, path) {
     if (current === 1) {
-      return (path || '').replace(/1\/?$/, '')
+      return path
     } else {
       return path + current
     }

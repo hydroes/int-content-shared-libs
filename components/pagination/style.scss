@@ -1,12 +1,12 @@
-// --------------------------------------------------
 .pagination {
   li {
   a {
       &.pagination {
       &__link {
         color: $black-color;
-        margin-right: $include rem-calc(2);
+        margin-right: 2px;
         &--active {
+          margin-right: 2px;
           color: $black-color;
           background: #eee;
           }
@@ -17,7 +17,7 @@
   li:first-child,
   li:last-child {
     a {
-       @include border-radius($border-radius-default);
+      @include border-radius($border-radius-default);
     }
   }
 }

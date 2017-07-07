@@ -4,7 +4,7 @@
     "path": "/entertainment/",
     "metadata": {
       "limit": 6,
-      "page": 11,
+      "page": 1,
       "sort": {
         "publicationDate": -1
       },
