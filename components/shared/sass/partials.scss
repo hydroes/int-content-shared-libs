@@ -4,7 +4,7 @@ body {
 
 .modified-container
 {
-	max-width: 100%;
+    max-width: 100%;
     font-size: rem-calc(12);
     font-weight: 400;
     text-transform: none;
@@ -30,8 +30,8 @@ body {
 .title {
     @include text-overflow-hidden(normal, inline-block);
 
-	padding: rem-calc(10) rem-calc(10) 0;
-	font-size: 1rem;
+  	padding: rem-calc(10) rem-calc(10) 0;
+  	font-size: 1rem;
     line-height: 1.35;
     letter-spacing: -.01em;
 
