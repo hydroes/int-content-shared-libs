@@ -26,7 +26,7 @@ mixin pagination
     - let numbers = getNextPagination(main.current)
     if main.current > 1
       li
-        a(class=main.path + nextprev href=main.parsePath(prev, main.path)) &lt;
+        a(class=nextprev href=main.parsePath(prev, main.path)) &lt;
     if main.current > 10
       li
         a(href=main.parsePath(1, main.path)) 1

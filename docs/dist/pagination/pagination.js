@@ -40,7 +40,7 @@ if (main.current > 1) {
 ;pug_debug_line = 28;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
 pug_html = pug_html + "\u003Cli\u003E";
 ;pug_debug_line = 29;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
-pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes([main.path + nextprev], [true]), false, false)+pug_attr("href", main.parsePath(prev, main.path), true, false)) + "\u003E";
+pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes([nextprev], [true]), false, false)+pug_attr("href", main.parsePath(prev, main.path), true, false)) + "\u003E";
 ;pug_debug_line = 29;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
 pug_html = pug_html + "&lt;\u003C\u002Fa\u003E\u003C\u002Fli\u003E";
 }
