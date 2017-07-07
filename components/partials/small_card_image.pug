@@ -1,12 +1,12 @@
 if images
   picture
     source(
-      type=images.sm.mimeType
-      srcset=images.sm.url
-      media="(min-width: 480px)"
+      type=images.xs.mimeType
+      srcset=images.xs.url
+      media="(max-width: 480px)"
     )
     img(
-      src=images.xs.url
+      src=images.sm.url
       alt=images.altText
     )
 else
