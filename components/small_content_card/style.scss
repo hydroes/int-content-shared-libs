@@ -29,8 +29,5 @@
 @media (min-width: $screen-sm) {
     .small-content-card {
         padding: rem-calc(10) rem-calc(10) 0;
-        img {
-            max-width: 100%;
-        }
     }
 }
