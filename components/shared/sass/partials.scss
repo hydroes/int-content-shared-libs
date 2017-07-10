@@ -2,14 +2,15 @@ body {
     font-family: "Gotham A","Gotham B","helvetica neue",arial,helvetica,sans-serif;
 }
 
-.modified-container {
+.modified-container
+{
     max-width: 100%;
-    font-size: 12px;
+    font-size: rem-calc(12);
     font-weight: 400;
     text-transform: none;
     color: $grey-color;
     white-space: nowrap;
-    padding: 10px 10px 0px;
+    padding: rem-calc(10) rem-calc(10) 0;
 
     @include text-overflow-hidden(nowrap, block);
 
@@ -29,8 +30,8 @@ body {
 .title {
     @include text-overflow-hidden(normal, inline-block);
 
-    padding: 10px 10px 0;
-    font-size: 16px;
+    padding: rem-calc(10) rem-calc(10) 0;
+    font-size: 1rem;
     line-height: 1.35;
     letter-spacing: -.01em;
 
@@ -56,6 +57,6 @@ body {
 
 @media screen and (min-width: $screen-sm) {
     .title {
-        font-size: 18px;
+      font-size: rem-calc(18);
     }
 }

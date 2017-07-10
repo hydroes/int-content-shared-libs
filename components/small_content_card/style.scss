@@ -1,13 +1,13 @@
 
 .small-content-card {
     width: 100%;
-    padding: 0px;
-    border-bottom: 1px solid $border-color;
+    padding: 0;
+    border-bottom: rem-calc(1) solid $border-color;
     background-color: $white-color;
     display: inline-block;
     vertical-align: top;
     .img-container {
-        padding: 0px;
+        padding: 0;
     }
     img {
         max-width: 100%;
@@ -16,21 +16,18 @@
 
     .tile-style {
         height: 100%;
-        box-shadow: $box-shadow-color 1px 1px 2px;
+        box-shadow: $box-shadow-color  rem-calc(1) rem-calc(1) rem-calc(2);
     }
     
     &__info {
         height: inherit;
         overflow: hidden;
-        padding: 0px;
+        padding: 0;
     }
 }
 
 @media (min-width: $screen-sm) {
     .small-content-card {
-        padding: 10px 10px 0;
-        img {
-            max-width: 100%;
-        }
+        padding: rem-calc(10) rem-calc(10) 0;
     }
 }

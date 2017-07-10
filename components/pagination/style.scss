@@ -3,7 +3,7 @@
   li {
     a {
       color: $black-color;
-      margin-right: 2px;
+      margin-right: rem-calc(2);
     }
   }
   li:first-child,
