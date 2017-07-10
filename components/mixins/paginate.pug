@@ -32,7 +32,7 @@ mixin pagination(paginateData)
       while counter <= numbers
         li
           a(class=main.isActive(counter) href=main.parsePath(counter, main.path)) #{counter++}
-    li 
+    li
       a(class=main.isActive(main.totalPages) href=main.parsePath(main.totalPages, main.path) ) #{main.totalPages}
     if main.current < main.totalPages
       li

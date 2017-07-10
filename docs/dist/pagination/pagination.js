@@ -74,8 +74,6 @@ pug_html = pug_html + (pug_escape(null == (pug_interp = counter++) ? "" : pug_in
 }
 ;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
 pug_html = pug_html + "\u003Cli\u003E";
-;pug_debug_line = 35;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
-pug_html = pug_html + " ";
 ;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
 pug_html = pug_html + "\u003Ca" + (pug_attr("class", pug_classes([main.isActive(main.totalPages)], [true]), false, false)+pug_attr("href", main.parsePath(main.totalPages, main.path), true, false)) + "\u003E";
 ;pug_debug_line = 36;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fmixins\u002Fpaginate.pug";
