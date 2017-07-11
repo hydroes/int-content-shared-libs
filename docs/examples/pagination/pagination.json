@@ -2,13 +2,13 @@
   "path": "/entertainment/",
   "metadata": {
     "limit": 6,
-    "page": 300,
+    "page": 698,
     "sort": {
       "publicationDate": -1
     },
     "offset": 0,
     "totalCount": 44,
     "totalPages": 700,
-    "nextPage": 301
+    "nextPage": 699
   }
 }

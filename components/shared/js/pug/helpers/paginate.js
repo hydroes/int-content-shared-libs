@@ -64,7 +64,7 @@ Paginate.prototype.isActive = function (isThisPage) {
  * @param {string=} display (optional)
  * @return {Void}
  */
-Paginate.prototype.createPage = function (current, isActive, display) {
+Paginate.prototype.createSinglePage = function (current, isActive, display) {
   this.pages.push({
     display: display || current,
     page: current,
@@ -82,11 +82,10 @@ Paginate.prototype.createPage = function (current, isActive, display) {
 Paginate.prototype.createPages = function (start, limit) {
   limit = limit || this.totalPages
   var _counter = start
-  if (_counter <= limit) {
+  while (_counter <= limit) {
     var isCounterActive = this.isActive(_counter)
-    this.createPage(_counter, isCounterActive)
+    this.createSinglePage(_counter, isCounterActive)
     _counter++
-    this.createPages(_counter, limit)
   }
 }
 
@@ -102,19 +101,19 @@ module.exports = function (data) {
 
   function createPagination () {
     if (paginate.currentPage > 1) {
-      paginate.createPage(paginate.currentPage - 1, false, '<')
-      paginate.createPage(1, false, 1)
+      paginate.createSinglePage(paginate.currentPage - 1, false, '<')
+      paginate.createSinglePage(1, false, 1)
     }
 
     var offset = paginate.counterOffset(paginate.currentPage)
     paginate.isAtLimit(paginate.currentPage) ? paginate.createPages(offset) : paginate.createPages(paginate.currentPage, offset)
 
     if (!paginate.isAtLimit(paginate.currentPage)) {
-      paginate.createPage(paginate.totalPages, false, paginate.totalPages)
+      paginate.createSinglePage(paginate.totalPages, false, paginate.totalPages)
     }
 
     if (paginate.currentPage < paginate.totalPages) {
-      paginate.createPage(paginate.next, false, '>')
+      paginate.createSinglePage(paginate.next, false, '>')
     }
 
     try {
