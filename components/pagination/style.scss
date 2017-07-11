@@ -1,15 +1,23 @@
-// --------------------------------------------------
 .pagination {
   li {
-    a {
-      color: $black-color;
-      margin-right: rem-calc(2);
+  a {
+      &.pagination {
+      &__link {
+        color: $black-color;
+        margin-right: rem-calc(2);
+        &--active {
+          margin-right: rem-calc(2);
+          color: $black-color;
+          background: #eee;
+          }
+        }
+      }
     }
   }
   li:first-child,
   li:last-child {
     a {
-       @include border-radius($border-radius-default);
+      @include border-radius($border-radius-default);
     }
   }
 }
