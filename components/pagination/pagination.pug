@@ -1,6 +1,6 @@
-- let paginates = window.bauerSharedLibs.pug.helpers.paginate(data)
+- let pages = window.bauerSharedLibs.pug.helpers.paginate(data)
 
 ul.pagination
-  each paginate in paginates
+  each page in pages
     li
-      a(href=paginate.href class=paginate.isActive ? 'pagination__link--active' : 'pagination__link') #{paginate.display}
+      a(href=page.href class=page.isActive ? 'pagination__link--active' : 'pagination__link') #{page.display}
