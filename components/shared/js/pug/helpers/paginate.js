@@ -2,10 +2,11 @@
  * @description Creates an array of objects that contain pagination data.
  * <isActive> is for css classes.
  * Example Usage:
+ * let pages = // e.g. require('helpers/paginate')(data)
  * ul.pagination
- *  each paginate in paginates
+ *  each page in pages
  *    li
- *      a(href=paginate.href class=paginate.isActive ? 'active' : 'normal') #{paginate.display}
+ *      a(href=page.href class=page.isActive ? 'active' : 'normal') #{page.display}
  *
  * @class Paginate
  * @param {array} pages
