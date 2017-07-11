@@ -1,3 +1,6 @@
-include ../mixins/paginate.pug
+- let paginates = window.bauerSharedLibs.pug.helpers.paginate(data)
 
-+pagination(data.metadata)
+ul.pagination
+  each paginate in paginates
+    li
+      a(href=paginate.href class=paginate.isActive ? 'pagination__link--active' : 'pagination__link') #{paginate.display}
