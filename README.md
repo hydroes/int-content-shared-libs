@@ -38,6 +38,10 @@ A component needs at a minimium to have 3 files within its folder:
 ## Testing
 Testing and qa in the project encompass unit and e2e tests.
 Tests can be found in the tests directory.
+ - e2e tests are written in gerkin syntax and follow cucumber methodology
+ - e2e tests use the chrome driver to run tests, chrome needs to be installed in the OS
+ - selenium and java are not required to run the tests
+ - Test examples can be found ([here](https://github.com/mucsi96/nightwatch-cucumber/tree/master/examples))
 Test reports can be found in the tests/reports directory.
 
 - To run e2e tests:
