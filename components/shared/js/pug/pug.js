@@ -24,7 +24,7 @@ var bauerPug = {
     compiledTemplatePath = compiledTemplatePath.replace('.pug', '.js')
 
     // retieve compiled template & execute it
-    $.getScript(compiledTemplatePath, function (script, textStatus, jqxhr) {
+    return $.getScript(compiledTemplatePath, function (script, textStatus, jqxhr) {
       if (jqxhr.status !== 200) {
         console.log('Compiled template not found: ', compiledTemplatePath)
       }

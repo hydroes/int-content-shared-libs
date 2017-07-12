@@ -80,12 +80,12 @@
           </div>
           <div class="row style-guide__item">
             <div class="col-md-6">
-              <div class="style-guide__item__label" style="">
+              <div class="style-guide__item__label">
                 <h2>Large Content Card</h2>
               </div>
             </div>
-            <div class="col-md-6" style="">
-              <div id="large-content-card"></div>
+            <div class="col-md-6">
+              <div class="large-content-card"></div>
             </div>
           </div>
           <div class="row style-guide__item">
@@ -94,7 +94,8 @@
                 <h2>Small Content Card</h2>
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-xl-3 content-card-small">
+            <div class="col-sm-6 col-md-4 col-xl-3">
+              <div class="content-card-small"></div>
             </div>
           </div>
           <div class="row style-guide__item">
@@ -116,8 +117,23 @@
             </div>
           </div>
         </section>
-        <section id="collections" class="section-header">
-          <h2>Collections</h2>
+        <section id="collections">
+          <div class="section-header">
+            <h2>Collections</h2>
+          </div>
+          <div class="row style-guide__item">
+            <div class="col-md-2">
+              <div class="style-guide__item__label">
+                <h2>Content Card Large &amp; Content Card Narrow</h2>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="large-content-card content-card-collection-1"></div>
+            </div>
+             <div class="col-sm-6 col-md-4 col-xl-3">
+               <div class="content-card-small content-card-collection-1"></div>
+            </div>
+          </div>
         </section>
         <section id="gallery" class="section-header">
           <h2>Gallery</h2>
@@ -143,12 +159,16 @@
 
   <script src="examples/test/test.js"></script>
 
+
+  
   <!-- small content card js -->
   <script type="text/javascript" src="examples/small_content_card/main.js"></script>
 
   <!-- large content card js -->
   <script type="text/javascript" src="examples/large_content_card/main.js"></script>
 
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  
   <div class="device-view">
     <div class="visible-xs device phone"></div>
     <div class="visible-sm device tablet"></div>
