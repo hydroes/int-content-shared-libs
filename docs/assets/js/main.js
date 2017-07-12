@@ -7,7 +7,6 @@ var components = {
       //TODO Change this to iteration... - as this will get bigger
       if (components.smallCard.dataStatus && components.largeCard.dataStatus) {
         jQuery('.content-card-collection-1').matchHeight()
-        console.log(jQuery('.content-card-collection-1').length)
       }
     }
   },
