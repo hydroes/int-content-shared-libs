@@ -20,11 +20,11 @@ pug_html = pug_html + "\u003Cdiv class=\"col sm-6 col-md-4\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 url = url || card.url
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Carticle class=\"small-content-card container\"\u003E";
+pug_html = pug_html + "\u003Carticle class=\"content-card--small container\"\u003E";
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + " ";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"tile-style row\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"img-container col-xs-4 col-sm-12\""+pug_attr("href", url, true, false)) + "\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
@@ -52,7 +52,7 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", noImage.lg.url, true, false
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"small-content-card__info col-xs-8 col-sm-12\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"content-card--small__info col-xs-8 col-sm-12\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 title = title || card.title
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
@@ -63,8 +63,6 @@ pug_html = pug_html + "\u003Cspan class=\"title\"\u003E";
 pug_html = pug_html + "\u003Ca" + (pug_attr("href", url, true, false)) + "\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fspan\u003E";
-;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"hidden-xs\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
 category = category || card.category
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
@@ -76,7 +74,7 @@ pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", cat
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = category.name) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
 ;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
-pug_html = pug_html + (pug_escape(null == (pug_interp = date) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Farticle\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = date) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Farticle\u003E\u003C\u002Fdiv\u003E";
       }
   } else {
     var $$l = 0;
@@ -88,11 +86,11 @@ pug_html = pug_html + "\u003Cdiv class=\"col sm-6 col-md-4\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 url = url || card.url
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Carticle class=\"small-content-card container\"\u003E";
+pug_html = pug_html + "\u003Carticle class=\"content-card--small container\"\u003E";
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + " ";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"tile-style row\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + "\u003Ca" + (" class=\"img-container col-xs-4 col-sm-12\""+pug_attr("href", url, true, false)) + "\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
@@ -120,7 +118,7 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", noImage.lg.url, true, false
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"small-content-card__info col-xs-8 col-sm-12\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"content-card--small__info col-xs-8 col-sm-12\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 title = title || card.title
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
@@ -131,8 +129,6 @@ pug_html = pug_html + "\u003Cspan class=\"title\"\u003E";
 pug_html = pug_html + "\u003Ca" + (pug_attr("href", url, true, false)) + "\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = title) ? "" : pug_interp)) + "\u003C\u002Fa\u003E\u003C\u002Fspan\u003E";
-;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"hidden-xs\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
 category = category || card.category
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
@@ -144,7 +140,7 @@ pug_html = pug_html + "\u003Ca" + (" class=\"brand-color\""+pug_attr("href", cat
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
 pug_html = pug_html + (pug_escape(null == (pug_interp = category.name) ? "" : pug_interp)) + "\u003C\u002Fa\u003E";
 ;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_date_time.pug";
-pug_html = pug_html + (pug_escape(null == (pug_interp = date) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Farticle\u003E\u003C\u002Fdiv\u003E";
+pug_html = pug_html + (pug_escape(null == (pug_interp = date) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fdiv\u003E\u003C\u002Fdiv\u003E\u003C\u002Farticle\u003E\u003C\u002Fdiv\u003E";
     }
   }
 }).call(this);
