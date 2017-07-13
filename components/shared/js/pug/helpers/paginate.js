@@ -119,7 +119,6 @@ module.exports = function (data) {
 
     try {
       if (paginate.pages.length > 0) {
-        console.log(paginate.pages)
         return paginate.pages
       }
     } catch (err) {

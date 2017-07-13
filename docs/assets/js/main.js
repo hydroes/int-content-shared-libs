@@ -1,12 +1,22 @@
 'use strict'
-window.jQuery.noConflict()
+
+//should we make this a `matchHeight` addon/plugin?
+function smallCardMatchHeight() {
+  jQuery('.content-card--small .row').matchHeight({
+    target: jQuery('.content-card--small .row .content-card__link')
+  })
+}
+
+
+
 var components = {
   'config': {
     'callback': function (jqxhr, componentName) {
       components[componentName]['dataStatus'] = jqxhr.status
       //TODO Change this to iteration... - as this will get bigger
       if (components.smallCard.dataStatus && components.largeCard.dataStatus) {
-        jQuery('.content-card-collection-1').matchHeight()
+        jQuery('.content-card-collection-1').matchHeight() // content card collection match height
+        smallCardMatchHeight() //only for xs on small cards
       }
     }
   },
