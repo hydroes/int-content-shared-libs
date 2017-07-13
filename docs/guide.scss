@@ -125,7 +125,7 @@ body
 	{
 		margin-bottom: 1rem; 
 		border: rem-calc(1) solid #DEE2E6; 
-		padding: 2rem; 
+		padding: 0.6rem; 
 		border-radius: rem-calc(4); 
 		background-color: white;
 
@@ -188,6 +188,15 @@ body
 
 @media screen and (min-width: 480px) // Using bootstrap breakpoints here would require bootstrap sass compilation too. 
 {
+	.style-guide
+	{
+		&__item
+		{
+			padding: 2rem; 
+		}
+	}
+
+
 	.navbar
 	{
 		&-collapse.in, &-collapse.collapsing
