@@ -1,23 +1,16 @@
-.large-content-card
+.content-card--large
 {
-	box-shadow: $box-shadow-color 1px 1px 2px;
-
-	img
-	{
-		max-width: 100%;
-	}
-
+	@extend %content-card;
 	&__info
 	{
-		height: 142px;
-		display: inline-block;
-		position: relative;
+		height: rem-calc(142);
 	}
-
+	&__info,&__link {
+        padding: 0;
+    }
 	.modified-container
 	{
 		position: absolute;
     	bottom: 0;
-    	left: 0;
 	}
 }

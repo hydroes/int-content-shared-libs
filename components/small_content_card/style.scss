@@ -1,0 +1,12 @@
+
+.content-card--small {
+    @extend %content-card;
+    .img-container {
+        padding: 0;
+    }
+    &__info {
+        height: inherit;
+        overflow: hidden;
+        padding: 0;
+    }
+}

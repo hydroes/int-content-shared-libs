@@ -1,8 +1,13 @@
-if settings.stationHeaderLogoSVG
-	picture.missing-image.brand-background-color(style="background-image: url('"+ settings.stationHeaderLogoSVG + "')")
-		source(type="", srcset=settings.placeholderImage, media="(min-width: 439px")
-		img(title=settings.placeholderAltText, alt=settings.placeholderAltText, srcset=settings.placeholderImageSmall)
-else
-	picture.missing-image.missing-image--hub(style="background-image: url('"+ settings.missingHubImage + "')")
-		source(type="", srcset=settings.placeholderImage, media="(min-width: 439px")
-		img(title=settings.placeholderAltText, alt=settings.placeholderAltText, srcset=settings.placeholderImageSmall)
+picture.missing-image.brand-background-color(
+  style={
+    'background-image' : 'url('+noImage.sm.url+')'
+    }
+)
+  source(
+    srcset=noImage.sm.url
+    media="(max-width: 439px)"
+  )
+  img(
+    src=noImage.lg.url
+    alt=image.altText 
+  )

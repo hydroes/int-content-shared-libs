@@ -3,22 +3,28 @@ function pug_escape(e){var a=""+e,t=pug_match_html.exec(a);if(!t)return e;var r,
 var pug_has_own_property=Object.prototype.hasOwnProperty;
 var pug_match_html=/["&<>]/;
 function pug_rethrow(n,e,r,t){if(!(n instanceof Error))throw n;if(!("undefined"==typeof window&&e||t))throw n.message+=" on line "+r,n;try{t=t||require("fs").readFileSync(e,"utf8")}catch(e){pug_rethrow(n,null,r)}var i=3,a=t.split("\n"),o=Math.max(r-i,0),h=Math.min(a.length,r+i),i=a.slice(o,h).map(function(n,e){var t=e+o+1;return(t==r?"  > ":"    ")+t+"| "+n}).join("\n");throw n.path=e,n.message=(e||"Pug")+":"+r+"\n"+i+"\n\n"+n.message,n}
-function pug_style(r){if(!r)return"";if("object"==typeof r){var t="";for(var e in r)pug_has_own_property.call(r,e)&&(t=t+e+":"+r[e]+";");return t}return r+="",";"!==r[r.length-1]?r+";":r}function large_content_card_large_content_card(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_debug_filename, pug_debug_line;try {;var locals_for_with = (locals || {});(function (card, category, date, image, images, noImage, title, url) {;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-pug_html = pug_html + "\u003Carticle class=\"content-card--large container\"\u003E";
-;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+function pug_style(r){if(!r)return"";if("object"==typeof r){var t="";for(var e in r)pug_has_own_property.call(r,e)&&(t=t+e+":"+r[e]+";");return t}return r+="",";"!==r[r.length-1]?r+";":r}function small_content_card_small_content_card(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_debug_filename, pug_debug_line;try {;var locals_for_with = (locals || {});(function (card, category, date, image, images, noImage, title, url) {;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
+url = url || card.url
+;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
+pug_html = pug_html + "\u003Carticle class=\"content-card--small container\"\u003E";
+;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + " ";
-;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
+;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
-;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-pug_html = pug_html + "\u003Ca" + (" class=\"content-card--large__link col-xs-12\""+pug_attr("href", url, true, false)) + "\u003E";
-;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
+;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
+pug_html = pug_html + "\u003Ca" + (" class=\"img-container col-xs-4 col-sm-12\""+pug_attr("href", url, true, false)) + "\u003E";
+;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
+pug_html = pug_html + " ";
+;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+images = images || card.images
+;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 if (images) {
-;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
+;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
 pug_html = pug_html + "\u003Cpicture\u003E";
-;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Csource" + (pug_attr("type", images.xs.mimeType, true, false)+pug_attr("srcset", images.xs.url, true, false)+" media=\"(max-width: 479px)\"") + "\u002F\u003E";
-;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", title, true, false)+pug_attr("title", title, true, false)+pug_attr("srcset", images.sm.url, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+pug_html = pug_html + "\u003Csource" + (pug_attr("type", images.xs.mimeType, true, false)+pug_attr("srcset", images.xs.url, true, false)+" media=\"(max-width: 480px)\"") + "\u002F\u003E";
+;pug_debug_line = 9;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fsmall_card_image.pug";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("src", images.sm.url, true, false)+pug_attr("alt", images.altText, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
@@ -31,8 +37,8 @@ pug_html = pug_html + "\u003Csource" + (pug_attr("srcset", noImage.sm.url, true,
 pug_html = pug_html + "\u003Cimg" + (pug_attr("src", noImage.lg.url, true, false)+pug_attr("alt", image.altText, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
-;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"content-card--large__info col-xs-12\"\u003E";
+;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fsmall_content_card\u002Fsmall_content_card.pug";
+pug_html = pug_html + "\u003Cdiv class=\"content-card--small__info col-xs-8 col-sm-12\"\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";
 title = title || card.title
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Ftitle.pug";

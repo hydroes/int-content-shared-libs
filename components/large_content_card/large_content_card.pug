@@ -1,27 +1,7 @@
--	
-	var primarySyndicate = window.bauerSharedLibs.pug.helpers.primarySyndicate
-	var link = window.bauerSharedLibs.pug.helpers.link
-
-	var primarySyndicateData = {
-		channel: settings.channel,
-		urls: data.syndicateUrls
-	}
-
-	var linkData = {
-		article: data, 
-		channel: settings.channel
-	}
-article
-	.large-content-card
-		if (data.primarySyndicatePosition != '')
-			a.large-content-card__link(href=primarySyndicate(primarySyndicateData))
-				include ../partials/large_card_image.pug
-			.large-content-card__info
-				include ../partials/title.pug
-				include ../partials/syndicate_time.pug
-		else
-			a.large-content-card__link(href=link(linkData))
-				include ../partials/large_card_image.pug
-			.large-content-card__info
-				include ../partials/title.pug
-				include ../partials/syndicate_time.pug
+article.content-card--large.container 
+  .row
+    a.content-card--large__link.col-xs-12(href=url)
+      include ../partials/large_card_image.pug
+    .content-card--large__info.col-xs-12
+      include ../partials/title.pug
+      include ../partials/card_date_time.pug
