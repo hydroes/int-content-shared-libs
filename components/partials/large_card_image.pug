@@ -1,7 +1,7 @@
 if images
-	picture
-		source(type=images.xs.mimeType, srcset=images.xs.url, media='(max-width: 479px)')
+  picture
+    source(type=images.xs.mimeType, srcset=images.xs.url, media='(max-width: 479px)')
 
-		img(alt=title, title=title, srcset=images.sm.url)
+    img(alt=title, title=title, srcset=images.sm.url)
 else
-	include card_no_image.pug
+  include card_no_image.pug
