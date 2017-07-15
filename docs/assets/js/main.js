@@ -1,10 +1,11 @@
 'use strict'
+/* global jQuery, getSmallCardJSON, getLargeCardJSON */
 window.jQuery.noConflict()
 var components = {
   'config': {
     'callback': function (jqxhr, componentName) {
       components[componentName]['dataStatus'] = jqxhr.status
-      //TODO Change this to iteration... - as this will get bigger
+      // TODO Change this to iteration... - as this will get bigger
       if (components.smallCard.dataStatus && components.largeCard.dataStatus) {
         jQuery('.content-card-collection-1').matchHeight()
       }
@@ -19,7 +20,7 @@ var components = {
 }
 
 jQuery.when(getSmallCardJSON(), getLargeCardJSON()).done(function (smallCardData, largeCardData) {
-  var pug = window.bauerSharedLibs.pug;
+  var pug = window.bauerSharedLibs.pug
   pug.render('large_content_card/large_content_card.pug', largeCardData[0], '.large-content-card').done(function (script, textStatus, jqxhr) {
     components.config.callback(jqxhr, 'largeCard')
   })
