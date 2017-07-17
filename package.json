@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
+  "engines": {
+    "node": ">=v7.10.0"
+  },
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery-match-height": "^0.7.2",
@@ -18,6 +21,8 @@
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
+    "chromedriver": "^2.30.1",
+    "cucumber": "^2.3.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
@@ -26,6 +31,8 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
+    "nightwatch": "^0.9.16",
+    "nightwatch-cucumber": "^7.1.10",
     "precommit-hook": "^3.0.0",
     "pug-lint": "^2.4.0",
     "standard": "^9.0.1",
@@ -64,12 +71,12 @@
     "validate-js-standard": "standard",
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
-    "validate": "npm ls"
+    "validate": "npm ls",
+    "e2e-tests": "nightwatch"
   },
   "standard": {
     "ignore": [
-      "dist/**",
-      "docs/**",
+      "docs/dist/**",
       "components/shared/sass/bootstrap-sass-3.3.7"
     ]
   },
