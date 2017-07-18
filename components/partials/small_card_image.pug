@@ -1,14 +1,13 @@
-- images = images || card.images
-if images
+if data.images
   picture
     source(
-      type=images.xs.mimeType
-      srcset=images.xs.url
+      type=data.images.xs.mimeType
+      srcset=data.images.xs.url
       media='(max-width: 480px)'
     )
     img(
-      src=images.sm.url
-      alt=images.altText
+      src=data.images.sm.url
+      alt=data.images.altText
     )
 else
   include card_no_image

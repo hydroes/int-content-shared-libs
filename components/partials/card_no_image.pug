@@ -1,13 +1,13 @@
 picture.missing-image.brand-background-color(
   style={
-    'background-image' : 'url('+noImage.sm.url+')'
+    'background-image' : 'url('+data.noImage.sm.url+')'
     }
 )
   source(
-    srcset=noImage.sm.url
+    srcset=data.noImage.sm.url
     media='(max-width: 439px)'
   )
   img(
-    src=noImage.lg.url
-    alt=image.altText
+    src=data.noImage.lg.url
+    alt=data.images.altText
   )

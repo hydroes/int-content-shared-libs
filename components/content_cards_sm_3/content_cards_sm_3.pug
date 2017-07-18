@@ -1,5 +1,6 @@
-- let cards = locals
+include ../mixins/smallContentCard.pug
+- let items = data
   .row
-    each card in cards
+    each item in items
       .col.sm-6.col-md-4
-        include ../small_content_card/small_content_card.pug
+        +smallContentCard(item)
