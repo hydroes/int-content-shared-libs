@@ -26,7 +26,7 @@ pug_html = pug_html + "\u003Cpicture" + (" class=\"missing-image brand-backgroun
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
 pug_html = pug_html + "\u003Csource" + (pug_attr("srcset", data.noImage.sm.url, true, false)+" media=\"(max-width: 439px)\"") + "\u002F\u003E";
 ;pug_debug_line = 10;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("src", data.noImage.lg.url, true, false)+pug_attr("alt", data.images.altText, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("src", data.noImage.lg.url, true, false)+pug_attr("alt", data.title, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 pug_html = pug_html + "\u003C\u002Fa\u003E";
 ;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Flarge_content_card\u002Flarge_content_card.pug";
