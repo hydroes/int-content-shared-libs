@@ -8,7 +8,7 @@ const category = '.large-content-card .content-card--large__info a.brand-color'
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view a large card', () => {
     return client.url('http://localhost:3000')
-      .waitForElementVisible('#bauer-web-component-test-btn', 1000)
+      .waitForElementVisible('.large-content-card', 1000)
   })
 
   Then(/^the small image url is "([^"]*)"$/, (url) => {
@@ -39,7 +39,7 @@ defineSupportCode(({Given, Then, When}) => {
     return client.expect.element(category).text.to.equal(text)
   })
 
-  Then(/^the date is "([^"]*)"$/, (text) => {
-    return client.expect.element('.large-content-card .content-card--large__info span.hidden-xs.modified-container').text.to.equal(text)
+  Then(/^the date is "([^"]*)" and "([^"]*)"$/, (text, date) => {
+    return client.expect.element('.large-content-card .content-card--large__info span.hidden-xs.modified-container').text.to.equal(text + date)
   })
 })

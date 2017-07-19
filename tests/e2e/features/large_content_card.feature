@@ -10,4 +10,4 @@ Scenario: Shows Large Card Component In Browser
   And the title link is "http://www.google.com"
   And the category url is "http://www.bbc.co.uk"
   And the category name is "Gossip"
-  And the date is "Gossip17 minutes ago"
+  And the date is "Gossip" and "17 minutes ago"
