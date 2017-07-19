@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/nvm/0.33.2/versions/node/v7.7.3/bin/node',
+1 verbose cli   '/usr/local/opt/nvm/versions/node/v7.7.3/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'e2e-tests' ]
+2 info using npm@4.1.2
+3 info using node@v7.7.3
+4 verbose run-script [ 'pree2e-tests', 'e2e-tests', 'poste2e-tests' ]
+5 info lifecycle bauer-shared-web-components@0.2.9~pree2e-tests: bauer-shared-web-components@0.2.9
+6 silly lifecycle bauer-shared-web-components@0.2.9~pree2e-tests: no script for pree2e-tests, continuing
+7 info lifecycle bauer-shared-web-components@0.2.9~e2e-tests: bauer-shared-web-components@0.2.9
+8 verbose lifecycle bauer-shared-web-components@0.2.9~e2e-tests: unsafe-perm in lifecycle true
+9 verbose lifecycle bauer-shared-web-components@0.2.9~e2e-tests: PATH: /usr/local/Cellar/nvm/0.33.2/versions/node/v7.7.3/lib/node_modules/npm/bin/node-gyp-bin:/Users/joegasewiczadmin/Documents/work/shared-components/node_modules/.bin:/usr/local/opt/nvm/versions/node/v7.7.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle bauer-shared-web-components@0.2.9~e2e-tests: CWD: /Users/joegasewiczadmin/Documents/work/shared-components
+11 silly lifecycle bauer-shared-web-components@0.2.9~e2e-tests: Args: [ '-c', 'nightwatch' ]
+12 silly lifecycle bauer-shared-web-components@0.2.9~e2e-tests: Returned: code: 1  signal: null
+13 info lifecycle bauer-shared-web-components@0.2.9~e2e-tests: Failed to exec e2e-tests script
+14 verbose stack Error: bauer-shared-web-components@0.2.9 e2e-tests: `nightwatch`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/Cellar/nvm/0.33.2/versions/node/v7.7.3/lib/node_modules/npm/lib/utils/lifecycle.js:279:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:194:7)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/Cellar/nvm/0.33.2/versions/node/v7.7.3/lib/node_modules/npm/lib/utils/spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:194:7)
+14 verbose stack     at maybeClose (internal/child_process.js:899:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+15 verbose pkgid bauer-shared-web-components@0.2.9
+16 verbose cwd /Users/joegasewiczadmin/Documents/work/shared-components
+17 error Darwin 16.6.0
+18 error argv "/usr/local/Cellar/nvm/0.33.2/versions/node/v7.7.3/bin/node" "/usr/local/opt/nvm/versions/node/v7.7.3/bin/npm" "run" "e2e-tests"
+19 error node v7.7.3
+20 error npm  v4.1.2
+21 error code ELIFECYCLE
+22 error bauer-shared-web-components@0.2.9 e2e-tests: `nightwatch`
+22 error Exit status 1
+23 error Failed at the bauer-shared-web-components@0.2.9 e2e-tests script 'nightwatch'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the bauer-shared-web-components package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     nightwatch
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs bauer-shared-web-components
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls bauer-shared-web-components
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
