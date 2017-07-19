@@ -11,5 +11,9 @@ module.exports = {
   after: function (done) {
     chromedriver.stop()
     done()
+  },
+
+  getComponentsPageUrl: function () {
+    return 'http://localhost:3000'
   }
 }

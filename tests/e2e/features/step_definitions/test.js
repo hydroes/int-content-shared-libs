@@ -3,7 +3,7 @@ const {defineSupportCode} = require('cucumber')
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page', () => {
-    return client.url('http://localhost:3000')
+    return client.url(client.globals.getComponentsPageUrl())
       .waitForElementVisible('#bauer-web-component-test-btn', 1000)
   })
 
