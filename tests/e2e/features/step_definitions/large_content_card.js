@@ -11,10 +11,6 @@ defineSupportCode(({Given, Then, When}) => {
       .waitForElementVisible('.large-content-card', 1000)
   })
 
-  Then(/^the small image url is "([^"]*)"$/, (url) => {
-    return client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
-  })
-
   Then(/^the large image url is "([^"]*)"$/, (url) => {
     return client.expect.element(imgAttr + ' img').to.have.attribute('srcset').which.contains(url)
   })
@@ -39,7 +35,18 @@ defineSupportCode(({Given, Then, When}) => {
     return client.expect.element(category).text.to.equal(text)
   })
 
-  Then(/^the date is "([^"]*)" and "([^"]*)"$/, (text, date) => {
-    return client.expect.element('.large-content-card .content-card--large__info span.hidden-xs.modified-container').text.to.equal(text + date)
+  Then(/^the category name is "([^"]*)" and the date is "([^"]*)"$/, (cat, date) => {
+    return client.expect.element('.large-content-card .content-card--large__info span.hidden-xs.modified-container').text.to.equal(cat + date)
+  })
+
+  Given(/^I open the shared components page to view a large card in a mobile viewport of "([^"]*)" width and "([^"]*)" height$/, (width, height) => {
+    return client
+            .url('http://localhost:3000')
+            .resizeWindow(width, height)
+            .waitForElementVisible('.large-content-card', 1000)
+  })
+
+  Then(/^the mobile view small image url is "([^"]*)"$/, (url) => {
+    return client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
   })
 })
