@@ -1,6 +1,7 @@
 include ../mixins/smallContentCard
 include ../mixins/largeContentCard
-.col-md-6
-  +largeContentCard(data.large)
-.col-md-6.col-md-4.col-xl-3
-  +smallContentCard(data.small)
+.row
+  .col-sm-8.col-xl-6.large-narrow
+    +largeContentCard(data.large)
+  .col-sm-4.col-xl-3.large-narrow
+    +smallContentCard(data.small)

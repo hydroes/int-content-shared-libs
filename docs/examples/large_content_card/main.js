@@ -1,5 +1,5 @@
 'use strict'
-/* global jQuery */
-function getLargeCardJSON () { // eslint-disable-line
-  return jQuery.getJSON('examples/large_content_card/large_content_card.json')
-}
+/* global */
+window.jQuery.getJSON('examples/large_content_card/large_content_card.json', function (data) {
+  window.bauerSharedLibs.pug.render('large_content_card/large_content_card.pug', data, '.large-content-card')
+})
