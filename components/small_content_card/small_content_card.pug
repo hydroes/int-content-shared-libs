@@ -1,7 +1,2 @@
-article.content-card--small.container
-  .row
-    a.img-container.col-xs-4.col-sm-12(href=data.url)
-      include ../partials/small_card_image
-    .content-card--small__info.col-xs-8.col-sm-12
-      include ../partials/title
-      include ../partials/card_date_time
+include ../mixins/smallContentCard
++smallContentCard(data)

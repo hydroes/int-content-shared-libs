@@ -62,7 +62,7 @@ body {
 .style-guide__item {
   margin-bottom: 1rem;
   border: 0.0625rem solid #DEE2E6;
-  padding: 2rem;
+  padding: 0.6rem;
   border-radius: 0.25rem;
   background-color: white; }
   .style-guide__item__label h2 {
@@ -104,5 +104,7 @@ body {
   background-image: url("desktop.svg"); }
 
 @media screen and (min-width: 480px) {
+  .style-guide__item {
+    padding: 2rem; }
   .navbar-collapse.in, .navbar-collapse.collapsing {
     background-color: #223B70; } }

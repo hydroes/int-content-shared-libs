@@ -1,16 +1,13 @@
 .content-card--large
 {
-	@extend %content-card;
+	max-width: rem-calc(900);
 	&__info
 	{
 		height: rem-calc(142);
 	}
-	&__info,&__link {
-        padding: 0;
-    }
 	.modified-container
 	{
 		position: absolute;
-    	bottom: 0;
+		bottom: 0;
 	}
 }

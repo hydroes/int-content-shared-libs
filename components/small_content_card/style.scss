@@ -1,12 +1,24 @@
-
 .content-card--small {
-    @extend %content-card;
-    .img-container {
-        padding: 0;
-    }
-    &__info {
-        height: inherit;
-        overflow: hidden;
-        padding: 0;
+  max-width: rem-calc(450);
+  &__info {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+    .content-card--small {
+        .row {
+            height: initial !important;
+
+            //to override any jQuery.matchHeight stylings
+       
+        }
     }
 }
