@@ -5,3 +5,8 @@ include ../mixins/largeContentCard
     +largeContentCard(data.large)
   .col-sm-4.col-xl-3.large-narrow
     +smallContentCard(data.small)
+
+-
+  setTimeout(function() {
+    window.bauerSharedLibs.components.content_cards_lg_and_nw()
+  }, 0)
