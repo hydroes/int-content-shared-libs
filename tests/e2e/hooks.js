@@ -9,7 +9,6 @@ defineSupportCode(function ({After, Before}) {
     client.resizeWindow(700, 940)
   })
 
-  // You can use the following shorthand when only specifying tags
   Before('@desktop', function () {
     client.resizeWindow(993, 940)
   })
