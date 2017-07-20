@@ -5,6 +5,9 @@ const nightwatchCucumberConf = {
   closeSession: 'afterFeature',
   'test_workers': true,
   cucumberArgs: [
+    '--require', './tests/e2e/hooks.js',
+    '--require',
+    './tests/e2e/features/step_definitions',
     './tests/e2e/features'
   ]
 }
