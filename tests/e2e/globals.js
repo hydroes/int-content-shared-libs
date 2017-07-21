@@ -12,9 +12,22 @@ module.exports = {
     chromedriver.stop()
     done()
   },
-
+  removeProtocolFromUrl: function (url) {
+    let protocolIndex = url.indexOf('//')
+    if (protocolIndex > 0) {
+      return url.slice(protocolIndex, url.length)// remove whatever protocol exists from url
+    }
+    return url
+  },
   getComponentsPageUrl: function () {
     return 'http://localhost:3000'
+  },
+  getPageTimeout: function () {
+    return 3000
+  },
+  goToComponentPage: function (client, awaitedElement) {
+    client.url(client.globals.getComponentsPageUrl())
+      .waitForElementVisible(awaitedElement, client.globals.getPageTimeout())
   },
   mobile: {
     width: 375,

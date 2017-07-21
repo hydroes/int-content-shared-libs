@@ -3,18 +3,15 @@ const { defineSupportCode } = require('cucumber')
 const smallCard = {
   container: '.content-card--small',
   info: '.content-card--small .content-card--small__info',
-  picture: '.content-card--small .img-container > picture'
+  picture: '.content-card--small .content-card__link > picture'
 }
 
-const home = client.globals.getComponentsPageUrl()
 defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page locally', () => {
-    client.resizeWindow(2000, 1200) //  ensure desktop size
-    return client.url(home)
-      .waitForElementVisible(smallCard.container, 3000)
+    return client.globals.goToComponentPage(client, smallCard.container)
   })
   Then(/^the card has a title text of "([^"]*)"$/, (text) => {
-    return client.expect.element(smallCard.info + ' .title a').text.to.equal(text)
+    return client.expect.element(smallCard.info + ':first-of-type .title a').text.to.equal(text)
   })
 
   Then(/^the card has a date-time of "([^"]*)" and a category of "([^"]*)"$/, (date, category) => {
@@ -23,7 +20,7 @@ defineSupportCode(({ Given, Then, When }) => {
 
   Then(/^the card has images displayed correctly with from cdn host "([^"]*)"$/, (host) => {
     let expect = client.expect.element
-    return expect(smallCard.picture + ' img').to.have.attribute('src').which.contains(host) &&
-     expect(smallCard.picture + ' source').to.have.attribute('srcset').which.contains(host)
+    return expect(smallCard.picture + ' img').to.have.attribute('src').which.contains(client.globals.removeProtocolFromUrl(host)) &&
+      expect(smallCard.picture + ' source').to.have.attribute('srcset').which.contains(client.globals.removeProtocolFromUrl(host))
   })
 })
