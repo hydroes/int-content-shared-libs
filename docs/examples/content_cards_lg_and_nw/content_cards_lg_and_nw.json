@@ -3,27 +3,27 @@
     "small": {
       "images": {
         "xs": {
-          "url": "http://via.placeholder.com/240x240",
+          "url": "//via.placeholder.com/240x240",
           "mimeType": "image/jpeg"
         },
         "sm": {
-          "url": "http://via.placeholder.com/450x236",
+          "url": "//via.placeholder.com/450x236",
           "mimeType": "image/jpeg"
         },
         "altText": "lorem ipsum dolor sit amet"
       },
       "noImage": {
         "sm": {
-          "url": "http://via.placeholder.com/240x240"
+          "url": "//via.placeholder.com/240x240"
         },
         "lg": {
-          "url": "http://via.placeholder.com/450x236"
+          "url": "//via.placeholder.com/450x236"
         }
       },
-      "url": "https://planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",
+      "url": "//planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",
       "title": "We asked the Top Gear narrator everything you want to know about cars in general.",
       "category": {
-        "url": "https://planetradio.co.uk/kiss/entertainment/television/",
+        "url": "//planetradio.co.uk/kiss/entertainment/television/",
         "name": "TV"
       },
       "date": "17 minutes ago"
@@ -31,27 +31,27 @@
     "large": {
       "images": {
         "xs": {
-          "url": "http://via.placeholder.com/350x150",
+          "url": "//via.placeholder.com/350x150",
           "mimeType": "image/png"
         },
         "sm": {
-          "url": "http://via.placeholder.com/900x350",
+          "url": "//via.placeholder.com/900x350",
           "mimeType": "image/png"
         },
         "altText": "lorem ipsum dolor sit amet"
       },
       "noImage": {
         "sm": {
-          "url": "http://via.placeholder.com/350"
+          "url": "//via.placeholder.com/350"
         },
         "lg": {
-          "url": "http://via.placeholder.com/900x350"
+          "url": "//via.placeholder.com/900x350"
         }
       },
-      "url": "http://www.google.com",
+      "url": "//www.google.com",
       "title": "We asked the Love Island narrator everything you want to know about the show",
       "category": {
-        "url": "http://www.bbc.co.uk",
+        "url": "//www.bbc.co.uk",
         "name": "Gossip"
       },
       "date": "17 minutes ago"

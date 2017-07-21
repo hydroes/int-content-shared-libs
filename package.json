@@ -72,7 +72,7 @@
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate": "npm ls",
-    "e2e-tests": "nightwatch"
+    "e2e-tests": "nightwatch --tag desktop; nightwatch --tag mobile; nightwatch --tag tablet"
   },
   "standard": {
     "ignore": [

@@ -2,27 +2,27 @@
     "data": {
         "images": {
             "xs": {
-                "url": "http://via.placeholder.com/240x240",
+                "url": "//via.placeholder.com/240x240",
                 "mimeType": "image/jpeg"
             },
             "sm": {
-                "url": "http://via.placeholder.com/450x236",
+                "url": "//via.placeholder.com/450x236",
                 "mimeType": "image/jpeg"
             },
             "altText": "lorem ipsum dolor sit amet"
         },
         "noImage": {
             "sm": {
-                "url": "http://via.placeholder.com/240x240"
+                "url": "//via.placeholder.com/240x240"
             },
             "lg": {
-                "url": "http://via.placeholder.com/450x236"
+                "url": "//via.placeholder.com/450x236"
             }
         },
-        "url": "https://planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",
+        "url": "//planetradio.co.uk/kiss/entertainment/television/asked-love-island-narrator-everything-want-know-show/",
         "title": "We asked the Love Island narrator everything you want to know about the show",
         "category": {
-            "url": "https://planetradio.co.uk/kiss/entertainment/television/",
+            "url": "//planetradio.co.uk/kiss/entertainment/television/",
             "name": "TV"
         },
         "date": "17 minutes ago"
