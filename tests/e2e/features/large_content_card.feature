@@ -1,5 +1,6 @@
 Feature: Large Content Card
 
+@desktop
 Scenario: Shows Large Card Component In Browser
 
   Given I open the shared components page to view a large card
