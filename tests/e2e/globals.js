@@ -15,5 +15,17 @@ module.exports = {
 
   getComponentsPageUrl: function () {
     return 'http://localhost:3000'
+  },
+  mobile: {
+    width: 375,
+    height: 667
+  },
+  tablet: {
+    width: 700,
+    height: 940
+  },
+  desktop: {
+    width: 993,
+    height: 940
   }
 }

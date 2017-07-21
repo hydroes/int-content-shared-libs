@@ -1,6 +1,6 @@
 Feature: Test button
 
-@phone
+@mobile
 Scenario: Clicking button
 
   Given I open the shared components page
