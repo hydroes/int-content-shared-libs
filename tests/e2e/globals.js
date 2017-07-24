@@ -23,7 +23,7 @@ module.exports = {
     return 'http://localhost:3000'
   },
   getPageTimeout: function () {
-    return 3000
+    return 10000
   },
   goToComponentPage: function (client, awaitedElement) {
     client.url(client.globals.getComponentsPageUrl())

@@ -10,8 +10,31 @@ const pagination = {
   currentPage: '.pagination > li a.pagination__link--active'
 }
 
-defineSupportCode(({ Given, Then, When }) => {
+// function goToPaginationTab (returnHome) {
+//   if (!returnHome) {
+//     client.windowHandles((result) => {
+//       if (result.value.length > 1) {
+//         let handle = result.value[1]
+//         client.switchWindow(handle)
+//       } else {
+//         client.execute((url, title) => {
+//           window.open(url, title).resizeWindow(client.width, client.height)
+//         }, ['#', 'Pagination Test'])
+//       }
+//     })
+//   } else {
+//     client.windowHandles((result) => {
+//       let homeTab = result.value[0]
+//       client.switchWindow(homeTab)
+//     })
+//   }
+// }
+
+defineSupportCode(({ Given, Then, When}) => {
   Given('I open the shared components page, to view pagination', () => {
+    if (client.url !== client.globals.getComponentsPageUrl()) {
+      client.globals.goToComponentPage(client, pagination.container)
+    }
     return client.globals.goToComponentPage(client, pagination.container)
   })
   Then(/^the first page button is ([0-9]+)/, (page) => {
@@ -37,17 +60,42 @@ defineSupportCode(({ Given, Then, When }) => {
     if (slug.charAt(lastChar) !== slash) {
       slug = slug + slash
     }
-
+    console.log('helloooo')
     //  function to check link of each pagination element so that it has the path with page number
-    function checkLink (elements, slug) {
-      elements.value.forEach(function (pageElement) {
-        let pageNumber = pageElement.text
-        if (!client.expect.element(pageElement).to.have.attribute('href').to.equal(slug + pageNumber)) {
-          return false
-        }
+    // function checkLink(elements) {
+    //   elements.value.forEach(function (item) {
+    //     console.log('HIII', item['ELEMENT'].value)
+    //     let pageNumber = pageElement.text
+    //     let isValid = client.expect.element(pageElement).to.have.attribute('href').to.equal(slug + pageNumber)
+    //     console.log('efsrdfghrtewqrthgj', isValid)
+    //     if (!isValid) {
+    //       return isValid
+    //     }
+    //   })
+    //   return true
+    // }
+
+    function checkLink (elements) {
+      //  get element values.
+      elements.value.forEach((value, key) => {
+        let elementId = value['ELEMENT']
+        //  get element attributes
+        client.elementIdAttribute(elementId, 'href', (elementInfo) => {
+          let href = elementInfo['value']
+          if (href.indexOf(client.url)) {
+            console.log(href)
+          }
+        })
       })
-      return true
     }
-    client.elements('css selector', pagination.allLinks, checkLink)
+    client.elements('css selector', pagination.allLinks, (elements) => {
+      checkLink(elements)
+    })
+    return !client
+    // console.log(client.findElements(pagination.allLinks), 'LOOO')
   })
+
+  // Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path) => {
+  //   return
+  // })
 })
