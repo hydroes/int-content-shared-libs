@@ -32,9 +32,6 @@ def execute_build() {
         def docker_registry_url = "https://841059140795.dkr.ecr.eu-west-1.amazonaws.com/"
         def docker_credentials_id = "ecr:eu-west-1:container.citools.pushpull"
         def git_credentials_id = "82874f36-94f6-4ce9-ba23-7b11c3532e24"
-        def kube_slave = "841059140795.dkr.ecr.eu-west-1.amazonaws.com/jenkins-slave-kube:1.0.0"
-        def kube_credentials = "752715f9-b784-4fd7-b359-f51ac3462c54"
-        def kube_server_url = "https://api.kubernetes-content.bauerxcel.tech"
 
         stages {
 
@@ -75,12 +72,13 @@ def execute_build() {
                 }
             }
 
-            stage('Deploy') {
-                steps{
-                    echo "Deploying"
-                    docker.image("${kube_slave}").inside {
-                            checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[credentialsId: "${git_credentials_id}", url: "${env.GIT_URL}"]], branches: [[name: "${env.BRANCH_NAME}"]]], poll: false
-                            wrap([$class: 'KubectlBuildWrapper', caCertificate: '', credentialsId: "${kube_credentials}", serverUrl: "${kube_server_url}"]) {
+            node('kubectl') {
+                stage('Deploy') {
+                    steps{
+                        echo "Deploying"
+
+                        checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[credentialsId: "${git_credentials_id}", url: "${env.GIT_URL}"]], branches: [[name: "${env.BRANCH_NAME}"]]], poll: false
+                        wrap([$class: 'KubectlBuildWrapper', caCertificate: '', credentialsId: "${kube_credentials}", serverUrl: "${kube_server_url}"]) {
                             sh "cat build/remote/web-deployment-svc-ing-hpa.template.yaml | sed 's/#IMAGE_TAG#/${docker_image_tag}/; s/#IMAGE_NAME#/${container_name}/; s/#KUBE_NAME#/${kube_name}/; s/#MIN_REPLICAS#/${env.MIN_REPLICAS}/; s/#MAX_REPLICAS#/${env.MAX_REPLICAS}/; s/#CONFIG_ENVIRONMENT#/${env.CONFIG_ENVIRONMENT}/; s/#HOST_NAME#/${host_name}/' | kubectl --namespace=${kubernetes_namespace} apply -f - "
                         }
                     }
