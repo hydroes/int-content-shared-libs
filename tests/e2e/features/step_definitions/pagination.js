@@ -1,5 +1,6 @@
 const { client } = require('nightwatch-cucumber')
 const { defineSupportCode } = require('cucumber')
+const assert = require('assert')
 const pagination = {
   container: '.pagination',
   allLinks: '.pagination > li a',
@@ -30,7 +31,7 @@ const pagination = {
 //   }
 // }
 
-defineSupportCode(({ Given, Then, When}) => {
+defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page, to view pagination', () => {
     if (client.url !== client.globals.getComponentsPageUrl()) {
       client.globals.goToComponentPage(client, pagination.container)
@@ -76,22 +77,38 @@ defineSupportCode(({ Given, Then, When}) => {
     // }
 
     function checkLink (elements) {
+      let text = ''
       //  get element values.
       elements.value.forEach((value, key) => {
         let elementId = value['ELEMENT']
         //  get element attributes
-        client.elementIdAttribute(elementId, 'href', (elementInfo) => {
+        client.elementIdText(elementId, (textInfo) => {
+          text = textInfo['value']
+        }).elementIdAttribute(elementId, 'href', (elementInfo) => {
           let href = elementInfo['value']
-          if (href.indexOf(client.url)) {
-            console.log(href)
+          let componentPage = client.globals.getComponentsPageUrl()
+          if (href.indexOf(componentPage) > -1) {
+            let relativeLink = href.replace(componentPage, '').split('/')
+            if (relativeLink.length === 1) {
+              let validOne = assert.equal(text, '1')
+              if (!validOne) {
+                return validOne
+              }
+            }
+            if (relativeLink.length === 2) {
+              let validElement = assert.equal(text, relativeLink[1].toString())
+              if (!validElement) {
+                return validElement
+              }
+            }
           }
+          return assert.notEqual(false, true)
         })
       })
     }
     client.elements('css selector', pagination.allLinks, (elements) => {
       checkLink(elements)
     })
-    return !client
     // console.log(client.findElements(pagination.allLinks), 'LOOO')
   })
 
