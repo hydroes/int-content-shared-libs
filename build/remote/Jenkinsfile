@@ -75,9 +75,9 @@ def execute_build() {
                 }
             }
 
-            node('kubectl') {
-                stage('Deploy') {
-                    steps{
+            stage('Deploy') {
+                steps{
+                    node('kubectl') {
                         echo "Deploying"
 
                         checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[credentialsId: "${git_credentials_id}", url: "${env.GIT_URL}"]], branches: [[name: "${env.BRANCH_NAME}"]]], poll: false
