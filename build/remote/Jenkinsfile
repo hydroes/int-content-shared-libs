@@ -77,13 +77,10 @@ def execute_build() {
 
             stage('Deploy') {
                 steps{
-                    node('kubectl') {
-                        echo "Deploying"
+                    echo "Deploying"
 
-                        checkout scm: [$class: 'GitSCM', userRemoteConfigs: [[credentialsId: "${git_credentials_id}", url: "${env.GIT_URL}"]], branches: [[name: "${env.BRANCH_NAME}"]]], poll: false
-                        wrap([$class: 'KubectlBuildWrapper', caCertificate: '', credentialsId: "${kube_credentials}", serverUrl: "${kube_server_url}"]) {
-                            sh "cat build/remote/web-deployment-svc-ing-hpa.template.yaml | sed 's/#IMAGE_TAG#/${docker_image_tag}/; s/#IMAGE_NAME#/${container_name}/; s/#KUBE_NAME#/${kube_name}/; s/#MIN_REPLICAS#/${env.MIN_REPLICAS}/; s/#MAX_REPLICAS#/${env.MAX_REPLICAS}/; s/#CONFIG_ENVIRONMENT#/${env.CONFIG_ENVIRONMENT}/; s/#HOST_NAME#/${host_name}/' | kubectl --namespace=${kubernetes_namespace} apply -f - "
-                        }
+                    wrap([$class: 'KubectlBuildWrapper', caCertificate: '', credentialsId: "${kube_credentials}", serverUrl: "${kube_server_url}"]) {
+                        sh "cat build/remote/web-deployment-svc-ing-hpa.template.yaml | sed 's/#IMAGE_TAG#/${docker_image_tag}/; s/#IMAGE_NAME#/${container_name}/; s/#KUBE_NAME#/${kube_name}/; s/#MIN_REPLICAS#/${env.MIN_REPLICAS}/; s/#MAX_REPLICAS#/${env.MAX_REPLICAS}/; s/#CONFIG_ENVIRONMENT#/${env.CONFIG_ENVIRONMENT}/; s/#HOST_NAME#/${host_name}/' | kubectl --namespace=${kubernetes_namespace} apply -f - "
                     }
                 }
             }
