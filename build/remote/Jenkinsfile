@@ -34,7 +34,7 @@ def execute_build() {
         def git_credentials_id = "82874f36-94f6-4ce9-ba23-7b11c3532e24"
         def kube_slave = "841059140795.dkr.ecr.eu-west-1.amazonaws.com/jenkins-slave-kube:1.0.0"
         def kube_credentials = "752715f9-b784-4fd7-b359-f51ac3462c54"
-        def kube_server_url = "https://api.kubernetes-content.bauerxcel.tech"
+        def kube_server_url = "https://kubernetes"
 
         stages {
 
