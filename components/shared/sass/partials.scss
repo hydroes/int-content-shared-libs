@@ -9,7 +9,7 @@ body {
     text-transform: none;
     color: $grey-color;
     white-space: nowrap;
-    padding: rem-calc(10) rem-calc(10) 0;
+    padding: rem-calc(10);
     @include text-overflow-hidden(nowrap, block);
     
     a {
