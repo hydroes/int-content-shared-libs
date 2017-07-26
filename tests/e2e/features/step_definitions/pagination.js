@@ -72,26 +72,22 @@ defineSupportCode(({ Given, Then, When }) => {
         let elementId = await value.ELEMENT // get nightwatch Element identifier Id
         if (!elementId) {
           assert(false, 'a pagination element doesn\'t exist')
-          return
         }
         //  get element attributes
         client.elementIdText(elementId, (textInfo) => {
           text = textInfo['value']
           if (!text) {
             assert(false, 'a pagination element doesn\'t have any text on the element')
-            return
           }
           client.elementIdAttribute(elementId, 'href', (elementInfo) => {
             let href = elementInfo['value']
             if (!href) {
               assert(false, 'a pagination element doesn\'t have a href/link attribute')
-              return
             }
             let relativeLink = path + text
             if (!href.endsWith(relativeLink, href.length)) {
               if (text !== '<' && text !== '>' && text !== '1') { // edge case for the first page, and naviagation
                 assert(false, 'first element doesn\'t have a valid nav element, a clue could be = "' + text + '"')
-                return
               }
             }
             assert(true) //  better to return assertion for callback
