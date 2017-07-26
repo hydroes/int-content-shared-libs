@@ -14,7 +14,7 @@ module.exports = {
   },
   removeProtocolFromUrl: function (url) {
     let protocolIndex = url.indexOf('//')
-    if (protocolIndex > 0) {
+    if (protocolIndex > -1) {
       return url.slice(protocolIndex, url.length)// remove whatever protocol exists from url
     }
     return url
