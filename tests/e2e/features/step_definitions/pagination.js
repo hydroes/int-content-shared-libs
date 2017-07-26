@@ -52,7 +52,6 @@ defineSupportCode(({ Given, Then, When }) => {
     return client.expect.element(pagination.lastPage).text.to.equal(total)
   })
   Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path) => {
-    let isValid = assert(false, 'pagination element doesn\'t exist on page')
     let slug = path
     let slash = '/'
     if (slug.charAt(0) !== slash) {
@@ -62,68 +61,43 @@ defineSupportCode(({ Given, Then, When }) => {
     if (slug.charAt(lastChar) !== slash) {
       slug = slug + slash
     }
-
+    client.elements('css selector', pagination.allLinks, elements => {
+      return checkLink(elements, slug)
+    })
     function checkLink (elements, path) {
       let text = ''
-      let isValid = assert(false, 'pagination element doesn\'t exist on page, during iteration')
       //  get element values.
-      elements.value.forEach((value, key) => {
-        let elementId = value['ELEMENT'] // get nightwatch Element identifier Id
+
+      elements.value.forEach(async (value, key) => {
+        let elementId = await value.ELEMENT // get nightwatch Element identifier Id
         if (!elementId) {
-          isValid.message = 'a pagination element doesn\'t exist'
+          assert(false, 'a pagination element doesn\'t exist')
           return
         }
         //  get element attributes
         client.elementIdText(elementId, (textInfo) => {
           text = textInfo['value']
           if (!text) {
-            isValid.message = 'a pagination element doesn\'t have any text on the element'
+            assert(false, 'a pagination element doesn\'t have any text on the element')
             return
           }
           client.elementIdAttribute(elementId, 'href', (elementInfo) => {
             let href = elementInfo['value']
             if (!href) {
-              isValid.message = 'a pagination element doesn\'t have a href/link attribute'
+              assert(false, 'a pagination element doesn\'t have a href/link attribute')
               return
             }
             let relativeLink = path + text
             if (!href.endsWith(relativeLink, href.length)) {
-              if (text === '1' && !href.endsWith(path, href.length)) { // edge case for the first page
-                isValid.message = 'first element doesn\'t have a valid element'
-                return
-              } else {
-                isValid.message = 'an element doesn\'t have a valid link: ' + relativeLink
+              if (text !== '<' && text !== '>' && text !== '1') { // edge case for the first page, and naviagation
+                assert(false, 'first element doesn\'t have a valid nav element, a clue could be = "' + text + '"')
                 return
               }
             }
-            // let componentPage = client.globals.getComponentsPageUrl()
-            // if (href.indexOf(componentPage) > -1) { //  then we'll make into a sort of 'relative link'
-            //   href = href.replace(componentPage, '')
-            // }
-            // href = href.split('/')
-            // if (href.length === 2) {
-            //   let validElement = assert.equal(text, href[1].toString())
-            //   if (!validElement) {
-            //     return
-            //   }
-            // } else {
-            //   if (href.length === 1) {
-            //     let validText = assert.equal(text, '1')
-            //     if (!validText) {
-            //       return
-            //     }
-            //   }
-            //   return
-            // }
-            isValid = assert(true) //  better to return assertion for callback
+            assert(true) //  better to return assertion for callback
           })
         })
       })
-      return isValid
     }
-    client.elements('css selector', pagination.allLinks, (elements) => {
-      isValid = checkLink(elements, slug)
-      return isValid
-    })
   })
 })
