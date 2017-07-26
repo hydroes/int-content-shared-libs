@@ -52,6 +52,7 @@ defineSupportCode(({ Given, Then, When }) => {
     return client.expect.element(pagination.lastPage).text.to.equal(total)
   })
   Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path) => {
+    let isValid = assert(false, 'pagination element doesn\'t exist on page')
     let slug = path
     let slash = '/'
     if (slug.charAt(0) !== slash) {
@@ -61,58 +62,68 @@ defineSupportCode(({ Given, Then, When }) => {
     if (slug.charAt(lastChar) !== slash) {
       slug = slug + slash
     }
-    console.log('helloooo')
-    //  function to check link of each pagination element so that it has the path with page number
-    // function checkLink(elements) {
-    //   elements.value.forEach(function (item) {
-    //     console.log('HIII', item['ELEMENT'].value)
-    //     let pageNumber = pageElement.text
-    //     let isValid = client.expect.element(pageElement).to.have.attribute('href').to.equal(slug + pageNumber)
-    //     console.log('efsrdfghrtewqrthgj', isValid)
-    //     if (!isValid) {
-    //       return isValid
-    //     }
-    //   })
-    //   return true
-    // }
 
-    function checkLink (elements) {
+    function checkLink(elements, path) {
       let text = ''
+      let isValid = assert(false, 'pagination element doesn\'t exist on page, during iteration')
       //  get element values.
       elements.value.forEach((value, key) => {
-        let elementId = value['ELEMENT']
+        let elementId = value['ELEMENT'] // get nightwatch Element identifier Id
+        if (!elementId) {
+          isValid.message = 'a pagination element doesn\'t exist'
+          return
+        }
         //  get element attributes
         client.elementIdText(elementId, (textInfo) => {
           text = textInfo['value']
-        }).elementIdAttribute(elementId, 'href', (elementInfo) => {
-          let href = elementInfo['value']
-          let componentPage = client.globals.getComponentsPageUrl()
-          if (href.indexOf(componentPage) > -1) {
-            let relativeLink = href.replace(componentPage, '').split('/')
-            if (relativeLink.length === 1) {
-              let validOne = assert.equal(text, '1')
-              if (!validOne) {
-                return validOne
-              }
-            }
-            if (relativeLink.length === 2) {
-              let validElement = assert.equal(text, relativeLink[1].toString())
-              if (!validElement) {
-                return validElement
-              }
-            }
+          if (!text) {
+            isValid.message = 'a pagination element doesn\'t have any text on the element'
+            return
           }
-          return assert.notEqual(false, true)
+          client.elementIdAttribute(elementId, 'href', (elementInfo) => {
+            let href = elementInfo['value']
+            if (!href) {
+              isValid.message = 'a pagination element doesn\'t have a href/link attribute'
+              return
+            }
+            let relativeLink = path + text
+            if (!href.endsWith(relativeLink, href.length)) {
+              if (text === '1' && !href.endsWith(path, href.length)) { // edge case for the first page
+                isValid.message = 'first element doesn\'t have a valid element'
+                return
+              } else {
+                isValid.message = 'an element doesn\'t have a valid link: ' + relativeLink
+                return
+              }
+            }
+            // let componentPage = client.globals.getComponentsPageUrl()
+            // if (href.indexOf(componentPage) > -1) { //  then we'll make into a sort of 'relative link'
+            //   href = href.replace(componentPage, '')
+            // }
+            // href = href.split('/')
+            // if (href.length === 2) {
+            //   let validElement = assert.equal(text, href[1].toString())
+            //   if (!validElement) {
+            //     return
+            //   }
+            // } else {
+            //   if (href.length === 1) {
+            //     let validText = assert.equal(text, '1')
+            //     if (!validText) {
+            //       return
+            //     }
+            //   }
+            //   return
+            // }
+            isValid = assert(true) //  better to return assertion for callback
+          })
         })
       })
+      return isValid
     }
     client.elements('css selector', pagination.allLinks, (elements) => {
-      checkLink(elements)
+      isValid = checkLink(elements, slug)
+      return isValid
     })
-    // console.log(client.findElements(pagination.allLinks), 'LOOO')
   })
-
-  // Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path) => {
-  //   return
-  // })
 })
