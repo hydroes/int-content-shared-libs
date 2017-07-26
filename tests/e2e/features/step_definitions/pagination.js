@@ -63,7 +63,7 @@ defineSupportCode(({ Given, Then, When }) => {
       slug = slug + slash
     }
 
-    function checkLink(elements, path) {
+    function checkLink (elements, path) {
       let text = ''
       let isValid = assert(false, 'pagination element doesn\'t exist on page, during iteration')
       //  get element values.
