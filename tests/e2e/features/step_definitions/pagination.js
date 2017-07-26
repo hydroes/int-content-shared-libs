@@ -11,26 +11,6 @@ const pagination = {
   currentPage: '.pagination > li a.pagination__link--active'
 }
 
-// function goToPaginationTab (returnHome) {
-//   if (!returnHome) {
-//     client.windowHandles((result) => {
-//       if (result.value.length > 1) {
-//         let handle = result.value[1]
-//         client.switchWindow(handle)
-//       } else {
-//         client.execute((url, title) => {
-//           window.open(url, title).resizeWindow(client.width, client.height)
-//         }, ['#', 'Pagination Test'])
-//       }
-//     })
-//   } else {
-//     client.windowHandles((result) => {
-//       let homeTab = result.value[0]
-//       client.switchWindow(homeTab)
-//     })
-//   }
-// }
-
 defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page, to view pagination', () => {
     if (client.url !== client.globals.getComponentsPageUrl()) {
