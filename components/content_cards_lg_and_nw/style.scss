@@ -1,0 +1,13 @@
+@media screen and (min-width: $screen-md) {
+    .large-narrow {
+        .content-card--large {
+            &__info {
+                min-height: 45%;
+            }
+
+            &__link {
+                min-height: 55%;
+            }
+        }
+    }
+}
