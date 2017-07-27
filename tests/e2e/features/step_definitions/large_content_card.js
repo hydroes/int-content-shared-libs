@@ -1,18 +1,18 @@
 const { client } = require('nightwatch-cucumber')
 const { defineSupportCode } = require('cucumber')
 
-const imgAttr = '.large-content-card .content-card--large__link picture'
-const title = '.large-content-card .content-card--large__info span.title a'
-const category = '.large-content-card .content-card--large__info a.brand-color'
+const container = '.large-content-card'
+const imgAttr = container + ' .content-card--large__link picture'
+const title = container + ' .content-card--large__info span.title a'
+const category = container + ' .content-card--large__info a.brand-color'
 
-defineSupportCode(({Given, Then, When}) => {
+defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page to view a large card', () => {
-    return client.url('http://localhost:3000')
-      .waitForElementVisible('.large-content-card', 1000)
+    return client.globals.goToComponentPage(client, '.large-content-card')
   })
 
   Then(/^the large image url is "([^"]*)"$/, (url) => {
-    return client.expect.element(imgAttr + ' img').to.have.attribute('srcset').which.contains(url)
+    return client.expect.element(imgAttr + ' img').to.have.attribute('srcset').which.contains(client.globals.removeProtocolFromUrl(url))
   })
 
   Then(/^the alt text is "([^"]*)"$/, (alt) => {
@@ -39,14 +39,7 @@ defineSupportCode(({Given, Then, When}) => {
     return client.expect.element('.large-content-card .content-card--large__info span.hidden-xs.modified-container').text.to.equal(cat + date)
   })
 
-  Given(/^I open the shared components page to view a large card in a mobile viewport of "([^"]*)" width and "([^"]*)" height$/, (width, height) => {
-    return client
-            .url('http://localhost:3000')
-            .resizeWindow(width, height)
-            .waitForElementVisible('.large-content-card', 1000)
-  })
-
-  Then(/^the mobile view small image url is "([^"]*)"$/, (url) => {
-    return client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
+  Given(/^the shared components page is open in mobile view, the small image url is "([^"]*)"$/, (url) => {
+    return client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(client.globals.removeProtocolFromUrl(url))
   })
 })

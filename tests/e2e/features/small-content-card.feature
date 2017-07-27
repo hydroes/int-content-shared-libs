@@ -1,5 +1,6 @@
 # features/small-content-card.feature
 
+@desktop
 Feature: Small Content Card
 
 Scenario: Displaying small content card properly
