@@ -51,7 +51,7 @@ body {
   background-color: $black-color;
 }
 
-@media screen and (min-width: $screen-sm) {
+@include screen-sm-min {
   .title {
     font-size: rem-calc(18);
   }

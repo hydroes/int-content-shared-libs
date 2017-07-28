@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (min-width: $screen-sm) {
+@include screen-sm-min {
     .content-card--small {
         .row {
             height: initial !important;

@@ -1,0 +1,42 @@
+///== Bootstrap 3 Media Queries
+@mixin screen-xs {
+    @media only screen and (min-width: #{$screen-xs}) {
+        @content;
+    }
+}
+
+@mixin screen-sm-min {
+    @media only screen and (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin screen-md-min {
+    @media only screen and (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin screen-lg-min {
+    @media only screen and (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin screen-xl-min {
+    @media only screen and (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin screen-grid-float {
+    @media (min-width: $grid-float-breakpoint) {
+        @content;
+    }
+}
+
+@mixin screen-webkit-pixel-ratio {
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+      @content;
+    }
+}
