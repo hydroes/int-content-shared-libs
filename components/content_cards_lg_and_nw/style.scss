@@ -1,4 +1,4 @@
-@media screen and (min-width: $screen-md) {
+@media screen and (min-width: $screen-md) and (max-width: $screen-lg) {
     .large-narrow {
         .content-card--large {
             &__info {
