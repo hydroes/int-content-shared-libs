@@ -28,15 +28,3 @@
         @content;
     }
 }
-
-@mixin screen-grid-float {
-    @media (min-width: $grid-float-breakpoint) {
-        @content;
-    }
-}
-
-@mixin screen-webkit-pixel-ratio {
-    @media screen and (-webkit-min-device-pixel-ratio: 0) {
-      @content;
-    }
-}
