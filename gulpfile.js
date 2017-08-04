@@ -117,7 +117,11 @@ gulp.task('default',
     // Serve files from the root of this project
     browserSync.init({
       server: {
-        baseDir: './docs/'
+        baseDir: './docs/',
+        middleware: function (req, res, next) {
+          res.setHeader('Access-Control-Allow-Origin', '*')
+          next()
+        }
       }
     })
 
