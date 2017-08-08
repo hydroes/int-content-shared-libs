@@ -4,7 +4,7 @@ Feature: Large Content Card
 Scenario: Shows Large Card Component In Browser
 
   Given I open the shared components page to view a large card
-  And the large image url is "http://via.placeholder.com/900x350"
+  And the large image url is "//via.placeholder.com/900x350"
   And the alt text is "We asked the Love Island narrator everything you want to know about the show"
   And the title text is "We asked the Love Island narrator everything you want to know about the show"
   And the title link is "http://www.google.com"
@@ -13,4 +13,4 @@ Scenario: Shows Large Card Component In Browser
 
 @mobile
 Scenario: Shows Large Card Component In Mobile view
-  Given the shared components page is open in mobile view, the small image url is "http://via.placeholder.com/350x150"
+  Given the shared components page is open in mobile view, the small image url is "//via.placeholder.com/350x150"

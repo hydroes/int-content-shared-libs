@@ -12,26 +12,31 @@ const pagination = {
 }
 
 defineSupportCode(({ Given, Then, When }) => {
-  Given('I open the shared components page, to view pagination', () => {
+  Given('I open the shared components page, to view pagination', (done) => {
     if (client.url !== client.globals.getComponentsPageUrl()) {
       client.globals.goToComponentPage(client, pagination.container)
     }
-    return client.globals.goToComponentPage(client, pagination.container)
+    client.globals.goToComponentPage(client, pagination.container)
+    done()
   })
-  Then(/^the first page button is ([0-9]+)/, (page) => {
-    return client.expect.element(pagination.firstPage).text.to.equal(page)
+  Then(/^the first page button is ([0-9]+)/, (page, done) => {
+    client.expect.element(pagination.firstPage).text.to.equal(page)
+    done()
   })
-  Then(/^the current page is ([0-9]+)$/, (page) => {
-    return client.expect.element(pagination.currentPage).text.to.equal(page)
+  Then(/^the current page is ([0-9]+)$/, (page, done) => {
+    client.expect.element(pagination.currentPage).text.to.equal(page)
+    done()
   })
-  Then(/^as a result, the back button should go to ([0-9]+) and the next page button should go to ([0-9]+)$/, (previous, next) => {
-    return client.expect.element(pagination.previousNav).to.have.attribute('href').which.contains(previous) &&
+  Then(/^as a result, the back button should go to ([0-9]+) and the next page button should go to ([0-9]+)$/, (previous, next, done) => {
+    client.expect.element(pagination.previousNav).to.have.attribute('href').which.contains(previous) &&
       client.expect.element(pagination.nextNav).to.have.attribute('href').which.contains(next)
+    done()
   })
-  Then(/^the total amount of pages is ([0-9]+)$/, (total) => {
-    return client.expect.element(pagination.lastPage).text.to.equal(total)
+  Then(/^the total amount of pages is ([0-9]+)$/, (total, done) => {
+    client.expect.element(pagination.lastPage).text.to.equal(total)
+    done()
   })
-  Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path) => {
+  Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path, done) => {
     let slug = path
     let slash = '/'
     if (slug.charAt(0) !== slash) {
@@ -42,8 +47,9 @@ defineSupportCode(({ Given, Then, When }) => {
       slug = slug + slash
     }
     client.elements('css selector', pagination.allLinks, elements => {
-      return checkLink(elements, slug)
+      checkLink(elements, slug)
     })
+    done()
     function checkLink (elements, path) {
       let text = ''
       //  get element values.

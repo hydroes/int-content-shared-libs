@@ -1,0 +1,24 @@
+.embeds-ntr {
+	display: block;
+	clear: both;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	overflow-x: scroll !important;
+	width: 100%;
+	max-width: 100%;
+	min-height: 720px !important;
+	height: 720px !important;
+
+	iframe, object, embed {
+		position: absolute;
+		overflow: hidden !important;
+		overflow-x: scroll !important;
+		min-height: 720px !important;
+		height: 720px !important;
+		//outline: 1px solid red;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}

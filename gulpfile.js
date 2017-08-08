@@ -43,8 +43,7 @@ gulp.task('compile-pug-templates', function () {
       let methodName = filePath.slice(0, -4)
       let start = methodName.indexOf(dirname)
       methodName = methodName.substring(start + dirname.length)
-      methodName = methodName.replace('/', '_')
-
+      methodName = methodName.replace(/\//g, '_')
       let options = {
         'name': `${methodName}`
       }

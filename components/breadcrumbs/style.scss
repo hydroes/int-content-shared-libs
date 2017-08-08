@@ -1,0 +1,22 @@
+.breadcrumbs {
+  background-color: $white-color;
+  color: $black-color;
+  font-weight: $normal;
+  li {
+    font-size: rem-calc(12);
+    &+li::before {
+      content: "> ";
+      color: $black-color;
+      padding: 0px 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  &__link {
+    color: $black-color;
+    &--active {
+      color: $link-active-color;
+    }
+  }
+}

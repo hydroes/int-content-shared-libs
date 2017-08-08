@@ -1,0 +1,6 @@
+- let classNames = ""
+ol.breadcrumb.breadcrumbs
+  each param, index in data
+    li
+      if param.cssClass !== undefined && param.cssClass !== "" ? classNames = param.cssClass : classNames = ""
+      a(href=param.url class=`breadcrumbs__link ${classNames}`) #{param.path}

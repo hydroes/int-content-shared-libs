@@ -1,0 +1,7 @@
+- let altText = null
+- !data.altText ? altText = data.title : altText = data.altText
+picture.hero-image
+  source(media='max-width: 480px' srcset=data.image.path)
+  source(media='max-width: 768px' srcset=data.image.path)
+  img(src=data.image.path alt=altText title=altText)
+  span.hero-image__image-credit #{data.credits}
