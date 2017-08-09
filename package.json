@@ -1,4 +1,5 @@
 {
+  "version": "0.4.0",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -79,6 +80,5 @@
       "docs/dist/**",
       "components/shared/sass/bootstrap-sass-3.3.7"
     ]
-  },
-  "version": "0.3.0"
+  }
 }
