@@ -28,9 +28,6 @@ A component needs at a minimium to have 3 files within its folder:
 - style.scss (sass file)
 - pug template file named after the parent folder
 
-# usage of a shared component in a dadi web project:
-p=shared.template('test', {title: 'test button'})
-
 # commits must follow the following es standard:
 ([commit message standard]) https://github.com/willsoto/validate-commit/blob/master/conventions/eslint.md
 
