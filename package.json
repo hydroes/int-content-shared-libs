@@ -1,5 +1,5 @@
 {
-  "version": "0.4.4",
+  "version": "0.4.5",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -9,7 +9,7 @@
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
   "engines": {
-    "node": ">=v7.10.0"
+    "node": "=v6.11.1"
   },
   "dependencies": {
     "jquery": "^3.2.1",
