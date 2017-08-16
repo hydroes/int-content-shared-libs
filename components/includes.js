@@ -14,6 +14,3 @@ require('./embeds/engagesciences')()
 window.bauerSharedLibs = window.bauerSharedLibs || {}
 window.bauerSharedLibs.pug = require('./shared/js/pug/pug')
 window.bauerSharedLibs.version = require('../package').version
-window.bauerSharedLibs.components = {
-  content_cards_lg_and_nw: require('./content_cards_lg_and_nw')
-}

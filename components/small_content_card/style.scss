@@ -13,12 +13,13 @@
 }
 
 @include screen-sm-min {
-    .content-card--small {
-        .row {
-            height: initial !important;
-
-            //to override any jQuery.matchHeight stylings
-       
-        }
+  .content-card--large + .content-card--small,
+  * > .content-card--large + * > .content-card--small {
+    .row {
+      height: initial !important; //to override any jQuery.matchHeight stylings
     }
+  }
+  .content-card--small {
+    min-height: rem-calc(300);
+  }
 }
