@@ -1,15 +1,3 @@
 .content-card--small {
   max-width: rem-calc(450);
-  &__info {
-    height: rem-calc(140);
-  }
-}
-
-@include screen-sm-min {
-  .content-card--large + .content-card--small,
-  * > .content-card--large + * > .content-card--small {
-    .row {
-      height: initial !important; //to override any jQuery.matchHeight stylings
-    }
-  }
 }
