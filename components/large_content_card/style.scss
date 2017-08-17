@@ -1,13 +1,10 @@
-.content-card--large
-{
-	max-width: rem-calc(900);
-	&__info
-	{
-		height: rem-calc(140);
-	}
-	.modified-container
-	{
-		position: absolute;
-		bottom: 0;
-	}
+.content-card--large {
+  max-width: rem-calc(900);
+  &__info {
+    height: rem-calc(140);
+  }
+  .modified-container {
+    position: absolute;
+    bottom: 0;
+  }
 }
