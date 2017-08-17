@@ -1,11 +1,11 @@
-.content-card--small {
-  max-width: rem-calc(450);
-  &__info {
-    height: rem-calc(140);
-  }
-}
 
 @include screen-sm-min {
+  .content-card--small {
+    max-width: rem-calc(450);
+    &__info {
+      height: rem-calc(140);
+    }
+  }
   .content-card--large + .content-card--small,
   * > .content-card--large + * > .content-card--small {
     .row {

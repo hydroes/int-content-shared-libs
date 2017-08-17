@@ -1,29 +1,27 @@
 body {
-    font-family: "Gotham A","Gotham B","helvetica neue",arial,helvetica,sans-serif;
+  font-family: "Gotham A", "Gotham B", "helvetica neue", arial, helvetica, sans-serif;
 }
 
 .modified-container {
-    max-width: 100%;
-    font-size: rem-calc(12);
-    font-weight: 400;
-    text-transform: none;
-    color: $grey-color;
-    white-space: nowrap;
-    padding: rem-calc(10);
-    @include text-overflow-hidden(nowrap, block);
-    
-    a {
-      &:hover {
-        text-decoration: none;
-      }
-
-      &:after {
-        color: $grey-color;
-        content: " | ";
-        margin: 0.2rem;
-      }
+  max-width: 100%;
+  font-size: rem-calc(12);
+  font-weight: 400;
+  text-transform: none;
+  color: $grey-color;
+  white-space: nowrap;
+  padding: rem-calc(10);
+  @include text-overflow-hidden(nowrap, block);
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+    &:after {
+      color: $grey-color;
+      content: " | ";
+      margin: 0.2rem;
     }
   }
+}
 
 .title {
   @include text-overflow-hidden(normal, inline-block);
@@ -35,7 +33,6 @@ body {
     color: $black-color;
     display: inline-block;
     padding: 0;
-    
     &:hover {
       text-decoration: none;
     }
@@ -55,6 +52,22 @@ body {
   .title {
     font-size: rem-calc(18);
   }
+  .content-card {
+    &__info {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      padding: 0;
+      overflow: hidden;
+      .title {
+        height: 80%;
+      }
+      .modified-container {
+        height: 20%;
+        padding: 0 rem-calc(10);
+      }
+    }
+  }
 }
 
 .content-card {
@@ -64,7 +77,8 @@ body {
   padding: 0;
   box-shadow: $box-shadow-color rem-calc(1) rem-calc(1) rem-calc(2);
   background-color: $white-color;
-  &__info,&__link {
+  &__info,
+  &__link {
     padding: 0;
   }
   &__info {
@@ -85,8 +99,8 @@ body {
     height: 100%;
     margin: 0;
   }
-
   img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
