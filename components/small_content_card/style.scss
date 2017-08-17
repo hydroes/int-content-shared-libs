@@ -1,14 +1,7 @@
 .content-card--small {
   max-width: rem-calc(450);
   &__info {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
+    height: rem-calc(140);
   }
 }
 
@@ -18,8 +11,5 @@
     .row {
       height: initial !important; //to override any jQuery.matchHeight stylings
     }
-  }
-  .content-card--small {
-    min-height: rem-calc(300);
   }
 }
