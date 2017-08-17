@@ -3,7 +3,8 @@
   !data.altText ? altText = data.title : altText = data.altText
   let images = data.images || []
 picture.hero-image
-  each image in images
-    source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
+  if images.length > 0 
+    each image in images
+      source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
   img(src=data.defaultImage.path alt=altText title=altText)
   span.hero-image__image-credit #{data.credits}
