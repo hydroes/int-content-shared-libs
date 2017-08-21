@@ -40,10 +40,14 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", data.defaultImage.path, tru
 ;pug_debug_line = 14;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
 pug_html = pug_html + "\u003Cspan class=\"image__image-credit\"\u003E";
 ;pug_debug_line = 14;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
-pug_html = pug_html + (pug_escape(null == (pug_interp = data.credits) ? "" : pug_interp));
-;pug_debug_line = 14;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
-pug_html = pug_html + " &copy;";
+pug_html = pug_html + (pug_escape(null == (pug_interp = data.credits + ' ') ? "" : pug_interp));
 ;pug_debug_line = 15;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
+if (data.caption) {
+;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
 pug_html = pug_html + "\u003Cspan class=\"image__image-caption\"\u003E";
-;pug_debug_line = 15;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
-pug_html = pug_html + (pug_escape(null == (pug_interp = ' ' + data.caption) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003C\u002Fspan\u003E\u003C\u002Fpicture\u003E";}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined));} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}
+;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
+pug_html = pug_html + "&copy; ";
+;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
+pug_html = pug_html + (pug_escape(null == (pug_interp = data.caption) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E";
+}
+pug_html = pug_html + "\u003C\u002Fspan\u003E\u003C\u002Fpicture\u003E";}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined));} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}
