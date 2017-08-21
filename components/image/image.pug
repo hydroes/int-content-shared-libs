@@ -11,4 +11,4 @@ picture.image
     each image in images
       source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
   img(src=data.defaultImage.path alt=altText title=altText)
-  span.image__image-credit #{data.credits}
+  span.image__image-credit #{data.credits} @ #{data.caption}
