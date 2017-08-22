@@ -12,6 +12,7 @@
     "node": "=v6.11.1"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.2",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "pug": "^2.0.0-rc.2",
@@ -26,6 +27,7 @@
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
@@ -35,6 +37,7 @@
     "nightwatch-cucumber": "^7.1.10",
     "precommit-hook": "^3.0.0",
     "pug-lint": "^2.4.0",
+    "sass-lint": "^1.10.2",
     "standard": "^9.0.1",
     "validate-commit": "^3.2.1",
     "vinyl-buffer": "^1.0.0",
@@ -57,6 +60,7 @@
   "pre-commit": [
     "validate-js-standard",
     "validate-pug",
+    "validate-sass",
     "validate-commitmsg"
   ],
   "readme": "README.md",
@@ -71,6 +75,7 @@
     "validate-js-standard": "standard",
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
+    "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
     "validate": "npm ls",
     "e2e-tests": "nightwatch --tag desktop; nightwatch --tag mobile; nightwatch --tag tablet"
   },

@@ -3,6 +3,7 @@ body {
 }
 
 .modified-container {
+  @include text-overflow-hidden(nowrap, block);
   max-width: 100%;
   font-size: rem-calc(12);
   font-weight: 400;
@@ -10,7 +11,6 @@ body {
   color: $grey-color;
   white-space: nowrap;
   padding: rem-calc(10);
-  @include text-overflow-hidden(nowrap, block);
   a {
     &:hover {
       text-decoration: none;

@@ -1,14 +1,14 @@
 .pagination {
   li {
-  a {
+    a {
       &.pagination {
-      &__link {
-        color: $black-color;
-        margin-right: rem-calc(2);
-        &--active {
-          margin-right: rem-calc(2);
+        &__link {
           color: $black-color;
-          background: #eee;
+          margin-right: rem-calc(2);
+          &--active {
+            margin-right: rem-calc(2);
+            color: $black-color;
+            background: #eee;
           }
         }
       }

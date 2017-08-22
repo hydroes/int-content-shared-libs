@@ -1,3 +1,6 @@
+'use strict'
+
+const autoprefixer = require('autoprefixer')
 const gulp = require('gulp')
 const browserify = require('browserify')
 const source = require('vinyl-source-stream')
@@ -10,6 +13,7 @@ const browserSync = require('browser-sync').create()
 const concat = require('gulp-concat')
 const pug = require('pug')
 const path = require('path')
+const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 
@@ -76,6 +80,7 @@ gulp.task('compile-sass', ['compile-development-sass'], function () {
         .pipe(concat('style.min.css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(rename('style.min.css'))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('docs/dist/'))
         .pipe(browserSync.reload({'stream': true}))
