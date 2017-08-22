@@ -11,8 +11,9 @@ picture.image
     each image in images
       source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
   img(src=data.defaultImage.path alt=altText title=altText)
-  if data.credits && data.credits !== ''
+  if data.caption && data.caption !== '' || data.credits && data.credits !== ''
     span.image__text
-      span.image__text__credit #{data.credits + ' '}
       if data.caption && data.caption !== ''
-        span.image__text__caption &copy; #{data.caption}
+        span.image__text__caption #{data.caption  + ' '}
+      if data.credits && data.credits !== ''
+        span.image__text__credit &copy; #{data.credits}

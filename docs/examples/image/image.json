@@ -1,7 +1,7 @@
 {
   "data": {
     "altText": "Kim Wilde",
-    "caption": "BBC2",
+    "caption": "Image Caption Text",
     "images": [
       {
         "maxWidth": 480,
@@ -15,6 +15,6 @@
     "defaultImage": {
       "path": "//via.placeholder.com/740x420"
     },
-    "credits": "test"
+    "credits": "Credits"
   }
 }
