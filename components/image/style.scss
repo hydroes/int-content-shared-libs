@@ -1,18 +1,17 @@
-.hero-image {
+.image {
   position: relative;
   display: block;
-  max-width: 100%;
   height: auto;
   img {
     vertical-align: middle;
-    max-width: 100%;
     height: auto;
+    width: 100%;
   }
   &__image-credit {
     position: absolute;
     bottom: 0;
+    right: 0;
     padding: 5px 7px;
-    margin-left: -45px; /* @todo loose this magic number */
     font-size: rem-calc(12);
     line-height: 1;
     font-weight: $light;
