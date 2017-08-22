@@ -40,7 +40,7 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", data.defaultImage.path, tru
 ;pug_debug_line = 14;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
 pug_html = pug_html + "\u003Cspan class=\"image__text\"\u003E";
 ;pug_debug_line = 15;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
-if (data.caption) {
+if (data.credits) {
 ;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
 pug_html = pug_html + "\u003Cspan class=\"image__text__credit\"\u003E";
 ;pug_debug_line = 16;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fshared-components\u002Fcomponents\u002Fimage\u002Fimage.pug";
