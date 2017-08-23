@@ -18,7 +18,9 @@ const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 
 gulp.task('compile-js', function () {
-  return browserify('./components/includes.js').bundle()
+  return browserify('./components/includes.js')
+    .transform('babelify', {presets: ['es2015']})
+    .bundle()
     .pipe(source('script.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
