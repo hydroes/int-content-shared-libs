@@ -1,5 +1,9 @@
 # Bauer shared web components
 
+[![npm version](https://badge.fury.io/js/bauer-shared-web-components.svg)](https://badge.fury.io/js/bauer-shared-web-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+##
+
 Shared bauer shared components npm module
 This npm module is meant to be included in a dadi web front end instance.
 
