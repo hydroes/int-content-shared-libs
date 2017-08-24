@@ -8,7 +8,6 @@ require('./test')(window)
 require('./embeds/twitter')(window)
 require('./embeds/facebook')()
 require('./embeds/instagram')()
-require('./embeds/engagesciences')()
 // bootstrap bauerSharedLibs
 window.bauerSharedLibs = window.bauerSharedLibs || {}
 window.bauerSharedLibs.pug = require('./shared/js/pug/pug')
