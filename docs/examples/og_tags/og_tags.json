@@ -5,6 +5,7 @@
     "site_name": "Lifestyle",
     "locale": "gb",
     "url": "www.google.com",
+    "type": "website",
     "image": {
       "url": "www.google.com/woooo.jpg",
       "width": 200,
