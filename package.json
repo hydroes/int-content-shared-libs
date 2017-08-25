@@ -1,5 +1,5 @@
 {
-  "version": "0.4.10",
+  "version": "0.4.11",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "pug": "^2.0.0-rc.2",
-    "underscore": "^1.8.3"
+    "pug": "^2.0.0-rc.2"
   },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {

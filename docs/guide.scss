@@ -205,3 +205,10 @@ body
 		}
 	}
 }
+
+pre.code {
+	white-space: pre-line;
+	code {
+		white-space: nowrap;
+	}   
+}

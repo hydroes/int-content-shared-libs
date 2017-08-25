@@ -2,6 +2,7 @@
 
 const $ = require('jquery')
 const helpers = require('./helpers/includes')
+const _ = require('lodash')
 
 var bauerPug = {
   /**
@@ -17,7 +18,7 @@ var bauerPug = {
   *
   * @return A promise that can be used to get the rendered into a string
   */
-  render: function (templatePath, templateData, elementSelector) {
+  render: function (templatePath, templateData, elementSelector, escapeOutput) {
     // build compiled template path
     var baseDir = 'dist/'
     var compiledTemplatePath = baseDir + templatePath
@@ -34,13 +35,17 @@ var bauerPug = {
       templateMethodName = templateMethodName.join('_')
       templateMethodName = templateMethodName.slice(0, -4)
       templateMethodName = templateMethodName + '(' + JSON.stringify(templateData) + ')'
-
-      templateMethodName = 'window.namespacedTemplateMethod = ' + templateMethodName
-
+      if (window.namespacedTemplateMethod !== templateMethodName) {
+        templateMethodName = 'window.namespacedTemplateMethod = ' + templateMethodName
+      }
       // namespaced methods need to run as follows
-      $(elementSelector).html(
-        eval(templateMethodName.toString()) // eslint-disable-line
-      )
+      let output = eval(templateMethodName.toString()) // eslint-disable-line
+      if (escapeOutput) {
+        output = _.escape(output)
+          .replace(/&gt;/g, '&gt;<br>') // add line breaks
+          .trim()
+      }
+      $(elementSelector).html(output)
 
       window.namespacedTemplateMethod = ''
     })

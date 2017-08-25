@@ -1,0 +1,12 @@
+meta(property='og:video' content=data.video.url)
+
+if data.video.secure_url
+  meta(property='og:video:secure_url' content=data.video.secure_url)
+else 
+  if data.video.url.startsWith('https')
+    meta(property='og:video:secure_url' content=data.video.url)
+
+meta(property='og:video:type' content=data.video.type)
+meta(property='og:video:width' content=data.video.height)
+meta(property='og:video:width' content=data.video.width)
+meta(property='og:image' content=data.video.imageUrl)

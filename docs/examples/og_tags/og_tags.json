@@ -8,7 +8,15 @@
     "image": {
       "url": "www.google.com/woooo.jpg",
       "width": 200,
-      "height": 300
+      "height": 300,
+      "type": "image/jpeg"
+    },
+    "video": {
+      "url": "www.google.com/woooo.jpg",
+      "width": 200,
+      "height": 300,
+      "type": "image/jpeg",
+      "imageUrl": "www.thevideosheroimage.stuff"
     }
   }
 }
