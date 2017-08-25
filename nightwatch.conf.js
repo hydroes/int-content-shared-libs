@@ -1,41 +1,42 @@
-const nightwatchCucumber = require('nightwatch-cucumber')
+const chromedriver = require('chromedriver')
 
-const nightwatchCucumberConf = {
-  runner: 'nightwatch',
+require('nightwatch-cucumber')({
   closeSession: 'afterFeature',
-  'test_workers': true,
   cucumberArgs: [
-    '--require', './tests/e2e/hooks.js',
-    '--require',
-    './tests/e2e/features/step_definitions',
-    './tests/e2e/features'
-  ]
-}
+    '--require', 'tests/e2e/config/hooks.js',
+    '--require', 'tests/e2e/features/step_definitions',
+    '--format', 'json:reports/cucumber.json',
+    'tests/e2e/features'
 
-const nightCumber = nightwatchCucumber(nightwatchCucumberConf)
+  ]
+})
 
 module.exports = {
-  'src_folders': [nightCumber],
-  'output_folder': './tests/reports',
-  'globals_path': './tests/e2e/globals.js',
-  'selenium': {
-    'start_process': false,
-    'log_path': '',
-    'port': 4444,
-    'cli_args': {
+  output_folder: 'tests/reports',
+  globals_path: 'tests/e2e/config/globals.js',
+  page_objects_path: 'tests/e2e/page_objects',
+  selenium: {
+    start_process: false,
+    log_path: 'tests/logs.txt',
+    port: 4444,
+    cli_args: {
+      'webdriver.chrome.driver': chromedriver.path
     }
   },
-  'test_settings': {
-    'default': {
-      'selenium_port': 9515,
-      'selenium_host': 'localhost',
-      'default_path_prefix': '',
-      'desiredCapabilities': {
-        'browserName': 'chrome',
-        'chromeOptions': {
-          'args': ['--no-sandbox']
-        },
-        'acceptSslCerts': true
+  test_settings: {
+    default: {
+      selenium_port: 9515,
+      selenium_host: 'localhost',
+      default_path_prefix: '',
+      screenshots: {
+        enabled: true,
+        on_failure: true,
+        path: 'tests/e2e/screenshots'
+      },
+      desiredCapabilities: {
+        browserName: 'chrome',
+        acceptInsecureCerts: true,
+        javascriptEnabled: true
       }
     }
   }
