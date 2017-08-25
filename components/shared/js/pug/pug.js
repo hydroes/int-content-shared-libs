@@ -35,6 +35,7 @@ var bauerPug = {
       templateMethodName = templateMethodName.join('_')
       templateMethodName = templateMethodName.slice(0, -4)
       templateMethodName = templateMethodName + '(' + JSON.stringify(templateData) + ')'
+      templateMethodName = 'window.namespacedTemplateMethod = ' + templateMethodName
       // namespaced methods need to run as follows
       let output = eval(templateMethodName.toString()) // eslint-disable-line
       if (escapeOutput) {
