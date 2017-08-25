@@ -108,3 +108,8 @@ body {
     padding: 2rem; }
   .navbar-collapse.in, .navbar-collapse.collapsing {
     background-color: #223B70; } }
+
+pre.code {
+  white-space: pre-line; }
+  pre.code code {
+    white-space: nowrap; }

@@ -1,0 +1,11 @@
+meta(property='og:image' content=data.image.url)
+
+if data.image.secure_url
+  meta(property='og:image:secure_url' content=data.image.secure_url)
+else 
+  if data.image.url.startsWith('https')
+    meta(property='og:image:secure_url' content=data.image.url)
+
+meta(property='og:image:width' content=data.image.width)
+meta(property='og:image:height' content=data.image.height)
+meta(property='og:image:type' content=data.image.type)
