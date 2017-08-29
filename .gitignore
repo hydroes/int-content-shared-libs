@@ -2,3 +2,4 @@ node_modules
 yarn.lock
 *.orig
 tests/reports
+tests/e2e/screenshots
