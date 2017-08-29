@@ -12,29 +12,24 @@ const pagination = {
 }
 
 defineSupportCode(({ Given, Then, When }) => {
-  Given('I open the shared components page, to view pagination', (done) => {
+  Given('I open the shared components page, to view pagination', async () => {
     if (client.url !== client.globals.getComponentsPageUrl()) {
       client.globals.goToComponentPage(client, pagination.container)
     }
-    client.globals.goToComponentPage(client, pagination.container)
-    done()
+    await client.globals.goToComponentPage(client, pagination.container)
   })
-  Then(/^the first page button is ([0-9]+)/, (page, done) => {
-    client.expect.element(pagination.firstPage).text.to.equal(page)
-    done()
+  Then(/^the first page button is ([0-9]+)/, async (page) => {
+    await client.expect.element(pagination.firstPage).text.to.equal(page)
   })
-  Then(/^the current page is ([0-9]+)$/, (page, done) => {
-    client.expect.element(pagination.currentPage).text.to.equal(page)
-    done()
+  Then(/^the current page is ([0-9]+)$/, async (page) => {
+    await client.expect.element(pagination.currentPage).text.to.equal(page)
   })
-  Then(/^as a result, the back button should go to ([0-9]+) and the next page button should go to ([0-9]+)$/, (previous, next, done) => {
-    client.expect.element(pagination.previousNav).to.have.attribute('href').which.contains(previous) &&
-      client.expect.element(pagination.nextNav).to.have.attribute('href').which.contains(next)
-    done()
+  Then(/^as a result, the back button should go to ([0-9]+) and the next page button should go to ([0-9]+)$/, async (previous, next) => {
+    await client.expect.element(pagination.previousNav).to.have.attribute('href').which.contains(previous)
+    await client.expect.element(pagination.nextNav).to.have.attribute('href').which.contains(next)
   })
-  Then(/^the total amount of pages is ([0-9]+)$/, (total, done) => {
+  Then(/^the total amount of pages is ([0-9]+)$/, async (total) => {
     client.expect.element(pagination.lastPage).text.to.equal(total)
-    done()
   })
   Then(/^all page number buttons link to "([^"]*)", with its respective page number$/, (path, done) => {
     let slug = path
@@ -49,7 +44,7 @@ defineSupportCode(({ Given, Then, When }) => {
     client.elements('css selector', pagination.allLinks, elements => {
       checkLink(elements, slug)
     })
-    done()
+
     function checkLink (elements, path) {
       let text = ''
       //  get element values.
@@ -81,5 +76,6 @@ defineSupportCode(({ Given, Then, When }) => {
         })
       })
     }
+    done()
   })
 })

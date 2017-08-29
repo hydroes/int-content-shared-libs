@@ -1,5 +1,11 @@
 // ** global methods that are run
 
+const { defineSupportCode } = require('cucumber')
+
+defineSupportCode(({ setDefaultTimeout }) => {
+  setDefaultTimeout(300000)
+})
+
 var chromedriver = require('chromedriver')
 
 module.exports = {

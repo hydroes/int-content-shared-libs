@@ -3,6 +3,7 @@ const chromedriver = require('chromedriver')
 require('nightwatch-cucumber')({
   closeSession: 'afterFeature',
   cucumberArgs: [
+    '--compiler', 'js:babel-core/register',
     '--require', 'tests/e2e/config/hooks.js',
     '--require', 'tests/e2e/features/step_definitions',
     '--format', 'json:reports/cucumber.json',
