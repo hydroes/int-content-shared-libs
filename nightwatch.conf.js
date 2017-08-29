@@ -15,6 +15,7 @@ module.exports = {
   globals_path: 'tests/e2e/config/globals.js',
   page_objects_path: 'tests/e2e/page_objects',
   test_workers: true,
+  detailed_output: false,
   selenium: {
     start_process: false,
     log_path: 'tests/logs.txt',
@@ -29,7 +30,7 @@ module.exports = {
       selenium_host: 'localhost',
       default_path_prefix: '',
       screenshots: {
-        enabled: true,
+        enabled: false,
         on_failure: true,
         path: 'tests/e2e/screenshots'
       },

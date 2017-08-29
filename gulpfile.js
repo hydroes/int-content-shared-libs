@@ -16,6 +16,7 @@ const path = require('path')
 const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
+const cucumberHtmlReporter = require('cucumber-html-reporter')
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js')
@@ -111,6 +112,21 @@ gulp.task('remove-dist', function () {
     }
   }
   deleteFolderRecursive('./docs/dist')
+})
+
+gulp.task('generate-test-reports', function () {
+  // generate html report
+  var options = {
+    theme: 'bootstrap',
+    jsonFile: 'tests/e2e/reports/cucumber.json',
+    output: 'docs/reports/e2e/index.html',
+    reportSuiteAsScenarios: true,
+    launchReport: false
+  }
+
+  cucumberHtmlReporter.generate(options)
+
+  // @todo: generate xml reports for jenkins
 })
 
 // use default task to launch Browsersync and watch JS files
