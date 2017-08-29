@@ -49,6 +49,9 @@ npm run e2e-tests
 - To run unit tests:
 npm run unit-tests
 
+# Test tools
+([chrome-addon for nightwatchjs]https://github.com/vvscode/js--nightwatch-recorder)
+
 ## Deployment
 - Update the version number in the package.json ([SemVer](http://semver.org/))
 - npm start (Do not forget to compile the components to the dist dir)
