@@ -6,16 +6,15 @@ require('nightwatch-cucumber')({
     '--compiler', 'js:babel-core/register',
     '--require', 'tests/e2e/config/hooks.js',
     '--require', 'tests/e2e/features/step_definitions',
-    '--format', 'json:reports/cucumber.json',
+    '--format', 'json:tests/e2e/reports/cucumber.json',
     'tests/e2e/features'
-
   ]
 })
 
 module.exports = {
-  output_folder: 'tests/reports',
   globals_path: 'tests/e2e/config/globals.js',
   page_objects_path: 'tests/e2e/page_objects',
+  test_workers: true,
   selenium: {
     start_process: false,
     log_path: 'tests/logs.txt',

@@ -40,6 +40,7 @@ defineSupportCode(({Given, Then, When}) => {
   })
 
   Given(/^the shared components page is open in mobile view, the small image url is "([^"]*)"$/, async (url) => {
+    await client.globals.goToComponentPage(client, '.large-content-card')
     await client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
   })
 })
