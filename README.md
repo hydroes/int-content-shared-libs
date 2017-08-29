@@ -42,7 +42,8 @@ Tests can be found in the tests directory.
  - selenium and java are not required to run the tests
  - Test examples can be found ([here](https://github.com/mucsi96/nightwatch-cucumber/tree/master/examples))
  - To run a specific test feature file: npm run e2e-tests tests/e2e/features/test.feature
-Test reports can be found in the tests/reports directory.
+Test reports can be found:
+ - [e2e](https://bauerxcel.github.io/int-content-shared-libs/dist/reports/e2e/index.html)
 
 - To run e2e tests: (ensure the files are being served, run npm start on local)
 npm run e2e-tests
