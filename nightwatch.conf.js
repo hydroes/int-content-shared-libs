@@ -1,5 +1,8 @@
 const chromedriver = require('chromedriver')
 
+// @todo: when refactored to run in docker this must be switched to false in docker and true in local
+const runTestsInThreads = true
+
 require('nightwatch-cucumber')({
   closeSession: 'afterFeature',
   cucumberArgs: [
@@ -14,11 +17,11 @@ require('nightwatch-cucumber')({
 module.exports = {
   globals_path: 'tests/e2e/config/globals.js',
   page_objects_path: 'tests/e2e/page_objects',
-  test_workers: true,
+  test_workers: runTestsInThreads,
   detailed_output: false,
   selenium: {
     start_process: false,
-    log_path: 'tests/logs.txt',
+    log_path: 'tests/e2e/selenium_log.txt',
     port: 4444,
     cli_args: {
       'webdriver.chrome.driver': chromedriver.path

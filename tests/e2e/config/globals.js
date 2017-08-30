@@ -1,6 +1,7 @@
 // ** global methods that are run
 
 const { defineSupportCode } = require('cucumber')
+const pkg = require('../../../package.json')
 
 defineSupportCode(({ setDefaultTimeout }) => {
   setDefaultTimeout(300000)
@@ -19,10 +20,14 @@ module.exports = {
     done()
   },
   getComponentsPageUrl: function () {
-    return 'http://localhost:3000'
+    if (typeof (process.env.USE_PACKAGE_QAHOST) === 'undefined') {
+      return 'http://localhost:3000'
+    } else {
+      return pkg.QA_HOST
+    }
   },
   getPageTimeout: function () {
-    return 10000
+    return 300000
   },
   goToComponentPage: function (client, awaitedElement) {
     client.url(client.globals.getComponentsPageUrl())
