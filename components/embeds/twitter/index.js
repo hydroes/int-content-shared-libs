@@ -1,5 +1,6 @@
+const $ = require('jquery')
 module.exports = function (window) {
-  setTimeout(function () {
+  $(document).ready(function () {
     window.twttr = (function (d, s, id) {
       var js
       var fjs = d.getElementsByTagName(s)[0]
