@@ -114,6 +114,7 @@ gulp.task('remove-dist', function () {
   deleteFolderRecursive('./docs/dist')
 })
 
+// genarates test reports
 gulp.task('generate-test-reports', function () {
   // generate html report
   var options = {
@@ -121,7 +122,7 @@ gulp.task('generate-test-reports', function () {
     jsonFile: 'tests/e2e/reports/cucumber.json',
     output: 'docs/reports/e2e/index.html',
     reportSuiteAsScenarios: true,
-    launchReport: false
+    launchReport: true
   }
 
   cucumberHtmlReporter.generate(options)

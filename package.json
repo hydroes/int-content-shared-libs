@@ -1,5 +1,6 @@
 {
   "version": "0.4.11",
+  "QA_HOST": "http://shared-libs.onebauer.media/",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -74,14 +75,14 @@
   "scripts": {
     "lint": "jshint .",
     "start": "gulp",
-    "test": "nightwatch --retries 3",
+    "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
     "posttest": "gulp generate-test-reports",
     "validate-js-standard": "standard",
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
     "validate": "npm ls",
-    "e2e-tests": "nightwatch --retries 3 --tag desktop; nightwatch --tag mobile; nightwatch --tag tablet"
+    "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet"
   },
   "standard": {
     "ignore": [
