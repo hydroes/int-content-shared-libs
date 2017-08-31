@@ -16,5 +16,5 @@ module.exports = function (window) {
       }
       return t
     }(document, 'script', 'twitter-wjs'))
-  }, 800)
+  })
 }

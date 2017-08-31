@@ -3,7 +3,7 @@
 const $ = require('jquery')
 
 module.exports = function () {
-  $(function () {
+  $(document).ready(function () {
     var btn = document.getElementById('bauer-web-component-test-btn')
     if (typeof btn === 'object' && btn !== null) {
       btn.addEventListener('click', function () {
