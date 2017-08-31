@@ -19,11 +19,11 @@ module.exports = {
     chromedriver.stop()
     done()
   },
-  getComponentsPageUrl: function () {
+  getComponentsPageUrl: function (urlSuffix = '') {
     if (typeof (process.env.USE_PACKAGE_QAHOST) === 'undefined') {
-      return 'http://localhost:3000'
+      return 'http://localhost:8000' + '/' + urlSuffix
     } else {
-      return pkg.QA_HOST
+      return pkg.QA_HOST + '/' + urlSuffix
     }
   },
   getPageTimeout: function () {

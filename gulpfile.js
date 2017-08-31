@@ -120,7 +120,7 @@ gulp.task('generate-test-reports', function () {
   var options = {
     theme: 'bootstrap',
     jsonFile: 'tests/e2e/reports/cucumber.json',
-    output: 'docs/reports/e2e/index.html',
+    output: 'docs/dist/reports/e2e/index.html',
     reportSuiteAsScenarios: true,
     launchReport: true
   }
