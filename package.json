@@ -1,5 +1,5 @@
 {
-  "version": "0.4.11",
+  "version": "0.4.12",
   "QA_HOST": "http://shared-libs.onebauer.media/",
   "author": {
     "name": "Brian Gouws",
@@ -10,7 +10,7 @@
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
   "engines": {
-    "node": "=v6.11.1"
+    "node": ">=v6.11.1"
   },
   "dependencies": {
     "jquery": "^3.2.1",
