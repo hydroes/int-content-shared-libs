@@ -1,7 +1,7 @@
 const chromedriver = require('chromedriver')
 
 // @todo: when refactored to run in docker this must be switched to false in docker and true in local
-const runTestsInThreads = true
+const runTestsInThreads = false
 
 require('nightwatch-cucumber')({
   closeSession: 'afterFeature',
