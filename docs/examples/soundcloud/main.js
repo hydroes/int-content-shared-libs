@@ -1,5 +1,5 @@
 'use strict'
 
-window.jQuery.getJSON('examples/soundcloud/embeds_soundcloud.json', function (data) {
-  window.bauerSharedLibs.pug.render('soundcloud/embeds_soundcloud.pug', data, '#embeds-soundcloud')
+window.jQuery.getJSON('examples/soundcloud/soundcloud.json', function (data) {
+  window.bauerSharedLibs.pug.render('soundcloud/soundcloud.pug', data, '#embeds-soundcloud')
 })
