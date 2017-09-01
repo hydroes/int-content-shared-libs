@@ -8,6 +8,7 @@ require('./test')(window)
 require('./twitter')(window)
 require('./facebook')()
 require('./instagram')()
+require('./social_sharing')(window)
 // bootstrap bauerSharedLibs
 window.bauerSharedLibs = window.bauerSharedLibs || {}
 window.bauerSharedLibs.pug = require('./shared/js/pug/pug')
