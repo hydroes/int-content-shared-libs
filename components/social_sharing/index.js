@@ -1,6 +1,6 @@
 const $ = require('jquery')
 module.exports = function (window) {
-  setTimeout(function () {
+  setTimeout(function () { // @todo timeout needs to be removed before final deployment version
     $(document).ready(function () {
       $('[data-partial="social-share"]').each(function () {
         var _self = $(this)
