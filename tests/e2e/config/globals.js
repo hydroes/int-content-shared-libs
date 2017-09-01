@@ -21,7 +21,7 @@ module.exports = {
   },
   getComponentsPageUrl: function (urlSuffix = '') {
     if (typeof (process.env.USE_PACKAGE_QAHOST) === 'undefined') {
-      return 'http://localhost:8000' + '/' + urlSuffix
+      return 'http://localhost:3000' + '/' + urlSuffix
     } else {
       return pkg.QA_HOST + '/' + urlSuffix
     }
