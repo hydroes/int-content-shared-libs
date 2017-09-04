@@ -1,0 +1,3049 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cucumber Feature Report</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" >
+    <style type="text/css">
+      .panel-heading {
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    .pull-right-lg {
+        float: left;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pull-right-lg {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .pull-right-lg {
+        float: right;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pull-right-lg {
+        float: right;
+    }
+}
+
+.left {
+    float: left;
+}
+
+.metadata {
+    overflow: auto;
+    letter-spacing: 0.2px;
+    border-color: white;
+    line-height: 1.6;
+    color: #4d4d4d;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    padding-bottom: 3px;
+}
+
+.panel-heading a {
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+}
+
+.panel-heading i.glyphicon-chevron-down {
+    display: none;
+}
+
+.panel-heading i.glyphicon-chevron-right {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-down {
+    display: inline-block;
+}
+
+.panel-heading.open i.glyphicon-chevron-right {
+    display: none;
+}
+
+.generated-on {
+    text-align: right;
+    padding-bottom: 10px;
+}
+
+.panel-title b {
+    padding-right: 10px;
+}
+
+.panel-heading .label-container {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.panel-heading .label-container label {
+    margin-left: 5px;
+    padding: 5px;
+}
+
+.navbar .label-container {
+    position: absolute;
+    right: 10px;
+    top: 14px;
+}
+
+.navbar {
+    margin-bottom: 10px;
+}
+
+.navbar .label {
+    font-size: 20px;
+}
+
+.navbar .project-name {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tags {
+    margin-left: 18px;
+    margin-right: 20px;
+    padding-top: 5px;
+    margin-bottom: -4px;
+}
+
+.tag {
+    font-size: 13px;
+    color: #696969;
+    letter-spacing: 0.3px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.chart {
+    padding-bottom: 15px;
+}
+
+div.chart div div svg rect {
+    fill: #f5f5f5;
+}
+
+.arguments {
+    margin-left: 30px;
+    margin-top: 1em;
+}
+
+#directory {
+    background-color: #f0f0f0;
+}
+
+.screenshot {
+    padding: 2% 0 2% 0;
+}
+
+.description {
+    background-color: white;
+    border-color: white;
+    line-height: 1.6;
+    color: #6f6f6f;
+    font-weight: 400;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    padding: 0.1em 0.5em 1.2em 1.5em
+}
+
+#scenario-description {
+    padding-bottom: 1em;
+    padding-left: 0.2em;
+}
+
+.scrollBar {
+    overflow-x: scroll;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.info {
+    background-color: #fbfbfb;
+}
+
+pre {
+    display: block;
+    padding: 10px;
+    margin-top: 1em;
+    margin-right: 3em;
+    font-size: 13px;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.step-duration {
+    float: right;
+    color: #BDBDBD;
+}
+
+.footer-div {
+    text-align: right;
+    vertical-align: middle;
+    height: 3.5%;
+    width: 100%;
+}
+
+.footer-container {
+    margin-right: 10px;
+    margin-top: 5px;
+    width: 18%;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.footer-link {
+    font-size: 13px;
+    float: right;
+}
+
+.footer-link:hover {
+    color: darkgray;
+}
+
+.steps {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: -9px;
+}
+
+.all-features {
+    padding-top: 0.6em;
+}
+
+    </style>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+        
+          <a class="navbar-brand">Cucumberjs Report</a>
+          <div class="project-name visible-md visible-lg">bauer-shared-web-components</div>
+          <div class="label-container">
+            <span class="label label-success" title=scenarios>Passed: 16</span>
+            <span class="label label-danger" title=scenarios>Failed: 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="generated-on">Mon Sep 04 2017 12:28:09 GMT+0100 (BST)</div>
+
+      <div class="row">
+        <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
+        <div class="chart col-lg-6 col-md-6" id="piechart_scenarios"></div>
+      </div>
+
+      
+
+      
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components0">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Audioboom
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components0" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components0_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Audioboom Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components0_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Audioboom embed</span>
+                          
+                              <span class="step-duration">
+                               3ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the embed url is &quot;https://embeds.audioboom.com/posts/5796892-jazz-in-2017-the-music-is-thriving-though-support-is-in-peril/embed/v4?eid=AQAAAIxOe1kcdFgA&quot;</span>
+                          
+                              <span class="step-duration">
+                               5s 90ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components1">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Bauer Creative
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components1_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Bauer Creative Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components1_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Bauer Creative embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the embed url for Bauer Creative is &quot;https://creative.bauermedia.co.uk/boots/beautyhunter/&quot;</span>
+                          
+                              <span class="step-duration">
+                               3s 53ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components2">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Brightcove
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components2" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components2_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Brightcove Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components2_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Brightcove embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Brightcove embed url is &quot;http://players.brightcove.net/5156122125001/default_default/index.html?videoId=5332897287001&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 734ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components3">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Giphy Giphy
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components3" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components3_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Giphy Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components3_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Giphy embed</span>
+                          
+                              <span class="step-duration">
+                               < 1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Giphy embed url is &quot;https://giphy.com/embed/NUWBlDiof5Vug&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 679ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components4">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Instagram
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components4" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components4_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Instagram Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="3 Steps Passed">3</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components4_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Instagram embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Instagram data attribute is &quot;https://www.instagram.com/p/BAfBRUZNRRP/&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 286ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Instagram link href attribute is &quot;https://www.instagram.com/p/BAfBRUZNRRP/&quot;</span>
+                          
+                              <span class="step-duration">
+                               23ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components5">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds NTR
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components5" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components5_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds NTR Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components5_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view NTR embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the NTR embed url is &quot;https://webentry.bauerweb.co.uk/index.php/front/iframe/097efe727867d72db12e0b3900bf48d0-110739&quot;</span>
+                          
+                              <span class="step-duration">
+                               2s 159ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components6">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Soundcloud
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components6" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components6_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Soundcloud Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components6_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Soundcloud embed</span>
+                          
+                              <span class="step-duration">
+                               < 1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Soundcloud embed url is &quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180876932&amp;amp&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 571ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components7">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Twitter
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components7" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components7_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Twitter Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="1 Steps Passed">1</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components7_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Twitter embed</span>
+                          
+                              <span class="step-duration">
+                               4ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components8">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Vimeo
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components8" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components8_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Vimeo Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components8_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Vimeo embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Vimeo embed url is &quot;https://player.vimeo.com/video/203658093&quot;</span>
+                          
+                              <span class="step-duration">
+                               2s 410ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components9">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Embeds Youtube
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components9" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components9_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Embeds Youtube Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="2 Steps Passed">2</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components9_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Youtube embed</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the Youtube embed url is &quot;https://www.youtube.com/embed/XGSy3_Czz8k&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 163ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components10">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Large Content Card
+                        <span class="label-container">
+              <span class="label label-success" title="2 Scenarios Passed">2</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components10" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components10_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Large Card Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="7 Steps Passed">7</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components10_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view a large card</span>
+                          
+                              <span class="step-duration">
+                               3ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the large image url is &quot;//via.placeholder.com/900x350&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 614ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the alt text is &quot;We asked the Love Island narrator everything you want to know about the show&quot;</span>
+                          
+                              <span class="step-duration">
+                               13ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the title text is &quot;We asked the Love Island narrator everything you want to know about the show&quot;</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the title link is &quot;http://www.google.com&quot;</span>
+                          
+                              <span class="step-duration">
+                               47ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the category url is &quot;http://www.bbc.co.uk&quot;</span>
+                          
+                              <span class="step-duration">
+                               26ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the category name is &quot;Gossip&quot; and the date is &quot;17 minutes ago&quot;</span>
+                          
+                              <span class="step-duration">
+                               37ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @mobile</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components10_1">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Large Card Component In Mobile view
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="1 Steps Passed">1</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components10_1" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> the shared components page is open in mobile view, the small image url is &quot;//via.placeholder.com/350x150&quot;</span>
+                          
+                              <span class="step-duration">
+                               6s 490ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components11">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Pagination
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components11" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components11_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Viewing pagination
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="5 Steps Passed">5</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components11_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page, to view pagination</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> the first page button is 1</span>
+                          
+                              <span class="step-duration">
+                               4s 
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the current page is 698</span>
+                          
+                              <span class="step-duration">
+                               43ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> as a result, the back button should go to 697 and the next page button should go to 699</span>
+                          
+                              <span class="step-duration">
+                               51ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the total amount of pages is 700</span>
+                          
+                              <span class="step-duration">
+                               36ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> <span class="tag">@desktop</span>  </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components12">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Small Content Card
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components12" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components12_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Displaying small content card properly
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="4 Steps Passed">4</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components12_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page locally</span>
+                          
+                              <span class="step-duration">
+                               1ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> the card has a title text of &quot;We asked the Love Island narrator everything you want to know about the show&quot;</span>
+                          
+                              <span class="step-duration">
+                               2s 146ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the card has a date-time of &quot;17 minutes ago&quot; and a category of &quot;TV&quot;</span>
+                          
+                              <span class="step-duration">
+                               36ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the card has images displayed correctly with from cdn host &quot;//via.placeholder.com&quot;</span>
+                          
+                              <span class="step-duration">
+                               49ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components13">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Social Sharing
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components13" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @desktop</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components13_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Shows Social Sharing Component In Browser
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="6 Steps Passed">6</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components13_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page to view Social Sharing icons</span>
+                          
+                              <span class="step-duration">
+                               2ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> Facebook&#39;s data-social-share-url attribute url is &quot;http://shared-libs.onebauer.media/testpath&quot;</span>
+                          
+                              <span class="step-duration">
+                               1s 156ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> Clicked on the Facebook icon to open a new tab with a url of &quot;https://www.facebook.com/login.php?skip_api_login=1&amp;api_key=966242223397117&amp;signed_next=1&amp;next=https%3A%2F%2Fwww.facebook.com%2Fsharer.php%3Fu%3Dhttp%253A%252F%252Fshared-libs.onebauer.media%252Ftestpath&amp;cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Freturn%2Fclose%3Ferror_code%3D4201%26error_message%3DUser%2Bcanceled%2Bthe%2BDialog%2Bflow%23_%3D_&amp;display=popup&amp;locale=en_GB&quot;</span>
+                          
+                              <span class="step-duration">
+                               350ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> Twitter&#39;s data-social-share-url attribute url is &quot;http://shared-libs.onebauer.media/testpath&quot;</span>
+                          
+                              <span class="step-duration">
+                               87ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> Clicked on the Twitter icon to open a new tab with a url of &quot;https://twitter.com/intent/tweet?text=Radio%20-%20&amp;amp;url=http://shared-libs.onebauer.media/testpath&amp;amp;original_referer=&quot;</span>
+                          
+                              <span class="step-duration">
+                               229ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> Whatsapp&#39;s href link is &quot;whatsapp://send?text=http%3a%2f%2fshared-libs.onebauer.media/testpath&quot;</span>
+                          
+                              <span class="step-duration">
+                               183ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+<div class="row">
+    
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="tags"> </div>
+                    <a data-toggle="collapse" href="#collapseFeaturebauer_shared_web_components14">
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <b>Feature:</b>Test button
+                        <span class="label-container">
+              <span class="label label-success" title="1 Scenarios Passed">1</span>
+              
+              
+              
+              
+              
+            </span>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFeaturebauer_shared_web_components14" class="panel-collapse collapse">
+                <div class="panel-body">
+                    
+                    
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                
+                                <div class="tags"> <span class="tag"> @mobile</span>  </div>
+                                <a data-toggle="collapse" href="#collapseScenariobauer_shared_web_components14_0">
+                                    <div>
+
+                                        <div style="padding-right: 30px">
+                                            <i class="glyphicon glyphicon-chevron-right"></i>
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <b>Scenario:</b>Clicking button
+                                        </div>
+                                        <div>
+                            <span class="label-container">
+                              <span class="label label-success" title="3 Steps Passed">3</span>
+                              
+                              
+                              
+                              
+                              
+                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseScenariobauer_shared_web_components14_0" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                
+                                
+                                
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Given </span>
+                          <span> I open the shared components page</span>
+                          
+                              <span class="step-duration">
+                               1s 718ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">Then </span>
+                          <span> the test button text is &quot;test button&quot;</span>
+                          
+                              <span class="step-duration">
+                               25ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                                
+                                <p class="scenario-container">
+                                <div class="row steps">
+                                    
+                                    
+                                    <span class="label label-success" title="Success"><i class="glyphicon glyphicon-ok"></i></span>
+                                    
+                                    
+                                    <span class="text">
+                        <span class="keyword highlight">And </span>
+                          <span> the buttons background color is red</span>
+                          
+                              <span class="step-duration">
+                               87ms
+                              </span>
+                            
+                         
+                            
+                          
+                      </span>
+                                    
+                                    
+
+                                    
+
+                                    
+
+                                    
+
+                                    
+                            	</div>
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+
+
+    </div>
+
+    <div class="navbar-fixed-bottom row-fluid footer-div ">
+      <div class="navbar-inner">
+        <div class="footer-container">
+          <a  target="_blank" href="https://www.npmjs.com/package/cucumber-html-reporter">
+            <div class="text-muted footer-link">
+              generated by @cucumber-html-reporter
+            </div>
+             </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages: ["corechart"]});
+        google.setOnLoadCallback(function() {drawChart({
+                                                            "title" : "Features",
+                                                            "failed" : 0,
+                                                            "passed" : 15,
+                                                            "ambiguous" : 0
+                                                        })
+                                            });
+        google.setOnLoadCallback(function() {drawChart({
+                                                            "title" : "Scenarios",
+                                                            "failed" : 0,
+                                                            "passed" : 16,
+                                                            "notdefined" : 0,
+                                                            "pending" : 0,
+                                                            "skipped" : 0,
+                                                            "ambiguous" : 0
+                                                        })
+                                            });
+    </script>
+    <script>
+      $(document).ready(function() {
+    $('.collapse').on('hide.bs.collapse', function(e) {
+        e.stopPropagation();
+        $(this).prev().removeClass('open');
+    }).on('show.bs.collapse', function(e) {
+        e.stopPropagation();
+        $(this).prev().addClass('open');
+    });
+
+    var $generated = $('.generated-on');
+
+    $generated.text('Generated ' + moment($generated.text()).fromNow());
+});
+
+      function drawChart(chartData) {
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Cucumber Results'],
+        ['Passed', chartData.passed],
+        ['Failed', chartData.failed],
+        ['Pending', chartData.pending],
+        ['Undefined', chartData.notdefined],
+        ['Ambiguous', chartData.ambiguous],
+        ['Skipped', chartData.skipped]        
+    ]);
+
+    var total = chartData.passed + chartData.failed + (chartData.pending || 0) + (chartData.notdefined || 0) + (chartData.ambiguous || 0) + (chartData.skipped || 0);
+    var title;
+
+    if (total === 1) {
+        title = total + ' ' + chartData.title.slice(0, -1)
+    } else {
+        title = total + ' ' + chartData.title;
+    }
+
+    var options = {
+        width: '100%',
+        height: 240,
+        title: title,
+        is3D: true,
+        colors: ['#5cb85c', '#d9534f', '#999', '#5bc0de', '#428bca', '#f0ad4e'],
+        fontSize: '13',
+        fontName: '"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif',
+        slices: {
+            1: {offset: 0.4},
+            2: {offset: 0.4},
+            3: {offset: 0.4},
+            4: {offset: 0.4},
+            5: {offset: 0.4},
+            6: {offset: 0.4}
+        },
+        titleTextStyle: {
+            fontSize: '13',
+            color: '#5e5e5e'
+        }
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart_' + chartData.title.toLowerCase()));
+    chart.draw(data, options);
+}
+      $('a.toggle').on('click', function() {
+    if ($(this).text() === 'Screenshot -') {
+        $(this).text('Screenshot +');
+        $(this).next('a.screenshot').find('img').hide();
+    } else {
+        $(this).text('Screenshot -');
+        $(this).next('a.screenshot').find('img').show();
+    }
+});
+
+    </script>
+  </body>
+</html>
