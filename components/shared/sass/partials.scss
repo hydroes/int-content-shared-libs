@@ -48,27 +48,6 @@ body {
   background-color: $black-color;
 }
 
-@include screen-sm-min {
-  .title {
-    font-size: rem-calc(18);
-  }
-  .content-card {
-    &__info {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-      padding: 0;
-      overflow: hidden;
-      .title {
-        height: 80%;
-      }
-      .modified-container {
-        height: 20%;
-        padding: 0 rem-calc(10);
-      }
-    }
-  }
-}
 
 .content-card {
   width: 100%;
@@ -97,5 +76,29 @@ body {
   img {
     width: 100%;
     height: auto;
+  }
+}
+
+@include screen-sm-min {
+  .title {
+    font-size: rem-calc(18);
+  }
+  .content-card {
+    &__info {
+      display: flex;
+      flex-direction: column;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      padding: 0;
+      overflow: hidden;
+      .title {
+        align-items: flex-start;
+      }
+      .modified-container {
+        padding: 0 rem-calc(10);
+        align-items: flex-end;
+      }
+    }
   }
 }
