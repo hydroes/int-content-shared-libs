@@ -7,9 +7,7 @@ function pug_style(r){if(!r)return"";if("object"==typeof r){var t="";for(var e i
 pug_mixins["largeContentCard"] = pug_interp = function(data){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fint-content-shared-libs\u002Fcomponents\u002Fmixins\u002FlargeContentCard.pug";
-pug_html = pug_html + "\u003Carticle class=\"content-card content-card--large container\"\u003E";
-;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fint-content-shared-libs\u002Fcomponents\u002Fmixins\u002FlargeContentCard.pug";
-pug_html = pug_html + " ";
+pug_html = pug_html + "\u003Carticle class=\"content-card content-card--large\"\u003E";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fint-content-shared-libs\u002Fcomponents\u002Fmixins\u002FlargeContentCard.pug";
 pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjoegasewiczadmin\u002FDocuments\u002Fwork\u002Fint-content-shared-libs\u002Fcomponents\u002Fmixins\u002FlargeContentCard.pug";

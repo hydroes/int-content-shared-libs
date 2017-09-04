@@ -48,6 +48,4 @@ function pug_style(r){if(!r)return"";if("object"==typeof r){var t="";for(var e i
 
 
 
-
-
 } catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}
