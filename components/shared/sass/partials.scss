@@ -84,7 +84,7 @@ body {
   }
   .content-card {
     &__info {
-      height: rem-calc($content-card-content-height);
+      min-height: rem-calc($content-card-content-height);
       display: flex;
       flex-direction: column;
       overflow-wrap: break-word;
