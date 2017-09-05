@@ -17,7 +17,7 @@
   li:first-child,
   li:last-child {
     a {
-      @include border-radius($border-radius-default);
+      border-radius: $border-radius-default;
     }
   }
 }

@@ -1,10 +1,9 @@
-@import "shared/sass/functions";
+@import "shared/sass/utilities/_imports";
 @import 'shared/sass/main';
 @import 'test/style';
 
 // STYLES REQUIRED FOR THE COMPONENTS
-@import "shared/sass/shared-variables";
-@import "shared/sass/mixins";
+@import "shared/sass/_variables";
 @import "shared/sass/partials";
 
 // COMPONENTS STYLES
