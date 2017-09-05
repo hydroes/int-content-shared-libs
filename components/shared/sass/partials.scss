@@ -84,6 +84,7 @@ body {
   }
   .content-card {
     &__info {
+      height: rem-calc($content-card-content-height);
       display: flex;
       flex-direction: column;
       overflow-wrap: break-word;
@@ -97,6 +98,7 @@ body {
       .modified-container {
         padding: 0 rem-calc(10);
         align-items: flex-end;
+        margin-top: auto;
       }
     }
   }
