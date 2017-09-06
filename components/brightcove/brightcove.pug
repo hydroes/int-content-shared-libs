@@ -1,2 +1,6 @@
 .embeds-brightcove
+  -
+    // replace url with correct embed
+    data.url = data.url.replace('http://', '//')
+    data.url = data.url.replace('https://', '//')
   iframe(src=data.url frameborder='0' allowfullscreen webkitallowfullscreen mozallowfullscreen)
