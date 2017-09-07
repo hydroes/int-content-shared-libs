@@ -1,0 +1,20 @@
+{
+  "data": {
+    "tags": [{
+        "name": "Fashion",
+        "url": "url/to/fashion/link"
+      },
+      {
+        "name": "Donald Trump",
+        "url": "url/to/donald-trump/link"
+      }, {
+        "name": "Lorem",
+        "url": "url/to/Lorem/link"
+      },
+      {
+        "name": "#ChildrenInNeed",
+        "url": "url/to/children-in-need/link"
+      }
+    ]
+  }
+}
