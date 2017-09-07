@@ -1,13 +1,27 @@
 'use strict'
 /* global */
 window.jQuery.getJSON('examples/og_tags/og_tags.json', function (json) {
-  window.bauerSharedLibs.pug.render('og_tags/og_tags.pug', json, '.og-tags-image', true)
-  .done(function () {
+  var pug = window.bauerSharedLibs.pug
+  var tagsTemplate = 'og_tags/og_tags.pug'
+
+  var $imgOG = function () {
+    return pug.render(tagsTemplate, json, '.og-tags-image', true)
+  }
+  var $vidOG = function (data) {
     delete json.data.image
-    window.bauerSharedLibs.pug.render('og_tags/og_tags.pug', json, '.og-tags-video', true)
-    .done(function () {
-      delete json.data.video
-      window.bauerSharedLibs.pug.render('og_tags/og_tags.pug', json, '.og-tags', true)
-    })
-  })
+    return pug.render(tagsTemplate, json, '.og-tags-video', true)
+  }
+  var $NoMediaOG = function () {
+    delete json.data.video
+    return pug.render(tagsTemplate, json, '.og-tags-no-hero', true)
+  }
+  var $stdOG = function () {
+    delete json.data.article
+    return pug.render(tagsTemplate, json, '.og-tags', true)
+  }
+
+  $imgOG()
+    .done($vidOG)
+    .done($NoMediaOG)
+    .done($stdOG)
 })

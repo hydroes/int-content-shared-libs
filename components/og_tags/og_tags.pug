@@ -1,5 +1,8 @@
 include ../partials/og_tags/og_tags_default
   if data.image
     include ../partials/og_tags/og_tags_image
-  else if data.video
-    include ../partials/og_tags/og_tags_video
+  else 
+    if data.video
+      include ../partials/og_tags/og_tags_video
+  if data.article
+    include ../partials/og_tags/og_tags_article
