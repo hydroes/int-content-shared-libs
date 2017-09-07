@@ -18,6 +18,10 @@
       "height": 300,
       "type": "image/jpeg",
       "imageUrl": "www.thevideosheroimage.stuff"
+    },
+    "article": {
+      "published_time": "2017-09-07T10:14:46+01:00",
+      "author": "James Bond"
     }
   }
 }

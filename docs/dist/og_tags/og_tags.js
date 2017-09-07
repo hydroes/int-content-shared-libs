@@ -36,7 +36,8 @@ pug_html = pug_html + "\u003Cmeta" + (" property=\"og:image:height\""+pug_attr("
 ;pug_debug_line = 11;pug_debug_filename = "\u002FUsers\u002Fbriangouwsadmin\u002Fworkspace\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fog_tags\u002Fog_tags_image.pug";
 pug_html = pug_html + "\u003Cmeta" + (" property=\"og:image:type\""+pug_attr("content", data.image.type, true, false)) + "\u002F\u003E";
 }
-else
+else {
+;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fog_tags\u002Fog_tags.pug";
 if (data.video) {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fbriangouwsadmin\u002Fworkspace\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fog_tags\u002Fog_tags_video.pug";
 pug_html = pug_html + "\u003Cmeta" + (" property=\"og:video\""+pug_attr("content", data.video.url, true, false)) + "\u002F\u003E";
@@ -60,4 +61,12 @@ pug_html = pug_html + "\u003Cmeta" + (" property=\"og:video:width\""+pug_attr("c
 pug_html = pug_html + "\u003Cmeta" + (" property=\"og:video:width\""+pug_attr("content", data.video.width, true, false)) + "\u002F\u003E";
 ;pug_debug_line = 12;pug_debug_filename = "\u002FUsers\u002Fbriangouwsadmin\u002Fworkspace\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fog_tags\u002Fog_tags_video.pug";
 pug_html = pug_html + "\u003Cmeta" + (" property=\"og:image\""+pug_attr("content", data.video.imageUrl, true, false)) + "\u002F\u003E";
+}
+}
+;pug_debug_line = 7;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fog_tags\u002Fog_tags.pug";
+if (data.article) {
+;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fog_tags\u002Fog_tags_article.pug";
+pug_html = pug_html + "\u003Cmeta" + (" property=\"article:published_time\""+pug_attr("content", data.article.published_time, true, false)) + "\u002F\u003E";
+;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fog_tags\u002Fog_tags_article.pug";
+pug_html = pug_html + "\u003Cmeta" + (" property=\"article:author\""+pug_attr("content", data.article.author, true, false)) + "\u002F\u003E";
 }}.call(this,"data" in locals_for_with?locals_for_with.data:typeof data!=="undefined"?data:undefined));} catch (err) {pug_rethrow(err, pug_debug_filename, pug_debug_line);};return pug_html;}
