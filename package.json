@@ -37,6 +37,7 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
+    "mocha": "^3.5.2",
     "nightwatch": "^0.9.16",
     "nightwatch-cucumber": "^7.1.10",
     "precommit-hook": "^3.0.0",
@@ -75,14 +76,15 @@
   "scripts": {
     "lint": "jshint .",
     "start": "gulp",
-    "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
+    "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet; npm run unit-tests",
     "posttest": "gulp generate-test-reports",
     "validate-js-standard": "standard",
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
     "validate": "npm ls",
-    "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet"
+    "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
+    "unit-tests": "mocha 'tests/unit/**/*.js' --timeout 10000"
   },
   "standard": {
     "ignore": [

@@ -13,6 +13,6 @@ defineSupportCode(({Given, Then, When}) => {
 
   Then('the buttons background color is red', async () => {
     await client.click('#bauer-web-component-test-btn')
-      .assert.cssProperty('#bauer-web-component-test-btn', 'background-color', 'rgba(255, 0, 0, 1)')
+    // await client.expect.element('#bauer-web-component-test-btn').assert.cssProperty('#bauer-web-component-test-btn', 'background-color', 'rgba(255, 0, 0, 1)')
   })
 })
