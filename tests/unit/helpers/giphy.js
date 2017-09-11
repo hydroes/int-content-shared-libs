@@ -18,6 +18,4 @@ describe('Giphy url helper', function () {
       assert.equal('https://giphy.com/embed/YAv1nFIJc38hW', giphyHelper('https://media.giphy.com/media/YAv1nFIJc38hW/giphy.gif'))
     })
   })
-
-  // describe('should transform /gifs  /')
 })
