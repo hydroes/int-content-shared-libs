@@ -1,0 +1,20 @@
+ul.article-tags {
+  list-style: none;
+  li {
+    border: rem-calc(1) solid $black-color;
+    display: inline-block;
+    &:hover {
+      background-color: $black-color;
+      a {
+        color: $white-color;
+      }
+    }
+    a {
+      color: $black-color;
+      text-decoration: none;
+      height: inherit;
+      width: inherit;
+      display: block;
+    }
+  }
+}
