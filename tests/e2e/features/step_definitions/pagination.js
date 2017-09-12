@@ -16,22 +16,27 @@ defineSupportCode(({ Given, Then, When }) => {
       client.globals.goToComponentPage(client, pagination.container)
     }
     await client.globals.goToComponentPage(client, pagination.container)
+    return 'pending'
   })
 
   Then(/^the first page button is ([0-9]+)/, async (page) => {
     await client.expect.element(pagination.firstPage).text.to.equal(page)
+    return 'pending'
   })
 
   Then(/^the current page is ([0-9]+)$/, async (page) => {
     await client.expect.element(pagination.currentPage).text.to.equal(page)
+    return 'pending'
   })
 
   Then(/^as a result, the back button should go to ([0-9]+) and the next page button should go to ([0-9]+)$/, async (previous, next) => {
     await client.expect.element(pagination.previousNav).to.have.attribute('href').which.contains(previous)
     await client.expect.element(pagination.nextNav).to.have.attribute('href').which.contains(next)
+    return 'pending'
   })
 
   Then(/^the total amount of pages is ([0-9]+)$/, async (total) => {
     await client.expect.element(pagination.lastPage).text.to.equal(total)
+    return 'pending'
   })
 })

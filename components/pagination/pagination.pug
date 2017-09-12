@@ -1,4 +1,10 @@
-- let pages = window.bauerSharedLibs.pug.helpers.paginate(data)
+-
+  //- @todo: refactor to use server side helper
+  //- let pages = window.bauerSharedLibs.pug.helpers.paginate(data)
+  let pages = [{
+    href: '#',
+    diplay: 1
+  }]
 
 ul.pagination
   each page in pages

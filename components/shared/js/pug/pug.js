@@ -1,15 +1,9 @@
 'use strict'
 
 const $ = require('jquery')
-const helpers = require('./helpers/includes')
 const _ = require('lodash')
 
 var bauerPug = {
-  /**
-  * Mixin libs
-  * @return objects
-  */
-  helpers: helpers,
   /**
   * Renders a pug template into an element
   * @param templatePath string Template filename Eg test/test.pug
