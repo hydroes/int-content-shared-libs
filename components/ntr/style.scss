@@ -7,15 +7,15 @@
   overflow-x: scroll !important; // sass-lint:disable-line no-important
   width: 100%;
   max-width: 100%;
-  min-height: 720px !important; // sass-lint:disable-line no-important
-  height: 720px !important; // sass-lint:disable-line no-important
+  min-height: 320px !important; // sass-lint:disable-line no-important
+  height: 320px !important; // sass-lint:disable-line no-important
 
   iframe, object, embed {
     position: absolute;
     overflow: hidden !important; // sass-lint:disable-line no-important
     overflow-x: scroll !important; // sass-lint:disable-line no-important
-    min-height: 720px !important; // sass-lint:disable-line no-important
-    height: 720px !important; // sass-lint:disable-line no-important
+    min-height: 320px !important; // sass-lint:disable-line no-important
+    height: 320px !important; // sass-lint:disable-line no-important
     //outline: 1px solid red;
     top: 0;
     left: 0;
