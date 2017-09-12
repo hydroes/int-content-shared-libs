@@ -2,6 +2,6 @@ if data.images
   picture
     source(type=data.images.xs.mimeType, srcset=data.images.xs.url, media='(max-width: 479px)')
 
-    img(alt=data.title, title=data.title, srcset=data.images.sm.url)
+    img(alt=data.title, title=data.title, src=data.images.sm.url)
 else
   include card_no_image.pug

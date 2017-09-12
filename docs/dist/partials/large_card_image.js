@@ -10,7 +10,7 @@ pug_html = pug_html + "\u003Cpicture\u003E";
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 pug_html = pug_html + "\u003Csource" + (pug_attr("type", data.images.xs.mimeType, true, false)+pug_attr("srcset", data.images.xs.url, true, false)+" media=\"(max-width: 479px)\"") + "\u002F\u003E";
 ;pug_debug_line = 5;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
-pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", data.title, true, false)+pug_attr("title", data.title, true, false)+pug_attr("srcset", data.images.sm.url, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
+pug_html = pug_html + "\u003Cimg" + (pug_attr("alt", data.title, true, false)+pug_attr("title", data.title, true, false)+pug_attr("src", data.images.sm.url, true, false)) + "\u002F\u003E\u003C\u002Fpicture\u003E";
 }
 else {
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Fcard_no_image.pug";
