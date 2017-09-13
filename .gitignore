@@ -4,3 +4,4 @@ yarn.lock
 tests/e2e/screenshots/*
 tests/e2e/reports/*
 package-lock.json
+npm-debug.log
