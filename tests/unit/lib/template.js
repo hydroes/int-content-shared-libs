@@ -8,6 +8,7 @@ describe('Test template loader', function () {
   it('Works by checking if a string is returned', function () {
     assert.equal('string', typeof template('test'))
   })
+
   describe('Throws errors when', function () {
     it('Template file not found', function () {
       assert.throws(() => template('non-existent-file'), Error, 'Shared template not found: ')
