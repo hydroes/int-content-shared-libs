@@ -25,6 +25,8 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
+    "chai": "^4.1.2",
+    "chalk": "^2.1.0",
     "chromedriver": "^2.30.1",
     "cucumber": "^2.3.1",
     "cucumber-html-reporter": "^3.0.1",
@@ -37,6 +39,8 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
+    "koa": "^2.3.0",
+    "koa-views": "^6.0.2",
     "mocha": "^3.5.2",
     "nightwatch": "^0.9.16",
     "nightwatch-cucumber": "^7.1.10",
@@ -66,7 +70,8 @@
     "validate-js-standard",
     "validate-pug",
     "validate-sass",
-    "validate-commitmsg"
+    "validate-commitmsg",
+    "unit-tests"
   ],
   "readme": "README.md",
   "repository": {
