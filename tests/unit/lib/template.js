@@ -22,13 +22,5 @@ describe('Test template loader', function () {
     it('Invalid param templateData: null', function () {
       assert.throws(() => template('test', null), Error, 'param templateData must be an object')
     })
-
-    it('Reserved templateData key "helper":', function () {
-      assert.throws(() => template('test', {helpers: true}), Error, 'property "helpers" is a reserved property and cannot be used')
-    })
-
-    it('Reserved templateData key "_":', function () {
-      assert.throws(() => template('test', {_: true}), Error, 'property "_" is reserved and cannot be used')
-    })
   })
 })

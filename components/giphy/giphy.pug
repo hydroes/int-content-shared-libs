@@ -1,4 +1,4 @@
 .embeds-giphy
-  - // @todo: Use server side helper to transform data.url
+  - data.url = helpers.giphy(data.url)
 
   iframe.giphy-embed(src=data.url, width='480', height='480', frameborder='0', allowfullscreen='')
