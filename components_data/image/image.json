@@ -1,0 +1,20 @@
+{
+  "data": {
+    "altText": "Kim Wilde",
+    "caption": "Image Caption Text",
+    "images": [
+      {
+        "maxWidth": 480,
+        "path": "//via.placeholder.com/480x230"
+      },
+      {
+        "maxWidth": 768,
+        "path": "//via.placeholder.com/530x400"
+      }
+    ],
+    "defaultImage": {
+      "path": "//via.placeholder.com/740x420"
+    },
+    "credits": "Credits"
+  }
+}

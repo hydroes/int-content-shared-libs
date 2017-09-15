@@ -1,0 +1,10 @@
+{
+  "data": {
+    "protocol": "http://",
+    "host": "shared-libs.onebauer.media",
+    "pathname": "/testpath",
+    "facebook": "Share on Facebook",
+    "twitter": "Tweet on Twitter",
+    "whatsApp": "Text on Whatsapp"
+  }
+}
