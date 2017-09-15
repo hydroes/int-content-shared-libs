@@ -3,6 +3,8 @@
 const autoprefixer = require('autoprefixer')
 const gulp = require('gulp')
 const browserify = require('browserify')
+const chalk = require('chalk')
+const log = console.log
 const source = require('vinyl-source-stream')
 const minifyCSS = require('gulp-minify-css')
 const sass = require('gulp-sass')
@@ -15,6 +17,7 @@ const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 const cucumberHtmlReporter = require('cucumber-html-reporter')
+const nodemon = require('gulp-nodemon')
 // @todo: make DIST_DIR come from a config var
 const DIST_DIR = 'public/dist/'
 
@@ -94,6 +97,35 @@ gulp.task('generate-test-reports', function () {
   cucumberHtmlReporter.generate(options)
 
   // @todo: generate xml reports for jenkins
+})
+
+gulp.task('nodemon', function (cb) {
+  var called = false
+  nodemon({
+    script: 'server.js',
+    ext: 'pug',
+    exec: 'node --inspect',
+    watch: ['components'],
+    tasks: ['compile-sass', 'browserify'],
+    env: {'NODE_ENV': 'development'}
+  }).on('restart', function () {
+    log(chalk.green('Server restarted'))
+  }).on('start', function () {
+    log(chalk.green('Server started'))
+
+    if (!called) {
+      called = true
+      cb()
+    }
+
+    setTimeout(() => {
+      browserSync.init({
+        proxy: 'localhost:7000',
+        port: 3000,
+        notify: true
+      })
+    }, 1500)
+  })
 })
 
 // use default task to launch Browsersync and watch JS files
