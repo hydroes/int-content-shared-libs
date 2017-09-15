@@ -1,6 +1,25 @@
-FROM nginx:1.13.1
+FROM node:7.10.0
+
+# Create app directory
+RUN mkdir -p /app
+WORKDIR /app
+
+RUN yarn global add gulp
 
 # Bundle app source
-COPY docs/. /usr/share/nginx/html
+COPY . /app
+
+# Install app dependencies
+RUN yarn install
+
+# COPY config/config.development.dist.json config/config.development.json
+
+WORKDIR /app
+
+# RUN gulp
 
 EXPOSE 80
+
+ENV NODE_ENV=development
+
+CMD [ "node", "./server.js" ]
