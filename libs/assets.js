@@ -4,13 +4,14 @@
 
 const path = require('path')
 const fs = require('fs')
-
+// @todo: make DIST_DIR come from a config var
+const DIST_DIR = 'public/dist/'
 // returns paths of css/js assets
 // @param assetType css|scripts9
 module.exports = function (assetType) {
   // script paths stored here
   let assets = []
-  const componentPath = path.normalize(__dirname + './../views/dist') // eslint-disable-line
+  const componentPath = path.normalize(__dirname + './../' + DIST_DIR) // eslint-disable-line
 
   switch (assetType) {
     case 'scripts':
@@ -30,7 +31,7 @@ module.exports = function (assetType) {
           })
         }
       }
-      addAssetsInFoldersRecursive('./docs/assets/')
+      addAssetsInFoldersRecursive('./public/assets/')
       break
     case 'bootstrap_variables':
       let variablesFilePath = path.normalize(__dirname + './../components/shared/sass/bauer-bootstrap/variables.scss') // eslint-disable-line

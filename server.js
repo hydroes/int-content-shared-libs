@@ -20,7 +20,7 @@ app.use(convert(require('koa-logger')()))
 app.use(views(path.join(__dirname, '/views'), { extension: 'pug' }))
 
 // serve static assets
-app.use(serve(path.join(__dirname, '/views')))
+app.use(serve(path.join(__dirname, '/public')))
 
 log(chalk.green('Server started'))
 

@@ -17,6 +17,8 @@ const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 const cucumberHtmlReporter = require('cucumber-html-reporter')
+// @todo: make DIST_DIR come from a config var
+const DIST_DIR = 'public/dist/'
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js')
@@ -27,7 +29,7 @@ gulp.task('compile-js', function () {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('docs/dist/'))
+    .pipe(gulp.dest(`./${DIST_DIR}`))
     .pipe(browserSync.reload({'stream': true}))
 })
 
@@ -45,7 +47,7 @@ gulp.task('compile-pug-templates', function () {
 
   return gulp.src('components/**/*.pug')
     .on('data', function (file) {
-      let dirname = '/docs/dist/'
+      let dirname = DIST_DIR
       let filePath = file.path.replace('/components/', dirname)
       let methodName = filePath.slice(0, -4)
       let start = methodName.indexOf(dirname)
@@ -85,7 +87,7 @@ gulp.task('compile-sass', ['compile-development-sass'], function () {
         .pipe(rename('style.min.css'))
         .pipe(postcss([ autoprefixer() ]))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('docs/dist/'))
+        .pipe(gulp.dest(`./${DIST_DIR}`))
         .pipe(browserSync.reload({'stream': true}))
 })
 
@@ -111,7 +113,7 @@ gulp.task('remove-dist', function () {
       fs.rmdirSync(path)
     }
   }
-  deleteFolderRecursive('./docs/dist')
+  deleteFolderRecursive(`./${DIST_DIR}`)
 })
 
 // genarates test reports
@@ -139,15 +141,15 @@ gulp.task('default',
     'compile-sass'
   ], function () {
     // Serve files from the root of this project
-    browserSync.init({
-      server: {
-        baseDir: './docs/',
-        middleware: function (req, res, next) {
-          res.setHeader('Access-Control-Allow-Origin', '*')
-          next()
-        }
-      }
-    })
+    // browserSync.init({
+    //   server: {
+    //     baseDir: './docs/',
+    //     middleware: function (req, res, next) {
+    //       res.setHeader('Access-Control-Allow-Origin', '*')
+    //       next()
+    //     }
+    //   }
+    // })
 
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
