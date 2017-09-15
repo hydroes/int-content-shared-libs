@@ -1,8 +1,9 @@
+'use strict'
 /* globals describe, it */
 
 const chai = require('chai')
 const assert = chai.assert
-const template = require('../../../lib/template')
+const template = require('../../../libs/template')
 
 describe('Test template loader', function () {
   it('Works by checking if a string is returned', function () {
