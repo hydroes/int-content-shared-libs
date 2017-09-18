@@ -26,6 +26,3 @@
 @import "soundcloud/style";
 @import "vimeo/style";
 @import "youtube/style";
-
-//- import spacing last so that this styling takes precedence above others.
-@import "shared/sass/utilities/spacing";

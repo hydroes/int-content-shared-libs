@@ -1,30 +1,42 @@
+.content-card {
+  &--impactful {
+    &__info {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+      .title-container {
+        height: 100%;
+        width: 100%;
+        &__item {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
 @include screen-sm-min {
   .content-card {
     &--impactful {
       &__info {
-        &:hover,
-        &:active {
-          text-decoration: none;
-        }
+        padding: 0;
         .title-container {
           display: inline-flex;
           align-items: stretch;
           padding-right: rem-calc(5);
-          text-align: right;
           position: absolute;
           bottom: 0;
           right: 0;
           white-space: nowrap;
           overflow: hidden;
-          height: 100%;
-          width: 100%;
           margin-top: auto;
           &__item {
+            padding: 0;
             margin-left: auto;
             text-align: right;
             align-self: flex-start;
             margin-top: auto;
-            padding-bottom: 5%;
             .title {
               word-wrap: break-word;
               padding: rem-calc(5);
@@ -35,6 +47,20 @@
               box-decoration-break: clone;
               box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include screen-md-min {
+  .content-card {
+    &--impactful {
+      &__info {
+        .title-container {
+          &__item {
+            padding: 0 0 5% 0;
           }
         }
       }

@@ -8,7 +8,7 @@ pug_html = pug_html + "\u003Carticle class=\"content-card content-card--impactfu
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
-pug_html = pug_html + "\u003Ca" + (" class=\"content-card__info content-card--impactful__info pad-0 col-xs-12\""+pug_attr("href", data.url, true, false)) + "\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"content-card__info content-card--impactful__info col-xs-12\""+pug_attr("href", data.url, true, false)) + "\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 if (data.images) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
@@ -31,7 +31,7 @@ pug_html = pug_html + "\u003Cimg" + (pug_attr("src", data.noImage.lg.url, true, 
 ;pug_debug_line = 6;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"title-container\"\u003E";
 ;pug_debug_line = 7;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
-pug_html = pug_html + "\u003Cdiv class=\"title-container__item col-md-5 pad-0\"\u003E";
+pug_html = pug_html + "\u003Cdiv class=\"title-container__item col-xs-12 col-sm-5 col-md-6\"\u003E";
 ;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
 pug_html = pug_html + "\u003Cspan class=\"title\"\u003E";
 ;pug_debug_line = 8;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
