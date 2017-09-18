@@ -1,39 +1,33 @@
-.content-card {
-  &--impactful {
-    &:hover,
-    &:active {
-      text-decoration: none;
-    }
-    .title-container {
-      padding-right: rem-calc(5);
-      text-align: right;
-      position: absolute;
-      max-width: 45%;
-      display: block;
-      top: 0;
-      right: 0;
-      white-space: nowrap;
-      overflow: hidden;
 
-      .title {
-        word-wrap: break-word;
-        padding: rem-calc(5);
-        color: $white-color;
-        background-color: black;
-        line-height: 2;
-        display: inline;
-        align-self: flex-end;
-        box-decoration-break: clone;
-        box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
-      }
-    }
-  }
-}
-@include screen-md-min {
+@include screen-sm-min {
   .content-card {
-    .title-container {
-      top: unset;
-      bottom: 0;
+    &--impactful {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+      .title-container {
+        padding-right: rem-calc(5);
+        text-align: right;
+        position: absolute;
+        max-width: 45%;
+        bottom: 0;
+        right: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        max-height: 100%;
+        display: inline-block;
+        .title {
+          word-wrap: break-word;
+          padding: rem-calc(5);
+          color: $white-color;
+          background-color: black;
+          line-height: 2;
+          display: inline;
+          box-decoration-break: clone;
+          box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
+        }
+      }
     }
   }
 }
@@ -42,7 +36,6 @@
     &--impactful {
       .title-container {
         margin-bottom: rem-calc(20);
-        
       }
     }
   }
