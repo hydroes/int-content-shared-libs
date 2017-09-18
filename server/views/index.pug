@@ -164,4 +164,13 @@ include partials/header
                 h2 Embeds Ntr
             .col-md-6
               #embeds-ntr!= shared.component('ntr', shared.data('ntr/ntr.json'))
+
+          .row
+            .col-md-6
+              .style-guide__item__label
+                h2 Pinterest Embed
+            .col-md-6
+              .pinterest-rich-pin!= shared.component('pinterest', shared.data('pinterest/pinterest.json'))
+
+
 include partials/footer
