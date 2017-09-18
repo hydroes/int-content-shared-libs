@@ -7,5 +7,5 @@ const paginate = require('./paginate')
 
 module.exports = {
   giphy: url => giphy(url),
-  paginate: () => paginate()
+  paginate: data => paginate(data)
 }
