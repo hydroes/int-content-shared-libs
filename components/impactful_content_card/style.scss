@@ -1,41 +1,42 @@
-
 @include screen-sm-min {
   .content-card {
     &--impactful {
-      &:hover,
-      &:active {
-        text-decoration: none;
-      }
-      .title-container {
-        padding-right: rem-calc(5);
-        text-align: right;
-        position: absolute;
-        max-width: 45%;
-        bottom: 0;
-        right: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        max-height: 100%;
-        display: inline-block;
-        .title {
-          word-wrap: break-word;
-          padding: rem-calc(5);
-          color: $white-color;
-          background-color: black;
-          line-height: 2;
-          display: inline;
-          box-decoration-break: clone;
-          box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
+      &__info {
+        &:hover,
+        &:active {
+          text-decoration: none;
         }
-      }
-    }
-  }
-}
-@include screen-lg-min {
-  .content-card {
-    &--impactful {
-      .title-container {
-        margin-bottom: rem-calc(20);
+        .title-container {
+          display: inline-flex;
+          align-items: stretch;
+          padding-right: rem-calc(5);
+          text-align: right;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          height: 100%;
+          width: 100%;
+          margin-top: auto;
+          &__item {
+            margin-left: auto;
+            text-align: right;
+            align-self: flex-start;
+            margin-top: auto;
+            padding-bottom: 5%;
+            .title {
+              word-wrap: break-word;
+              padding: rem-calc(5);
+              color: $white-color;
+              background-color: $black-color;
+              line-height: 2;
+              display: inline;
+              box-decoration-break: clone;
+              box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
+            }
+          }
+        }
       }
     }
   }

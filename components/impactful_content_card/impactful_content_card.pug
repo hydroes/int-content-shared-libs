@@ -1,7 +1,8 @@
 
-article.content-card
+article.content-card.content-card--impactful
   .row
-    a.content-card__info.content-card--impactful.pad-0.col-xs-12(href=data.url)
+    a.content-card__info.content-card--impactful__info.pad-0.col-xs-12(href=data.url)
       include ../partials/large_card_image.pug
       .title-container
-        span.title #{data.title}
+        .title-container__item.col-md-5.pad-0
+          span.title #{data.title}
