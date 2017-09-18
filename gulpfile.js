@@ -101,7 +101,7 @@ gulp.task('generate-test-reports', function () {
 
 gulp.task('serve-app', function () {
   nodemon({
-    script: 'server.js',
+    script: 'server/server.js',
     exec: 'node --inspect',
     watch: ['components'],
     tasks: ['compile-sass', 'browserify'],

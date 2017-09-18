@@ -1,0 +1,42 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    title Bauer shared components
+    link(href='https://cdn.bauerassets.com/global-fonts/539934/62925A996736230B3.css', media='none', onload='if(media!="all")media="all"', rel='stylesheet', type='text/css')
+    noscript
+      link(rel='stylesheet', href='https://cloud.typography.com/777534/6275952/css/fonts.css')
+    link(href='dist/style.min.css', rel='stylesheet')
+    link(href='/guide.css', rel='stylesheet')
+    script(src='dist/script.min.js')
+  body
+    header.header
+      .header__items
+        img.header-logo(src='http://www.bauermedia.co.uk/images/logo-bauer.png')
+        h1
+          | Styleguide
+          span#header__version
+            |  #{pkg.version}
+      nav.navbar.row
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse#navbar
+          ul.nav.navbar-nav
+            li
+              a(href='#cards') Cards
+            li
+              a(href='#collections') Collections
+            li
+              a(href='#gallery') Gallery
+            li
+              a(href='#misc') Miscellaneous
+        // /.navbar-collapse
