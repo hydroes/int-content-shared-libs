@@ -11,6 +11,7 @@ const shared = {
 }
 const Koa = require('koa')
 const app = module.exports = new Koa()
+const appPort = 7000
 
 // setup console logger
 app.use(convert(require('koa-logger')()))
@@ -22,7 +23,7 @@ app.use(views(path.join(__dirname, '/views'), { extension: 'pug' }))
 // serve static assets
 app.use(serve(path.join(__dirname, '/public')))
 
-log(chalk.green('Server started'))
+log(chalk.green('Server started localhost:' + appPort))
 
 app.use(async function (ctx) {
   await ctx.render('index', {
@@ -35,4 +36,4 @@ app.use(async function (ctx) {
   })
 })
 
-if (!module.parent) app.listen(7000)
+if (!module.parent) app.listen(appPort)
