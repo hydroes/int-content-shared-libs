@@ -1,0 +1,49 @@
+.content-card {
+  &--impactful {
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+    .title-container {
+      padding-right: rem-calc(5);
+      text-align: right;
+      position: absolute;
+      max-width: 45%;
+      display: block;
+      top: 0;
+      right: 0;
+      white-space: nowrap;
+      overflow: hidden;
+
+      .title {
+        word-wrap: break-word;
+        padding: rem-calc(5);
+        color: $white-color;
+        background-color: black;
+        line-height: 2;
+        display: inline;
+        align-self: flex-end;
+        box-decoration-break: clone;
+        box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
+      }
+    }
+  }
+}
+@include screen-md-min {
+  .content-card {
+    .title-container {
+      top: unset;
+      bottom: 0;
+    }
+  }
+}
+@include screen-lg-min {
+  .content-card {
+    &--impactful {
+      .title-container {
+        margin-bottom: rem-calc(20);
+        
+      }
+    }
+  }
+}

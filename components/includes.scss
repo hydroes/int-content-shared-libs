@@ -1,6 +1,6 @@
-@import "shared/sass/utilities/_imports";
 @import 'shared/sass/main';
 @import 'test/style';
+@import "shared/sass/utilities/_imports";
 
 // STYLES REQUIRED FOR THE COMPONENTS
 @import "shared/sass/_variables";
@@ -14,6 +14,7 @@
 @import "social_sharing/style";
 @import "image/style";
 @import "article_tags/style";
+@import "impactful_content_card/style";
 ///==Embeds
 @import "audioboom/style";
 @import "bauercreative/style";
@@ -25,3 +26,6 @@
 @import "soundcloud/style";
 @import "vimeo/style";
 @import "youtube/style";
+
+//- import spacing last so that this styling takes precedence above others.
+@import "shared/sass/utilities/spacing";
