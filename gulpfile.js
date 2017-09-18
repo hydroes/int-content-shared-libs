@@ -99,32 +99,15 @@ gulp.task('generate-test-reports', function () {
   // @todo: generate xml reports for jenkins
 })
 
-gulp.task('nodemon', function (cb) {
-  var called = false
+gulp.task('serve-app', function () {
   nodemon({
     script: 'server.js',
-    ext: 'pug',
     exec: 'node --inspect',
     watch: ['components'],
     tasks: ['compile-sass', 'browserify'],
     env: {'NODE_ENV': 'development'}
   }).on('restart', function () {
     log(chalk.green('Server restarted'))
-  }).on('start', function () {
-    log(chalk.green('Server started'))
-
-    if (!called) {
-      called = true
-      cb()
-    }
-
-    setTimeout(() => {
-      browserSync.init({
-        proxy: 'localhost:7000',
-        port: 3000,
-        notify: true
-      })
-    }, 1500)
   })
 })
 
@@ -133,18 +116,15 @@ gulp.task('default',
   [
     'remove-dist',
     'compile-js',
-    'compile-sass'
+    'compile-sass',
+    'serve-app'
   ], function () {
     // Serve files from the root of this project
-    // browserSync.init({
-    //   server: {
-    //     baseDir: './docs/',
-    //     middleware: function (req, res, next) {
-    //       res.setHeader('Access-Control-Allow-Origin', '*')
-    //       next()
-    //     }
-    //   }
-    // })
+    browserSync.init({
+      proxy: 'localhost:7000',
+      port: 3000,
+      notify: true
+    })
 
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
