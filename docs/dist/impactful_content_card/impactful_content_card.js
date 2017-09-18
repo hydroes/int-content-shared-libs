@@ -8,7 +8,7 @@ pug_html = pug_html + "\u003Carticle class=\"content-card content-card--impactfu
 ;pug_debug_line = 3;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
 pug_html = pug_html + "\u003Cdiv class=\"row\"\u003E";
 ;pug_debug_line = 4;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fimpactful_content_card\u002Fimpactful_content_card.pug";
-pug_html = pug_html + "\u003Ca" + (" class=\"content-card__info content-card--impactful__info col-xs-12\""+pug_attr("href", data.url, true, false)) + "\u003E";
+pug_html = pug_html + "\u003Ca" + (" class=\"content-card__info content-card__info--impactful col-xs-12\""+pug_attr("href", data.url, true, false)) + "\u003E";
 ;pug_debug_line = 1;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";
 if (data.images) {
 ;pug_debug_line = 2;pug_debug_filename = "\u002FUsers\u002Fjordanpaisleyadmin\u002FDocuments\u002Fgit-repos\u002Fint-content-shared-libs\u002Fcomponents\u002Fpartials\u002Flarge_card_image.pug";

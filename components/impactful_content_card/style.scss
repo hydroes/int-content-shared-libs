@@ -1,6 +1,6 @@
 .content-card {
-  &--impactful {
-    &__info {
+  &__info {
+    &--impactful {
       &:hover,
       &:active {
         text-decoration: none;
@@ -18,8 +18,8 @@
 
 @include screen-sm-min {
   .content-card {
-    &--impactful {
-      &__info {
+    &__info {
+      &--impactful {
         padding: 0;
         .title-container {
           display: inline-flex;
@@ -56,8 +56,8 @@
 
 @include screen-md-min {
   .content-card {
-    &--impactful {
-      &__info {
+    &__info {
+      &--impactful {
         .title-container {
           &__item {
             padding: 0 0 5% 0;
