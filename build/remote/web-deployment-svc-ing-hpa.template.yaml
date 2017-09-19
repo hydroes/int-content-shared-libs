@@ -20,7 +20,7 @@ metadata:
     app: #KUBE_NAME#
 spec:
   ports:
-  - port: 80
+  - port: 7000
   selector:
     app: #KUBE_NAME#
 ---
@@ -49,7 +49,7 @@ spec:
           limits:
             cpu: "400m"
         ports:
-        - containerPort: 80
+        - containerPort: 7000
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -63,4 +63,4 @@ spec:
       - path: /
         backend:
           serviceName: #KUBE_NAME#
-          servicePort: 80
+          servicePort: 7000

@@ -18,7 +18,7 @@ WORKDIR /app
 
 # RUN gulp
 
-EXPOSE 80
+EXPOSE 7000
 
 ENV NODE_ENV=development
 
