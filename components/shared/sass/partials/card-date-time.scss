@@ -1,0 +1,20 @@
+.modified-container {
+  @include text-overflow-hidden(nowrap, block);
+  max-width: 100%;
+  font-size: rem-calc(12);
+  font-weight: 400;
+  text-transform: none;
+  color: $grey-color;
+  white-space: nowrap;
+  padding: rem-calc(10);
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+    &:after {
+      color: $grey-color;
+      content: " | ";
+      margin: 0.2rem;
+    }
+  }
+}

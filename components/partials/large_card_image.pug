@@ -1,7 +1,8 @@
 if data.images
-  picture
-    source(type=data.images.xs.mimeType, srcset=data.images.xs.url, media='(max-width: 479px)')
-
-    img(alt=data.title, title=data.title, src=data.images.sm.url)
+  .card-image.pad-0
+    include card_icons/play_button
+    picture
+      source(type=data.images.xs.mimeType, srcset=data.images.xs.url, media='(max-width: 479px)')
+      img(alt=data.title, title=data.title, src=data.images.sm.url)
 else
   include card_no_image.pug

@@ -1,0 +1,25 @@
+.card-icon {
+  transition: all 0.15s;
+  height: rem-calc(50);
+  width: rem-calc(50);
+  background-color: $black-color;
+  color: $white-color;
+  padding: rem-calc(5);
+  &__play {
+    .glyphicon {
+      font-size: rem-calc(30);
+      width: 100%;
+      text-align: center;
+      &:after {
+        content: "\e072";
+        color: $black-color;
+        position: absolute;
+        right: rem-calc(8);
+        top: rem-calc(4);
+        text-align: center;
+        font-size: rem-calc(25);
+        display: inline-block;
+      }
+    }
+  }
+}
