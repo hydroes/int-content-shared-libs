@@ -1,7 +1,6 @@
 {
   "data": {
     "path": "/entertainment/",
-    "metadata": {
       "limit": 6,
       "page": 698,
       "sort": {
@@ -11,6 +10,5 @@
       "totalCount": 44,
       "totalPages": 700,
       "nextPage": 699
-    }
   }
 }

@@ -94,10 +94,10 @@ module.exports = (data = {}) => {
   var paginate = new Paginate({
     pages: [],
     limit: 10,
-    totalPages: data.metadata.totalPages || null,
+    totalPages: data.totalPages || null,
     path: data.path || '',
-    currentPage: data.metadata.page || null,
-    next: data.metadata.nextPage || null
+    currentPage: data.page || null,
+    next: data.nextPage || null
   })
 
   function createPagination () {
