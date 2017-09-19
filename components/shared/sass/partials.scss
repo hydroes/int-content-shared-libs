@@ -29,8 +29,10 @@ body {
   font-size: 1rem;
   line-height: 1.35;
   letter-spacing: -.01em;
+  color: $black-color;
+  
   a {
-    color: $black-color;
+    color: inherit;
     display: inline-block;
     padding: 0;
     &:hover {
