@@ -90,14 +90,14 @@ Paginate.prototype.createPages = function (start, limit) {
   }
 }
 
-module.exports = function (data) {
+module.exports = (data = {}) => {
   var paginate = new Paginate({
     pages: [],
     limit: 10,
-    totalPages: data.metadata.totalPages,
-    path: data.path,
-    currentPage: data.metadata.page,
-    next: data.metadata.nextPage
+    totalPages: data.metadata.totalPages || null,
+    path: data.path || '',
+    currentPage: data.metadata.page || null,
+    next: data.metadata.nextPage || null
   })
 
   function createPagination () {
