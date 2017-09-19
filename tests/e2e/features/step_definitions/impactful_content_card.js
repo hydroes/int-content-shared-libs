@@ -10,7 +10,6 @@ defineSupportCode(({Given, Then, When}) => {
   })
 
   Then(/^the cards image url is "([^"]*)"$/, async (url) => {
-    console.log('-------------------------------url', url)
     await client.expect.element(imgAttr + ' img').to.have.attribute('src').which.equals(url)
   })
 

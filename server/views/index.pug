@@ -5,6 +5,14 @@ include partials/header
       section#cards
         .section-header
           h2 Cards
+
+        .row.style-guide__item
+          .col-md-6
+            .style-guide__item__label
+              h2 Impactful Content Card
+          .col-md-6
+            .large-content-card!= shared.component('impactful_content_card', shared.data('impactful_content_card/impactful_content_card.json'))
+
         .row.style-guide__item
           .col-md-6
             .style-guide__item__label
