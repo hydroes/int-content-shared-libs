@@ -1,6 +1,6 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
-  "version": "0.4.19",
+  "version": "0.4.26",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -25,18 +25,28 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
+    "chai": "^4.1.2",
+    "chalk": "^2.1.0",
     "chromedriver": "^2.30.1",
     "cucumber": "^2.3.1",
     "cucumber-html-reporter": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
+    "gulp-nodemon": "^2.2.1",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
+    "koa": "^2.3.0",
+    "koa-convert": "^1.2.0",
+    "koa-logger": "^3.0.1",
+    "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "koa-views": "^6.0.2",
+    "mocha": "^3.5.2",
     "nightwatch": "^0.9.16",
     "nightwatch-cucumber": "^7.1.10",
     "precommit-hook": "^3.0.0",
@@ -65,7 +75,8 @@
     "validate-js-standard",
     "validate-pug",
     "validate-sass",
-    "validate-commitmsg"
+    "validate-commitmsg",
+    "unit-tests"
   ],
   "readme": "README.md",
   "repository": {
@@ -75,14 +86,15 @@
   "scripts": {
     "lint": "jshint .",
     "start": "gulp",
-    "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
+    "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet; npm run unit-tests",
     "posttest": "gulp generate-test-reports",
     "validate-js-standard": "standard",
     "validate-pug": "pug-lint components/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
     "validate": "npm ls",
-    "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet"
+    "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
+    "unit-tests": "mocha 'tests/unit/**/*.js' --timeout 10000"
   },
   "standard": {
     "ignore": [

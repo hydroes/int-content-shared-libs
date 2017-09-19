@@ -1,0 +1,30 @@
+{
+    "data": {
+        "images": {
+            "xs": {
+                "url": "//via.placeholder.com/350x150",
+                "mimeType": "image/png"
+            },
+            "sm": {
+                "url": "//via.placeholder.com/900x350",
+                "mimeType": "image/png"
+            },
+            "altText": "lorem ipsum dolor sit amet"
+        },
+        "noImage": {
+            "sm": {
+                "url": "//via.placeholder.com/350"
+            },
+            "lg": {
+                "url": "//via.placeholder.com/900x350"
+            }
+        },
+        "url": "//www.google.com",
+        "title": "We asked the Love Island narrator everything you want to know about the show",
+        "category": {
+            "url": "//www.bbc.co.uk",
+            "name": "Gossip"
+        },
+        "date": "17 minutes ago"
+    }
+}

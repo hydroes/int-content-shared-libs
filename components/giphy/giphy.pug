@@ -1,5 +1,4 @@
 .embeds-giphy
-  -
-    // replace urls with watch with correct embed
-    data.url = data.url.replace('/gifs/', '/embed/')
-  iframe(src=data.url frameborder='0' allowfullscreen)
+  - data.url = helpers.giphy(data.url)
+
+  iframe.giphy-embed(src=data.url, width='480', height='480', frameborder='0', allowfullscreen='')

@@ -13,7 +13,4 @@ defineSupportCode(({Given, Then, When}) => {
   Then(/^the Instagram data attribute is "([^"]*)"$/, async (url) => {
     await client.expect.element(domElements.data_attr).to.have.attribute('data-embed-id').which.contains(url)
   })
-  Then(/^the Instagram link href attribute is "([^"]*)"$/, async (url) => {
-    await client.expect.element(domElements.url).to.have.attribute('href').which.contains(url)
-  })
 })

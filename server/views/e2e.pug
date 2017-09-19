@@ -1,0 +1,12 @@
+include partials/header
+.main-container
+  .container-fluid
+    .style-guide
+      .row.style-guide__item
+        .col-md-6
+          .style-guide__item__label
+            h2 Test Component
+        .col-md-6
+          #test_component!= shared.component('test', {title: 'test button'})
+
+include partials/footer

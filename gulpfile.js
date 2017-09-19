@@ -3,6 +3,8 @@
 const autoprefixer = require('autoprefixer')
 const gulp = require('gulp')
 const browserify = require('browserify')
+const chalk = require('chalk')
+const log = console.log
 const source = require('vinyl-source-stream')
 const minifyCSS = require('gulp-minify-css')
 const sass = require('gulp-sass')
@@ -11,12 +13,13 @@ const buffer = require('vinyl-buffer')
 const fs = require('fs')
 const browserSync = require('browser-sync').create()
 const concat = require('gulp-concat')
-const pug = require('pug')
-const path = require('path')
 const postcss = require('gulp-postcss')
 const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 const cucumberHtmlReporter = require('cucumber-html-reporter')
+const nodemon = require('gulp-nodemon')
+// @todo: make DIST_DIR come from a config var
+const DIST_DIR = 'public/dist/'
 
 gulp.task('compile-js', function () {
   return browserify('./components/includes.js')
@@ -27,45 +30,11 @@ gulp.task('compile-js', function () {
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('docs/dist/'))
+    .pipe(gulp.dest(`./${DIST_DIR}`))
     .pipe(browserSync.reload({'stream': true}))
 })
 
-// front end templates are compiled and stored all together in one file
-// this is done to ease development
-gulp.task('compile-pug-templates', function () {
-  function ensureDirectoryExistence (filePath) {
-    var dirname = path.dirname(filePath)
-    if (fs.existsSync(dirname)) {
-      return true
-    }
-    ensureDirectoryExistence(dirname)
-    fs.mkdirSync(dirname)
-  }
-
-  return gulp.src('components/**/*.pug')
-    .on('data', function (file) {
-      let dirname = '/docs/dist/'
-      let filePath = file.path.replace('/components/', dirname)
-      let methodName = filePath.slice(0, -4)
-      let start = methodName.indexOf(dirname)
-      methodName = methodName.substring(start + dirname.length)
-      methodName = methodName.replace(/\//g, '_')
-      let options = {
-        'name': `${methodName}`
-      }
-
-      // @todo: add option.filters here once they have been converted
-
-      let jsString = pug.compileFileClient(file.path, options)
-
-      filePath = filePath.slice(0, -4) + '.js'
-      ensureDirectoryExistence(filePath)
-      fs.writeFileSync(filePath, jsString)
-    })
-})
-
-gulp.task('pug-watch', ['compile-pug-templates'], function (done) {
+gulp.task('pug-watch', [], function (done) {
   browserSync.reload()
   done()
 })
@@ -85,7 +54,7 @@ gulp.task('compile-sass', ['compile-development-sass'], function () {
         .pipe(rename('style.min.css'))
         .pipe(postcss([ autoprefixer() ]))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('docs/dist/'))
+        .pipe(gulp.dest(`./${DIST_DIR}`))
         .pipe(browserSync.reload({'stream': true}))
 })
 
@@ -111,7 +80,7 @@ gulp.task('remove-dist', function () {
       fs.rmdirSync(path)
     }
   }
-  deleteFolderRecursive('./docs/dist')
+  deleteFolderRecursive(`./${DIST_DIR}`)
 })
 
 // genarates test reports
@@ -130,23 +99,31 @@ gulp.task('generate-test-reports', function () {
   // @todo: generate xml reports for jenkins
 })
 
+gulp.task('serve-app', function () {
+  nodemon({
+    script: 'server/server.js',
+    exec: 'node --inspect',
+    watch: ['components'],
+    tasks: ['compile-sass', 'browserify'],
+    env: {'NODE_ENV': 'development'}
+  }).on('restart', function () {
+    log(chalk.green('Server restarted'))
+  })
+})
+
 // use default task to launch Browsersync and watch JS files
 gulp.task('default',
   [
     'remove-dist',
     'compile-js',
-    'compile-pug-templates',
-    'compile-sass'
+    'compile-sass',
+    'serve-app'
   ], function () {
     // Serve files from the root of this project
     browserSync.init({
-      server: {
-        baseDir: './docs/',
-        middleware: function (req, res, next) {
-          res.setHeader('Access-Control-Allow-Origin', '*')
-          next()
-        }
-      }
+      proxy: 'localhost:7000',
+      port: 3000,
+      notify: true
     })
 
   // add browserSync.reload to the tasks array to make
