@@ -1,13 +1,15 @@
 if data.images
-  picture
-    source(
-      type=data.images.xs.mimeType
-      srcset=data.images.xs.url
-      media='(max-width: 480px)'
-    )
-    img(
-      src=data.images.sm.url
-      alt=data.images.altText
-    )
+  .card-image.pad-0
+    include card_icons/card_icons.pug
+    picture
+      source(
+        type=data.images.xs.mimeType
+        srcset=data.images.xs.url
+        media='(max-width: 480px)'
+      )
+      img(
+        src=data.images.sm.url
+        alt=data.images.altText
+      )
 else
   include card_no_image
