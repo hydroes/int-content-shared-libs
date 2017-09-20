@@ -17,8 +17,7 @@
  * @param {number} next
  */
 class Paginate {
-  constructor (options) {
-    options = options || {}
+  constructor (options = {}) {
     this._pages = options.pages || []
     this.limit = options.limit || 0
     this.totalPages = options.totalPages || 0
