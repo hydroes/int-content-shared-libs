@@ -1,0 +1,51 @@
+.content-card {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  box-shadow: $box-shadow-color rem-calc(1) rem-calc(1) rem-calc(2);
+  background-color: $white-color;
+  &__info,
+  &__link {
+    padding: 0;
+  }
+  &__info {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    padding: 0;
+    .modified-container {
+      padding: 0 rem-calc(10);
+    }
+  }
+  .row {
+    height: 100%;
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include screen-sm-min {
+  .content-card {
+    &__info {
+      min-height: rem-calc($content-card-content-height);
+      display: flex;
+      flex-direction: column;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      padding: 0;
+      overflow: hidden;
+      .title {
+        align-items: flex-start;
+      }
+      .modified-container {
+        padding: 0 rem-calc(10);
+        align-items: flex-end;
+        margin-top: auto;
+      }
+    }
+  }
+}

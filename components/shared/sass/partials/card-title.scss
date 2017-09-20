@@ -1,0 +1,21 @@
+.title {
+  @include text-overflow-hidden(normal, inline-block);
+  padding: rem-calc(10) rem-calc(10) 0;
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: -.01em;
+  a {
+    color: $black-color;
+    display: inline-block;
+    padding: 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@include screen-sm-min {
+  .title {
+    font-size: rem-calc(18);
+  }
+}

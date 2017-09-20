@@ -25,6 +25,14 @@ include partials/header
               h2 Small Content Card
           .col-sm-6.col-md-4.col-xl-3
             .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card.json'))
+        .row.style-guide__item
+          .col-md-3
+            .style-guide__item__label
+              h2 Cards with icons
+          .col-md-6
+            .content-card-large!= shared.component('large_content_card', shared.data('card_icons/large_content_card.json'))
+          .col-md-3
+            .content-card-small!= shared.component('small_content_card', shared.data('card_icons/small_content_card.json'))
       // =============== Images ===================
       section#collections
         .section-header
