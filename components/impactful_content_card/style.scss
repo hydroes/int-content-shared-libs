@@ -55,13 +55,13 @@
   }
 }
 
-@include screen-md-min {
+@include screen-sm-min {
   .content-card {
     &__info {
       &--impactful {
         .title-container {
           &__item {
-            padding: 0 0 5% 0;
+            padding-bottom: 5%;
           }
         }
       }
