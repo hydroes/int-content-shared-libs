@@ -20,11 +20,11 @@ class Paginate {
   constructor (options) {
     options = options || {}
     this._pages = options.pages || []
-    this.limit = options.limit || null
-    this.totalPages = options.totalPages || null
+    this.limit = options.limit || 0
+    this.totalPages = options.totalPages || 0
     this.path = options.path || ''
-    this.currentPage = options.currentPage || null
-    this.next = options.next || null
+    this.currentPage = options.currentPage || 0
+    this.next = options.next || 0
   }
 
   /**
