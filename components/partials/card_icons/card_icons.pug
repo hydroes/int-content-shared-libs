@@ -1,4 +1,3 @@
-if data.mediaType
-  case data.mediaType.toLowerCase()
-    when 'video'
-      include play_button
+if _.hasIn(data, 'icon.image.url')
+  .card-icon.hidden-xs
+    img.pad-0(src=data.icon.image.url)

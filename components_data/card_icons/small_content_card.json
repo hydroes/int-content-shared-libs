@@ -1,6 +1,10 @@
 {
     "data": {
-        "mediaType": "video",
+        "icon" : {
+            "image": {
+                "url": "https://via.placeholder.com/50x50"
+            }
+        },
         "images": {
             "xs": {
                 "url": "//via.placeholder.com/240x240",

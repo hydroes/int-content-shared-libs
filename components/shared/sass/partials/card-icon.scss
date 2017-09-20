@@ -1,7 +1,5 @@
 .card-icon {
   transition: all 0.15s;
-  height: rem-calc(50);
-  width: rem-calc(50);
-  background-image: url('https://via.placeholder.com/50x50');
+  display: inline;
   border: rem-calc(1) solid $black-color;
 }
