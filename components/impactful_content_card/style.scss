@@ -33,7 +33,7 @@
           overflow: hidden;
           margin-top: auto;
           &__item {
-            padding: 0;
+            padding: 0 0 5% 0;
             margin-left: auto;
             text-align: right;
             align-self: flex-start;
@@ -48,20 +48,6 @@
               box-decoration-break: clone;
               box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
             }
-          }
-        }
-      }
-    }
-  }
-}
-
-@include screen-md-min {
-  .content-card {
-    &__info {
-      &--impactful {
-        .title-container {
-          &__item {
-            padding: 0 0 5% 0;
           }
         }
       }
