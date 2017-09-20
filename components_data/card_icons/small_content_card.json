@@ -1,6 +1,6 @@
 {
     "data": {
-        "hasVideo": true,
+        "mediaType": "video",
         "images": {
             "xs": {
                 "url": "//via.placeholder.com/240x240",

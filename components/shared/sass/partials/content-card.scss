@@ -17,20 +17,6 @@
       padding: 0 rem-calc(10);
     }
   }
-  &__link {
-    &:hover {
-      .card-icon {
-        background-color: $white-color;
-        color: $black-color;
-        .glyphicon {
-          color: $black-color;
-          &:after {
-            color: $white-color;
-          }
-        }
-      }
-    }
-  }
   .row {
     height: 100%;
     margin: 0;
