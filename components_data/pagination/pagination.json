@@ -1,5 +1,6 @@
 {
   "data": {
+    "size": "pagination-lg",
     "path": "/entertainment/",
       "limit": 6,
       "page": 698,

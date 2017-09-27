@@ -17,7 +17,9 @@ defineSupportCode(({ Given, Then, When }) => {
     }
     await client.globals.goToComponentPage(client, pagination.container)
   })
-
+  Then(/^pagination component is displayed large, and should have the class "([^"]*)"/, async (className) => {
+    await client.expect.element(pagination.container).to.have.attribute('class').which.contains(className)
+  })
   Then(/^the first page button is ([0-9]+)/, async (page) => {
     await client.expect.element(pagination.firstPage).text.to.equal(page)
   })
