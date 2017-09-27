@@ -19,11 +19,11 @@ defineSupportCode(({Given, Then, When}) => {
 
   Then(/^the titles text from the card is "([^"]*)"$/, async (text) => {
     const title = container + ' .content-card--impactful__info .title-container .title-container__item .title'
-    client.expect.element(title).text.to.equal(text)
+    await client.expect.element(title).text.to.equal(text)
   })
 
   Then(/^the cards link itself is "([^"]*)"$/, async (text) => {
-    client.expect.element(container + ' a.content-card--impactful__info').text.to.equal(text)
+    await client.expect.element(container + ' a.content-card--impactful__info').text.to.equal(text)
   })
 
   Given(/^the shared components page is open in mobile view, the impactful cards small image url is "([^"]*)"$/, async (url) => {
