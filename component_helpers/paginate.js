@@ -109,7 +109,7 @@ class Paginate {
 module.exports = (data = {}) => {
   const paginate = new Paginate({
     pages: [],
-    limit: 10,
+    limit: data.limit || 10,
     totalPages: data.totalPages || null,
     path: data.path || '',
     currentPage: data.page || null,
