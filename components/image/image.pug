@@ -1,19 +1,10 @@
 -
-  let altText = null
-  if (!data.altText) {
+  let alt = ''
+  if (!alt) {
     altText = data.title
   } else {
     altText = data.altText
   }
-  let images = data.images || []
-picture.image
-  if images.length > 0 
-    each image in images
-      source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
-  img(src=data.defaultImage.path alt=altText title=altText)
-  if data.caption && data.caption !== '' || data.credits && data.credits !== ''
-    span.image__text
-      if data.caption && data.caption !== ''
-        span.image__text__caption #{data.caption  + ' '}
-      if data.credits && data.credits !== ''
-        span.image__text__credit &copy; #{data.credits}
+
+include ../mixins/renderImage
++renderImage(data.defaultImage.path, data.images, altText, data.caption, data.credits)
