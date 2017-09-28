@@ -26,13 +26,16 @@ include partials/header
           .col-sm-6.col-md-4.col-xl-3
             .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card.json'))
         .row.style-guide__item
-          .col-md-3
+          .col-md-12
             .style-guide__item__label
               h2 Cards with icons
           .col-md-6
             .content-card-large!= shared.component('large_content_card', shared.data('card_icons/large_content_card.json'))
           .col-md-3
             .content-card-small!= shared.component('small_content_card', shared.data('card_icons/small_content_card.json'))
+          .col-md-3
+            //- for dev..
+            //- .content-card-small!= shared.component('small_content_card', shared.data('card_icons/small_content_card_no_icon.json'))
       // =============== Images ===================
       section#collections
         .section-header
