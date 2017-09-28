@@ -1,0 +1,14 @@
+mixin renderImage(defaultImgUrl, imagesSizes, altText = '', caption = '', credits = '') 
+  -
+    let images = imagesSizes || []
+  picture.image
+    if images.length > 0 
+      each image in images
+        source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
+    img(src=defaultImgUrl alt=altText title=altText)
+    if caption || credits
+      span.image__text
+        if caption
+          span.image__text__caption #{caption  + ' '}
+        if credits
+          span.image__text__credit &copy; #{credits}
