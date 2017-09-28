@@ -3,7 +3,11 @@
         "icon" : {
             "image": {
                 "url": "https://via.placeholder.com/50x50"
-            }
+            },
+            "images": [{
+                "maxWidth": 479,
+                "path": "//via.placeholder.com/25x25"
+              }]
         },
         "images": {
             "xs": {

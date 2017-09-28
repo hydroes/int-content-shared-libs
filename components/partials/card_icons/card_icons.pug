@@ -1,5 +1,7 @@
 -
-  let iconUrl = _.result(data, 'icon.image.url')
-if iconUrl
+  let defaultIcon =_.result(data, 'icon.defaultImage.path', '') //- keep this so devs can inherit properties from the image component
+  defaultIcon = _.result(data, 'icon.image.url', defaultIcon) //-  kept icon.image.url as precedence for backward compatibility with changes
+if defaultIcon
+  include ../../mixins/renderImage
   .card-icon.col-xs-2
-    img.pad-0(src=iconUrl)
+    +renderImage(defaultIcon, data.icon.images || [])
