@@ -1,0 +1,144 @@
+extends partials/page
+block content
+  // =============== Miscallaneous ===================
+  section#misc
+    .section-header
+      h2 Miscallaneous
+    .row.style-guide__item
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Pagination
+        .col-md-6
+          #pagination-component!= shared.component('pagination', shared.data('pagination/pagination.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Breadcrumbs
+        .col-md-6
+          #breadcrumbs!= shared.component('breadcrumbs', shared.data('breadcrumbs/breadcrumbs.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Social Sharing
+        .col-md-6
+          #social-sharing!= shared.component('social_sharing', shared.data('social_sharing/social_sharing.json'))
+      .row
+        .col-md-12
+          .style-guide__item__label
+            h2 Facebook Open Graph Tags
+            h2 Used for sharing on social sites, e.g. Facebook
+        .col-md-3
+          h3 Open Graph Tags: Article - with video
+          pre.code
+            -
+              let ogData = shared.data('og_tags/og_tags.json')
+              let ogTagsVideo = ogData
+              delete ogTagsVideo.data.image
+            code.og-tags-video= shared.component('og_tags', ogTagsVideo)
+        .col-md-3
+          h3 Open Graph Tags: Article - with image
+          pre.code
+            code.og-tags-image= shared.component('og_tags', ogData)
+        .col-md-3
+          h3 Open Graph Tags: Article - without video or image
+          pre.code
+            -
+              let ogDataNoHero = ogData
+              delete ogDataNoHero.data.video
+            code.og-tags-no-hero= shared.component('og_tags', ogDataNoHero)
+        .col-md-3
+          h3 Open Graph Tags: For non-article pages
+          pre.code
+            -
+              let ogTagsArticle = ogData
+              delete ogTagsArticle.data.article
+            code.og-tags= shared.component('og_tags', ogTagsArticle)
+      .row
+        .col-md-2
+          .style-guide__item__label
+            h2 Twitter Card Tags
+        .col-md-5
+          h3 Twitter Card Tags: with image
+          pre.code
+            code.twitter-card-tags-image= shared.component('twitter_card_tags', shared.data('twitter_card_tags/twitter_cards_tags.json'))
+        .col-md-5
+          h3 Twitter Card Tags: without image
+          pre.code
+            code.twitter-card-tags= shared.component('twitter_card_tags', shared.data('twitter_card_tags/twitter_cards_tags.json'))
+      // ============== Embeds ================
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds - Twitter
+        .col-md-6
+          #embeds-twitter!= shared.component('twitter', shared.data('twitter/twitter.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Youtube
+        .col-md-6
+          #embeds-youtube!= shared.component('youtube', shared.data('youtube/youtube.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Vimeo
+        .col-md-6
+          #embeds-vimeo!= shared.component('vimeo', shared.data('vimeo/vimeo.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds- Facebook
+        .col-md-6
+          #embeds-facebook!= shared.component('facebook', shared.data('facebook/facebook.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Instagram
+        .col-md-6
+          #embeds-instagram!= shared.component('instagram', shared.data('instagram/instagram.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Giphy
+        .col-md-6
+          #embeds-giphy!= shared.component('giphy', shared.data('giphy/giphy.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Brightcove
+        .col-md-6
+          #embeds-brightcove!= shared.component('brightcove', shared.data('brightcove/brightcove.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Audioboom
+        .col-md-6
+          #embeds-audioboom!= shared.component('audioboom', shared.data('audioboom/audioboom.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Soundcloud
+        .col-md-6
+          #embeds-soundcloud!= shared.component('soundcloud', shared.data('soundcloud/soundcloud.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Bauercreative
+        .col-md-6
+          #embeds-bauercreative!= shared.component('bauercreative', shared.data('bauercreative/bauercreative.json'))
+      // @todo engagesciences
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds Ntr
+        .col-md-6
+          #embeds-ntr!= shared.component('ntr', shared.data('ntr/ntr.json'))
+
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Pinterest Embed
+        .col-md-6
+          .pinterest-rich-pin!= shared.component('pinterest', shared.data('pinterest/pinterest.json'))
+

@@ -1,11 +1,10 @@
-@import "shared/sass/utilities/_imports";
 @import 'shared/sass/main';
 @import 'test/style';
 
 // STYLES REQUIRED FOR THE COMPONENTS
 @import "shared/sass/_variables";
+@import "shared/sass/utilities/_imports";
 @import "shared/sass/partials/_includes";
-@import "shared/sass/mixins/_includes";
 
 // COMPONENTS STYLES
 @import "large_content_card/style";

@@ -1,0 +1,12 @@
+extends partials/page
+block content
+  // =============== Images ===================
+  section#collections
+    .section-header
+      h2 Images
+    .row.style-guide__item
+      .style-guide__item__label
+        h2 Image
+      .col-md-6
+      .col-md-6
+        #image!= shared.component('image', shared.data('image/image.json'))
