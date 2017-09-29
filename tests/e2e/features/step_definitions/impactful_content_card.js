@@ -4,11 +4,9 @@ const { defineSupportCode } = require('cucumber')
 const container = '.content-card--impactful'
 const imgAttr = container + ' .content-card__info--impactful .card-image > picture'
 
-const { globals } = client
-
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view a impactful hero card', async () => {
-    await globals.goToComponentPage(client, container, 'cards')
+    await client.globals.goToComponentPage(client, container, 'cards')
   })
 
   Then(/^the cards image url is "([^"]*)"$/, async (url) => {
@@ -29,7 +27,7 @@ defineSupportCode(({Given, Then, When}) => {
   })
 
   Given(/^the shared components page is open in mobile view, the impactful cards small image url is "([^"]*)"$/, async (url) => {
-    await globals.goToComponentPage(client, container, 'cards')
+    await client.globals.goToComponentPage(client, container, 'cards')
     await client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
   })
 })

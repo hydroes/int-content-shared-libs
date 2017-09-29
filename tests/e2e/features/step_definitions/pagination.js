@@ -9,12 +9,11 @@ const pagination = {
   firstPage: '.pagination > li:nth-child(2) a',
   currentPage: '.pagination > li a.pagination__link--active'
 }
-const { globals } = client
 
 defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page, to view pagination', async () => {
     if (client.url !== client.globals.getComponentsPageUrl('misc')) {
-      globals.goToComponentPage(client, pagination.container, 'misc')
+      client.globals.goToComponentPage(client, pagination.container, 'misc')
     }
     await client.globals.goToComponentPage(client, pagination.container, 'misc')
   })

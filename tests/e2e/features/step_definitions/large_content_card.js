@@ -5,10 +5,9 @@ const container = '.large-content-card'
 const imgAttr = container + ' .content-card--large__link picture'
 const title = container + ' .content-card--large__info span.title a'
 const category = container + ' .content-card--large__info a.brand-color'
-const { globals } = client
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view a large card', async () => {
-    await globals.goToComponentPage(client, '.large-content-card', 'cards')
+    await client.globals.goToComponentPage(client, '.large-content-card', 'cards')
   })
 
   Then(/^the large image url is "([^"]*)"$/, async (url) => {

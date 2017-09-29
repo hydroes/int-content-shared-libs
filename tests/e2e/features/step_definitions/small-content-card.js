@@ -6,11 +6,9 @@ const smallCard = {
   picture: '.content-card--small .content-card__link picture'
 }
 
-const { globals } = client
-
 defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page locally', async () => {
-    await globals.goToComponentPage(client, smallCard.container, 'cards')
+    await client.globals.goToComponentPage(client, smallCard.container, 'cards')
   })
   Then(/^the card has a title text of "([^"]*)"$/, async (text) => {
     await client.expect.element(smallCard.info + ':first-of-type .title a').text.to.equal(text)
