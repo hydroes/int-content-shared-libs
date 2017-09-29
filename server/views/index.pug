@@ -58,6 +58,18 @@ include partials/header
             .col-md-6
               #pagination-component!= shared.component('pagination', shared.data('pagination/pagination.json'))
           .row
+            .col-md-12
+              .style-guide__item__label
+                h2 Impactful Text
+            .col-md-12
+              -
+                let impactful = shared.component('impactful_text', shared.data('impactful_text/impactful_text.json'))
+              h1 !{impactful}
+              h2 !{impactful}
+              h3 !{impactful}
+              h4 !{impactful}
+              h5 !{impactful}
+          .row
             .col-md-6
               .style-guide__item__label
                 h2 Breadcrumbs
