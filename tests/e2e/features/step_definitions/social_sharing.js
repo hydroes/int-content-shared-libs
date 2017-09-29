@@ -12,9 +12,11 @@ let handle = {} // @todo
 /*eslint-enable */
 let self = null
 
+const { globals } = client
+
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Social Sharing icons', async () => {
-    await client.globals.goToComponentPage(client, domElements.container)
+    await globals.goToComponentPage(client, domElements.container, 'misc')
   })
   Then(/^Facebook's data-social-share-url attribute url is "([^"]*)"$/, async (url) => {
     await client.expect.element(domElements.facebook).to.have.attribute('data-social-share-url').which.equals(url)
