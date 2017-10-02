@@ -14,7 +14,7 @@ let self = null
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Social Sharing icons', async () => {
-    await client.globals.goToComponentPage(client, domElements.container, 'misc')
+    await client.globals.goToComponentPage(client, domElements.container, 'ui')
   })
   Then(/^Facebook's data-social-share-url attribute url is "([^"]*)"$/, async (url) => {
     await client.expect.element(domElements.facebook).to.have.attribute('data-social-share-url').which.equals(url)

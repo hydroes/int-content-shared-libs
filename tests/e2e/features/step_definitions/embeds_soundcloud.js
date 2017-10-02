@@ -7,7 +7,7 @@ const domElements = {
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Soundcloud embed', async () => {
-    await client.globals.goToComponentPage(client, domElements.container, 'misc')
+    await client.globals.goToComponentPage(client, domElements.container, 'embeds')
   })
   Then(/^the Soundcloud embed url is "([^"]*)"$/, async (url) => {
     await client.expect.element(domElements.url).to.have.attribute('src').which.contains(url)

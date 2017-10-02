@@ -5,7 +5,7 @@ const pin = container + ' > *'
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Pinterest embed', async () => {
-    await client.globals.goToComponentPage(client, container, 'misc')
+    await client.globals.goToComponentPage(client, container, 'embeds')
   })
   Then('the pin embed is present', async () => {
     await client.expect.element(pin).to.be.present

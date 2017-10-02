@@ -22,10 +22,15 @@ module.exports = function (router) {
     await ctx.render('index', templateOpts)
   })
 
-  router.get('/miscellaneous', async function (ctx, next) {
-    await ctx.render('miscellaneous', templateOpts)
+  router.get('/ui-components', async function (ctx, next) {
+    await ctx.render('ui-components', templateOpts)
   })
-  router.redirect('/misc', '/miscellaneous')
+  router.redirect('/ui', '/ui-components')
+
+  router.get('/embeds', async function (ctx, next) {
+    await ctx.render('embeds', templateOpts)
+  })
+  router.redirect('/embed', '/embeds')
 
   router.get('/css-utilities', async function (ctx, next) {
     await ctx.render('css-utilities', templateOpts)
@@ -36,12 +41,10 @@ module.exports = function (router) {
   })
   router.redirect('/cards', '/content-cards')
 
-  router.get('/collections', async function (ctx, next) {
-    await ctx.render('collections', templateOpts)
+  router.get('/meta-tags', async function (ctx, next) {
+    await ctx.render('meta-tags', templateOpts)
   })
-  router.redirect('/image-component', '/collections')
-  router.redirect('/hero-image', '/collections')
-  router.redirect('/image', '/collections')
+  router.redirect('/metas', '/meta-tags')
 
   router.get('/e2e', async function (ctx, next) {
     await ctx.render('e2e', templateOpts)

@@ -15,7 +15,8 @@ html(lang='en')
   body
     header.header
       .header__items
-        img.header-logo(src='http://www.bauermedia.co.uk/images/logo-bauer.png')
+        a.pad-0(href='/')
+          img.header-logo(src='http://www.bauermedia.co.uk/images/logo-bauer.png')
         h1
           | Styleguide
           span#header__version
@@ -33,12 +34,14 @@ html(lang='en')
           ul.nav.navbar-nav
             li
               a(href='/content-cards') Cards
-            li
-              a(href='/collections') Collections
             //- li
             //-   a(href='#gallery') Gallery //- not implemented
             li
-              a(href='/miscellaneous') Miscellaneous
+              a(href='/ui-components') UI Components
+            li
+              a(href='/embeds') Embeds
             li
               a(href='/css-utilities') CSS Utilities
+            li
+              a(href='/metas') Meta tags
         //- /.navbar-collapse
