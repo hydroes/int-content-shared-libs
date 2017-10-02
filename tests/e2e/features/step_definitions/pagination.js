@@ -12,10 +12,10 @@ const pagination = {
 
 defineSupportCode(({ Given, Then, When }) => {
   Given('I open the shared components page, to view pagination', async () => {
-    if (client.url !== client.globals.getComponentsPageUrl()) {
-      client.globals.goToComponentPage(client, pagination.container)
+    if (client.url !== client.globals.getComponentsPageUrl('ui')) {
+      client.globals.goToComponentPage(client, pagination.container, 'ui')
     }
-    await client.globals.goToComponentPage(client, pagination.container)
+    await client.globals.goToComponentPage(client, pagination.container, 'ui')
   })
   Then(/^pagination component is displayed large, and should have the class "([^"]*)"/, async (className) => {
     await client.expect.element(pagination.container).to.have.attribute('class').which.contains(className)

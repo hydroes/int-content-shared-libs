@@ -4,7 +4,8 @@ mixin renderImage(defaultImgUrl, imagesSizes, altText = '', caption = '', credit
   picture.image
     if images.length > 0 
       each image in images
-        source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
+        if image.path
+          source(media=`(max-width: ${image.maxWidth}px)` srcset=image.path)
     img(src=defaultImgUrl alt=altText title=altText)
     if caption || credits
       span.image__text

@@ -22,6 +22,30 @@ module.exports = function (router) {
     await ctx.render('index', templateOpts)
   })
 
+  router.get('/ui-components', async function (ctx, next) {
+    await ctx.render('ui-components', templateOpts)
+  })
+  router.redirect('/ui', '/ui-components')
+
+  router.get('/embeds', async function (ctx, next) {
+    await ctx.render('embeds', templateOpts)
+  })
+  router.redirect('/embed', '/embeds')
+
+  router.get('/css-utilities', async function (ctx, next) {
+    await ctx.render('css-utilities', templateOpts)
+  })
+
+  router.get('/content-cards', async function (ctx, next) {
+    await ctx.render('content-cards', templateOpts)
+  })
+  router.redirect('/cards', '/content-cards')
+
+  router.get('/meta-tags', async function (ctx, next) {
+    await ctx.render('meta-tags', templateOpts)
+  })
+  router.redirect('/metas', '/meta-tags')
+
   router.get('/e2e', async function (ctx, next) {
     await ctx.render('e2e', templateOpts)
   })

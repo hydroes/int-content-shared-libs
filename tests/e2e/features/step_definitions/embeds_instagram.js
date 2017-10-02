@@ -8,7 +8,7 @@ const domElements = {
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Instagram embed', async () => {
-    await client.globals.goToComponentPage(client, domElements.container)
+    await client.globals.goToComponentPage(client, domElements.container, 'embeds')
   })
   Then(/^the Instagram data attribute is "([^"]*)"$/, async (url) => {
     await client.expect.element(domElements.data_attr).to.have.attribute('data-embed-id').which.contains(url)

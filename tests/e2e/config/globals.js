@@ -29,8 +29,8 @@ module.exports = {
   getPageTimeout: function () {
     return 300000
   },
-  goToComponentPage: function (client, awaitedElement) {
-    client.url(client.globals.getComponentsPageUrl())
+  goToComponentPage: function (client, awaitedElement, url = '') {
+    client.url(client.globals.getComponentsPageUrl(url))
       .waitForElementVisible(awaitedElement, client.globals.getPageTimeout())
   },
   mobile: {
