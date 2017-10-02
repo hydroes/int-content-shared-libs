@@ -46,8 +46,16 @@ class Paginate {
    * @return {string}
    * @static
    */
-  static parsePath (current, path) {
-    return current === 1 ? path : path + current
+  static parsePath (page, current, path) {
+    let pathArray = path.split('/', 3)
+    if (pathArray[2] === '' || parseInt(pathArray[2]) === page) {
+      return current === 1 ? `/${pathArray[1]}` : `/${pathArray[1]}/${current}`
+    }
+    if (isNaN(pathArray[2])) {
+      let fullPath = `${pathArray[1]}/${pathArray[2]}`
+      return current === 1 ? `/${fullPath}/` : `/${fullPath}/${current}/`
+    }
+    return '/'
   }
   /**
    * @param {number} current
@@ -81,17 +89,15 @@ class Paginate {
    * @return {Void}
    */
   createSinglePage (current, isActive, display) {
-    if (current > 0) {
-      this.pages = {
-        display: display || current,
-        page: current,
-        href: Paginate.parsePath(current, this.path),
-        isActive
-      }
+    this.pages = {
+      display: display || current,
+      page: current,
+      href: Paginate.parsePath(this.currentPage, current, this.path),
+      isActive
     }
   }
   /**
-   * @description Recursive method that builds an array based on the start
+   * @description Builds an array based on the start
    * number being less than <limit> & checks the counter <isActive>.
    * @param {number} start - Either current or offset.
    * @param {number=} limit - (Optional) use either <limit>, <totalPages> or an offset value here.
@@ -111,21 +117,25 @@ class Paginate {
 module.exports = (data = {}) => {
   const paginate = new Paginate({
     pages: [],
-    limit: data.limit || 10,
+    limit: data.limit > data.totalPages ? data.totalPages : data.limit || 10,
     totalPages: data.totalPages || null,
     path: data.path || '',
     currentPage: data.page || null,
     next: data.nextPage || null
   })
-
   function createPagination () {
     if (paginate.currentPage > 1) {
       paginate.createSinglePage(paginate.currentPage - 1, false, '<')
       paginate.createSinglePage(1, false, 1)
     }
-
-    let offset = paginate.counterOffset(paginate.currentPage)
-    paginate.isAtLimit(paginate.currentPage) ? paginate.createPages(offset) : paginate.createPages(paginate.currentPage, offset)
+    let offset
+    if (paginate.totalPages <= paginate.limit) {
+      offset = paginate.totalPages
+      paginate.createPages(offset - 2, offset) // -2: this is to allow for < and 1 pages
+    } else {
+      offset = paginate.counterOffset(paginate.currentPage)
+      paginate.isAtLimit(paginate.currentPage) ? paginate.createPages(offset) : paginate.createPages(paginate.currentPage, offset)
+    }
 
     if (!paginate.isAtLimit(paginate.currentPage)) {
       paginate.createSinglePage(paginate.totalPages, false, paginate.totalPages)
@@ -134,7 +144,6 @@ module.exports = (data = {}) => {
     if (paginate.currentPage < paginate.totalPages) {
       paginate.createSinglePage(paginate.next, false, '>')
     }
-
     try {
       if (paginate.pages.length > 0) {
         return paginate.pages
