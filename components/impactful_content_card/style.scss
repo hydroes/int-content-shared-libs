@@ -17,6 +17,18 @@
   }
 }
 
+@include screen-sm-max {
+  .impactful-text {
+    &--card {
+      word-wrap: break-word;
+      background-color: initial;
+      color: $black-color;
+      box-decoration-break: none;
+      box-shadow: none;
+    }
+  }
+}
+
 @include screen-sm-min {
   .content-card {
     &__info {
@@ -38,15 +50,13 @@
             text-align: right;
             align-self: flex-start;
             margin-top: auto;
-            .title {
-              word-wrap: break-word;
-              padding: rem-calc(5);
-              color: $white-color;
-              background-color: $black-color;
-              line-height: 2;
-              display: inline;
-              box-decoration-break: clone;
-              box-shadow: rem-calc(5) 0 0 $black-color, rem-calc(5) 0 0 $black-color;
+            .impactful-text {
+              &--card {
+                word-wrap: break-word;
+                padding: rem-calc(5);
+                line-height: 2;
+                display: inline;
+              }
             }
           }
         }
