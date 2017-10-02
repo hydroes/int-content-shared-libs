@@ -1,8 +1,11 @@
 .card-image {
-  & > .card-icon {
+  .icon-container {
     position: absolute;
     bottom: 0;
     left: 0;
+    .card-icon {
+      width: 100%;
+    }
   }
   .missing-image {
     background-repeat: no-repeat;

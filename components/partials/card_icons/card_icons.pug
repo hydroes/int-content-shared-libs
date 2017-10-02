@@ -4,5 +4,5 @@
   let hasIconImage = _.result(data, 'images.xs.url', '') || _.result(data, 'images.sm.url', '')
 if defaultIcon && hasIconImage
   include ../../mixins/renderImage
-  .card-icon.col-xs-2
+  .card-icon
     +renderImage(defaultIcon, data.icon.images || [])
