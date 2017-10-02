@@ -81,11 +81,13 @@ class Paginate {
    * @return {Void}
    */
   createSinglePage (current, isActive, display) {
-    this.pages = {
-      display: display || current,
-      page: current,
-      href: Paginate.parsePath(current, this.path),
-      isActive
+    if (current > 0) {
+      this.pages = {
+        display: display || current,
+        page: current,
+        href: Paginate.parsePath(current, this.path),
+        isActive
+      }
     }
   }
   /**
