@@ -1,0 +1,80 @@
+extends partials/page
+block content
+  section#ui-components
+      .section-header
+        h2 Embeds
+      .row.style-guide__item
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Twitter
+          .col-md-6
+            #embeds-twitter!= shared.component('twitter', shared.data('twitter/twitter.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Youtube
+          .col-md-6
+            #embeds-youtube!= shared.component('youtube', shared.data('youtube/youtube.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Vimeo
+          .col-md-6
+            #embeds-vimeo!= shared.component('vimeo', shared.data('vimeo/vimeo.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds- Facebook
+          .col-md-6
+            #embeds-facebook!= shared.component('facebook', shared.data('facebook/facebook.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Instagram
+          .col-md-6
+            #embeds-instagram!= shared.component('instagram', shared.data('instagram/instagram.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Giphy
+          .col-md-6
+            #embeds-giphy!= shared.component('giphy', shared.data('giphy/giphy.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Brightcove
+          .col-md-6
+            #embeds-brightcove!= shared.component('brightcove', shared.data('brightcove/brightcove.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Audioboom
+          .col-md-6
+            #embeds-audioboom!= shared.component('audioboom', shared.data('audioboom/audioboom.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Soundcloud
+          .col-md-6
+            #embeds-soundcloud!= shared.component('soundcloud', shared.data('soundcloud/soundcloud.json'))
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Bauercreative
+          .col-md-6
+            #embeds-bauercreative!= shared.component('bauercreative', shared.data('bauercreative/bauercreative.json'))
+        // @todo engagesciences
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Embeds Ntr
+          .col-md-6
+            #embeds-ntr!= shared.component('ntr', shared.data('ntr/ntr.json'))
+
+        .row
+          .col-md-6
+            .style-guide__item__label
+              h2 Pinterest Embed
+          .col-md-6
+            .pinterest-rich-pin!= shared.component('pinterest', shared.data('pinterest/pinterest.json'))

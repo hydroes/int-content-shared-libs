@@ -1,6 +1,7 @@
 if data.images
   .card-image.pad-0
-    include card_icons/card_icons.pug
+    .col-xs-4.col-sm-3.col-md-2.icon-container
+      include card_icons/card_icons.pug
     picture
       source(
         type=data.images.xs.mimeType

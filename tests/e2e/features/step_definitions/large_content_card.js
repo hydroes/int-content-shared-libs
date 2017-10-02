@@ -5,14 +5,13 @@ const container = '.large-content-card'
 const imgAttr = container + ' .content-card--large__link picture'
 const title = container + ' .content-card--large__info span.title a'
 const category = container + ' .content-card--large__info a.brand-color'
-
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view a large card', async () => {
-    await client.globals.goToComponentPage(client, '.large-content-card')
+    await client.globals.goToComponentPage(client, '.large-content-card', 'cards')
   })
 
   Then(/^the large image url is "([^"]*)"$/, async (url) => {
-    await client.expect.element(imgAttr + ' img').to.have.attribute('srcset').which.equals(url)
+    await client.expect.element(imgAttr + ' img').to.have.attribute('src').which.contains(url)
   })
 
   Then(/^the alt text is "([^"]*)"$/, async (alt) => {
@@ -40,7 +39,7 @@ defineSupportCode(({Given, Then, When}) => {
   })
 
   Given(/^the shared components page is open in mobile view, the small image url is "([^"]*)"$/, async (url) => {
-    await client.globals.goToComponentPage(client, '.large-content-card')
+    await client.globals.goToComponentPage(client, '.large-content-card', 'cards')
     await client.expect.element(imgAttr + ' source').to.have.attribute('srcset').which.contains(url)
   })
 })

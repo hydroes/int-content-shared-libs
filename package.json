@@ -1,6 +1,10 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
+<<<<<<< HEAD
   "version": "0.4.30",
+=======
+  "version": "0.4.31",
+>>>>>>> develop
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
