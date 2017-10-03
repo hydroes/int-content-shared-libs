@@ -131,7 +131,16 @@ module.exports = (data = {}) => {
     let offset
     if (paginate.totalPages <= paginate.limit) {
       offset = paginate.totalPages
-      paginate.createPages(offset - 2, offset) // -2: this is to allow for < and 1 pages
+      let pageOneOffset = offset - 3
+      let pageTwoUpwardsOffset = offset - 2
+      // If the Total Paginated Pages is less or equal to the limit of number of page numbers you want shown then
+      // we go inside this block:
+      if (paginate.currentPage === 1) {
+        paginate.createPages(pageOneOffset, offset)
+      } else {
+        paginate.createPages(pageTwoUpwardsOffset, offset)
+      }
+      // This block uses methods to set the offset against the total to achieve page numbers up until the defined limit / or ent total.
     } else {
       offset = paginate.counterOffset(paginate.currentPage)
       paginate.isAtLimit(paginate.currentPage) ? paginate.createPages(offset) : paginate.createPages(paginate.currentPage, offset)
