@@ -130,6 +130,7 @@ gulp.task('default',
   // all browsers reload after tasks are complete.
     gulp.watch('components/**/*.js', ['compile-js'])
     gulp.watch('components/**/*.pug', ['pug-watch'])
+    gulp.watch('server/views/**/*.pug', ['pug-watch'])
     gulp.watch('components/**/*.scss', ['compile-sass'])
     gulp.watch('docs/guide.scss', ['compile-sass'])
     gulp.watch('docs/index.html', [])
