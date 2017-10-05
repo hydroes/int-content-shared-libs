@@ -2,7 +2,7 @@ meta(property='og:image' content=data.image.url)
 
 if data.image.secure_url
   meta(property='og:image:secure_url' content=data.image.secure_url)
-else 
+else
   if data.image.url.startsWith('https')
     meta(property='og:image:secure_url' content=data.image.url)
 
