@@ -2,7 +2,7 @@ meta(property='og:video' content=data.video.url)
 
 if data.video.secure_url
   meta(property='og:video:secure_url' content=data.video.secure_url)
-else 
+else
   if data.video.url.startsWith('https')
     meta(property='og:video:secure_url' content=data.video.url)
 

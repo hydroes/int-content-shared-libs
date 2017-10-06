@@ -1,6 +1,6 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
-  "version": "0.4.33",
+  "version": "0.4.34",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -89,7 +89,7 @@
     "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet; npm run unit-tests",
     "posttest": "gulp generate-test-reports",
     "validate-js-standard": "standard",
-    "validate-pug": "pug-lint components/**/*.pug",
+    "validate-pug": "pug-lint components/**/*.pug server/views/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
     "validate": "npm ls",
