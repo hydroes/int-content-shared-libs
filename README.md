@@ -23,6 +23,33 @@ npm install
 Run:
 npm start
 
+# Project structure:
+.
+├── build - devops build scripts
+├── component_helpers - component js helpers
+├── components - components folder
+├── components_data - json files required for components
+├── libs - libs used to retrieve and compile components and assets etc
+├── public - static assets folder
+│   ├── assets
+│   │   └── bootstrap - customised bootstrap
+│   ├── dist - compiled assets, scripts|css
+│   └── reports - html reports dir
+│       └── e2e
+├── server - koa server
+│   └── views - pages
+│       └── partials - partial templates
+└── tests
+    ├── e2e
+    │   ├── config
+    │   ├── features
+    │   │   └── step_definitions
+    │   ├── page_objects
+    │   └── reports
+    ├── reports
+    │   └── e2e
+    └── unit
+
 # components
 When modifying templates/js/sass they are automatically compiled to templates/dist
 a component in its entirety lives in a aptly named folder in the components dir.
