@@ -11,7 +11,6 @@
   &__info {
     overflow-wrap: break-word;
     word-wrap: break-word;
-    hyphens: auto;
     padding: 0;
     .modified-container {
       padding: 0 rem-calc(10);
@@ -35,7 +34,6 @@
       flex-direction: column;
       overflow-wrap: break-word;
       word-wrap: break-word;
-      hyphens: auto;
       padding: 0;
       overflow: hidden;
       .title {
