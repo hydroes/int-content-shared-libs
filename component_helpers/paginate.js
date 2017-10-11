@@ -13,7 +13,7 @@ class PageGenerator {
     this._pages.push({
       display: display,
       page: pageNumber,
-      href: this.parsePath(this._data.currentPage, pageNumber, this._data.path),
+      href: this.parsePath(this._data.page, pageNumber, this._data.path),
       isActive: isActive
     })
   }
