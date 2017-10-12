@@ -29,3 +29,9 @@ block content
             h2 Image
         .col-md-6
           #image!= shared.component('image', shared.data('image/image.json'))
+      .row.pad-t-15
+        .col-md-5
+          .style-guide__item__label
+            h2 Page / Article Tags
+        .col-md-7
+          #tags!= shared.component('article_tags', shared.data('article_tags/article_tags.json'))
