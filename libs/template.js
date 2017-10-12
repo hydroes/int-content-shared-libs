@@ -7,7 +7,7 @@ const _ = require('lodash')
 
 module.exports = function (templateName, templateData = {}) {
   // build template path
-  let componentsPath = path.normalize(__dirname + './../components') // eslint-disable-line
+  let componentsPath = path.normalize(__dirname + './../src/components') // eslint-disable-line
   let templateFilePath = componentsPath + '/' +
     templateName + '/' + templateName + '.pug'
 

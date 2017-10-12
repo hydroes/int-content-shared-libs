@@ -34,7 +34,7 @@ module.exports = function (assetType) {
       addAssetsInFoldersRecursive('./public/assets/')
       break
     case 'bootstrap_variables':
-      let variablesFilePath = path.normalize(__dirname + './../components/shared/sass/bauer-bootstrap/variables.scss') // eslint-disable-line
+      let variablesFilePath = path.normalize(__dirname + './../src/components/shared/sass/bauer-bootstrap/variables.scss') // eslint-disable-line
       assets.push(variablesFilePath)
       break
     case 'styles':

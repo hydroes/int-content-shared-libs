@@ -2,6 +2,7 @@
 
 const autoprefixer = require('autoprefixer')
 const gulp = require('gulp')
+const babel = require('gulp-babel')
 const browserify = require('browserify')
 const chalk = require('chalk')
 const log = console.log
@@ -21,9 +22,9 @@ const nodemon = require('gulp-nodemon')
 // @todo: make DIST_DIR come from a config var
 const DIST_DIR = 'public/dist/'
 
-gulp.task('compile-js', function () {
-  return browserify('./components/includes.js')
-    .transform('babelify', {presets: ['es2015']})
+gulp.task('compile-js-for-frontend', function () {
+  return browserify('./src/components/includes.js')
+    .transform('babelify', {presets: ['es2015', 'react', 'env']})
     .bundle()
     .pipe(source('script.min.js'))
     .pipe(buffer())
@@ -34,14 +35,29 @@ gulp.task('compile-js', function () {
     .pipe(browserSync.reload({'stream': true}))
 })
 
+gulp.task('copy-src-to-dis', function () {
+  gulp.src(['src/**/!(*.js)']).pipe(gulp.dest('dist'))
+})
+
+gulp.task('compile-all-js', ['copy-src-to-dis'], () =>
+    gulp.src('src/**/*.js')
+      .pipe(sourcemaps.init())
+      .pipe(babel({
+        presets: ['es2015', 'react', 'env'],
+        plugins: ['transform-runtime']
+      }))
+      // .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('dist'))
+)
+
 gulp.task('pug-watch', [], function (done) {
   browserSync.reload()
   done()
 })
 
 // Compile sass
-gulp.task('compile-sass', ['compile-development-sass'], function () {
-  return gulp.src('components/includes.scss', { ignoreInitial: false })
+gulp.task('compile-sass', function () {
+  return gulp.src('src/components/includes.scss', { ignoreInitial: false })
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', function (Error) {
           console.error('sass error occurred: ', Error.message)
@@ -56,13 +72,6 @@ gulp.task('compile-sass', ['compile-development-sass'], function () {
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(`./${DIST_DIR}`))
         .pipe(browserSync.reload({'stream': true}))
-})
-
-gulp.task('compile-development-sass', function () {
-  return gulp.src('docs/guide.scss')
-         .pipe(sass())
-         .pipe(concat('guide.css'))
-         .pipe(gulp.dest('docs/'))
 })
 
 // Task to remove any cached dist files
@@ -101,10 +110,10 @@ gulp.task('generate-test-reports', function () {
 
 gulp.task('serve-app', function () {
   nodemon({
-    script: 'server/server.js',
+    script: 'dist/server/server.js',
     exec: 'node --inspect',
-    watch: ['components'],
-    tasks: ['compile-sass', 'browserify'],
+    watch: ['src/components'],
+    tasks: ['compile-sass', 'compile-js-for-frontend', 'compile-all-js'],
     env: {'NODE_ENV': 'development'}
   }).on('restart', function () {
     log(chalk.green('Server restarted'))
@@ -115,7 +124,8 @@ gulp.task('serve-app', function () {
 gulp.task('default',
   [
     'remove-dist',
-    'compile-js',
+    'compile-js-for-frontend',
+    'compile-all-js',
     'compile-sass',
     'serve-app'
   ], function () {
@@ -128,10 +138,8 @@ gulp.task('default',
 
   // add browserSync.reload to the tasks array to make
   // all browsers reload after tasks are complete.
-    gulp.watch('components/**/*.js', ['compile-js'])
-    gulp.watch('components/**/*.pug', ['pug-watch'])
-    gulp.watch('server/views/**/*.pug', ['pug-watch'])
-    gulp.watch('components/**/*.scss', ['compile-sass'])
-    gulp.watch('docs/guide.scss', ['compile-sass'])
-    gulp.watch('docs/index.html', [])
+    gulp.watch('src/components/**/*.js', ['compile-all-js', 'compile-js-for-frontend'])
+    gulp.watch('src/components/**/*.pug', ['pug-watch'])
+    gulp.watch('src/server/views/**/*.pug', ['pug-watch'])
+    gulp.watch('src/components/**/*.scss', ['compile-sass'])
   })
