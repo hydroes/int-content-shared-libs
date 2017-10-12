@@ -1,0 +1,19 @@
+.social-sharing {
+  clear: both;
+  margin-left: -2px;
+  padding: 20px 0;
+  list-style-type: none;
+  li {
+    display: inline;
+    padding: 0 2px;
+    text-align: center;
+    color: $white-color;
+    text-decoration: none;
+    a {
+      img {
+        width: rem-calc($social-icon-width);
+        height: rem-calc($social-icon-width);
+      }
+    }
+  }
+}

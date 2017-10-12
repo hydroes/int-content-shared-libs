@@ -1,0 +1,6 @@
+@mixin text-overflow-hidden($whiteSpace, $display) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: $whiteSpace;
+  display: $display;
+}

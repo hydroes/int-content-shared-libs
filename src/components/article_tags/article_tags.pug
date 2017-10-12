@@ -1,0 +1,6 @@
+if data.tags
+  ul.article-tags
+    each tag in data.tags
+      if tag && tag.name
+        li.pad-0.margin-l-r-5
+          a.pad-10(href=tag.url) #{tag.name}

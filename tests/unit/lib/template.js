@@ -3,7 +3,7 @@
 
 const chai = require('chai')
 const assert = chai.assert
-const template = require('../../../libs/template')
+const template = require('../../../src/libs/template')
 
 describe('Test template loader', function () {
   it('Works by checking if a string is returned', function () {

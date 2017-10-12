@@ -1,0 +1,7 @@
+.embeds-audioboom
+  -
+    if (/^(https?)/.test(data.url) == false) {
+      data.url = data.url.replace(/^(https?):\/\/audioboo\.fm/, 'https://embeds.audioboom.com')
+      data.url = data.url.replace(/\/embed\?(.*)/, '/embed/v4')
+    }
+  iframe(width='100%' height='300' frameborder='0' allowtransparency='allowtransparency' scrolling='no' src=data.url title='audioBoom player')

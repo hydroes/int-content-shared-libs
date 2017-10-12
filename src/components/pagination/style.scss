@@ -1,0 +1,23 @@
+.pagination {
+  li {
+    a {
+      &.pagination {
+        &__link {
+          color: $black-color;
+          margin-right: rem-calc(2);
+          &--active {
+            margin-right: rem-calc(2);
+            color: $black-color;
+            background: #eee;
+          }
+        }
+      }
+    }
+  }
+  li:first-child,
+  li:last-child {
+    a {
+      border-radius: $border-radius-default;
+    }
+  }
+}

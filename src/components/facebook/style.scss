@@ -1,0 +1,11 @@
+.embed--facebook {
+  position: relative;
+  padding-bottom: 20px;
+  display: inline-block;
+  width: 100% !important; // sass-lint:disable-line no-important
+
+  max-width: 100% !important; // sass-lint:disable-line no-important
+  .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important; // sass-lint:disable-line no-important
+  }
+}

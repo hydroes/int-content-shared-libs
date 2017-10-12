@@ -1,0 +1,9 @@
+if data.images
+  .card-image.pad-0
+    .col-xs-2.col-sm-3.col-md-2.icon-container
+      include card_icons/card_icons
+    picture
+      source(type=data.images.xs.mimeType, srcset=data.images.xs.url, media='(max-width: 479px)')
+      img(alt=data.title, title=data.title, src=data.images.sm.url)
+else
+  include card_no_image.pug

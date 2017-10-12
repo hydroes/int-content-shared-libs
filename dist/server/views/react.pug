@@ -1,0 +1,12 @@
+extends partials/page
+block content
+  .main-container
+    .container-fluid
+      .style-guide
+        .row.style-guide__item
+          .col-md-6
+            .style-guide__item__label
+              h2 React test
+          .col-md-6
+            p here we go
+            p!=shared.component('test_react')

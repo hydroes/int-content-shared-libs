@@ -1,0 +1,37 @@
+extends partials/page
+block content
+  // =============== UI Components ===================
+  section#ui-components
+    .section-header
+      h2 UI Components
+    .row.style-guide__item
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Pagination
+        .col-md-6
+          #pagination-component!= shared.component('pagination', shared.data('pagination/pagination.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Breadcrumbs
+        .col-md-6
+          #breadcrumbs!= shared.component('breadcrumbs', shared.data('breadcrumbs/breadcrumbs.json'))
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Social Sharing
+        .col-md-6
+          #social-sharing!= shared.component('social_sharing', shared.data('social_sharing/social_sharing.json'))
+      .row
+        .col-md-12
+          .style-guide__item__label
+            h2 Image
+        .col-md-6
+          #image!= shared.component('image', shared.data('image/image.json'))
+      .row.pad-t-15
+        .col-md-5
+          .style-guide__item__label
+            h2 Page / Article Tags
+        .col-md-7
+          #tags!= shared.component('article_tags', shared.data('article_tags/article_tags.json'))

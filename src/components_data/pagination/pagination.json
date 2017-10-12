@@ -1,0 +1,15 @@
+{
+  "data": {
+    "size": "pagination-lg",
+    "path": "/entertainment/",
+      "limit": 6,
+      "page": 698,
+      "sort": {
+        "publicationDate": -1
+      },
+      "offset": 0,
+      "totalCount": 44,
+      "totalPages": 700,
+      "nextPage": 699
+  }
+}

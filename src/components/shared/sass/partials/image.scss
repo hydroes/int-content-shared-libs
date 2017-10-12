@@ -1,0 +1,22 @@
+.image {
+  position: relative;
+  display: block;
+  height: auto;
+  img {
+    vertical-align: middle;
+    height: auto;
+    width: 100%;
+  }
+  &__text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 7px;
+    font-size: rem-calc(12);
+    line-height: 1;
+    font-weight: $light;
+    text-transform: uppercase;
+    color: $image-credit-color;
+    background-color: rgba(0,0,0,.5);
+  }
+}

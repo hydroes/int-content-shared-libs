@@ -1,0 +1,10 @@
+ul.social-sharing
+  li(class='article-social-share-facebook' data-partial='social-share')
+    a(href='#' data-social-share-url=`${data.protocol}${data.host}${data.pathname}`)
+      img(src='https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-facebook.svg' alt=data.facebook title=data.facebook)
+  li(class='article-social-share-twitter' data-partial='social-share')
+    a(href='#' data-social-share-url=`${data.protocol}${data.host}${data.pathname}`)
+      img(src='https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter.svg' alt=data.twitter title=data.twitter)
+  li.article-social-share-whatsapp
+    a(href=`whatsapp://send?text=http%3a%2f%2f${data.host}${data.pathname}`)
+      img(img src='https://image.flaticon.com/icons/svg/124/124034.svg' data-action='share/whatsapp/share' alt=data.whatsApp title=data.whatsApp)

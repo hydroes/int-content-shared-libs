@@ -1,0 +1,7 @@
+.embeds-soundcloud
+  -
+    // replace url with correct embed
+    if (/^(https?):\/\/soundcloud.com\//.test(data.url)) {
+      data.url = 'https://w.soundcloud.com/player/?url=' + data.url
+    }
+  iframe(src=data.url  frameborder='0' allowfullscreen)

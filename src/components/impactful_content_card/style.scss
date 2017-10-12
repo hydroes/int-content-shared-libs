@@ -1,0 +1,66 @@
+.content-card {
+  &__info {
+    &--impactful {
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+      .title-container {
+        height: 100%;
+        width: 100%;
+        color: $black-color;
+        &__item {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@include screen-sm-max {
+  .impactful-text {
+    &--card {
+      word-wrap: break-word;
+      background-color: initial;
+      color: $black-color;
+      box-decoration-break: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@include screen-sm-min {
+  .content-card {
+    &__info {
+      &--impactful {
+        padding: 0;
+        .title-container {
+          display: inline-flex;
+          align-items: stretch;
+          padding-right: rem-calc(5);
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          margin-top: auto;
+          &__item {
+            padding: 0 0 5% 0;
+            margin-left: auto;
+            text-align: right;
+            align-self: flex-start;
+            margin-top: auto;
+            .impactful-text {
+              &--card {
+                word-wrap: break-word;
+                padding: rem-calc(5);
+                line-height: 1.8;
+                display: inline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

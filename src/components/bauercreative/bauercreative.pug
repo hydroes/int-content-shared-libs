@@ -1,0 +1,6 @@
+- let iframeId = _.uniqueId('bauerCreativeFrame_')
+.embeds-bauercreative
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js')
+  iframe.bauer-creative(src=data.url allowtransparency='true' frameborder='0' id=iframeId scrolling='no' width='100%')
+  script.
+    var iframes = iFrameResize({}, '##{iframeId}')
