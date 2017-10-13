@@ -25,7 +25,7 @@ npm start
 
 # Project structure:
 
-
+```
 ├── build - Devops build and deploy code
 ├── dist - This is a copy of the src directory the difference is js code is transpiled from ecma2015 down
 ├── public - static assets dir
@@ -47,7 +47,7 @@ npm start
     ├── reports
     │   └── e2e
     └── unit - unit tests
-
+```
 
 # components
 When modifying templates/js/sass they are automatically compiled to templates/dist
