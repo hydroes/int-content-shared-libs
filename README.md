@@ -24,31 +24,30 @@ Run:
 npm start
 
 # Project structure:
-.
-├── build - devops build scripts
-├── component_helpers - component js helpers
-├── components - components folder
-├── components_data - json files required for components
-├── libs - libs used to retrieve and compile components and assets etc
-├── public - static assets folder
-│   ├── assets
-│   │   └── bootstrap - customised bootstrap
-│   ├── dist - compiled assets, scripts|css
-│   └── reports - html reports dir
-│       └── e2e
-├── server - koa server
-│   └── views - pages
-│       └── partials - partial templates
+
+
+├── build - Devops build and deploy code
+├── dist - This is a copy of the src directory the difference is js code is transpiled from ecma2015 down
+├── public - static assets dir
+├── src - source code directory
+│   ├── component_helpers
+│   ├── components - components folder
+│   ├── components_data
+│   ├── libs - libs used to retrieve and compile components and assets etc
+│   └── server
+│       └── views
+│           └── partials
 └── tests
     ├── e2e
-    │   ├── config
-    │   ├── features
-    │   │   └── step_definitions
-    │   ├── page_objects
-    │   └── reports
+    │   ├── config
+    │   ├── features
+    │   │   └── step_definitions
+    │   ├── page_objects
+    │   └── reports - html reports dir
     ├── reports
-    │   └── e2e
-    └── unit
+    │   └── e2e
+    └── unit - unit tests
+
 
 # components
 When modifying templates/js/sass they are automatically compiled to templates/dist
