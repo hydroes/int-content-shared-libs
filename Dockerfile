@@ -22,4 +22,4 @@ EXPOSE 7000
 
 ENV NODE_ENV=development
 
-CMD [ "node", "./server/server.js" ]
+CMD [ "node", "./dist/server/server.js" ]
