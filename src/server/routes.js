@@ -2,6 +2,7 @@
 
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
+import PropTypes from 'prop-types'
 
 // Add routes to the app from this file
 
@@ -65,6 +66,10 @@ module.exports = function (router) {
           </div>
         )
       }
+    }
+
+    HelloMessage.propTypes = {
+      name: PropTypes.element.isRequired
     }
 
     let html = ReactDOMServer.renderToString(<HelloMessage name='Brian' />)

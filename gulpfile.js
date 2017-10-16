@@ -40,14 +40,14 @@ gulp.task('copy-src-to-dis', function () {
 })
 
 gulp.task('compile-all-js', ['copy-src-to-dis'], () =>
-    gulp.src('src/**/*.js')
-      .pipe(sourcemaps.init())
-      .pipe(babel({
-        presets: ['es2015', 'react', 'env'],
-        plugins: ['transform-runtime']
-      }))
-      // .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['es2015', 'react', 'env'],
+      plugins: ['transform-runtime']
+    }))
+    // .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist'))
 )
 
 gulp.task('pug-watch', [], function (done) {
@@ -58,20 +58,20 @@ gulp.task('pug-watch', [], function (done) {
 // Compile sass
 gulp.task('compile-sass', function () {
   return gulp.src('src/components/includes.scss', { ignoreInitial: false })
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', function (Error) {
-          console.error('sass error occurred: ', Error.message)
-          browserSync.notify(Error.message, 3000) // Display error in the browser
-          this.emit('end') // Prevent gulp from catching the error and exiting the watch process
-        }))
-        .pipe(minifyCSS())
-        .pipe(concat('style.min.css'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(rename('style.min.css'))
-        .pipe(postcss([ autoprefixer() ]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(`./${DIST_DIR}`))
-        .pipe(browserSync.reload({'stream': true}))
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', function (Error) {
+      console.error('sass error occurred: ', Error.message)
+      browserSync.notify(Error.message, 3000) // Display error in the browser
+      this.emit('end') // Prevent gulp from catching the error and exiting the watch process
+    }))
+    .pipe(minifyCSS())
+    .pipe(concat('style.min.css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(rename('style.min.css'))
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`./${DIST_DIR}`))
+    .pipe(browserSync.reload({'stream': true}))
 })
 
 // Task to remove any cached dist files
@@ -136,8 +136,8 @@ gulp.task('default',
       notify: true
     })
 
-  // add browserSync.reload to the tasks array to make
-  // all browsers reload after tasks are complete.
+    // add browserSync.reload to the tasks array to make
+    // all browsers reload after tasks are complete.
     gulp.watch('src/components/**/*.js', ['compile-all-js', 'compile-js-for-frontend'])
     gulp.watch('src/components/**/*.pug', ['pug-watch'])
     gulp.watch('src/server/views/**/*.pug', ['pug-watch'])
