@@ -101,7 +101,7 @@
     "validate-sass": "sass-lint -c .sass-lint.yml 'src/components/**/*.scss' -v -q",
     "validate": "npm ls",
     "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
-    "unit-tests": "mocha 'tests/unit/**/*.js' --timeout 10000"
+    "unit-tests": "gulp compile-all-js && mocha 'tests/unit/**/*.js' --timeout 10000"
   },
   "standard": {
     "ignore": [
