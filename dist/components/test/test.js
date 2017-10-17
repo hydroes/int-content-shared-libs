@@ -40,9 +40,7 @@ var Test = function (_React$Component) {
 
   (0, _createClass3.default)(Test, [{
     key: 'contructor',
-    value: function contructor(props) {
-      this.props.title = 'RENDERED with react';
-    }
+    value: function contructor(props) {}
   }, {
     key: 'render',
     value: function render() {

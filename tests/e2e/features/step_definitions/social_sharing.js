@@ -9,7 +9,7 @@ const domElements = {
 }
 /*eslint-disable */
 let handle = {} // @todo 
-/*eslint-enable */
+/* eslint-enable */
 let self = null
 
 defineSupportCode(({Given, Then, When}) => {
