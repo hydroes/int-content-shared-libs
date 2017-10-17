@@ -37,14 +37,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Test = function (_React$Component) {
   (0, _inherits3.default)(Test, _React$Component);
 
-  function Test() {
+  function Test(props) {
     (0, _classCallCheck3.default)(this, Test);
-    return (0, _possibleConstructorReturn3.default)(this, (Test.__proto__ || (0, _getPrototypeOf2.default)(Test)).apply(this, arguments));
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Test.__proto__ || (0, _getPrototypeOf2.default)(Test)).call(this, props));
+
+    _this.state = { isToggleOn: true };
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
   }
 
   (0, _createClass3.default)(Test, [{
-    key: 'contructor',
-    value: function contructor(props) {}
+    key: 'handleClick',
+    value: function handleClick() {
+      this.setState(function (prevState) {
+        return {
+          isToggleOn: !prevState.isToggleOn
+        };
+      });
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -54,14 +65,15 @@ var Test = function (_React$Component) {
         _React2.default.createElement(
           'h2',
           null,
-          'Test component',
+          'Test component: ',
+          this.props.title,
           _React2.default.createElement('br', null),
           _React2.default.createElement(
             'button',
-            { id: 'bauer-web-component-test-btn', type: 'button', className: 'btn btn-default btn-lg' },
-            _React2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' })
-          ),
-          this.props.title
+            { id: 'bauer-web-component-test-btn', type: 'button', className: 'btn btn-default btn-lg', onClick: this.handleClick },
+            _React2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' }),
+            this.state.isToggleOn ? 'ON' : 'OFF'
+          )
         ),
         _React2.default.createElement(
           'span',

@@ -34,7 +34,9 @@ module.exports = function (ComponentName) {
 
   // test if component found
   if (Components[ComponentName] === undefined) {
-    throw new Error('Component not found: ', ComponentName);
+    // @todo add error throwing back in
+    // throw new Error('Component not found: ', ComponentName)
+    return '!!Component: "' + ComponentName + '" NOT reactified!!';
   }
 
   try {
