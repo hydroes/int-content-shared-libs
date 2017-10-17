@@ -3,7 +3,7 @@
 
 const chai = require('chai')
 const assert = chai.assert
-const dataMapper = require('../../../dist/libs/dataMapper')
+const dataMapper = require('../../../../dist/libs/dataMapper')
 
 describe('Test data mapper', function () {
   it('Throws an error when no mapping file found', function () {

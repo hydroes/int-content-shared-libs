@@ -1,4 +1,5 @@
 import React from 'React'
+import PropTypes from 'prop-types'
 
 class Test extends React.Component {
   contructor (props) {
@@ -11,6 +12,10 @@ class Test extends React.Component {
       </h2><span>Example helper (formatting relative time): 6 mins ago</span>
     </div>)
   }
+}
+
+Test.propTypes = {
+  title: PropTypes.string
 }
 
 export default Test

@@ -1,6 +1,6 @@
 /* globals describe, it */
 var assert = require('assert')
-var giphyHelper = require('../../../dist/component_helpers/giphy')
+var giphyHelper = require('../../../../dist/component_helpers/giphy')
 
 describe('Giphy url helper', function () {
   describe('Not convert correctly given url', function () {

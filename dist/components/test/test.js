@@ -28,6 +28,10 @@ var _React = require('React');
 
 var _React2 = _interopRequireDefault(_React);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Test = function (_React$Component) {
@@ -69,5 +73,9 @@ var Test = function (_React$Component) {
   }]);
   return Test;
 }(_React2.default.Component);
+
+Test.propTypes = {
+  title: _propTypes2.default.string
+};
 
 exports.default = Test;

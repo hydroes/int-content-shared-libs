@@ -3,7 +3,7 @@
 /* globals describe, it */
 const chai = require('chai')
 const assert = chai.assert
-var component = require('../../../dist/libs/component')
+var component = require('../../../../dist/libs/component')
 
 describe('Test react component renderer', function () {
   it('Throws an error when component is not found', function () {
