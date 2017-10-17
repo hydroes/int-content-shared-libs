@@ -35,7 +35,7 @@ let pages = require(`${projectRoot}/dist/component_helpers/paginate.js`)(pageDat
 let middlePages = require(`${projectRoot}/dist/component_helpers/paginate.js`)(middlePageData)
 
 describe('#Paginator()', function () {
-  describe.only('#pages()', function () {
+  describe('#pages()', function () {
     it('should return an array of pages', function () {
       assert.typeOf(pages, 'array')
     })
