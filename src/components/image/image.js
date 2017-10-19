@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'React'
 import PropTypes from 'prop-types'
-import RawImage from ../mixins/rawImage
+import RawImage from '../mixins/rawImage'
 
-class Image extends React.PureComponent {
-
+class Image extends PureComponent {
   render () {
     let altText = ''
     if (!altText) {
-      altText = data.title
+      altText = this.props.data.title
     } else {
-      altText = data.altText
+      altText = this.props.data.altText
     }
 
     return (
