@@ -45,9 +45,9 @@ var AudioBoom = function (_PureComponent) {
   (0, _createClass3.default)(AudioBoom, [{
     key: 'createEmbed',
     value: function createEmbed() {
-      if (/^(https?)/.test(this.props.data.url) == false) {
-        this.props.data.url = data.url.replace(/^(https?):\/\/audioboo\.fm/, 'https://embeds.audioboom.com');
-        this.props.data.url = data.url = data.url.replace(/\/embed\?(.*)/, '/embed/v4');
+      if (/^(https?)/.test(this.props.data.url) === false) {
+        this.props.data.url = this.props.data.url.replace(/^(https?):\/\/audioboo\.fm/, 'https://embeds.audioboom.com');
+        this.props.data.url = this.props.data.url = this.props.data.url.replace(/\/embed\?(.*)/, '/embed/v4');
       }
     }
   }, {
@@ -57,7 +57,7 @@ var AudioBoom = function (_PureComponent) {
       return _React2.default.createElement(
         'div',
         { className: 'embeds-audioboom' },
-        _React2.default.createElement('iframe', { width: '100%', height: '300', frameborder: '0', allowtransparency: 'allowtransparency', scrolling: 'no', src: this.props.data.url, title: 'audioBoom player' })
+        _React2.default.createElement('iframe', { width: '100%', height: '300', frameBorder: '0', allowTransparency: 'allowtransparency', scrolling: 'no', src: this.props.data.url, title: 'audioBoom player' })
       );
     }
   }]);
