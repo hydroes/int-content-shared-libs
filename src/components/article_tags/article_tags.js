@@ -1,7 +1,7 @@
-import React, { Component } from 'React'
+import React, { PureComponent } from 'React'
 import PropTypes from 'prop-types'
 
-class Articletags extends Component {
+class Articletags extends PureComponent {
   tagItem () {
     const tagItems = this.props.data.tags
     let list = tagItems.map(tag => {

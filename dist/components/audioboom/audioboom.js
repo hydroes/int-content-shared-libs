@@ -34,50 +34,38 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Articletags = function (_PureComponent) {
-  (0, _inherits3.default)(Articletags, _PureComponent);
+var AudioBoom = function (_PureComponent) {
+  (0, _inherits3.default)(AudioBoom, _PureComponent);
 
-  function Articletags() {
-    (0, _classCallCheck3.default)(this, Articletags);
-    return (0, _possibleConstructorReturn3.default)(this, (Articletags.__proto__ || (0, _getPrototypeOf2.default)(Articletags)).apply(this, arguments));
+  function AudioBoom() {
+    (0, _classCallCheck3.default)(this, AudioBoom);
+    return (0, _possibleConstructorReturn3.default)(this, (AudioBoom.__proto__ || (0, _getPrototypeOf2.default)(AudioBoom)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Articletags, [{
-    key: 'tagItem',
-    value: function tagItem() {
-      var tagItems = this.props.data.tags;
-      var list = tagItems.map(function (tag) {
-        if (tag && tag.name) {
-          return _React2.default.createElement(
-            'li',
-            { className: 'pad-0.margin-l-r-5' },
-            _React2.default.createElement(
-              'a',
-              { className: 'pad-10', href: tag.url },
-              tag.name
-            )
-          );
-        }
-      });
-      return list;
+  (0, _createClass3.default)(AudioBoom, [{
+    key: 'createEmbed',
+    value: function createEmbed() {
+      if (/^(https?)/.test(this.props.data.url) == false) {
+        this.props.data.url = data.url.replace(/^(https?):\/\/audioboo\.fm/, 'https://embeds.audioboom.com');
+        this.props.data.url = data.url = data.url.replace(/\/embed\?(.*)/, '/embed/v4');
+      }
     }
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.data.tags) {
-        return _React2.default.createElement(
-          'ul',
-          { className: 'article-tags' },
-          this.tagItem()
-        );
-      }
+      this.createEmbed();
+      return _React2.default.createElement(
+        'div',
+        { className: 'embeds-audioboom' },
+        _React2.default.createElement('iframe', { width: '100%', height: '300', frameborder: '0', allowtransparency: 'allowtransparency', scrolling: 'no', src: this.props.data.url, title: 'audioBoom player' })
+      );
     }
   }]);
-  return Articletags;
+  return AudioBoom;
 }(_React.PureComponent);
 
-Articletags.propTypes = {
+AudioBoom.propTypes = {
   data: _propTypes2.default.object
 };
 
-exports.default = Articletags;
+exports.default = AudioBoom;
