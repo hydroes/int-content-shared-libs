@@ -1,7 +1,0 @@
--
-  let pages = helpers.paginate(data)
-  let size = data.size || '' 
-ul.pagination(class=size)
-  each page in pages
-    li
-      a(href=page.href class=page.isActive ? 'pagination__link--active' : 'pagination__link') #{page.display}
