@@ -1,4 +1,4 @@
-module.exports = function (url = '') {
+export default function (url = '') {
   // convert https://giphy.com/gifs/string_description-xGIPHYID formats
   if (url.indexOf('/gifs/') !== -1 && url.substr(url.lastIndexOf('-'))) {
     url = url.replace('/gifs/', '/embed/')

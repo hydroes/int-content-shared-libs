@@ -32,52 +32,41 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _giphy = require('./../../component_helpers/giphy');
+
+var _giphy2 = _interopRequireDefault(_giphy);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Articletags = function (_PureComponent) {
-  (0, _inherits3.default)(Articletags, _PureComponent);
+var Giphy = function (_PureComponent) {
+  (0, _inherits3.default)(Giphy, _PureComponent);
 
-  function Articletags() {
-    (0, _classCallCheck3.default)(this, Articletags);
-    return (0, _possibleConstructorReturn3.default)(this, (Articletags.__proto__ || (0, _getPrototypeOf2.default)(Articletags)).apply(this, arguments));
+  function Giphy() {
+    (0, _classCallCheck3.default)(this, Giphy);
+    return (0, _possibleConstructorReturn3.default)(this, (Giphy.__proto__ || (0, _getPrototypeOf2.default)(Giphy)).apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Articletags, [{
-    key: 'tagItem',
-    value: function tagItem() {
-      var tagItems = this.props.data.tags;
-      var list = tagItems.map(function (tag, i) {
-        if (tag && tag.name) {
-          return _React2.default.createElement(
-            'li',
-            { key: i, className: 'pad-0.margin-l-r-5' },
-            _React2.default.createElement(
-              'a',
-              { className: 'pad-10', href: tag.url },
-              tag.name
-            )
-          );
-        }
-      });
-      return list;
+  (0, _createClass3.default)(Giphy, [{
+    key: 'createEmbed',
+    value: function createEmbed() {
+      this.props.data.url = (0, _giphy2.default)(this.props.data.url);
+      return _React2.default.createElement('iframe', { src: this.props.data.url, width: '480', height: '480', frameBorder: '0', allowFullScreen: '' });
     }
   }, {
     key: 'render',
     value: function render() {
-      if (this.props.data.tags) {
-        return _React2.default.createElement(
-          'ul',
-          { className: 'article-tags' },
-          this.tagItem()
-        );
-      }
+      return _React2.default.createElement(
+        'div',
+        { className: 'embeds-giphy' },
+        this.createEmbed()
+      );
     }
   }]);
-  return Articletags;
+  return Giphy;
 }(_React.PureComponent);
 
-Articletags.propTypes = {
+Giphy.propTypes = {
   data: _propTypes2.default.object
 };
 
-exports.default = Articletags;
+exports.default = Giphy;
