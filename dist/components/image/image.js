@@ -63,7 +63,19 @@ var Image = function (_PureComponent) {
 }(_React.PureComponent);
 
 Image.propTypes = {
-  data: _propTypes2.default.object
+  data: _propTypes2.default.shape({
+    title: _propTypes2.default.string,
+    altText: _propTypes2.default.string,
+    defaultImage: _propTypes2.default.shape({
+      path: _propTypes2.default.string
+    }),
+    images: _propTypes2.default.shape({
+      maxWidth: _propTypes2.default.number,
+      path: _propTypes2.default.string
+    }),
+    caption: _propTypes2.default.string,
+    credits: _propTypes2.default.string
+  })
 };
 
 exports.default = Image;

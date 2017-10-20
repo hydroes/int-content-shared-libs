@@ -18,7 +18,19 @@ class Image extends PureComponent {
 }
 
 Image.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    altText: PropTypes.string,
+    defaultImage: PropTypes.shape({
+      path: PropTypes.string
+    }),
+    images: PropTypes.shape({
+      maxWidth: PropTypes.number,
+      path: PropTypes.string
+    }),
+    caption: PropTypes.string,
+    credits: PropTypes.string
+  })
 }
 
 export default Image
