@@ -1,6 +1,10 @@
 'use strict';
 
-module.exports = function () {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
   var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
   // convert https://giphy.com/gifs/string_description-xGIPHYID formats

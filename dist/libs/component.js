@@ -23,7 +23,9 @@ for (var i = 0; i < componentsRegisterLength; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
     Components[_componentsRegister2.default[i].name] = require(_componentsRegister2.default[i].path).default;
-  } catch (error) {}
+  } catch (error) {
+    console.log('---------------------------' + _componentsRegister2.default[i].name + ' - ' + error);
+  }
 }
 // finds and renders a react component
 module.exports = function (ComponentName) {
