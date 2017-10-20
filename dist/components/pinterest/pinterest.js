@@ -45,7 +45,12 @@ var Pinterest = function (_React$PureComponent) {
   (0, _createClass3.default)(Pinterest, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('a', { 'data-pin-do': 'embedPin', 'data-pin-width': this.props.data.pin.size, href: this.props.data.pin.url });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('a', { 'data-pin-do': 'embedPin', 'data-pin-width': this.props.data.pin.size, href: this.props.data.pin.url }),
+        _react2.default.createElement('script', { async: true, defer: true, src: '//assets.pinterest.com/js/pinit.js' })
+      );
     }
   }]);
   return Pinterest;

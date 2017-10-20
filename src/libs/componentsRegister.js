@@ -68,8 +68,8 @@ export default [
     path: componentPath + 'partials/partials'
   },
   {
-    name: 'pintrest',
-    path: componentPath + 'pintrest/pintrest'
+    name: 'pinterest',
+    path: componentPath + 'pinterest/pinterest'
   },
   {
     name: 'shared',

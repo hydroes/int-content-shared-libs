@@ -54,8 +54,8 @@ exports.default = [{
   name: 'partials',
   path: componentPath + 'partials/partials'
 }, {
-  name: 'pintrest',
-  path: componentPath + 'pintrest/pintrest'
+  name: 'pinterest',
+  path: componentPath + 'pinterest/pinterest'
 }, {
   name: 'shared',
   path: componentPath + 'shared/shared'
