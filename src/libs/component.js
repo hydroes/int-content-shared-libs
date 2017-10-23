@@ -12,7 +12,9 @@ for (let i = 0; i < componentsRegisterLength; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
     Components[componentsRegister[i].name] = require(componentsRegister[i].path).default
-  } catch (error) {}
+  } catch (error) {
+    // console.log('error', error)
+  }
 }
 // finds and renders a react component
 module.exports = function (ComponentName, data = {}) {

@@ -32,6 +32,18 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _small_card_image = require('../partials/small_card_image');
+
+var _small_card_image2 = _interopRequireDefault(_small_card_image);
+
+var _title = require('../partials/title');
+
+var _title2 = _interopRequireDefault(_title);
+
+var _card_date_time = require('../partials/card_date_time');
+
+var _card_date_time2 = _interopRequireDefault(_card_date_time);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SmallContentCard = function (_PureComponent) {
@@ -46,9 +58,23 @@ var SmallContentCard = function (_PureComponent) {
     key: 'render',
     value: function render() {
       return _React2.default.createElement(
-        'p',
-        null,
-        'Smallcontent card'
+        'article',
+        { className: 'content-card content-card--small' },
+        _React2.default.createElement(
+          'div',
+          { className: 'row' },
+          _React2.default.createElement(
+            'a',
+            { className: 'content-card__link col-xs-4 col-sm-12', href: this.props.data.url },
+            _React2.default.createElement(_small_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
+          ),
+          _React2.default.createElement(
+            'div',
+            { className: 'content-card--small__info content-card__info col-xs-8 col-sm-12' },
+            _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
+            _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
+          )
+        )
       );
     }
   }]);
@@ -78,8 +104,20 @@ SmallContentCard.propTypes = {
     }),
     url: _propTypes2.default.string,
     title: _propTypes2.default.string,
-    category: _propTypes2.default.shape(),
-    date: _propTypes2.default.string
+    category: _propTypes2.default.shape({
+      url: _propTypes2.default.string,
+      name: _propTypes2.default.string
+    }),
+    date: _propTypes2.default.string,
+    icon: _propTypes2.default.shape({
+      defaultImage: _propTypes2.default.shape({
+        path: _propTypes2.default.string
+      }),
+      images: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        maxWidth: _propTypes2.default.number,
+        path: _propTypes2.default.string
+      }))
+    })
   })
 };
 

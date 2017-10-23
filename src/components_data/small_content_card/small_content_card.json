@@ -1,16 +1,5 @@
 {
     "data": {
-        "images": {
-            "xs": {
-                "url": "//via.placeholder.com/240x240",
-                "mimeType": "image/jpeg"
-            },
-            "sm": {
-                "url": "//via.placeholder.com/450x236",
-                "mimeType": "image/jpeg"
-            },
-            "altText": "lorem ipsum dolor sit amet"
-        },
         "noImage": {
             "sm": {
                 "url": "//via.placeholder.com/240x240"
