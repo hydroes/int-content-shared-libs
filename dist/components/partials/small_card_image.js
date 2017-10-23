@@ -70,7 +70,6 @@ var SmallCardImage = function (_PureComponent) {
           )
         );
       } else {
-        console.log('------ere');
         return _React2.default.createElement(_card_no_image2.default, { image: this.props.noImage, title: this.props.title, icon: this.props.icon });
       }
     }

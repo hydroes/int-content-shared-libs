@@ -4,8 +4,10 @@ import CardIcons from './card_icons/card_icons'
 
 class CardNoImage extends PureComponent {
   render () {
-    const styleAttribute = `background-image: url(${this.props.image.sm.url})'`
-    console.log('---- ere now')
+    const styleAttribute = {
+      'background-image': 'url(' + this.props.image.sm.url + ')'
+    }
+
     return (
       <div className='card-image pad-0'>
         <CardIcons icon={this.props.icon} />

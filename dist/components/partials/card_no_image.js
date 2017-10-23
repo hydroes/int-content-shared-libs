@@ -49,8 +49,10 @@ var CardNoImage = function (_PureComponent) {
   (0, _createClass3.default)(CardNoImage, [{
     key: 'render',
     value: function render() {
-      var styleAttribute = 'background-image: url(' + this.props.image.sm.url + ')\'';
-      console.log('---- ere now');
+      var styleAttribute = {
+        'background-image': 'url(' + this.props.image.sm.url + ')'
+      };
+
       return _React2.default.createElement(
         'div',
         { className: 'card-image pad-0' },

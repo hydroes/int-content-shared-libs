@@ -18,7 +18,6 @@ class SmallCardImage extends PureComponent {
         </div>
       )
     } else {
-      console.log('------ere')
       return (<CardNoImage image={this.props.noImage} title={this.props.title} icon={this.props.icon} />)
     }
   }
