@@ -1,0 +1,10 @@
+{
+  "data": {
+    "title": "some title",
+    "description": "description of lorem ipsum dolor amet",
+    "site_name": "Lifestyle",
+    "locale": "gb",
+    "url": "www.google.com",
+    "type": "website"
+  }
+}

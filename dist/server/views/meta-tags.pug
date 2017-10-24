@@ -8,29 +8,19 @@ block content
     .col-md-3
       h3 Open Graph Tags: Article - with video
       pre.code
-        -
-          let ogData = shared.data('og_tags/og_tags.json')
-          let ogTagsVideo = ogData
-          delete ogTagsVideo.data.image
-        code.og-tags-video= shared.component('og_tags', ogTagsVideo)
+        code.og-tags-video= shared.component('og_tags', shared.data('og_tags/og_tags_video.json'))
     .col-md-3
       h3 Open Graph Tags: Article - with image
       pre.code
-        code.og-tags-image= shared.component('og_tags', ogData)
+        code.og-tags-image= shared.component('og_tags', shared.data('og_tags/og_tags_image.json'))
     .col-md-3
       h3 Open Graph Tags: Article - without video or image
       pre.code
-        -
-          let ogDataNoHero = ogData
-          delete ogDataNoHero.data.video
-        code.og-tags-no-hero= shared.component('og_tags', ogDataNoHero)
+        code.og-tags-no-hero= shared.component('og_tags', shared.data('og_tags/og_tags_no_media.json'))
     .col-md-3
       h3 Open Graph Tags: For non-article pages
       pre.code
-        -
-          let ogTagsArticle = ogData
-          delete ogTagsArticle.data.article
-        code.og-tags= shared.component('og_tags', ogTagsArticle)
+        code.og-tags= shared.component('og_tags', shared.data('og_tags/og_tags_non_article.json'))
   .row
     .col-md-2
       .style-guide__item__label
