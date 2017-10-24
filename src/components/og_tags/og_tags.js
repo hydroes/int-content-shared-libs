@@ -5,50 +5,50 @@ import Meta from '../meta/meta'
 class OgTags extends PureComponent {
   generateSecureImageMeta () {
     if (this.props.data.image.secure_url) {
-      this.metaItems.push(<Meta property='og:image:secure_url' content={this.props.data.image.secure_url} />)
+      this.metaItems.push(<Meta name='og:image:secure_url' content={this.props.data.image.secure_url} />)
     } else if (this.props.data.image.url.startsWith('https')) {
-      this.metaItems.push(<Meta property='og:image:secure_url' content={this.props.data.image.url} />)
+      this.metaItems.push(<Meta name='og:image:secure_url' content={this.props.data.image.url} />)
     }
   }
 
   generateSecureVideoMeta () {
     if (this.props.data.video.secure_url) {
-      this.metaItems.push(<Meta property='og:video:secure_url' content={this.props.data.video.secure_url} />)
+      this.metaItems.push(<Meta name='og:video:secure_url' content={this.props.data.video.secure_url} />)
     } else if (this.props.data.video.url.startsWith('https')) {
-      this.metaItems.push(<Meta property='og:video:secure_url' content={this.props.data.video.url} />)
+      this.metaItems.push(<Meta name='og:video:secure_url' content={this.props.data.video.url} />)
     }
   }
 
   generateMediaMeta () {
     if (this.props.data.image) {
-      this.metaItems.push(<Meta property='og:image' content={this.props.data.image.url} />)
-      this.metaItems.push(<Meta property='og:image:width' content={this.props.data.image.width.toString()} />)
-      this.metaItems.push(<Meta property='og:image:height' content={this.props.data.image.height.toString()} />)
-      this.metaItems.push(<Meta property='og:image:type' content={this.props.data.image.type} />)
+      this.metaItems.push(<Meta name='og:image' content={this.props.data.image.url} />)
+      this.metaItems.push(<Meta name='og:image:width' content={this.props.data.image.width.toString()} />)
+      this.metaItems.push(<Meta name='og:image:height' content={this.props.data.image.height.toString()} />)
+      this.metaItems.push(<Meta name='og:image:type' content={this.props.data.image.type} />)
     } else if (this.props.data.video) {
-      this.metaItems.push(<Meta property='og:video' content={this.props.data.video.url} />)
-      this.metaItems.push(<Meta property='og:video:width' content={this.props.data.video.width.toString()} />)
-      this.metaItems.push(<Meta property='og:video:height' content={this.props.data.video.height.toString()} />)
-      this.metaItems.push(<Meta property='og:video:type' content={this.props.data.video.type} />)
-      this.metaItems.push(<Meta property='og:video:image' content={this.props.data.video.imageUrl} />)
+      this.metaItems.push(<Meta name='og:video' content={this.props.data.video.url} />)
+      this.metaItems.push(<Meta name='og:video:width' content={this.props.data.video.width.toString()} />)
+      this.metaItems.push(<Meta name='og:video:height' content={this.props.data.video.height.toString()} />)
+      this.metaItems.push(<Meta name='og:video:type' content={this.props.data.video.type} />)
+      this.metaItems.push(<Meta name='og:video:image' content={this.props.data.video.imageUrl} />)
     }
   }
   generateArticleMeta () {
     if (this.props.data.article) {
-      this.metaItems.push(<Meta property='article:published_time' content={this.props.data.article.published_time} />)
-      this.metaItems.push(<Meta property='article:author' content={this.props.data.article.author} />)
+      this.metaItems.push(<Meta name='article:published_time' content={this.props.data.article.published_time} />)
+      this.metaItems.push(<Meta name='article:author' content={this.props.data.article.author} />)
     }
   }
 
   render () {
     this.metaItems = []
 
-    this.metaItems.push(<Meta property='og:site_name' content={this.props.data.site_name} />)
-    this.metaItems.push(<Meta property='og:type' content={this.props.data.type} />)
-    this.metaItems.push(<Meta property='og:url' content={this.props.data.url} />)
-    this.metaItems.push(<Meta property='og:description' content={this.props.data.description} />)
-    this.metaItems.push(<Meta property='og:title' content={this.props.data.title} />)
-    this.metaItems.push(<Meta property='og:locale' content={this.props.data.locale} />)
+    this.metaItems.push(<Meta name='og:site_name' content={this.props.data.site_name} />)
+    this.metaItems.push(<Meta name='og:type' content={this.props.data.type} />)
+    this.metaItems.push(<Meta name='og:url' content={this.props.data.url} />)
+    this.metaItems.push(<Meta name='og:description' content={this.props.data.description} />)
+    this.metaItems.push(<Meta name='og:title' content={this.props.data.title} />)
+    this.metaItems.push(<Meta name='og:locale' content={this.props.data.locale} />)
     this.generateMediaMeta()
     this.generateArticleMeta()
 

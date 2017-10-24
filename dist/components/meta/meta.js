@@ -45,14 +45,14 @@ var Meta = function (_PureComponent) {
   (0, _createClass3.default)(Meta, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement('meta', { property: this.props.property, content: this.props.content });
+      return _React2.default.createElement('meta', { name: this.props.name, content: this.props.content });
     }
   }]);
   return Meta;
 }(_React.PureComponent);
 
 Meta.propTypes = {
-  property: _propTypes2.default.string,
+  name: _propTypes2.default.string,
   content: _propTypes2.default.string
 };
 

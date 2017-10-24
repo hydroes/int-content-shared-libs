@@ -50,42 +50,42 @@ var OgTags = function (_PureComponent) {
     key: 'generateSecureImageMeta',
     value: function generateSecureImageMeta() {
       if (this.props.data.image.secure_url) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image:secure_url', content: this.props.data.image.secure_url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image:secure_url', content: this.props.data.image.secure_url }));
       } else if (this.props.data.image.url.startsWith('https')) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image:secure_url', content: this.props.data.image.url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image:secure_url', content: this.props.data.image.url }));
       }
     }
   }, {
     key: 'generateSecureVideoMeta',
     value: function generateSecureVideoMeta() {
       if (this.props.data.video.secure_url) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:secure_url', content: this.props.data.video.secure_url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:secure_url', content: this.props.data.video.secure_url }));
       } else if (this.props.data.video.url.startsWith('https')) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:secure_url', content: this.props.data.video.url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:secure_url', content: this.props.data.video.url }));
       }
     }
   }, {
     key: 'generateMediaMeta',
     value: function generateMediaMeta() {
       if (this.props.data.image) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image', content: this.props.data.image.url }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image:width', content: this.props.data.image.width.toString() }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image:height', content: this.props.data.image.height.toString() }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:image:type', content: this.props.data.image.type }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image', content: this.props.data.image.url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image:width', content: this.props.data.image.width.toString() }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image:height', content: this.props.data.image.height.toString() }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:image:type', content: this.props.data.image.type }));
       } else if (this.props.data.video) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video', content: this.props.data.video.url }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:width', content: this.props.data.video.width.toString() }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:height', content: this.props.data.video.height.toString() }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:type', content: this.props.data.video.type }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:video:image', content: this.props.data.video.imageUrl }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video', content: this.props.data.video.url }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:width', content: this.props.data.video.width.toString() }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:height', content: this.props.data.video.height.toString() }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:type', content: this.props.data.video.type }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:video:image', content: this.props.data.video.imageUrl }));
       }
     }
   }, {
     key: 'generateArticleMeta',
     value: function generateArticleMeta() {
       if (this.props.data.article) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'article:published_time', content: this.props.data.article.published_time }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'article:author', content: this.props.data.article.author }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'article:published_time', content: this.props.data.article.published_time }));
+        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'article:author', content: this.props.data.article.author }));
       }
     }
   }, {
@@ -93,12 +93,12 @@ var OgTags = function (_PureComponent) {
     value: function render() {
       this.metaItems = [];
 
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:site_name', content: this.props.data.site_name }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:type', content: this.props.data.type }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:url', content: this.props.data.url }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:description', content: this.props.data.description }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:title', content: this.props.data.title }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { property: 'og:locale', content: this.props.data.locale }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:site_name', content: this.props.data.site_name }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:type', content: this.props.data.type }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:url', content: this.props.data.url }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:description', content: this.props.data.description }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:title', content: this.props.data.title }));
+      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'og:locale', content: this.props.data.locale }));
       this.generateMediaMeta();
       this.generateArticleMeta();
 
