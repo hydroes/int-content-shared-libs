@@ -3,15 +3,27 @@ import PropTypes from 'prop-types'
 
 class Meta extends PureComponent {
   render () {
-    return (
-      <meta name={this.props.name} content={this.props.content} />
-    )
+    if (this.props.property){
+      return (
+        <meta property={this.props.property} content={this.props.content} />
+      )
+    }
+
+    if (this.props.name){
+      return(
+        <meta name={this.props.name} content={this.props.content} />
+      )
+    }
+
+    return null
+    
   }
 }
 
 Meta.propTypes = {
   name: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
+  property: PropTypes.string
 }
 
 export default Meta

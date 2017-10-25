@@ -45,7 +45,15 @@ var Meta = function (_PureComponent) {
   (0, _createClass3.default)(Meta, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement('meta', { name: this.props.name, content: this.props.content });
+      if (this.props.property) {
+        return _React2.default.createElement('meta', { property: this.props.property, content: this.props.content });
+      }
+
+      if (this.props.name) {
+        return _React2.default.createElement('meta', { name: this.props.name, content: this.props.content });
+      }
+
+      return null;
     }
   }]);
   return Meta;
@@ -53,7 +61,8 @@ var Meta = function (_PureComponent) {
 
 Meta.propTypes = {
   name: _propTypes2.default.string,
-  content: _propTypes2.default.string
+  content: _propTypes2.default.string,
+  property: _propTypes2.default.string
 };
 
 exports.default = Meta;
