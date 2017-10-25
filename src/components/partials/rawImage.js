@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 class RawImage extends PureComponent {
   buildSourceElements (items) {
-    const sourceElements = items.map((item) => {
+    const sourceElements = items.map((item, index) => {
       if (item.path) {
         let mediaQuery = '(max-width: ' + item.maxWidth + 'px)'
-        return <source media={mediaQuery} srcSet={item.path} />
+        return <source media={mediaQuery} srcSet={item.path} key={index} />
       }
     })
 

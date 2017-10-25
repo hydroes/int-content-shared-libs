@@ -45,10 +45,10 @@ var RawImage = function (_PureComponent) {
   (0, _createClass3.default)(RawImage, [{
     key: 'buildSourceElements',
     value: function buildSourceElements(items) {
-      var sourceElements = items.map(function (item) {
+      var sourceElements = items.map(function (item, index) {
         if (item.path) {
           var mediaQuery = '(max-width: ' + item.maxWidth + 'px)';
-          return _React2.default.createElement('source', { media: mediaQuery, srcSet: item.path });
+          return _React2.default.createElement('source', { media: mediaQuery, srcSet: item.path, key: index });
         }
       });
 
