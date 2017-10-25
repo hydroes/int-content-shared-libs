@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'React'
 import PropTypes from 'prop-types'
-import RawImage from '../../mixins/rawImage'
+import RawImage from '../../partials/rawImage'
 import _ from 'lodash'
 
 class CardIcons extends PureComponent {
@@ -8,7 +8,6 @@ class CardIcons extends PureComponent {
     let defaultIcon = _.result(this.props, 'icon.defaultImage.path', '')
     defaultIcon = _.result(this.props, 'icon.image.url', defaultIcon) // -  kept icon.image.url as precedence for backward compatibility with changes
     let hasIconImage = _.result(this.props, 'images.xs.url', '') || _.result(this.props, 'images.sm.url', '')
-    console.log('--------- before the if')
     if (defaultIcon && hasIconImage) {
       let imageSizes = this.props.icon.images || []
       return (
@@ -17,7 +16,6 @@ class CardIcons extends PureComponent {
         </div>
       )
     }
-    console.log('returning nothing')
     return null
   }
 }

@@ -32,7 +32,7 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _rawImage = require('../../mixins/rawImage');
+var _rawImage = require('../../partials/rawImage');
 
 var _rawImage2 = _interopRequireDefault(_rawImage);
 
@@ -56,7 +56,6 @@ var CardIcons = function (_PureComponent) {
       var defaultIcon = _lodash2.default.result(this.props, 'icon.defaultImage.path', '');
       defaultIcon = _lodash2.default.result(this.props, 'icon.image.url', defaultIcon); // -  kept icon.image.url as precedence for backward compatibility with changes
       var hasIconImage = _lodash2.default.result(this.props, 'images.xs.url', '') || _lodash2.default.result(this.props, 'images.sm.url', '');
-      console.log('--------- before the if');
       if (defaultIcon && hasIconImage) {
         var imageSizes = this.props.icon.images || [];
         return _React2.default.createElement(
@@ -65,7 +64,6 @@ var CardIcons = function (_PureComponent) {
           _React2.default.createElement(_rawImage2.default, { defaultImgUrl: defaultIcon, imageSizes: imageSizes })
         );
       }
-      console.log('returning nothing');
       return null;
     }
   }]);

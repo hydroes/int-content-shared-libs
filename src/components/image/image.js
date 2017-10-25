@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'React'
 import PropTypes from 'prop-types'
-import RawImage from '../mixins/rawImage'
+import RawImage from '../partials/rawImage'
 
 class Image extends PureComponent {
   render () {

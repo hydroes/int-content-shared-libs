@@ -32,7 +32,7 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _rawImage = require('../mixins/rawImage');
+var _rawImage = require('../partials/rawImage');
 
 var _rawImage2 = _interopRequireDefault(_rawImage);
 
