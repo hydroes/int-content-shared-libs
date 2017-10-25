@@ -15,7 +15,7 @@ class Meta extends PureComponent {
       )
     }
 
-    return null
+    return (null)
   }
 }
 
