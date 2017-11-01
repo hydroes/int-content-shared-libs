@@ -59,21 +59,22 @@ var Test = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var componentId = this.props.componentId;
       return _React2.default.createElement(
         'div',
-        { className: 'bauer-web-component-test' },
+        { id: componentId, className: 'bauer-web-component-test' },
         _React2.default.createElement(
-          'h2',
+          'span',
           null,
           'Test component: ',
-          this.props.title,
-          _React2.default.createElement('br', null),
-          _React2.default.createElement(
-            'button',
-            { id: 'bauer-web-component-test-btn', type: 'button', className: 'btn btn-default btn-lg', onClick: this.handleClick },
-            _React2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' }),
-            this.state.isToggleOn ? 'ON' : 'OFF'
-          )
+          this.props.title
+        ),
+        _React2.default.createElement('br', null),
+        _React2.default.createElement(
+          'button',
+          { id: 'bauer-web-component-test-btn', type: 'button', className: 'btn btn-default btn-lg', onClick: this.handleClick },
+          _React2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' }),
+          this.state.isToggleOn ? 'ON' : 'OFF'
         ),
         _React2.default.createElement(
           'span',

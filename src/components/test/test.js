@@ -15,17 +15,19 @@ class Test extends React.Component {
   }
 
   render () {
-    return (<div className='bauer-web-component-test'>
-      <h2>Test component: {this.props.title}<br />
-        <button id='bauer-web-component-test-btn' type='button' className='btn btn-default btn-lg' onClick={this.handleClick}><span aria-hidden='true' className='glyphicon glyphicon-wrench' />
-          {this.state.isToggleOn ? 'ON' : 'OFF'}
-        </button>
-      </h2><span>Example helper (formatting relative time): 6 mins ago</span>
+    const componentId = this.props.componentId
+    return (<div id={componentId} className='bauer-web-component-test'>
+      <span>Test component: {this.props.title}</span><br />
+      <button id='bauer-web-component-test-btn' type='button' className='btn btn-default btn-lg' onClick={this.handleClick}><span aria-hidden='true' className='glyphicon glyphicon-wrench' />
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+      <span>Example helper (formatting relative time): 6 mins ago</span>
     </div>)
   }
 }
 
 Test.propTypes = {
+  componentId: PropTypes.string,
   title: PropTypes.string
 }
 
