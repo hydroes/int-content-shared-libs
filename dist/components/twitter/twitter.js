@@ -81,6 +81,7 @@ var Twitter = function (_React$Component) {
 }(_React2.default.Component);
 
 Twitter.propTypes = {
+  componentId: _propTypes2.default.string,
   data: _propTypes2.default.shape({
     url: _propTypes2.default.string
   })

@@ -2,7 +2,7 @@
 
 import React from 'React'
 import PropTypes from 'prop-types'
-const $ = require('jquery')
+import $ from 'jquery'
 
 class Instagram extends React.Component {
   constructor (props) {
@@ -31,9 +31,8 @@ class Instagram extends React.Component {
   }
 
   render () {
-    const componentId = this.props.componentId
-    const oembedUrl = this.state.oembedUrl
-    const oembedHtml = this.state.oembedHtml
+    const { componentId } = this.props
+    const { oembedUrl, oembedHtml } = this.state
     return (
       <div id={componentId} data-embed-id={oembedUrl} className='embeds-instagram'>
         <a href={oembedUrl}>{oembedHtml}</a>

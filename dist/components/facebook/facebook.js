@@ -32,9 +32,11 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _jquery = require('jquery');
 
-var $ = require('jquery');
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Facebook = function (_React$Component) {
   (0, _inherits3.default)(Facebook, _React$Component);
@@ -48,38 +50,44 @@ var Facebook = function (_React$Component) {
       oembedUrl: _this.props.data.url,
       oembedHtml: _this.props.data.url
     };
+    _this.element = _React2.default.createElement('div', null);
+
     return _this;
   }
 
   (0, _createClass3.default)(Facebook, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      $('.embed--facebook').each(function () {
-        var _self = $(this);
-        var oembedUrl = 'https://www.facebook.com/plugins/post/oembed.json/?url=' + _self.data('embed-id');
-        $.ajax({
-          url: oembedUrl,
-          dataType: 'jsonp',
-          success: function success(data) {
-            // _self.html(data.html)
-            console.log('-------------fb response', data);
-            this.setState({ oembedHtml: data.html });
-          },
-          error: function error(result) {
-            console.log('-------error', result);
-          }
-        });
+      var _self = (0, _jquery2.default)(this.element);
+      var oembedUrl = 'https://www.facebook.com/plugins/post/oembed.json/?url=' + _self.data('embed-id');
+      _jquery2.default.ajax({
+        url: oembedUrl,
+        dataType: 'jsonp',
+        success: function success(data) {
+          _self.html(data.html);
+          console.log('-------------fb response', data);
+        },
+        error: function error(result) {
+          console.log('-------error', result);
+        }
       });
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var componentId = this.props.componentId;
-      var oembedUrl = this.state.oembedUrl;
-      var oembedHtml = this.state.oembedHtml;
+      var _state = this.state,
+          oembedUrl = _state.oembedUrl,
+          oembedHtml = _state.oembedHtml;
+
+
       return _React2.default.createElement(
         'div',
-        { id: componentId, 'data-embed-id': '{oembedUrl}', className: 'embed--facebook' },
+        { id: componentId, 'data-embed-id': oembedUrl, className: 'embed--facebook', ref: function ref(el) {
+            _this2.element = el;
+          } },
         _React2.default.createElement(
           'a',
           { href: oembedUrl },
@@ -92,6 +100,7 @@ var Facebook = function (_React$Component) {
 }(_React2.default.Component);
 
 Facebook.propTypes = {
+  componentId: _propTypes2.default.string,
   data: _propTypes2.default.shape({
     url: _propTypes2.default.string
   })

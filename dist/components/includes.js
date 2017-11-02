@@ -22,10 +22,16 @@ var _instagram = require('./instagram/instagram');
 
 var _instagram2 = _interopRequireDefault(_instagram);
 
+var _social_sharing = require('./social_sharing/social_sharing');
+
+var _social_sharing2 = _interopRequireDefault(_social_sharing);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// add desired required components to ensure files are included in the component bootstrap
 var components = window.bootstrapComponents || [];
+
+// add desired required components to ensure files are included in the component bootstrap
+
 for (var i in components) {
   var component = components[i];
 
@@ -46,6 +52,9 @@ for (var i in components) {
       break;
     case 'instagram':
       (0, _reactDom.hydrate)(_react2.default.createElement(_instagram2.default, component.data), componentElement);
+      break;
+    case 'social_sharing':
+      (0, _reactDom.hydrate)(_react2.default.createElement(_social_sharing2.default, component.data), componentElement);
       break;
   }
 }

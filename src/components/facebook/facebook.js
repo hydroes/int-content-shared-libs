@@ -2,7 +2,7 @@
 
 import React from 'React'
 import PropTypes from 'prop-types'
-const $ = require('jquery')
+import $ from 'jquery'
 
 class Facebook extends React.Component {
   constructor (props) {
@@ -11,33 +11,32 @@ class Facebook extends React.Component {
       oembedUrl: this.props.data.url,
       oembedHtml: this.props.data.url
     }
+    this.element = <div></div>
+    
   }
 
   componentDidMount () {
-    $('.embed--facebook').each(function () {
-      var _self = $(this)
-      var oembedUrl = 'https://www.facebook.com/plugins/post/oembed.json/?url=' + _self.data('embed-id')
-      $.ajax({
-        url: oembedUrl,
-        dataType: 'jsonp',
-        success: function (data) {
-          // _self.html(data.html)
-          console.log('-------------fb response', data)
-          this.setState({oembedHtml: data.html})
-        },
-        error: function (result) {
-          console.log('-------error', result)
-        }
-      })
+    var _self = $(this.element)
+    var oembedUrl = 'https://www.facebook.com/plugins/post/oembed.json/?url=' + _self.data('embed-id')
+    $.ajax({
+      url: oembedUrl,
+      dataType: 'jsonp',
+      success: function (data) {
+        _self.html(data.html)
+        console.log('-------------fb response', data)
+      },
+      error: function (result) {
+        console.log('-------error', result)
+      }
     })
   }
 
   render () {
-    const componentId = this.props.componentId
-    const oembedUrl = this.state.oembedUrl
-    const oembedHtml = this.state.oembedHtml
+    const { componentId } = this.props
+    const { oembedUrl, oembedHtml } = this.state
+
     return (
-      <div id={componentId} data-embed-id='{oembedUrl}' className='embed--facebook'>
+      <div id={componentId} data-embed-id={oembedUrl} className='embed--facebook' ref={ (el) => { this.element = el } }>
         <a href={oembedUrl}>{oembedHtml}</a>
       </div>
     )

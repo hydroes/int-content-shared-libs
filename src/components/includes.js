@@ -8,6 +8,7 @@ import Test from './test/test'
 import Twitter from './twitter/twitter'
 import Facebook from './facebook/facebook'
 import Instagram from './instagram/instagram'
+import SocialSharing from './social_sharing/social_sharing'
 
 const components = window.bootstrapComponents || []
 for (let i in components) {
@@ -30,6 +31,9 @@ for (let i in components) {
       break
     case 'instagram':
       hydrate(<Instagram {...component.data} />, componentElement)
+      break
+    case 'social_sharing':
+      hydrate(<SocialSharing { ...component.data } />, componentElement)
       break
   }
 }

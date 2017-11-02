@@ -32,9 +32,11 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _jquery = require('jquery');
 
-var $ = require('jquery');
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Instagram = function (_React$Component) {
   (0, _inherits3.default)(Instagram, _React$Component);
@@ -54,10 +56,10 @@ var Instagram = function (_React$Component) {
   (0, _createClass3.default)(Instagram, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      $('.embeds-instagram').each(function () {
-        var _self = $(this);
+      (0, _jquery2.default)('.embeds-instagram').each(function () {
+        var _self = (0, _jquery2.default)(this);
         var oembedUrl = 'https://api.instagram.com/oembed?url=' + _self.data('embed-id');
-        $.ajax({
+        _jquery2.default.ajax({
           url: oembedUrl,
           dataType: 'jsonp',
           success: function success(data) {
@@ -73,8 +75,10 @@ var Instagram = function (_React$Component) {
     key: 'render',
     value: function render() {
       var componentId = this.props.componentId;
-      var oembedUrl = this.state.oembedUrl;
-      var oembedHtml = this.state.oembedHtml;
+      var _state = this.state,
+          oembedUrl = _state.oembedUrl,
+          oembedHtml = _state.oembedHtml;
+
       return _React2.default.createElement(
         'div',
         { id: componentId, 'data-embed-id': oembedUrl, className: 'embeds-instagram' },
@@ -90,6 +94,7 @@ var Instagram = function (_React$Component) {
 }(_React2.default.Component);
 
 Instagram.propTypes = {
+  componentId: _propTypes2.default.string,
   data: _propTypes2.default.shape({
     url: _propTypes2.default.string
   })

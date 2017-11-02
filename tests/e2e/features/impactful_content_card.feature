@@ -5,7 +5,7 @@ Scenario: Shows Impactful Card Component In Browser
 
   Given I open the shared components page to view a impactful hero card
   Then the cards image url is "//via.placeholder.com/900x350"
-  And the alt text from the image is "We asked the Love Island narrator everything you want to know about the show"
+  And the alt text from the image is "lorem ipsum dolor sit amet"
   And the titles text from the card is "We asked the Love Island narrator everything you want to know about the show"
   And the cards link itself is "//www.google.com"
 

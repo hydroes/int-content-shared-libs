@@ -50,7 +50,7 @@ var Articletags = function (_PureComponent) {
         if (tag && tag.name) {
           return _React2.default.createElement(
             'li',
-            { key: i, className: 'pad-0.margin-l-r-5' },
+            { key: i, className: 'pad-0 margin-l-r-5' },
             _React2.default.createElement(
               'a',
               { className: 'pad-10', href: tag.url },

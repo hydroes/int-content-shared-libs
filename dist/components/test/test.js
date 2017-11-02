@@ -88,6 +88,7 @@ var Test = function (_React$Component) {
 }(_React2.default.Component);
 
 Test.propTypes = {
+  componentId: _propTypes2.default.string,
   title: _propTypes2.default.string
 };
 

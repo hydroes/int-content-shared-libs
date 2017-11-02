@@ -7,7 +7,7 @@ class Articletags extends PureComponent {
     let list = tagItems.map((tag, i) => {
       if (tag && tag.name) {
         return (
-          <li key={i} className='pad-0.margin-l-r-5'>
+          <li key={i} className='pad-0 margin-l-r-5'>
             <a className='pad-10' href={tag.url}>{tag.name}</a>
           </li>
         )
