@@ -51,7 +51,6 @@ var Facebook = function (_React$Component) {
       oembedHtml: _this.props.data.url
     };
     _this.element = _React2.default.createElement('div', null);
-
     return _this;
   }
 
@@ -65,10 +64,6 @@ var Facebook = function (_React$Component) {
         dataType: 'jsonp',
         success: function success(data) {
           _self.html(data.html);
-          console.log('-------------fb response', data);
-        },
-        error: function error(result) {
-          console.log('-------error', result);
         }
       });
     }

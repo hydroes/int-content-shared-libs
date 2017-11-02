@@ -12,7 +12,6 @@ class Facebook extends React.Component {
       oembedHtml: this.props.data.url
     }
     this.element = <div></div>
-    
   }
 
   componentDidMount () {
@@ -23,10 +22,6 @@ class Facebook extends React.Component {
       dataType: 'jsonp',
       success: function (data) {
         _self.html(data.html)
-        console.log('-------------fb response', data)
-      },
-      error: function (result) {
-        console.log('-------error', result)
       }
     })
   }

@@ -3,9 +3,9 @@ const { defineSupportCode } = require('cucumber')
 
 const domElements = {
   container: '#social-sharing',
-  facebook: '#social-sharing > .social-sharing > .article-social-share-facebook > a',
-  twitter: '#social-sharing > .social-sharing > .article-social-share-twitter > a',
-  whatsapp: '#social-sharing > .social-sharing >  .article-social-share-whatsapp > a'
+  facebook: '#social-sharing > .social-sharing .article-social-share-facebook > a',
+  twitter: '#social-sharing > .social-sharing .article-social-share-twitter > a',
+  whatsapp: '#social-sharing > .social-sharing  .article-social-share-whatsapp > a'
 }
 /*eslint-disable */
 let handle = {} // @todo 
