@@ -6,14 +6,18 @@ import CardDateTime from '../partials/card_date_time'
 
 class SmallContentCard extends PureComponent {
   render () {
+    const fullWidthCol = this.props.data.isStacked ? 'col-sm-12' : ''
     return (<article className='content-card content-card--small'>
       <div className='row'>
-        <a className='content-card__link col-xs-4 col-sm-12' href={this.props.data.url}>
+        <a className={`content-card__link col-xs-4 ${fullWidthCol}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className='content-card--small__info content-card__info col-xs-8 col-sm-12'>
+        <div className={`content-card--small__info${this.props.data.isStacked ? '' : '--not-stacked'} content-card__info col-xs-8 ${fullWidthCol}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
-          <CardDateTime category={this.props.data.category} date={this.props.data.date} />
+          {
+            this.props.data.category && this.props.data.date &&
+            <CardDateTime category={this.props.data.category} date={this.props.data.date} />
+          }
         </div>
       </div>
     </article>)
@@ -22,6 +26,7 @@ class SmallContentCard extends PureComponent {
 
 SmallContentCard.propTypes = {
   data: PropTypes.shape({
+    isStacked: PropTypes.bool,
     images: PropTypes.shape({
       xs: PropTypes.shape({
         url: PropTypes.string,

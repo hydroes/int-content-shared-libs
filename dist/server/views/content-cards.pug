@@ -24,6 +24,12 @@ block content
       .col-sm-6.col-md-4.col-xl-3
         .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card.json'))
     .row.style-guide__item
+      .col-md-8.col-xl-9
+        .style-guide__item__label
+          h2 Small Content Card inline, on all screen sizes
+      .col-sm-6.col-md-4.col-xl-3
+        .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card_not_stacked.json'))
+    .row.style-guide__item
       .col-md-3
         .style-guide__item__label
           h2 Cards with icons

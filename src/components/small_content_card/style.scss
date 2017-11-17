@@ -1,5 +1,10 @@
 .content-card {
   &--small {
+    &__info {
+      &--not-stacked {
+        min-height: initial;
+      }
+    }
     max-width: rem-calc(450);
     .card-icon {
       min-width: rem-calc(20);
