@@ -12,7 +12,7 @@ class SmallContentCard extends PureComponent {
         <a className={`content-card__link col-xs-4 ${fullWidthCol}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className={`content-card--small__info${this.props.data.isInline ? '--not-stacked' : ''} content-card__info col-xs-8 ${fullWidthCol}`}>
+        <div className={`content-card--small__info${this.props.data.isInline ? '--inline-card' : ''} content-card__info col-xs-8 ${fullWidthCol}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
           {
             this.props.data.category && this.props.data.date &&

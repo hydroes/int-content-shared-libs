@@ -71,7 +71,7 @@ var SmallContentCard = function (_PureComponent) {
           ),
           _React2.default.createElement(
             'div',
-            { className: 'content-card--small__info' + (this.props.data.isInline ? '--not-stacked' : '') + ' content-card__info col-xs-8 ' + fullWidthCol },
+            { className: 'content-card--small__info' + (this.props.data.isInline ? '--inline-card' : '') + ' content-card__info col-xs-8 ' + fullWidthCol },
             _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
             this.props.data.category && this.props.data.date && _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
           )
