@@ -57,7 +57,7 @@ var SmallContentCard = function (_PureComponent) {
   (0, _createClass3.default)(SmallContentCard, [{
     key: 'render',
     value: function render() {
-      var fullWidthCol = this.props.data.isStacked ? 'col-sm-12' : '';
+      var fullWidthCol = this.props.data.isInline ? '' : 'col-sm-12';
       return _React2.default.createElement(
         'article',
         { className: 'content-card content-card--small' },
@@ -71,7 +71,7 @@ var SmallContentCard = function (_PureComponent) {
           ),
           _React2.default.createElement(
             'div',
-            { className: 'content-card--small__info' + (this.props.data.isStacked ? '' : '--not-stacked') + ' content-card__info col-xs-8 ' + fullWidthCol },
+            { className: 'content-card--small__info' + (this.props.data.isInline ? '--not-stacked' : '') + ' content-card__info col-xs-8 ' + fullWidthCol },
             _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
             this.props.data.category && this.props.data.date && _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
           )
@@ -84,7 +84,7 @@ var SmallContentCard = function (_PureComponent) {
 
 SmallContentCard.propTypes = {
   data: _propTypes2.default.shape({
-    isStacked: _propTypes2.default.bool,
+    isInline: _propTypes2.default.bool,
     images: _propTypes2.default.shape({
       xs: _propTypes2.default.shape({
         url: _propTypes2.default.string,

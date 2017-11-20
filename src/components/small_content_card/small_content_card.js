@@ -6,13 +6,13 @@ import CardDateTime from '../partials/card_date_time'
 
 class SmallContentCard extends PureComponent {
   render () {
-    const fullWidthCol = this.props.data.isStacked ? 'col-sm-12' : ''
+    const fullWidthCol = this.props.data.isInline ? '' : 'col-sm-12'
     return (<article className='content-card content-card--small'>
       <div className='row'>
         <a className={`content-card__link col-xs-4 ${fullWidthCol}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className={`content-card--small__info${this.props.data.isStacked ? '' : '--not-stacked'} content-card__info col-xs-8 ${fullWidthCol}`}>
+        <div className={`content-card--small__info${this.props.data.isInline ? '--not-stacked' : ''} content-card__info col-xs-8 ${fullWidthCol}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
           {
             this.props.data.category && this.props.data.date &&
@@ -26,7 +26,7 @@ class SmallContentCard extends PureComponent {
 
 SmallContentCard.propTypes = {
   data: PropTypes.shape({
-    isStacked: PropTypes.bool,
+    isInline: PropTypes.bool,
     images: PropTypes.shape({
       xs: PropTypes.shape({
         url: PropTypes.string,
