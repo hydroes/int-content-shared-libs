@@ -6,25 +6,42 @@ import CardDateTime from '../partials/card_date_time'
 
 class SmallContentCard extends PureComponent {
   render () {
-    const fullWidthCol = this.props.data.isInline ? '' : 'col-sm-12'
-    return (<article className='content-card content-card--small'>
+    const ElementTag = this.props.tag || 'article'
+    const isInline = this.props.linkBreakpoint || this.props.infoBreakpoint || this.props.data.isInline
+    const fullWidthCol = isInline ? '' : 'col-sm-12'
+
+    const breakpoints = {
+      link: this.props.linkBreakpoint || 'col-xs-4',
+      info: this.props.infoBreakpoint || 'col-xs-8'
+    }
+
+    const classes = {
+      link: '',
+      info: isInline ? '--inline-card' : ''
+    }
+    return (<ElementTag className='content-card content-card--small'>
       <div className='row'>
-        <a className={`content-card__link col-xs-4 ${fullWidthCol}`} href={this.props.data.url}>
+        <a className={`content-card__link ${breakpoints.link} ${fullWidthCol}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className={`content-card--small__info${this.props.data.isInline ? '--inline-card' : ''} content-card__info col-xs-8 ${fullWidthCol}`}>
+        <div className={`content-card--small__info${classes.info} content-card__info ${breakpoints.info} ${fullWidthCol}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
           {
             this.props.data.category && this.props.data.date &&
             <CardDateTime category={this.props.data.category} date={this.props.data.date} />
           }
         </div>
+        {this.props.children}
       </div>
-    </article>)
+    </ElementTag>)
   }
 }
 
 SmallContentCard.propTypes = {
+  children: PropTypes.node,
+  tag: PropTypes.string,
+  linkBreakpoint: PropTypes.string,
+  infoBreakpoint: PropTypes.string,
   data: PropTypes.shape({
     isInline: PropTypes.bool,
     images: PropTypes.shape({

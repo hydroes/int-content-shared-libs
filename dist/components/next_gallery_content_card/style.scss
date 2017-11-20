@@ -1,0 +1,13 @@
+.next-gallery-card {
+  .row {
+    display: flex;
+    flex: 0;
+    .card-arrow {
+      display: flex;
+      &__item {
+        align-self: center;
+        width: 100%;
+      }
+    }
+  }
+}

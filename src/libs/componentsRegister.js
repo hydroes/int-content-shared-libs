@@ -106,5 +106,9 @@ export default [
   {
     name: 'youtube',
     path: componentPath + 'youtube/youtube'
+  },
+  {
+    name: 'next_gallery_content_card',
+    path: componentPath + 'next_gallery_content_card/next_gallery_content_card'
   }
 ]
