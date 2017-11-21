@@ -1,15 +1,11 @@
 'use strict'
 
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-
 // Add routes to the app from this file
-
 const path = require('path')
 const pkg = require('../../package.json')
 const shared = {
-  component: (templateName, templateData) => require(path.join(__dirname, './../../src/libs/template'))(templateName, templateData),
-  data: (filePath) => require(path.join(__dirname, './../../src/libs/dataMapper'))(filePath)
+  component: (templateName, templateData) => require(path.join(__dirname, './../../dist/libs/component'))(templateName, templateData),
+  data: (filePath) => require(path.join(__dirname, './../../dist/libs/dataMapper'))(filePath)
 }
 
 let templateOpts = {
@@ -52,22 +48,5 @@ module.exports = function (router) {
 
   router.get('/e2e', async function (ctx, next) {
     await ctx.render('e2e', templateOpts)
-  })
-
-  router.get('/react', async function (ctx, next) {
-    // await ctx.render('react', templateOpts)
-
-    class HelloMessage extends React.Component {
-      render () {
-        return (
-          <div>
-            Hello {this.props.name}
-          </div>
-        )
-      }
-    }
-
-    let html = ReactDOMServer.renderToString(<HelloMessage name='Brian' />)
-    await ctx.res.write(html)
   })
 }

@@ -4,4 +4,4 @@ Feature: Test button
 Scenario: Clicking button
 
   Given I open the shared components page
-  Then the test button text is "test button"
+  Then the test button text is "ON"

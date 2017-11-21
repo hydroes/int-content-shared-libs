@@ -54,9 +54,18 @@ When modifying templates/js/sass they are automatically compiled to templates/di
 a component in its entirety lives in a aptly named folder in the components dir.
 
 A component needs at a minimium to have 3 files within its folder:
-- index.js (js stored here and can be required)
+
 - style.scss (sass file)
-- pug template file named after the parent folder
+- JSX template file named after the parent folder (suffixed with `.js`)
+    - each parent node rendered requires an id attribute assigned as
+    e.g..
+    ```
+        return (
+            <div id={this.props.componentId}>
+                ...
+            </div>
+        )
+    ```
 
 # commits must follow the following es standard:
 ([commit message standard]) https://github.com/willsoto/validate-commit/blob/master/conventions/eslint.md

@@ -1,24 +1,6 @@
 'use strict';
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
+// Add routes to the app from this file
 
 var _regenerator = require('babel-runtime/regenerator');
 
@@ -28,26 +10,16 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _server = require('react-dom/server');
-
-var _server2 = _interopRequireDefault(_server);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Add routes to the app from this file
 
 var path = require('path');
 var pkg = require('../../package.json');
 var shared = {
   component: function component(templateName, templateData) {
-    return require(path.join(__dirname, './../../src/libs/template'))(templateName, templateData);
+    return require(path.join(__dirname, './../../dist/libs/component'))(templateName, templateData);
   },
   data: function data(filePath) {
-    return require(path.join(__dirname, './../../src/libs/dataMapper'))(filePath);
+    return require(path.join(__dirname, './../../dist/libs/dataMapper'))(filePath);
   }
 };
 
@@ -216,54 +188,6 @@ module.exports = function (router) {
 
     return function (_x13, _x14) {
       return _ref7.apply(this, arguments);
-    };
-  }());
-
-  router.get('/react', function () {
-    var _ref8 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee8(ctx, next) {
-      var HelloMessage, html;
-      return _regenerator2.default.wrap(function _callee8$(_context8) {
-        while (1) {
-          switch (_context8.prev = _context8.next) {
-            case 0:
-              // await ctx.render('react', templateOpts)
-
-              HelloMessage = function (_React$Component) {
-                (0, _inherits3.default)(HelloMessage, _React$Component);
-
-                function HelloMessage() {
-                  (0, _classCallCheck3.default)(this, HelloMessage);
-                  return (0, _possibleConstructorReturn3.default)(this, (HelloMessage.__proto__ || (0, _getPrototypeOf2.default)(HelloMessage)).apply(this, arguments));
-                }
-
-                (0, _createClass3.default)(HelloMessage, [{
-                  key: 'render',
-                  value: function render() {
-                    return _react2.default.createElement(
-                      'div',
-                      null,
-                      'Hello ',
-                      this.props.name
-                    );
-                  }
-                }]);
-                return HelloMessage;
-              }(_react2.default.Component);
-
-              html = _server2.default.renderToString(_react2.default.createElement(HelloMessage, { name: 'Brian' }));
-              _context8.next = 4;
-              return ctx.res.write(html);
-
-            case 4:
-            case 'end':
-              return _context8.stop();
-          }
-        }
-      }, _callee8, this);
-    }));
-
-    return function (_x15, _x16) {
-      return _ref8.apply(this, arguments);
     };
   }());
 };
