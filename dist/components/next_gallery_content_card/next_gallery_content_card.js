@@ -57,17 +57,9 @@ var NextGalleryContentCard = function (_PureComponent) {
           { tag: 'div', linkBreakpoint: 'col-xs-4',
             infoBreakpoint: 'col-xs-7',
             data: this.props.data },
-          _react2.default.createElement(
-            'a',
-            { className: 'col-xs-1 pad-0 card-arrow' },
-            this.props.data.navIconImg ? _react2.default.createElement('img', { className: 'card-arrow__item', src: this.props.data.navIconImg }) : _react2.default.createElement(
-              'svg',
-              { className: 'card-arrow__item',
-                viewBox: '0 0 1792 1792',
-                xmlns: 'http://www.w3.org/2000/svg' },
-              _react2.default.createElement('path', { d: 'M1171 960q0 13-10 23l-466 466q-10 10-23 \n                10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 \n                23-10t23 10l466 466q10 10 10 23z' })
-            )
-          )
+          _react2.default.createElement('a', { className: 'col-xs-1 pad-0 card-arrow',
+            href: this.props.data.url,
+            style: { background: 'url(' + this.props.data.navIconImgSrc + ') no-repeat center' } })
         )
       );
     }
@@ -77,8 +69,8 @@ var NextGalleryContentCard = function (_PureComponent) {
 
 NextGalleryContentCard.propTypes = {
   data: _propTypes2.default.shape({
-    navIconImg: _propTypes2.default.string,
-    isInline: _propTypes2.default.bool
+    navIconImgSrc: _propTypes2.default.string,
+    url: _propTypes2.default.string
   })
 };
 
