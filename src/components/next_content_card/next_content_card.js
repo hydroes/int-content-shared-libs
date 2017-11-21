@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import SmallContentCard from './../small_content_card/small_content_card'
 import PropTypes from 'prop-types'
 
-class NextGalleryContentCard extends PureComponent {
+class NextContentCard extends PureComponent {
   render () {
     return (<article className='next-gallery-card'>
       <SmallContentCard tag='div' linkBreakpoint='col-xs-4'
@@ -17,11 +17,11 @@ class NextGalleryContentCard extends PureComponent {
   }
 }
 
-NextGalleryContentCard.propTypes = {
+NextContentCard.propTypes = {
   data: PropTypes.shape({
     navIconImgSrc: PropTypes.string,
     url: PropTypes.string
   })
 }
 
-export default NextGalleryContentCard
+export default NextContentCard
