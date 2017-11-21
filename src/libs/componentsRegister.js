@@ -100,6 +100,10 @@ export default [
     path: componentPath + 'twitter_card_tags/twitter_card_tags'
   },
   {
+    name: 'video',
+    path: componentPath + 'video/video'
+  },
+  {
     name: 'vimeo',
     path: componentPath + 'vimeo/vimeo'
   },

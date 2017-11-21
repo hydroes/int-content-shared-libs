@@ -1,0 +1,12 @@
+{
+  "data": {
+    "content": {
+      "provider": "brightcove",
+      "url": "https://player.vimeo.com/video/203658093"
+    },
+    "displayName": "Hero Video",
+    "free": true,
+    "name": "heroVideo",
+    "type": "heroVideo"
+  }
+}
