@@ -1,10 +1,5 @@
 .content-card {
   &--small {
-    &__info {
-      &--inline-card {
-        min-height: initial;
-      }
-    }
     max-width: rem-calc(450);
     .card-icon {
       min-width: rem-calc(20);

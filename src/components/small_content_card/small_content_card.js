@@ -7,24 +7,19 @@ import CardDateTime from '../partials/card_date_time'
 class SmallContentCard extends PureComponent {
   render () {
     const ElementTag = this.props.tag || 'article'
-    const isInline = this.props.linkBreakpoint || this.props.infoBreakpoint || this.props.data.isInline
-    const fullWidthCol = isInline ? '' : 'col-sm-12'
 
     const breakpoints = {
       link: this.props.linkBreakpoint || 'col-xs-4',
-      info: this.props.infoBreakpoint || 'col-xs-8'
+      info: this.props.infoBreakpoint || 'col-xs-8',
+      fullWidth: (this.props.linkBreakpoint || this.props.infoBreakpoint) ? '' : 'col-sm-12'
     }
 
-    const classes = {
-      link: '',
-      info: isInline ? '--inline-card' : ''
-    }
     return (<ElementTag className='content-card content-card--small'>
       <div className='row'>
-        <a className={`content-card__link ${breakpoints.link} ${fullWidthCol}`} href={this.props.data.url}>
+        <a className={`content-card__link ${breakpoints.link} ${breakpoints.fullWidth}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className={`content-card--small__info${classes.info} content-card__info ${breakpoints.info} ${fullWidthCol}`}>
+        <div className={`content-card--small__info content-card__info ${breakpoints.info} ${breakpoints.fullWidth}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
           {
             this.props.data.category && this.props.data.date &&
@@ -43,7 +38,6 @@ SmallContentCard.propTypes = {
   linkBreakpoint: PropTypes.string,
   infoBreakpoint: PropTypes.string,
   data: PropTypes.shape({
-    isInline: PropTypes.bool,
     images: PropTypes.shape({
       xs: PropTypes.shape({
         url: PropTypes.string,

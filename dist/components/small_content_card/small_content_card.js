@@ -58,18 +58,13 @@ var SmallContentCard = function (_PureComponent) {
     key: 'render',
     value: function render() {
       var ElementTag = this.props.tag || 'article';
-      var isInline = this.props.linkBreakpoint || this.props.infoBreakpoint || this.props.data.isInline;
-      var fullWidthCol = isInline ? '' : 'col-sm-12';
 
       var breakpoints = {
         link: this.props.linkBreakpoint || 'col-xs-4',
-        info: this.props.infoBreakpoint || 'col-xs-8'
+        info: this.props.infoBreakpoint || 'col-xs-8',
+        fullWidth: this.props.linkBreakpoint || this.props.infoBreakpoint ? '' : 'col-sm-12'
       };
 
-      var classes = {
-        link: '',
-        info: isInline ? '--inline-card' : ''
-      };
       return _React2.default.createElement(
         ElementTag,
         { className: 'content-card content-card--small' },
@@ -78,12 +73,12 @@ var SmallContentCard = function (_PureComponent) {
           { className: 'row' },
           _React2.default.createElement(
             'a',
-            { className: 'content-card__link ' + breakpoints.link + ' ' + fullWidthCol, href: this.props.data.url },
+            { className: 'content-card__link ' + breakpoints.link + ' ' + breakpoints.fullWidth, href: this.props.data.url },
             _React2.default.createElement(_small_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
           ),
           _React2.default.createElement(
             'div',
-            { className: 'content-card--small__info' + classes.info + ' content-card__info ' + breakpoints.info + ' ' + fullWidthCol },
+            { className: 'content-card--small__info content-card__info ' + breakpoints.info + ' ' + breakpoints.fullWidth },
             _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
             this.props.data.category && this.props.data.date && _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
           ),
@@ -101,7 +96,6 @@ SmallContentCard.propTypes = {
   linkBreakpoint: _propTypes2.default.string,
   infoBreakpoint: _propTypes2.default.string,
   data: _propTypes2.default.shape({
-    isInline: _propTypes2.default.bool,
     images: _propTypes2.default.shape({
       xs: _propTypes2.default.shape({
         url: _propTypes2.default.string,
