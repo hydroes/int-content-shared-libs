@@ -1,6 +1,6 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -13,15 +13,23 @@
     "node": ">=v6.11.1"
   },
   "dependencies": {
+    "axios": "^0.17.0",
+    "fetch-jsonp": "^1.1.3",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.3.0",
@@ -30,7 +38,15 @@
     "chromedriver": "^2.30.1",
     "cucumber": "^2.3.1",
     "cucumber-html-reporter": "^3.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-standard": "^3.0.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",
     "gulp-nodemon": "^2.2.1",
@@ -52,7 +68,6 @@
     "precommit-hook": "^3.0.0",
     "pug-lint": "^2.4.0",
     "sass-lint": "^1.10.2",
-    "standard": "^9.0.1",
     "validate-commit": "^3.2.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
@@ -72,7 +87,7 @@
   ],
   "name": "bauer-shared-web-components",
   "pre-commit": [
-    "validate-js-standard",
+    "validate-js",
     "validate-pug",
     "validate-sass",
     "validate-commitmsg",
@@ -88,18 +103,18 @@
     "start": "gulp",
     "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet; npm run unit-tests",
     "posttest": "gulp generate-test-reports",
-    "validate-js-standard": "standard",
-    "validate-pug": "pug-lint components/**/*.pug server/views/**/*.pug",
+    "validate-pug": "pug-lint src/components/**/*.pug src/server/views/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
-    "validate-sass": "sass-lint -c .sass-lint.yml 'components/**/*.scss' -v -q",
+    "validate-sass": "sass-lint -c .sass-lint.yml 'src/components/**/*.scss' -v -q",
     "validate": "npm ls",
     "e2e-tests": "nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet",
-    "unit-tests": "mocha 'tests/unit/**/*.js' --timeout 10000"
+    "unit-tests": "gulp compile-all-js && mocha 'tests/unit/**/*.js' --timeout 10000",
+    "validate-js": "eslint --ext .js --ext .jsx ./"
   },
   "standard": {
     "ignore": [
-      "docs/dist/**",
-      "components/shared/sass/bootstrap-sass-3.3.7"
+      "src/components/shared/sass/bootstrap-sass-3.3.7",
+      "dist"
     ]
   }
 }

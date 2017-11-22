@@ -24,40 +24,48 @@ Run:
 npm start
 
 # Project structure:
-.
-├── build - devops build scripts
-├── component_helpers - component js helpers
-├── components - components folder
-├── components_data - json files required for components
-├── libs - libs used to retrieve and compile components and assets etc
-├── public - static assets folder
-│   ├── assets
-│   │   └── bootstrap - customised bootstrap
-│   ├── dist - compiled assets, scripts|css
-│   └── reports - html reports dir
-│       └── e2e
-├── server - koa server
-│   └── views - pages
-│       └── partials - partial templates
+
+```
+├── build - Devops build and deploy code
+├── dist - This is a copy of the src directory the difference is js code is transpiled from ecma2015 down
+├── public - static assets dir
+├── src - source code directory
+│   ├── component_helpers
+│   ├── components - components folder
+│   ├── components_data
+│   ├── libs - libs used to retrieve and compile components and assets etc
+│   └── server
+│       └── views
+│           └── partials
 └── tests
     ├── e2e
-    │   ├── config
-    │   ├── features
-    │   │   └── step_definitions
-    │   ├── page_objects
-    │   └── reports
+    │   ├── config
+    │   ├── features
+    │   │   └── step_definitions
+    │   ├── page_objects
+    │   └── reports - html reports dir
     ├── reports
-    │   └── e2e
-    └── unit
+    │   └── e2e
+    └── unit - unit tests
+```
 
 # components
 When modifying templates/js/sass they are automatically compiled to templates/dist
 a component in its entirety lives in a aptly named folder in the components dir.
 
 A component needs at a minimium to have 3 files within its folder:
-- index.js (js stored here and can be required)
+
 - style.scss (sass file)
-- pug template file named after the parent folder
+- JSX template file named after the parent folder (suffixed with `.js`)
+    - each parent node rendered requires an id attribute assigned as
+    e.g..
+    ```
+        return (
+            <div id={this.props.componentId}>
+                ...
+            </div>
+        )
+    ```
 
 # commits must follow the following es standard:
 ([commit message standard]) https://github.com/willsoto/validate-commit/blob/master/conventions/eslint.md

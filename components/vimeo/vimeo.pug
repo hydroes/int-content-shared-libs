@@ -1,8 +1,0 @@
-.embeds-vimeo
-  -
-    // replace url with correct embed
-    if (/\/\/vimeo.com\//.test(data.url)) {
-      var videoID = data.url.split('vimeo.com/')[1]
-      data.url = 'https://player.vimeo.com/video/' + videoID
-    }
-  iframe(src=data.url frameborder='0' allowfullscreen)

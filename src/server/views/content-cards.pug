@@ -1,0 +1,40 @@
+extends partials/page
+block content
+  section#cards
+    .section-header
+      h2 Cards
+
+    .row.style-guide__item
+      .col-md-6
+        .style-guide__item__label
+          h2 Impactful Content Card
+      .col-md-6
+        .impactful!= shared.component('impactful_content_card', shared.data('impactful_content_card/impactful_content_card.json'))
+
+    .row.style-guide__item
+      .col-md-6
+        .style-guide__item__label
+          h2 Large Content Card
+      .col-md-6
+        .large-content-card!= shared.component('large_content_card', shared.data('large_content_card/large_content_card.json'))
+    .row.style-guide__item
+      .col-md-8.col-xl-9
+        .style-guide__item__label
+          h2 Small Content Card
+      .col-sm-6.col-md-4.col-xl-3
+        .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card.json'))
+    .row.style-guide__item
+      .col-md-3
+        .style-guide__item__label
+          h2 Cards with icons
+      .col-md-6
+        .content-card-large!= shared.component('large_content_card', shared.data('large_content_card/large_content_card_has_icon.json'))
+      .col-md-3
+        .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card_has_icon.json'))
+    .row.style-guide__item
+      .row
+        .col-md-7
+          .style-guide__item__label
+            h2 Next Content Card
+        .col-md-5
+          #gallery-component!= shared.component('next_content_card', shared.data('next_content_card/next_content_card.json'))

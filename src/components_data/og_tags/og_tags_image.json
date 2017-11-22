@@ -1,0 +1,20 @@
+{
+  "data": {
+    "title": "some title",
+    "description": "description of lorem ipsum dolor amet",
+    "site_name": "Lifestyle",
+    "locale": "gb",
+    "url": "www.google.com",
+    "type": "website",
+    "image": {
+      "url": "www.google.com/woooo.jpg",
+      "width": 200,
+      "height": 300,
+      "type": "image/jpeg"
+    },
+    "article": {
+      "published_time": "2017-09-07T10:14:46+01:00",
+      "author": "James Bond"
+    }
+  }
+}

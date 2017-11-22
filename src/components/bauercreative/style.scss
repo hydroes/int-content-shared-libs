@@ -1,0 +1,11 @@
+.embeds-bauercreative {
+  display:block;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe, object, embed {
+    /* hack to make safari expand iframe to full width */
+    width: 100px;
+    min-width: 100%;
+  }
+}

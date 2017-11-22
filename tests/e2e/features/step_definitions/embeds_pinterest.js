@@ -1,7 +1,7 @@
 const { client } = require('nightwatch-cucumber')
 const { defineSupportCode } = require('cucumber')
 const container = '.pinterest-rich-pin'
-const pin = container + ' > *'
+const pin = container + ' * > *'
 
 defineSupportCode(({Given, Then, When}) => {
   Given('I open the shared components page to view Pinterest embed', async () => {

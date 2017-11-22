@@ -1,0 +1,12 @@
+{
+  "data": {
+    "protocol": "http://",
+    "host": "shared-libs.onebauer.media",
+    "pathname": "/testpath",
+    "shareMsg": {
+      "default": "Check this cool link out!",
+      "twitter": "Bauer Shared Components -",
+      "whatsApp": "Mate, you gotta see this..."
+    }
+  }
+}

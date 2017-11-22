@@ -1,9 +1,0 @@
-
-.embeds-youtube
-  -
-    // replace urls with watch with correct embed
-    if (/watch\?v=/.test(data.url)) {
-      var videoID = data.url.split('watch?v=')[1]
-      data.url = 'https://youtube.com/embed/' + videoID + '?rel=0'
-    }
-  iframe(src=data.url allowfullscreen)

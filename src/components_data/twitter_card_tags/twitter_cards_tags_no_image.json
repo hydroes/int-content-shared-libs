@@ -1,0 +1,12 @@
+{
+  "data": {
+    "title": "some title",
+    "description": "description of lorem ipsum dolor amet",
+    "twitter": {
+      "cardType": "summary_large_image",
+      "site": "@GraziaUK",
+      "creator": "@bauermedia",
+      "domain": "http://graziadaily.co.uk"
+    }
+  }
+}

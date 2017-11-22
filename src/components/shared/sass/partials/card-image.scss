@@ -1,0 +1,18 @@
+.card-image {
+  .icon-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .card-icon {
+      width: 100%;
+    }
+  }
+  .missing-image {
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: 50% 50%;
+    width: 100%;
+    display: inline-block;
+    background-color: $black-color;
+  }
+}

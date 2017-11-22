@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "path": "Planet Radio",
+      "url": "/"
+    },
+    {
+      "path": "KISS",
+      "url": "/kiss/"
+    },
+    {
+      "path": "Entertainment",
+      "url": "/kiss/entertainment/"
+    },
+    {
+      "path": "Comedy",
+      "url": "/kiss/entertainment/comedy/",
+      "cssClass": "breadcrumbs__link--active"
+    }
+  ]
+}

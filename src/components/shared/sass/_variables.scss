@@ -1,0 +1,58 @@
+/// --------------------------------------
+//  Media queries breakpoints
+/// --------------------------------------
+// These variables are here for reference only.
+// Defined in ./bauer-bootstrap/variables.scss
+// $screen-xs 
+// $screen-xs:                  280px !default;
+// Small screen / tablet
+// $screen-sm-min:              480px !default;
+// Medium screen / desktop
+// $screen-md-min:              768px !default;
+// Large screen / wide desktop
+// $screen-lg-min:              992px !default;
+// Extral Large screen / extra wide desktop
+// $screen-xl-min:              1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+// $screen-xs-max:              ($screen-sm-min - 1) !default;
+// $screen-sm-max:              ($screen-md-min - 1) !default;
+// $screen-md-max:              ($screen-lg-min - 1) !default;
+// $screen-lg-max:              ($screen-xl-min - 1) !default;
+/// --------------------------------------
+/// Colors
+/// --------------------------------------
+$white-color: #fff !default;
+$grey-color: #939393 !default;
+$black-color: #000 !default;
+$radio-brand-color: #5D2466;
+$primary-color: #00A2E5;
+$secondary-color: #fff;
+/// --------------------------------------
+///  Base Styles
+$brand-color: $radio-brand-color; /* main brand color */
+$box-shadow-color: #d9d9d9 !default;
+$main-background-color: #ececec;
+$border-radius-default: 0;
+$border-color: #e1e1e1 !default;
+/// --------------------------------------
+/// Fonts
+/// --------------------------------------
+// Typography Colors
+$paginate-bg-color: #ddd!default;
+$link-active-color: $brand-color;
+$image-credit-color: $white-color;
+// Font weights
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+/// --------------------------------------
+/// Icons
+/// --------------------------------------
+$social-icon-width: 16;
+/// --------------------------------------
+/// Icons
+/// --------------------------------------
+$content-card-content-height: 142;
+$content-card-padding: 10;
