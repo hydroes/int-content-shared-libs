@@ -48,9 +48,12 @@ module.exports = function (ComponentName) {
 
   // test if component found
   if (Components[ComponentName] === undefined) {
-    // @todo add error throwing back in
-    // throw new Error('Component not found: ', ComponentName)
-    return '!!Component: "' + ComponentName + '" NOT reactified!!';
+    // only throw error on dev env, return empty string in production
+    var env = process.env.NODE_ENV || 'dev';
+    if (env === 'dev') {
+      throw new Error('Component not found: ', ComponentName);
+    }
+    return '';
   }
   var componentId = (0, _uniqueId2.default)('bauerComponentId_');
   var mergedData = (0, _assign2.default)({}, data, { componentId: componentId });

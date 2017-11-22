@@ -39,9 +39,6 @@ exports.default = [{
   name: 'large_content_card',
   path: componentPath + 'large_content_card/large_content_card'
 }, {
-  name: 'mixins',
-  path: componentPath + 'mixins/mixins'
-}, {
   name: 'ntr',
   path: componentPath + 'ntr/ntr'
 }, {
@@ -51,14 +48,8 @@ exports.default = [{
   name: 'pagination',
   path: componentPath + 'pagination/pagination'
 }, {
-  name: 'partials',
-  path: componentPath + 'partials/partials'
-}, {
   name: 'pinterest',
   path: componentPath + 'pinterest/pinterest'
-}, {
-  name: 'shared',
-  path: componentPath + 'shared/shared'
 }, {
   name: 'small_content_card',
   path: componentPath + 'small_content_card/small_content_card'
