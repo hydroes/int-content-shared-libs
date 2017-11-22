@@ -1,6 +1,4 @@
 'use strict';
-// import path from 'path'
-// import _ from 'lodash'
 
 var _stringify = require('babel-runtime/core-js/json/stringify');
 
@@ -31,6 +29,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import and assign all components
 var componentsRegisterLength = _componentsRegister2.default.length;
 var Components = [];
+var env = process.env.NODE_ENV || 'dev';
 for (var i = 0; i < componentsRegisterLength; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
@@ -49,11 +48,10 @@ module.exports = function (ComponentName) {
   // test if component found
   if (Components[ComponentName] === undefined) {
     // only throw error on dev env, return empty string in production
-    var env = process.env.NODE_ENV || 'dev';
     if (env === 'dev') {
       throw new Error('Component not found: ', ComponentName);
     }
-    return '';
+    console.error('Component not found: ', ComponentName);
   }
   var componentId = (0, _uniqueId2.default)('bauerComponentId_');
   var mergedData = (0, _assign2.default)({}, data, { componentId: componentId });
@@ -61,7 +59,10 @@ module.exports = function (ComponentName) {
   try {
     Component = _react2.default.createElement(Components[ComponentName], mergedData);
   } catch (error) {
-    throw new Error('Component is not a valid component: ', ComponentName);
+    if (env === 'dev') {
+      throw new Error('Component is not a valid component: ', ComponentName);
+    }
+    console.log('Component is not a valid component: ', ComponentName);
   }
 
   var clientBoostrapData = {

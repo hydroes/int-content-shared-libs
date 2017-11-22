@@ -1,6 +1,5 @@
 'use strict'
-// import path from 'path'
-// import _ from 'lodash'
+
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import componentsRegister from './componentsRegister'
@@ -9,6 +8,7 @@ import uniqueId from 'lodash/uniqueId'
 // import and assign all components
 let componentsRegisterLength = componentsRegister.length
 let Components = []
+let env = process.env.NODE_ENV || 'dev'
 for (let i = 0; i < componentsRegisterLength; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
@@ -25,11 +25,10 @@ module.exports = function (ComponentName, data = {}) {
   // test if component found
   if (Components[ComponentName] === undefined) {
     // only throw error on dev env, return empty string in production
-    let env = process.env.NODE_ENV || 'dev'
     if (env === 'dev') {
       throw new Error('Component not found: ', ComponentName)
     }
-    return ''
+    console.error('Component not found: ', ComponentName)
   }
   let componentId = uniqueId('bauerComponentId_')
   let mergedData = Object.assign({}, data, {componentId: componentId})
@@ -37,7 +36,10 @@ module.exports = function (ComponentName, data = {}) {
   try {
     Component = React.createElement(Components[ComponentName], mergedData)
   } catch (error) {
-    throw new Error('Component is not a valid component: ', ComponentName)
+    if (env === 'dev') {
+      throw new Error('Component is not a valid component: ', ComponentName)
+    }
+    console.log('Component is not a valid component: ', ComponentName)
   }
 
   let clientBoostrapData = {
