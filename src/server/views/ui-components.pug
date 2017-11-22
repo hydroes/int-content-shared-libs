@@ -35,3 +35,8 @@ block content
             h2 Page / Article Tags
         .col-md-7
           #tags!= shared.component('article_tags', shared.data('article_tags/article_tags.json'))
+      .row
+        .col-md-6
+          h2 Video
+      #video!= shared.component('video', shared.data('video/video.json'))
+
