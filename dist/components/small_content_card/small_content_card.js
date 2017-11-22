@@ -57,8 +57,6 @@ var SmallContentCard = function (_PureComponent) {
   (0, _createClass3.default)(SmallContentCard, [{
     key: 'render',
     value: function render() {
-      var ElementTag = this.props.tag || 'article';
-
       var breakpoints = {
         link: this.props.linkBreakpoint || 'col-xs-4',
         info: this.props.infoBreakpoint || 'col-xs-8',
@@ -66,8 +64,8 @@ var SmallContentCard = function (_PureComponent) {
       };
 
       return _React2.default.createElement(
-        ElementTag,
-        { className: 'content-card content-card--small' },
+        'article',
+        { className: 'content-card content-card--small ' + this.props.styleName },
         _React2.default.createElement(
           'div',
           { className: 'row' },
@@ -93,6 +91,7 @@ var SmallContentCard = function (_PureComponent) {
 SmallContentCard.propTypes = {
   children: _propTypes2.default.node,
   tag: _propTypes2.default.string,
+  styleName: _propTypes2.default.string,
   linkBreakpoint: _propTypes2.default.string,
   infoBreakpoint: _propTypes2.default.string,
   data: _propTypes2.default.shape({

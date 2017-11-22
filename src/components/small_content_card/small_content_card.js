@@ -6,15 +6,13 @@ import CardDateTime from '../partials/card_date_time'
 
 class SmallContentCard extends PureComponent {
   render () {
-    const ElementTag = this.props.tag || 'article'
-
     const breakpoints = {
       link: this.props.linkBreakpoint || 'col-xs-4',
       info: this.props.infoBreakpoint || 'col-xs-8',
       fullWidth: (this.props.linkBreakpoint || this.props.infoBreakpoint) ? '' : 'col-sm-12'
     }
 
-    return (<ElementTag className='content-card content-card--small'>
+    return (<article className={`content-card content-card--small ${this.props.styleName}`}>
       <div className='row'>
         <a className={`content-card__link ${breakpoints.link} ${breakpoints.fullWidth}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
@@ -28,13 +26,14 @@ class SmallContentCard extends PureComponent {
         </div>
         {this.props.children}
       </div>
-    </ElementTag>)
+    </article>)
   }
 }
 
 SmallContentCard.propTypes = {
   children: PropTypes.node,
   tag: PropTypes.string,
+  styleName: PropTypes.string,
   linkBreakpoint: PropTypes.string,
   infoBreakpoint: PropTypes.string,
   data: PropTypes.shape({

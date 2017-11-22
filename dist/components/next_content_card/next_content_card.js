@@ -50,17 +50,14 @@ var NextContentCard = function (_PureComponent) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'article',
-        { className: 'next-gallery-card' },
-        _react2.default.createElement(
-          _small_content_card2.default,
-          { tag: 'div', linkBreakpoint: 'col-xs-4',
-            infoBreakpoint: 'col-xs-7',
-            data: this.props.data },
-          _react2.default.createElement('a', { className: 'col-xs-1 pad-0 card-arrow',
-            href: this.props.data.url,
-            style: { background: 'url(' + this.props.data.navIconImgSrc + ') no-repeat center' } })
-        )
+        _small_content_card2.default,
+        { linkBreakpoint: 'col-xs-4',
+          infoBreakpoint: 'col-xs-7',
+          data: this.props.data,
+          styleName: 'content-card--next' },
+        _react2.default.createElement('a', { className: 'col-xs-1 pad-0 card-arrow',
+          href: this.props.data.url,
+          style: { background: 'url(' + this.props.data.navIconImgSrc + ') no-repeat center' } })
       );
     }
   }]);
