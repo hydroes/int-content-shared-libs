@@ -6,17 +6,6 @@ import YouTube from '../youtube/youtube'
 import Vimeo from '../vimeo/vimeo'
 import Facebook from '../facebook/facebook'
 
-const videoStyles = {
-  container: {
-    padding: '2em 0',
-    background: '#000'
-  },
-  video: {
-    width: '80%',
-    margin: '0 auto'
-  }
-}
-
 class Video extends React.PureComponent {
   renderVideos (type, data) {
     switch (type) {
@@ -33,9 +22,9 @@ class Video extends React.PureComponent {
 
   render () {
     return (
-      <div className="row" style={videoStyles.container}>
+      <div className="row video-component">
         <div className="container">
-          <div style={videoStyles.video}>
+          <div className="video-component--video">
             {this.renderVideos(this.props.data.content.provider, this.props.data.content)}
           </div>
         </div>

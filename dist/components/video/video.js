@@ -50,17 +50,6 @@ var _facebook2 = _interopRequireDefault(_facebook);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var videoStyles = {
-  container: {
-    padding: '2em 0',
-    background: '#000'
-  },
-  video: {
-    width: '80%',
-    margin: '0 auto'
-  }
-};
-
 var Video = function (_React$PureComponent) {
   (0, _inherits3.default)(Video, _React$PureComponent);
 
@@ -88,13 +77,13 @@ var Video = function (_React$PureComponent) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'row', style: videoStyles.container },
+        { className: 'row video-component' },
         _react2.default.createElement(
           'div',
           { className: 'container' },
           _react2.default.createElement(
             'div',
-            { style: videoStyles.video },
+            { className: 'video-component--video' },
             this.renderVideos(this.props.data.content.provider, this.props.data.content)
           )
         )
