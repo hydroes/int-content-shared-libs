@@ -31,3 +31,10 @@ block content
         .content-card-large!= shared.component('large_content_card', shared.data('large_content_card/large_content_card_has_icon.json'))
       .col-md-3
         .content-card-small!= shared.component('small_content_card', shared.data('small_content_card/small_content_card_has_icon.json'))
+    .row.style-guide__item
+      .row
+        .col-md-7
+          .style-guide__item__label
+            h2 Next Content Card
+        .col-md-5
+          #gallery-component!= shared.component('next_content_card', shared.data('next_content_card/next_content_card.json'))

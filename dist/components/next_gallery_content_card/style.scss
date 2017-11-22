@@ -1,0 +1,10 @@
+.next-gallery-card {
+  .row {
+    display: flex;
+    flex: 0;
+    .card-arrow {
+      align-self: center;
+      min-height: rem-calc(50);
+    }
+  }
+}

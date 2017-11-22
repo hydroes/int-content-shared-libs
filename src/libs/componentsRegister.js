@@ -110,5 +110,9 @@ export default [
   {
     name: 'youtube',
     path: componentPath + 'youtube/youtube'
+  },
+  {
+    name: 'next_content_card',
+    path: componentPath + 'next_content_card/next_content_card'
   }
 ]

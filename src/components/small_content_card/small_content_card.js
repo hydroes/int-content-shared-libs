@@ -6,21 +6,36 @@ import CardDateTime from '../partials/card_date_time'
 
 class SmallContentCard extends PureComponent {
   render () {
-    return (<article className='content-card content-card--small'>
+    const breakpoints = {
+      link: this.props.linkBreakpoint || 'col-xs-4',
+      info: this.props.infoBreakpoint || 'col-xs-8',
+      fullWidth: (this.props.linkBreakpoint || this.props.infoBreakpoint) ? '' : 'col-sm-12'
+    }
+
+    return (<article className={`content-card content-card--small ${this.props.styleName}`}>
       <div className='row'>
-        <a className='content-card__link col-xs-4 col-sm-12' href={this.props.data.url}>
+        <a className={`content-card__link ${breakpoints.link} ${breakpoints.fullWidth}`} href={this.props.data.url}>
           <SmallCardImage images={this.props.data.images} title={this.props.data.title} noImage={this.props.data.noImage} icon={this.props.data.icon} />
         </a>
-        <div className='content-card--small__info content-card__info col-xs-8 col-sm-12'>
+        <div className={`content-card--small__info content-card__info ${breakpoints.info} ${breakpoints.fullWidth}`}>
           <Title url={this.props.data.url} title={this.props.data.title} />
-          <CardDateTime category={this.props.data.category} date={this.props.data.date} />
+          {
+            this.props.data.category && this.props.data.date &&
+            <CardDateTime category={this.props.data.category} date={this.props.data.date} />
+          }
         </div>
+        {this.props.children}
       </div>
     </article>)
   }
 }
 
 SmallContentCard.propTypes = {
+  children: PropTypes.node,
+  tag: PropTypes.string,
+  styleName: PropTypes.string,
+  linkBreakpoint: PropTypes.string,
+  infoBreakpoint: PropTypes.string,
   data: PropTypes.shape({
     images: PropTypes.shape({
       xs: PropTypes.shape({
