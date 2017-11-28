@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -60,23 +60,23 @@ var Test = function (_React$Component) {
     key: 'render',
     value: function render() {
       var componentId = this.props.componentId;
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { id: componentId, className: 'bauer-web-component-test' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'span',
           null,
           'Test component: ',
           this.props.title
         ),
-        _React2.default.createElement('br', null),
-        _React2.default.createElement(
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
           'button',
           { id: 'bauer-web-component-test-btn', type: 'button', className: 'btn btn-default btn-lg', onClick: this.handleClick },
-          _React2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' }),
+          _react2.default.createElement('span', { 'aria-hidden': 'true', className: 'glyphicon glyphicon-wrench' }),
           this.state.isToggleOn ? 'ON' : 'OFF'
         ),
-        _React2.default.createElement(
+        _react2.default.createElement(
           'span',
           null,
           'Example helper (formatting relative time): 6 mins ago'
@@ -85,7 +85,7 @@ var Test = function (_React$Component) {
     }
   }]);
   return Test;
-}(_React2.default.Component);
+}(_react2.default.Component);
 
 Test.propTypes = {
   componentId: _propTypes2.default.string,

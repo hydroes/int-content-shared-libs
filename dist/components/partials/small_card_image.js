@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -54,28 +54,28 @@ var SmallCardImage = function (_PureComponent) {
     key: 'render',
     value: function render() {
       if (this.props.images) {
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'div',
           { className: 'card-image pad-0' },
-          _React2.default.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'col-xs-4 col-sm-3 col-md-2 icon-container' },
-            _React2.default.createElement(_card_icons2.default, { icon: this.props.icon, images: this.props.images })
+            _react2.default.createElement(_card_icons2.default, { icon: this.props.icon, images: this.props.images })
           ),
-          _React2.default.createElement(
+          _react2.default.createElement(
             'picture',
             null,
-            _React2.default.createElement('source', { type: this.props.images.xs.mimeType, srcSet: this.props.images.xs.url, media: '(max-width: 480px)' }),
-            _React2.default.createElement('img', { src: this.props.images.sm.url, alt: this.props.images.altText })
+            _react2.default.createElement('source', { type: this.props.images.xs.mimeType, srcSet: this.props.images.xs.url, media: '(max-width: 480px)' }),
+            _react2.default.createElement('img', { src: this.props.images.sm.url, alt: this.props.images.altText })
           )
         );
       } else {
-        return _React2.default.createElement(_card_no_image2.default, { image: this.props.noImage, title: this.props.title, icon: this.props.icon });
+        return _react2.default.createElement(_card_no_image2.default, { image: this.props.noImage, title: this.props.title, icon: this.props.icon });
       }
     }
   }]);
   return SmallCardImage;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 SmallCardImage.propTypes = {
   images: _propTypes2.default.shape({

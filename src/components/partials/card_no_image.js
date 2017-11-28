@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'React'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import CardIcons from './card_icons/card_icons'
 

@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -47,13 +47,13 @@ var Brightcove = function (_PureComponent) {
     value: function createEmbed() {
       this.props.data.url = this.props.data.url.replace('http://', '//');
       this.props.data.url = this.props.data.url.replace('https://', '//');
-      return _React2.default.createElement('iframe', { frameBorder: '0', allowTransparency: 'allowtransparency', src: this.props.data.url, allowFullScreen: true });
+      return _react2.default.createElement('iframe', { frameBorder: '0', allowTransparency: 'allowtransparency', src: this.props.data.url, allowFullScreen: true });
     }
   }, {
     key: 'render',
     value: function render() {
       this.createEmbed();
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'embeds-brightcove' },
         this.createEmbed()
@@ -61,7 +61,7 @@ var Brightcove = function (_PureComponent) {
     }
   }]);
   return Brightcove;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Brightcove.propTypes = {
   data: _propTypes2.default.object

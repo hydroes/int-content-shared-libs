@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -45,10 +45,10 @@ var Title = function (_PureComponent) {
   (0, _createClass3.default)(Title, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'span',
         { className: 'title' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'a',
           { href: this.props.url },
           this.props.title
@@ -57,7 +57,7 @@ var Title = function (_PureComponent) {
     }
   }]);
   return Title;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Title.propTypes = {
   title: _propTypes2.default.string,

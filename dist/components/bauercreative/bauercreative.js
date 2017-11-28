@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _lodash = require('lodash');
 
@@ -50,12 +50,12 @@ var BauerCreative = function (_PureComponent) {
     key: 'iframe',
     value: function iframe() {
       var iframeId = _lodash2.default.uniqueId('bauerCreativeFrame_');
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'embeds-bauercreative' },
-        _React2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js' }),
-        _React2.default.createElement('iframe', { src: this.props.data.url, allowTransparency: 'true', frameBorder: '0', id: iframeId, scrolling: 'no', width: '100%' }),
-        _React2.default.createElement(
+        _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js' }),
+        _react2.default.createElement('iframe', { src: this.props.data.url, allowTransparency: 'true', frameBorder: '0', id: iframeId, scrolling: 'no', width: '100%' }),
+        _react2.default.createElement(
           'script',
           null,
           'var iframes = iFrameResize({}, \'##{iframeId}\')'
@@ -65,7 +65,7 @@ var BauerCreative = function (_PureComponent) {
   }, {
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         null,
         this.iframe()
@@ -73,7 +73,7 @@ var BauerCreative = function (_PureComponent) {
     }
   }]);
   return BauerCreative;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 BauerCreative.propTypes = {
   data: _propTypes2.default.object

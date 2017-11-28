@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -45,10 +45,10 @@ var CardDateTime = function (_PureComponent) {
   (0, _createClass3.default)(CardDateTime, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'span',
         { className: 'hidden-xs modified-container' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'a',
           { className: 'brand-color', href: this.props.category.url },
           this.props.category.name
@@ -58,7 +58,7 @@ var CardDateTime = function (_PureComponent) {
     }
   }]);
   return CardDateTime;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 CardDateTime.propTypes = {
   category: _propTypes2.default.shape({

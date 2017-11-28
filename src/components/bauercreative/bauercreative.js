@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'React'
+import React, { PureComponent } from 'react'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 

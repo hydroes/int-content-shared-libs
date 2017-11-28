@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -79,10 +79,10 @@ var Instagram = function (_React$Component) {
           oembedUrl = _state.oembedUrl,
           oembedHtml = _state.oembedHtml;
 
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { id: componentId, 'data-embed-id': oembedUrl, className: 'embeds-instagram' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'a',
           { href: oembedUrl },
           oembedHtml
@@ -91,7 +91,7 @@ var Instagram = function (_React$Component) {
     }
   }]);
   return Instagram;
-}(_React2.default.Component);
+}(_react2.default.Component);
 
 Instagram.propTypes = {
   componentId: _propTypes2.default.string,

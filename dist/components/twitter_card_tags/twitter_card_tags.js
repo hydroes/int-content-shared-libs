@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -50,8 +50,8 @@ var TwitterCardTags = function (_PureComponent) {
     key: 'generateMediaMeta',
     value: function generateMediaMeta() {
       if (this.props.data.image) {
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:image', content: this.props.data.image.url }));
-        this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:image:alt', content: this.props.data.image.alt }));
+        this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:image', content: this.props.data.image.url }));
+        this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:image:alt', content: this.props.data.image.alt }));
       }
     }
   }, {
@@ -59,18 +59,18 @@ var TwitterCardTags = function (_PureComponent) {
     value: function render() {
       this.metaItems = [];
 
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:title', content: this.props.data.title }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:description', content: this.props.data.description }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:card', content: this.props.data.twitter.cardType }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:site', content: this.props.data.twitter.site }));
-      this.metaItems.push(_React2.default.createElement(_meta2.default, { name: 'twitter:creator', content: this.props.data.twitter.creator }));
+      this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:title', content: this.props.data.title }));
+      this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:description', content: this.props.data.description }));
+      this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:card', content: this.props.data.twitter.cardType }));
+      this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:site', content: this.props.data.twitter.site }));
+      this.metaItems.push(_react2.default.createElement(_meta2.default, { name: 'twitter:creator', content: this.props.data.twitter.creator }));
       this.generateMediaMeta();
 
       return this.metaItems;
     }
   }]);
   return TwitterCardTags;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 TwitterCardTags.propTypes = {
   data: _propTypes2.default.shape({

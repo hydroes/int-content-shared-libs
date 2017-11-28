@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -53,10 +53,10 @@ var BreadCrumbs = function (_PureComponent) {
         } else {
           classNames = '';
         }
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'li',
           { key: i },
-          _React2.default.createElement(
+          _react2.default.createElement(
             'a',
             { href: param.url, className: 'breadcrumbs__link ' + classNames },
             param.path
@@ -68,7 +68,7 @@ var BreadCrumbs = function (_PureComponent) {
   }, {
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'ol',
         { className: 'breadcrumb breadcrumbs' },
         this.breadCrumbsItem()
@@ -76,7 +76,7 @@ var BreadCrumbs = function (_PureComponent) {
     }
   }]);
   return BreadCrumbs;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 BreadCrumbs.propTypes = {
   data: _propTypes2.default.array

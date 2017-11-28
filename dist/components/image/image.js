@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -56,11 +56,11 @@ var Image = function (_PureComponent) {
         altText = this.props.data.altText;
       }
 
-      return _React2.default.createElement(_rawImage2.default, { defaultImgUrl: this.props.data.defaultImage.path, imageSizes: this.props.data.images, altText: altText, caption: this.props.data.caption, credits: this.props.data.credits });
+      return _react2.default.createElement(_rawImage2.default, { defaultImgUrl: this.props.data.defaultImage.path, imageSizes: this.props.data.images, altText: altText, caption: this.props.data.caption, credits: this.props.data.credits });
     }
   }]);
   return Image;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Image.propTypes = {
   data: _propTypes2.default.shape({
