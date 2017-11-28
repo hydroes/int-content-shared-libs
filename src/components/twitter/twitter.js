@@ -1,6 +1,6 @@
 'use strict'
 
-import React from 'React'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 class Twitter extends React.Component {

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'React'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import LargeCardImage from '../partials/large_card_image'
 import Title from '../partials/title'
