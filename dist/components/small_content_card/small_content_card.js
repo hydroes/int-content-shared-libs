@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -63,22 +63,22 @@ var SmallContentCard = function (_PureComponent) {
         fullWidth: this.props.linkBreakpoint || this.props.infoBreakpoint ? '' : 'col-sm-12'
       };
 
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'article',
         { className: 'content-card content-card--small ' + this.props.styleName },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'row' },
-          _React2.default.createElement(
+          _react2.default.createElement(
             'a',
             { className: 'content-card__link ' + breakpoints.link + ' ' + breakpoints.fullWidth, href: this.props.data.url },
-            _React2.default.createElement(_small_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
+            _react2.default.createElement(_small_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
           ),
-          _React2.default.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'content-card--small__info content-card__info ' + breakpoints.info + ' ' + breakpoints.fullWidth },
-            _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
-            this.props.data.category && this.props.data.date && _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
+            _react2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
+            this.props.data.category && this.props.data.date && _react2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
           ),
           this.props.children
         )
@@ -86,7 +86,7 @@ var SmallContentCard = function (_PureComponent) {
     }
   }]);
   return SmallContentCard;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 SmallContentCard.propTypes = {
   children: _propTypes2.default.node,

@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -50,7 +50,7 @@ var Facebook = function (_React$Component) {
       oembedUrl: _this.props.data.url,
       oembedHtml: _this.props.data.url
     };
-    _this.element = _React2.default.createElement('div', null);
+    _this.element = _react2.default.createElement('div', null);
     return _this;
   }
 
@@ -78,12 +78,12 @@ var Facebook = function (_React$Component) {
           oembedHtml = _state.oembedHtml;
 
 
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { id: componentId, 'data-embed-id': oembedUrl, className: 'embed--facebook', ref: function ref(el) {
             _this2.element = el;
           } },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'a',
           { href: oembedUrl },
           oembedHtml
@@ -92,7 +92,7 @@ var Facebook = function (_React$Component) {
     }
   }]);
   return Facebook;
-}(_React2.default.Component);
+}(_react2.default.Component);
 
 Facebook.propTypes = {
   componentId: _propTypes2.default.string,

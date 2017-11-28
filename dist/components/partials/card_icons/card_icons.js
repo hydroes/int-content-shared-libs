@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -58,17 +58,17 @@ var CardIcons = function (_PureComponent) {
       var hasIconImage = _lodash2.default.result(this.props, 'images.xs.url', '') || _lodash2.default.result(this.props, 'images.sm.url', '');
       if (defaultIcon && hasIconImage) {
         var imageSizes = this.props.icon.images || [];
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'div',
           { className: 'card-icon' },
-          _React2.default.createElement(_rawImage2.default, { defaultImgUrl: defaultIcon, imageSizes: imageSizes })
+          _react2.default.createElement(_rawImage2.default, { defaultImgUrl: defaultIcon, imageSizes: imageSizes })
         );
       }
       return null;
     }
   }]);
   return CardIcons;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 CardIcons.propTypes = {
   icon: _propTypes2.default.shape({

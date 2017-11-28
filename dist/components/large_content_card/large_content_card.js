@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -57,29 +57,29 @@ var LargeContentCard = function (_PureComponent) {
   (0, _createClass3.default)(LargeContentCard, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'article',
         { className: 'content-card content-card--large' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'row' },
-          _React2.default.createElement(
+          _react2.default.createElement(
             'a',
             { className: 'content-card--large__link content-card__link col-xs-12', href: this.props.data.url },
-            _React2.default.createElement(_large_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
+            _react2.default.createElement(_large_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon })
           ),
-          _React2.default.createElement(
+          _react2.default.createElement(
             'div',
             { className: 'content-card--large__info content-card__info col-xs-12' },
-            _React2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
-            _React2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
+            _react2.default.createElement(_title2.default, { url: this.props.data.url, title: this.props.data.title }),
+            _react2.default.createElement(_card_date_time2.default, { category: this.props.data.category, date: this.props.data.date })
           )
         )
       );
     }
   }]);
   return LargeContentCard;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 LargeContentCard.propTypes = {
   data: _propTypes2.default.shape({

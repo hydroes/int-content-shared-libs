@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -66,19 +66,19 @@ var Twitter = function (_React$Component) {
     value: function render() {
       var componentId = this.props.componentId;
       var url = this.props.data.url;
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { id: componentId, className: 'embeds-twitter' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'blockquote',
           { className: 'twitter-tweet' },
-          _React2.default.createElement('a', { href: url })
+          _react2.default.createElement('a', { href: url })
         )
       );
     }
   }]);
   return Twitter;
-}(_React2.default.Component);
+}(_react2.default.Component);
 
 Twitter.propTypes = {
   componentId: _propTypes2.default.string,

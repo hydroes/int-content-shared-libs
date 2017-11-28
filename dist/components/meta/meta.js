@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -46,18 +46,18 @@ var Meta = function (_PureComponent) {
     key: 'render',
     value: function render() {
       if (this.props.property) {
-        return _React2.default.createElement('meta', { property: this.props.property, content: this.props.content });
+        return _react2.default.createElement('meta', { property: this.props.property, content: this.props.content });
       }
 
       if (this.props.name) {
-        return _React2.default.createElement('meta', { name: this.props.name, content: this.props.content });
+        return _react2.default.createElement('meta', { name: this.props.name, content: this.props.content });
       }
 
       return null;
     }
   }]);
   return Meta;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Meta.propTypes = {
   name: _propTypes2.default.string,

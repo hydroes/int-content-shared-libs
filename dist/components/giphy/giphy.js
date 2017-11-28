@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -50,12 +50,12 @@ var Giphy = function (_PureComponent) {
     key: 'createEmbed',
     value: function createEmbed() {
       this.props.data.url = (0, _giphy2.default)(this.props.data.url);
-      return _React2.default.createElement('iframe', { src: this.props.data.url, width: '480', height: '480', frameBorder: '0', allowFullScreen: '' });
+      return _react2.default.createElement('iframe', { src: this.props.data.url, width: '480', height: '480', frameBorder: '0', allowFullScreen: '' });
     }
   }, {
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'embeds-giphy' },
         this.createEmbed()
@@ -63,7 +63,7 @@ var Giphy = function (_PureComponent) {
     }
   }]);
   return Giphy;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Giphy.propTypes = {
   data: _propTypes2.default.object

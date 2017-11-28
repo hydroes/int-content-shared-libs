@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -48,10 +48,10 @@ var Articletags = function (_PureComponent) {
       var tagItems = this.props.data.tags;
       var list = tagItems.map(function (tag, i) {
         if (tag && tag.name) {
-          return _React2.default.createElement(
+          return _react2.default.createElement(
             'li',
             { key: i, className: 'pad-0 margin-l-r-5' },
-            _React2.default.createElement(
+            _react2.default.createElement(
               'a',
               { className: 'pad-10', href: tag.url },
               tag.name
@@ -65,7 +65,7 @@ var Articletags = function (_PureComponent) {
     key: 'render',
     value: function render() {
       if (this.props.data.tags) {
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'ul',
           { className: 'article-tags' },
           this.tagItem()
@@ -74,7 +74,7 @@ var Articletags = function (_PureComponent) {
     }
   }]);
   return Articletags;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 Articletags.propTypes = {
   data: _propTypes2.default.object

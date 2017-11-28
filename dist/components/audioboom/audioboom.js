@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -54,15 +54,15 @@ var AudioBoom = function (_PureComponent) {
     key: 'render',
     value: function render() {
       this.createEmbed();
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'embeds-audioboom' },
-        _React2.default.createElement('iframe', { width: '100%', height: '300', frameBorder: '0', allowTransparency: 'allowtransparency', scrolling: 'no', src: this.props.data.url, title: 'audioBoom player' })
+        _react2.default.createElement('iframe', { width: '100%', height: '300', frameBorder: '0', allowTransparency: 'allowtransparency', scrolling: 'no', src: this.props.data.url, title: 'audioBoom player' })
       );
     }
   }]);
   return AudioBoom;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 AudioBoom.propTypes = {
   data: _propTypes2.default.object

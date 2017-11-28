@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -53,21 +53,21 @@ var CardNoImage = function (_PureComponent) {
         'background-image': 'url(' + this.props.image.sm.url + ')'
       };
 
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'div',
         { className: 'card-image pad-0' },
-        _React2.default.createElement(_card_icons2.default, { icon: this.props.icon }),
-        _React2.default.createElement(
+        _react2.default.createElement(_card_icons2.default, { icon: this.props.icon }),
+        _react2.default.createElement(
           'picture',
           { className: 'missing-image brand-background-color', style: styleAttribute },
-          _React2.default.createElement('source', { srcSet: this.props.image.sm.url, media: '(max-width: 439px)' }),
-          _React2.default.createElement('img', { src: this.props.image.lg.url, alt: this.props.title })
+          _react2.default.createElement('source', { srcSet: this.props.image.sm.url, media: '(max-width: 439px)' }),
+          _react2.default.createElement('img', { src: this.props.image.lg.url, alt: this.props.title })
         )
       );
     }
   }]);
   return CardNoImage;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 CardNoImage.propTypes = {
   image: _propTypes2.default.shape({

@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -48,7 +48,7 @@ var RawImage = function (_PureComponent) {
       var sourceElements = items.map(function (item, index) {
         if (item.path) {
           var mediaQuery = '(max-width: ' + item.maxWidth + 'px)';
-          return _React2.default.createElement('source', { media: mediaQuery, srcSet: item.path, key: index });
+          return _react2.default.createElement('source', { media: mediaQuery, srcSet: item.path, key: index });
         }
       });
 
@@ -58,7 +58,7 @@ var RawImage = function (_PureComponent) {
     key: 'buildCaption',
     value: function buildCaption() {
       if (this.props.caption) {
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'span',
           { className: 'image__text__caption' },
           this.props.caption,
@@ -70,7 +70,7 @@ var RawImage = function (_PureComponent) {
     key: 'buildCredit',
     value: function buildCredit() {
       if (this.props.credits) {
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'span',
           { className: 'image__text__credit' },
           '\xA9 ',
@@ -82,7 +82,7 @@ var RawImage = function (_PureComponent) {
     key: 'buildSpans',
     value: function buildSpans() {
       if (this.props.credits || this.props.caption) {
-        return _React2.default.createElement(
+        return _react2.default.createElement(
           'span',
           { className: 'image__text' },
           this.buildCaption(),
@@ -94,17 +94,17 @@ var RawImage = function (_PureComponent) {
     key: 'render',
     value: function render() {
       var sources = this.buildSourceElements(this.props.imageSizes);
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'picture',
         { className: 'image' },
         sources,
-        _React2.default.createElement('img', { src: this.props.defaultImgUrl, alt: this.props.altText, title: this.props.altText }),
+        _react2.default.createElement('img', { src: this.props.defaultImgUrl, alt: this.props.altText, title: this.props.altText }),
         this.buildSpans()
       );
     }
   }]);
   return RawImage;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 RawImage.propTypes = {
   defaultImgUrl: _propTypes2.default.string,

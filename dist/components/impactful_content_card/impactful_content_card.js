@@ -24,9 +24,9 @@ var _inherits2 = require('babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _React = require('React');
+var _react = require('react');
 
-var _React2 = _interopRequireDefault(_React);
+var _react2 = _interopRequireDefault(_react);
 
 var _propTypes = require('prop-types');
 
@@ -49,23 +49,23 @@ var ImpactfulContentCard = function (_PureComponent) {
   (0, _createClass3.default)(ImpactfulContentCard, [{
     key: 'render',
     value: function render() {
-      return _React2.default.createElement(
+      return _react2.default.createElement(
         'article',
         { className: 'content-card content-card--impactful' },
-        _React2.default.createElement(
+        _react2.default.createElement(
           'div',
           { className: 'row' },
-          _React2.default.createElement(
+          _react2.default.createElement(
             'a',
             { className: 'content-card__info content-card__info--impactful col-xs-12', href: this.props.data.url },
-            _React2.default.createElement(_large_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon }),
-            _React2.default.createElement(
+            _react2.default.createElement(_large_card_image2.default, { images: this.props.data.images, title: this.props.data.title, noImage: this.props.data.noImage, icon: this.props.data.icon }),
+            _react2.default.createElement(
               'div',
               { className: 'title-container' },
-              _React2.default.createElement(
+              _react2.default.createElement(
                 'div',
                 { className: 'title-container__item col-xs-12 col-sm-5 col-md-6' },
-                _React2.default.createElement(
+                _react2.default.createElement(
                   'span',
                   { className: 'title impactful-text impactful-text--card' },
                   this.props.data.title
@@ -78,7 +78,7 @@ var ImpactfulContentCard = function (_PureComponent) {
     }
   }]);
   return ImpactfulContentCard;
-}(_React.PureComponent);
+}(_react.PureComponent);
 
 ImpactfulContentCard.propTypes = {
   data: _propTypes2.default.shape({
