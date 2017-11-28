@@ -1,25 +1,20 @@
 FROM node:8.4.0
 
-# Create app directory
-RUN mkdir -p /app
 WORKDIR /app
 
-RUN yarn global add gulp
+COPY package.json yarn.lock ./
+
+RUN yarn install
 
 # Bundle app source
 COPY . /app
 
-# Install app dependencies
-RUN yarn install
-
-# COPY config/config.development.dist.json config/config.development.json
-
-WORKDIR /app
-
-# RUN gulp
+RUN npx gulp compile-js-for-frontend \
+  && npx gulp compile-all-js \
+  && npx gulp compile-sass
 
 EXPOSE 7000
 
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 
-CMD [ "node", "./dist/server/server.js" ]
+CMD node ./dist/server/server.js
