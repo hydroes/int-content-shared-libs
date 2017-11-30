@@ -76,3 +76,4 @@ manifest.compile(['application.css'], function (err, assetsData) {
   console.info('\n\nAssets were successfully compiled.\n' + 'Manifest data (a proper JSON) was written to:\n' + manifest.path + '\n\n');
   console.dir(assetsData);
 });
+//# sourceMappingURL=manifest.js.map

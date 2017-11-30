@@ -67,3 +67,4 @@ YouTube.propTypes = {
 };
 
 exports.default = YouTube;
+//# sourceMappingURL=youtube.js.map

@@ -101,3 +101,4 @@ Instagram.propTypes = {
 };
 
 exports.default = Instagram;
+//# sourceMappingURL=instagram.js.map

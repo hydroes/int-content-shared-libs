@@ -1,6 +1,6 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
-  "version": "2.0.4",
+  "version": "2.1.5",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -20,7 +20,8 @@
     "moment": "^2.18.1",
     "pug": "^2.0.0-rc.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0"
   },
   "description": "Bauer web components are re-usable shared html/css/js across multiple sites",
   "devDependencies": {
@@ -66,7 +67,6 @@
     "nightwatch": "^0.9.16",
     "nightwatch-cucumber": "^7.1.10",
     "precommit-hook": "^3.0.0",
-    "pug-lint": "^2.4.0",
     "sass-lint": "^1.10.2",
     "validate-commit": "^3.2.1",
     "vinyl-buffer": "^1.0.0",
@@ -88,7 +88,6 @@
   "name": "bauer-shared-web-components",
   "pre-commit": [
     "validate-js",
-    "validate-pug",
     "validate-sass",
     "validate-commitmsg",
     "unit-tests"
@@ -103,7 +102,6 @@
     "start": "gulp",
     "test": "USE_PACKAGE_QAHOST=1 nightwatch --config nightwatch.conf.js --retres 3 --tag desktop --tag mobile --tag tablet; npm run unit-tests",
     "posttest": "gulp generate-test-reports",
-    "validate-pug": "pug-lint src/components/**/*.pug src/server/views/**/*.pug",
     "validate-commitmsg": "validate-commit-msg -p eslint",
     "validate-sass": "sass-lint -c .sass-lint.yml 'src/components/**/*.scss' -v -q",
     "validate": "npm ls",

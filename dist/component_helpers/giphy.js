@@ -24,3 +24,4 @@ exports.default = function () {
 
   return url;
 };
+//# sourceMappingURL=giphy.js.map

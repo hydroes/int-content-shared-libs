@@ -48,3 +48,4 @@ module.exports = function (assetType) {
 
   return assets;
 };
+//# sourceMappingURL=assets.js.map

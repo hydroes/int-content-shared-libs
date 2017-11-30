@@ -193,3 +193,4 @@ module.exports = function () {
   var paginate = new Paginator(new SequentialGenerator(data));
   return paginate.pages;
 };
+//# sourceMappingURL=paginate.js.map

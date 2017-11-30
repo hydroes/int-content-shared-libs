@@ -104,3 +104,4 @@ Video.propTypes = {
 };
 
 exports.default = Video;
+//# sourceMappingURL=video.js.map

@@ -90,3 +90,4 @@ TwitterCardTags.propTypes = {
 };
 
 exports.default = TwitterCardTags;
+//# sourceMappingURL=twitter_card_tags.js.map

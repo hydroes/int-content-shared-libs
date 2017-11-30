@@ -21,15 +21,18 @@ const cucumberHtmlReporter = require('cucumber-html-reporter')
 const nodemon = require('gulp-nodemon')
 // @todo: make DIST_DIR come from a config var
 const DIST_DIR = 'public/dist/'
+// set this to develop when debugging locally
+const NODE_ENV = 'production'
 
 gulp.task('compile-js-for-frontend', function () {
+  process.env.NODE_ENV = NODE_ENV
   return browserify('./src/components/includes.js')
     .transform('babelify', {presets: ['es2015', 'react', 'env']})
     .bundle()
     .pipe(source('script.min.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    .pipe(uglify({mangle: false}))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(`./${DIST_DIR}`))
     .pipe(browserSync.reload({'stream': true}))
@@ -39,16 +42,17 @@ gulp.task('copy-src-to-dis', function () {
   gulp.src(['src/**/!(*.js)']).pipe(gulp.dest('dist'))
 })
 
-gulp.task('compile-all-js', ['copy-src-to-dis'], () =>
+gulp.task('compile-all-js', ['copy-src-to-dis'], function () {
+  process.env.NODE_ENV = NODE_ENV
   gulp.src('src/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['es2015', 'react', 'env'],
       plugins: ['transform-runtime']
     }))
-    // .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist'))
-)
+})
 
 gulp.task('pug-watch', [], function (done) {
   browserSync.reload()

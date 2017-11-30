@@ -12,7 +12,9 @@ class AudioBoom extends PureComponent {
     this.createEmbed()
     return (
       <div className='embeds-audioboom'>
-        <iframe width='100%' height='300' frameBorder='0' allowTransparency='allowtransparency' scrolling='no' src={this.props.data.url} title='audioBoom player'></iframe>
+        {/* eslint-disable */}
+        <iframe width='100%' height='300' frameBorder='0' allowtransparency='allowtransparency' scrolling='no' src={this.props.data.url} title='audioBoom player'></iframe>
+        {/* eslint-enable */}
       </div>
     )
   }

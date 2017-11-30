@@ -72,3 +72,4 @@ NextContentCard.propTypes = {
 };
 
 exports.default = NextContentCard;
+//# sourceMappingURL=next_content_card.js.map

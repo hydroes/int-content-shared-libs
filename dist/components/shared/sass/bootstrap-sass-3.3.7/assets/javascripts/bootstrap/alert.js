@@ -85,3 +85,4 @@
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close);
 }(jQuery);
+//# sourceMappingURL=alert.js.map

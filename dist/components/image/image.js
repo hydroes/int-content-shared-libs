@@ -79,3 +79,4 @@ Image.propTypes = {
 };
 
 exports.default = Image;
+//# sourceMappingURL=image.js.map
