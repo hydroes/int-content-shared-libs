@@ -158,3 +158,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     });
   });
 }(jQuery);
+//# sourceMappingURL=affix.js.map

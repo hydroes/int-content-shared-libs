@@ -139,3 +139,4 @@ OgTags.propTypes = {
 };
 
 exports.default = OgTags;
+//# sourceMappingURL=og_tags.js.map

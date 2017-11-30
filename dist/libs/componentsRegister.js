@@ -81,3 +81,4 @@ exports.default = [{
   name: 'next_content_card',
   path: componentPath + 'next_content_card/next_content_card'
 }];
+//# sourceMappingURL=componentsRegister.js.map

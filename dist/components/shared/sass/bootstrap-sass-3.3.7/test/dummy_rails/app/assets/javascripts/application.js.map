@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/shared/sass/bootstrap-sass-3.3.7/test/dummy_rails/app/assets/javascripts/application.js"],"names":[],"mappings":"AAAA;AACA","file":"application.js","sourcesContent":["//= require jquery\n//= require bootstrap-sprockets\n"]}

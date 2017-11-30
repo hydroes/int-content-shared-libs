@@ -47,7 +47,11 @@ var Brightcove = function (_PureComponent) {
     value: function createEmbed() {
       this.props.data.url = this.props.data.url.replace('http://', '//');
       this.props.data.url = this.props.data.url.replace('https://', '//');
-      return _react2.default.createElement('iframe', { frameBorder: '0', allowTransparency: 'allowtransparency', src: this.props.data.url, allowFullScreen: true });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('iframe', { frameBorder: '0', allowtransparency: 'allowtransparency', src: this.props.data.url, allowFullScreen: true })
+      );
     }
   }, {
     key: 'render',
@@ -68,3 +72,4 @@ Brightcove.propTypes = {
 };
 
 exports.default = Brightcove;
+//# sourceMappingURL=brightcove.js.map

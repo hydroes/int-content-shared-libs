@@ -66,3 +66,4 @@ Soundcloud.propTypes = {
 };
 
 exports.default = Soundcloud;
+//# sourceMappingURL=soundcloud.js.map

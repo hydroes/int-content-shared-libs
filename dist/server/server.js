@@ -29,3 +29,4 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 if (!module.parent) app.listen(appPort);
+//# sourceMappingURL=server.js.map

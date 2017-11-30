@@ -63,3 +63,4 @@ for (var i in components) {
 // bootstrap bauerSharedLibs
 window.bauerSharedLibs = window.bauerSharedLibs || {};
 window.bauerSharedLibs.version = require('../../package').version;
+//# sourceMappingURL=includes.js.map

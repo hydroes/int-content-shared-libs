@@ -66,3 +66,4 @@ Pinterest.propTypes = {
 };
 
 exports.default = Pinterest;
+//# sourceMappingURL=pinterest.js.map
