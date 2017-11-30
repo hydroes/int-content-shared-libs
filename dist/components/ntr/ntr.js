@@ -62,3 +62,4 @@ Ntr.propTypes = {
 
 };
 exports.default = Ntr;
+//# sourceMappingURL=ntr.js.map

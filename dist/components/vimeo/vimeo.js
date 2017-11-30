@@ -67,3 +67,4 @@ Vimeo.propTypes = {
 };
 
 exports.default = Vimeo;
+//# sourceMappingURL=vimeo.js.map

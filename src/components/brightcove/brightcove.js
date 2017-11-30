@@ -6,8 +6,11 @@ class Brightcove extends PureComponent {
     this.props.data.url = this.props.data.url.replace('http://', '//')
     this.props.data.url = this.props.data.url.replace('https://', '//')
     return (
-      <iframe frameBorder='0' allowTransparency='allowtransparency' src={this.props.data.url} allowFullScreen>
-      </iframe>
+      <div>
+        {/* eslint-disable */}
+        <iframe frameBorder='0' allowtransparency='allowtransparency' src={this.props.data.url} allowFullScreen></iframe>
+        {/* eslint-enable */}
+      </div>
     )
   }
   render () {

@@ -65,3 +65,4 @@ Title.propTypes = {
 };
 
 exports.default = Title;
+//# sourceMappingURL=title.js.map

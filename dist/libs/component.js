@@ -24,12 +24,14 @@ var _uniqueId = require('lodash/uniqueId');
 
 var _uniqueId2 = _interopRequireDefault(_uniqueId);
 
+var _reactHelmet = require('react-helmet');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import and assign all components
 var componentsRegisterLength = _componentsRegister2.default.length;
 var Components = [];
-var env = process.env.NODE_ENV || 'dev';
+
 for (var i = 0; i < componentsRegisterLength; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
@@ -47,11 +49,7 @@ module.exports = function (ComponentName) {
 
   // test if component found
   if (Components[ComponentName] === undefined) {
-    // only throw error on dev env, return empty string in production
-    if (env === 'dev') {
-      throw new Error('Component not found: ', ComponentName);
-    }
-    console.error('Component not found: ', ComponentName);
+    throw new Error('Component not found: ', ComponentName);
   }
   var componentId = (0, _uniqueId2.default)('bauerComponentId_');
   var mergedData = (0, _assign2.default)({}, data, { componentId: componentId });
@@ -59,21 +57,25 @@ module.exports = function (ComponentName) {
   try {
     Component = _react2.default.createElement(Components[ComponentName], mergedData);
   } catch (error) {
-    if (env === 'dev') {
-      throw new Error('Component is not a valid component: ', ComponentName);
-    }
-    console.log('Component is not a valid component: ', ComponentName);
+    throw new Error('Component is not a valid component: ', ComponentName);
   }
 
   var clientBoostrapData = {
     id: componentId,
     name: ComponentName,
     data: mergedData
-  };
 
-  var bootstrapClientSideScript = '<script>\n    window.bootstrapComponents = window.bootstrapComponents || [];\n    window.bootstrapComponents.push(' + (0, _stringify2.default)(clientBoostrapData) + ')\n    </script>';
+    // build bootstrap code for the component to be instantiated by clientside react
+  };var bootstrapClientSideScript = '<script>\n    window.bootstrapComponents = window.bootstrapComponents || [];\n    window.bootstrapComponents.push(' + (0, _stringify2.default)(clientBoostrapData) + ')\n    </script>';
 
-  html = _server2.default.renderToString(Component) + bootstrapClientSideScript;
+  // build component html
+  var ComponentHtml = _server2.default.renderToString(Component);
+  var helmet = _reactHelmet.Helmet.renderStatic();
+  // if a component has script tags then include it in the response
+  var ComponentScript = helmet.script.toString();
+
+  html = ComponentHtml + ComponentScript + bootstrapClientSideScript;
 
   return html;
 };
+//# sourceMappingURL=component.js.map

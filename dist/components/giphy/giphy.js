@@ -70,3 +70,4 @@ Giphy.propTypes = {
 };
 
 exports.default = Giphy;
+//# sourceMappingURL=giphy.js.map

@@ -11,3 +11,4 @@ module.exports = function (filePath) {
 
   return require(mapFilePath);
 };
+//# sourceMappingURL=dataMapper.js.map

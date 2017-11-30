@@ -128,3 +128,4 @@
 
   $(document).on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler).on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler);
 }(jQuery);
+//# sourceMappingURL=tab.js.map

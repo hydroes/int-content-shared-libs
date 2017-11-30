@@ -81,3 +81,4 @@ Pagination.propTypes = {
 };
 
 exports.default = Pagination;
+//# sourceMappingURL=pagination.js.map

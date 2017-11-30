@@ -36,6 +36,8 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _reactHelmet = require('react-helmet');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BauerCreative = function (_PureComponent) {
@@ -54,11 +56,15 @@ var BauerCreative = function (_PureComponent) {
         'div',
         { className: 'embeds-bauercreative' },
         _react2.default.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js' }),
-        _react2.default.createElement('iframe', { src: this.props.data.url, allowTransparency: 'true', frameBorder: '0', id: iframeId, scrolling: 'no', width: '100%' }),
+        _react2.default.createElement('iframe', { src: this.props.data.url, allowtransparency: 'true', frameBorder: '0', id: iframeId, scrolling: 'no', width: '100%' }),
         _react2.default.createElement(
-          'script',
+          _reactHelmet.Helmet,
           null,
-          'var iframes = iFrameResize({}, \'##{iframeId}\')'
+          _react2.default.createElement(
+            'script',
+            null,
+            'var iframes = iFrameResize({}, \'#' + iframeId + '\')'
+          )
         )
       );
     }
@@ -80,3 +86,4 @@ BauerCreative.propTypes = {
 };
 
 exports.default = BauerCreative;
+//# sourceMappingURL=bauercreative.js.map

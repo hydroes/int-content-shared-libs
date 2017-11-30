@@ -11,3 +11,4 @@
 //= require ./bootstrap/tooltip
 //= require ./bootstrap/popover
 "use strict";
+//# sourceMappingURL=bootstrap-sprockets.js.map

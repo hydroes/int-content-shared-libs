@@ -110,3 +110,4 @@ SmallCardImage.propTypes = {
 };
 
 exports.default = SmallCardImage;
+//# sourceMappingURL=small_card_image.js.map
