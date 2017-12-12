@@ -46,8 +46,8 @@ var YouTube = function (_React$PureComponent) {
     key: 'render',
     value: function render() {
       var url = this.props.data.url;
-      if (/watch\?v=/.test(this.props.data.url)) {
-        var videoID = this.data.url.split('watch?v=')[1];
+      if (/watch\?v=/.test(url)) {
+        var videoID = url.split('watch?v=')[1];
         url = 'https://youtube.com/embed/' + videoID + '?rel=0';
       }
       return _react2.default.createElement(
