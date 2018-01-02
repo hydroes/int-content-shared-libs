@@ -8,8 +8,8 @@ class SocialSharing extends React.Component {
       shareUrl: this.props.data.protocol + this.props.data.host + this.props.data.pathname
     }
     this.element = {
-      facebook: <li></li>,
-      twitter: <li></li>
+      facebook: <li />,
+      twitter: <li />
     }
     this.defaultMsg = this.props.data.shareMsg.default
     this.shareMsg = this.props.data.shareMsg
@@ -37,12 +37,12 @@ class SocialSharing extends React.Component {
     const { componentId } = this.props
     return (
       <ul id={componentId} className='social-sharing'>
-        <li className='article-social-share-facebook' ref={ (el) => { this.element.facebook = el } }>
+        <li className='article-social-share-facebook' ref={(el) => { this.element.facebook = el }}>
           <a href='#' data-social-share-url={this.state.shareUrl}>
             <img src='https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-facebook.svg' alt='Share on Facebook' title='Share on Facebook' />
           </a>
         </li>
-        <li className='article-social-share-twitter' ref={ (el) => { this.element.twitter = el } }>
+        <li className='article-social-share-twitter' ref={(el) => { this.element.twitter = el }}>
           <a href='#' data-social-share-url={this.state.shareUrl}>
             <img src='https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter.svg' alt='Tweet on Twitter' title='Tweet on Twitter' />
           </a>

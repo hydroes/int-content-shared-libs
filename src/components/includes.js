@@ -33,7 +33,7 @@ for (let i in components) {
       hydrate(<Instagram {...component.data} />, componentElement)
       break
     case 'social_sharing':
-      hydrate(<SocialSharing { ...component.data } />, componentElement)
+      hydrate(<SocialSharing {...component.data} />, componentElement)
       break
   }
 }

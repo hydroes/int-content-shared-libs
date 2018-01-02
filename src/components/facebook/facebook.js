@@ -11,7 +11,7 @@ class Facebook extends React.Component {
       oembedUrl: this.props.data.url,
       oembedHtml: this.props.data.url
     }
-    this.element = <div></div>
+    this.element = <div />
   }
 
   componentDidMount () {
@@ -31,7 +31,7 @@ class Facebook extends React.Component {
     const { oembedUrl, oembedHtml } = this.state
 
     return (
-      <div id={componentId} data-embed-id={oembedUrl} className='embed--facebook' ref={ (el) => { this.element = el } }>
+      <div id={componentId} data-embed-id={oembedUrl} className='embed--facebook' ref={(el) => { this.element = el }}>
         <a href={oembedUrl}>{oembedHtml}</a>
       </div>
     )

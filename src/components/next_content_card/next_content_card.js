@@ -11,8 +11,7 @@ class NextContentCard extends PureComponent {
         styleName='content-card--next'>
         <a className='col-xs-1 pad-0 card-arrow'
           href={this.props.data.url}
-          style={{background: `url(${this.props.data.navIconImgSrc}) no-repeat center`}}>
-        </a>
+          style={{background: `url(${this.props.data.navIconImgSrc}) no-repeat center`}} />
       </SmallContentCard>)
   }
 }
