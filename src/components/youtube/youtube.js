@@ -10,7 +10,7 @@ class YouTube extends React.PureComponent {
     }
     return (
       <div className='embeds-youtube'>
-        <iframe src={url} allowFullScreen='true'></iframe>
+        <iframe src={url} allowFullScreen='true' />
       </div>
     )
   }

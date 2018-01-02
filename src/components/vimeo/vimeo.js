@@ -10,7 +10,7 @@ class Vimeo extends React.PureComponent {
     }
     return (
       <div className='embeds-vimeo'>
-        <iframe src={url} allowFullScreen='true'></iframe>
+        <iframe src={url} allowFullScreen='true' />
       </div>
     )
   }

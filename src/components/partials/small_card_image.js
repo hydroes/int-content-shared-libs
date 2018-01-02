@@ -9,7 +9,7 @@ class SmallCardImage extends PureComponent {
       return (
         <div className='card-image pad-0'>
           <div className='col-xs-4 col-sm-3 col-md-2 icon-container'>
-            <CardIcons icon={this.props.icon} images={this.props.images}/>
+            <CardIcons icon={this.props.icon} images={this.props.images} />
           </div>
           <picture>
             <source type={this.props.images.xs.mimeType} srcSet={this.props.images.xs.url} media='(max-width: 480px)' />

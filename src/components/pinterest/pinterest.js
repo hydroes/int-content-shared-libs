@@ -5,8 +5,8 @@ class Pinterest extends React.PureComponent {
   render () {
     return (
       <div>
-        <a data-pin-do='embedPin' data-pin-width={ this.props.data.pin.size } href={ this.props.data.pin.url }></a>
-        <script async defer src='//assets.pinterest.com/js/pinit.js'></script>
+        <a data-pin-do='embedPin' data-pin-width={this.props.data.pin.size} href={this.props.data.pin.url} />
+        <script async defer src='//assets.pinterest.com/js/pinit.js' />
       </div>
     )
   }
