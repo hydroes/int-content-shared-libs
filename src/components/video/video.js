@@ -22,9 +22,9 @@ class Video extends React.PureComponent {
 
   render () {
     return (
-      <div className="row video-component">
-        <div className="container">
-          <div className="video-component--video">
+      <div className='row video-component'>
+        <div className='container'>
+          <div className='video-component--video'>
             {this.renderVideos(this.props.data.content.provider, this.props.data.content)}
           </div>
         </div>

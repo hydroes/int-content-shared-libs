@@ -9,7 +9,7 @@ class Soundcloud extends React.PureComponent {
     }
     return (
       <div className='embeds-soundcloud'>
-        <iframe src={url} allowFullScreen='true' frameBorder='0'></iframe>
+        <iframe src={url} allowFullScreen='true' frameBorder='0' />
       </div>
     )
   }

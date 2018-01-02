@@ -6,7 +6,7 @@ class Pagination extends React.PureComponent {
   render () {
     const pages = Paginate(this.props.data) || []
     return (
-      <ul className={'pagination ' + this.props.data.size }>
+      <ul className={'pagination ' + this.props.data.size}>
         {
           pages.map(({href, isActive, display}, id) => {
             return <li key={id}>

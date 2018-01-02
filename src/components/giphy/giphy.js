@@ -6,7 +6,7 @@ class Giphy extends PureComponent {
   createEmbed () {
     this.props.data.url = giphy(this.props.data.url)
     return (
-      <iframe src={this.props.data.url} width='480' height='480' frameBorder='0' allowFullScreen=''></iframe>
+      <iframe src={this.props.data.url} width='480' height='480' frameBorder='0' allowFullScreen='' />
     )
   }
 
