@@ -1,8 +1,11 @@
 .video-component {
   padding: 2rem 0;
   background-color: #000;
-  &__video {
-    width: 80%;
+  .container {
+    max-width: 100%;
+  }
+  &--video {
+    width: 100%;
     margin: 0 auto;
   }
 }
