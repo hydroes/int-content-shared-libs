@@ -95,7 +95,7 @@
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BauerXcel/shared-templates.git"
+    "url": "git+https://github.com/BauerXcel/int-content-shared-libs.git"
   },
   "scripts": {
     "lint": "jshint .",
