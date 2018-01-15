@@ -1,6 +1,6 @@
 {
   "QA_HOST": "http://shared-libs.onebauer.media",
-  "version": "2.2.1",
+  "version": "2.2.3",
   "author": {
     "name": "Brian Gouws",
     "email": "briangouws@hotmail.com",
@@ -18,7 +18,6 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "pug": "^2.0.0-rc.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0"
@@ -95,7 +94,7 @@
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BauerXcel/shared-templates.git"
+    "url": "git+https://github.com/BauerXcel/int-content-shared-libs.git"
   },
   "scripts": {
     "lint": "jshint .",
