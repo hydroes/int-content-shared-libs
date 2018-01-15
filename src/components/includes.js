@@ -10,6 +10,9 @@ import Facebook from './facebook/facebook'
 import Instagram from './instagram/instagram'
 import SocialSharing from './social_sharing/social_sharing'
 
+window.jQuery = require('jquery')
+require('./shared/sass/bootstrap-sass-3.3.7/assets/javascripts/bootstrap.min.js')
+
 const components = window.bootstrapComponents || []
 for (let i in components) {
   let component = components[i]

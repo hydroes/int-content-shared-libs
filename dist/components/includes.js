@@ -28,10 +28,13 @@ var _social_sharing2 = _interopRequireDefault(_social_sharing);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var components = window.bootstrapComponents || [];
+window.jQuery = require('jquery');
 
 // add desired required components to ensure files are included in the component bootstrap
 
+require('./shared/sass/bootstrap-sass-3.3.7/assets/javascripts/bootstrap.min.js');
+
+var components = window.bootstrapComponents || [];
 for (var i in components) {
   var component = components[i];
 
