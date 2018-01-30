@@ -3,7 +3,11 @@
 const Fs = require('fs')
 const Path = require('path')
 
-class Components {
+class ComponentRegister {
+  constructor (path) {
+    return this._registerAll(path)
+  }
+
   _getComponentScriptPath (path, name) {
     return `${Path.join(path, name)}.js`
   }
@@ -13,7 +17,7 @@ class Components {
     return fileInfo.isDirectory()
   }
 
-  registerSingle (folderPath, componentRoot) {
+  _registerSingle (folderPath, componentRoot) {
     const componentPath = Path.join(componentRoot, folderPath)
     if (!this._isFolder(componentPath)) {
       return
@@ -29,14 +33,14 @@ class Components {
     }
   }
 
-  registerAll (path) {
+  _registerAll (path) {
     const dirContents = Fs.readdirSync(path)
     let components = []
     if (!this._isFolder(path)) {
       throw new Error(`${path} is not a directory. Components cannot be loaded!`)
     }
     for (const file of dirContents) {
-      const component = this.registerSingle(file, path)
+      const component = this._registerSingle(file, path)
       if (component) {
         components.push(component)
       }
@@ -45,4 +49,4 @@ class Components {
   }
 }
 const componentsPath = `${__dirname}/../components/`
-export default new Components().registerAll(componentsPath)
+export default new ComponentRegister(componentsPath)

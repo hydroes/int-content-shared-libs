@@ -21,12 +21,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Fs = require('fs');
 var Path = require('path');
 
-var Components = function () {
-  function Components() {
-    (0, _classCallCheck3.default)(this, Components);
+var ComponentRegister = function () {
+  function ComponentRegister(path) {
+    (0, _classCallCheck3.default)(this, ComponentRegister);
+
+    return this._registerAll(path);
   }
 
-  (0, _createClass3.default)(Components, [{
+  (0, _createClass3.default)(ComponentRegister, [{
     key: '_getComponentScriptPath',
     value: function _getComponentScriptPath(path, name) {
       return Path.join(path, name) + '.js';
@@ -38,8 +40,8 @@ var Components = function () {
       return fileInfo.isDirectory();
     }
   }, {
-    key: 'registerSingle',
-    value: function registerSingle(folderPath, componentRoot) {
+    key: '_registerSingle',
+    value: function _registerSingle(folderPath, componentRoot) {
       var componentPath = Path.join(componentRoot, folderPath);
       if (!this._isFolder(componentPath)) {
         return;
@@ -58,8 +60,8 @@ var Components = function () {
       }
     }
   }, {
-    key: 'registerAll',
-    value: function registerAll(path) {
+    key: '_registerAll',
+    value: function _registerAll(path) {
       var dirContents = Fs.readdirSync(path);
       var components = [];
       if (!this._isFolder(path)) {
@@ -73,7 +75,7 @@ var Components = function () {
         for (var _iterator = (0, _getIterator3.default)(dirContents), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var file = _step.value;
 
-          var component = this.registerSingle(file, path);
+          var component = this._registerSingle(file, path);
           if (component) {
             components.push(component);
           }
@@ -96,9 +98,9 @@ var Components = function () {
       return components;
     }
   }]);
-  return Components;
+  return ComponentRegister;
 }();
 
 var componentsPath = __dirname + '/../components/';
-exports.default = new Components().registerAll(componentsPath);
+exports.default = new ComponentRegister(componentsPath);
 //# sourceMappingURL=componentsRegister.js.map
