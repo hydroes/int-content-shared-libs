@@ -85,6 +85,18 @@
     {
       "name": "bdawg",
       "email": "briangouws@hotmail.com"
+    },
+    {
+      "name": "Ross Pickerill",
+      "email": "ross.pickerill@bauerxcel.co.uk"
+    },
+    {
+      "name": "Joe Gasewicz",
+      "email": "joe.gasewicz@bauerxcel.co.uk"
+    },
+    {
+      "name": "Jordan Paisley",
+      "email": "jordan.paisley@bauerxcel.co.uk"
     }
   ],
   "name": "bauer-shared-web-components",
