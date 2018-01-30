@@ -80,7 +80,7 @@ Tests can be found in the tests directory.
 Test reports can be found:
  - [e2e](https://bauerxcel.github.io/int-content-shared-libs/dist/reports/e2e/index.html)
 
-- To run e2e tests: (ensure the files are being served, run npm start on local)
+- To run e2e tests:
 npm run e2e-tests
 - To run unit tests:
 npm run unit-tests
