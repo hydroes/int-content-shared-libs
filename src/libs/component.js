@@ -4,13 +4,12 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import componentsRegister from './componentsRegister'
 import uniqueId from 'lodash/uniqueId'
-import {Helmet} from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 // import and assign all components
-let componentsRegisterLength = componentsRegister.length
-let Components = []
+let Components = componentsRegister || []
 
-for (let i = 0; i < componentsRegisterLength; i++) {
+for (let i = 0; i < Components.length; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
     Components[componentsRegister[i].name] = require(componentsRegister[i].path).default
@@ -30,11 +29,11 @@ module.exports = function (ComponentName, data = {}) {
   let componentId = uniqueId('bauerComponentId_')
   let mergedData = Object.assign({}, data, {componentId: componentId})
 
-  try {
+  // try {
     Component = React.createElement(Components[ComponentName], mergedData)
-  } catch (error) {
-    throw new Error('Component is not a valid component: ', ComponentName)
-  }
+  // } catch (error) {
+  //   throw new Error('Component is not a valid component: ', ComponentName)
+  // }
 
   let clientBoostrapData = {
     id: componentId,

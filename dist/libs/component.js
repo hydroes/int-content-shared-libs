@@ -29,10 +29,9 @@ var _reactHelmet = require('react-helmet');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import and assign all components
-var componentsRegisterLength = _componentsRegister2.default.length;
-var Components = [];
+var Components = _componentsRegister2.default || [];
 
-for (var i = 0; i < componentsRegisterLength; i++) {
+for (var i = 0; i < Components.length; i++) {
   try {
     // synchrounously require components, do this until new import supports dynamic loading
     Components[_componentsRegister2.default[i].name] = require(_componentsRegister2.default[i].path).default;
@@ -54,11 +53,11 @@ module.exports = function (ComponentName) {
   var componentId = (0, _uniqueId2.default)('bauerComponentId_');
   var mergedData = (0, _assign2.default)({}, data, { componentId: componentId });
 
-  try {
-    Component = _react2.default.createElement(Components[ComponentName], mergedData);
-  } catch (error) {
-    throw new Error('Component is not a valid component: ', ComponentName);
-  }
+  // try {
+  Component = _react2.default.createElement(Components[ComponentName], mergedData);
+  // } catch (error) {
+  //   throw new Error('Component is not a valid component: ', ComponentName)
+  // }
 
   var clientBoostrapData = {
     id: componentId,
