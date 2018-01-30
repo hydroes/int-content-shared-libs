@@ -29,11 +29,11 @@ module.exports = function (ComponentName, data = {}) {
   let componentId = uniqueId('bauerComponentId_')
   let mergedData = Object.assign({}, data, {componentId: componentId})
 
-  // try {
+  try {
     Component = React.createElement(Components[ComponentName], mergedData)
-  // } catch (error) {
-  //   throw new Error('Component is not a valid component: ', ComponentName)
-  // }
+  } catch (error) {
+    throw new Error('Component is not a valid component: ', ComponentName)
+  }
 
   let clientBoostrapData = {
     id: componentId,

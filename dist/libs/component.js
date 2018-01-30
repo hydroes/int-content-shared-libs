@@ -53,11 +53,11 @@ module.exports = function (ComponentName) {
   var componentId = (0, _uniqueId2.default)('bauerComponentId_');
   var mergedData = (0, _assign2.default)({}, data, { componentId: componentId });
 
-  // try {
-  Component = _react2.default.createElement(Components[ComponentName], mergedData);
-  // } catch (error) {
-  //   throw new Error('Component is not a valid component: ', ComponentName)
-  // }
+  try {
+    Component = _react2.default.createElement(Components[ComponentName], mergedData);
+  } catch (error) {
+    throw new Error('Component is not a valid component: ', ComponentName);
+  }
 
   var clientBoostrapData = {
     id: componentId,

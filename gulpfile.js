@@ -124,13 +124,12 @@ gulp.task('serve-app', function () {
   })
 })
 
+gulp.task('compile-app', ['remove-dist', 'compile-js-for-frontend', 'compile-all-js', 'compile-sass'])
+
 // use default task to launch Browsersync and watch JS files
 gulp.task('default',
   [
-    'remove-dist',
-    'compile-js-for-frontend',
-    'compile-all-js',
-    'compile-sass',
+    'compile-app',
     'serve-app'
   ], function () {
     // Serve files from the root of this project

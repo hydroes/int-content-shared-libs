@@ -1,7 +1,7 @@
 'use strict'
 
 const { readdirSync, statSync, existsSync } = require('fs')
-const { join, extname } = require('path')
+const { join } = require('path')
 
 const componentsPath = `${__dirname}/../components/`
 

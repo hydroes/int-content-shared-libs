@@ -12,7 +12,9 @@ const appPort = 7000
 require('./routes')(router)
 
 // setup console logger
-app.use(convert(require('koa-logger')()))
+if (process.env.NODE_ENV !== 'test:qa') {
+  app.use(convert(require('koa-logger')()))
+}
 
 // setup views, appending .pug
 // when no extname is given to render()

@@ -16,8 +16,7 @@ var _require = require('fs'),
     existsSync = _require.existsSync;
 
 var _require2 = require('path'),
-    join = _require2.join,
-    extname = _require2.extname;
+    join = _require2.join;
 
 var componentsPath = __dirname + '/../components/';
 
