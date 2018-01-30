@@ -10,7 +10,7 @@
     "url": "https://github.com/hydroes/bauer-web-templates/issues"
   },
   "engines": {
-    "node": ">=v6.11.1"
+    "node": ">=v7.10.1"
   },
   "dependencies": {
     "axios": "^0.17.0",
