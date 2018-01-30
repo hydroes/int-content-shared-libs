@@ -65,7 +65,12 @@ block content
             h2 Embeds Ntr
         .col-md-6
           #embeds-ntr!= shared.component('ntr', shared.data('ntr/ntr.json'))
-
+      .row
+        .col-md-6
+          .style-guide__item__label
+            h2 Embeds AOD
+        .col-md-6
+          div!= shared.component('aod', shared.data('aod/aod.json'))
       .row
         .col-md-6
           .style-guide__item__label

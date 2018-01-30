@@ -7,16 +7,19 @@ import uniqueId from 'lodash/uniqueId'
 import { Helmet } from 'react-helmet'
 
 // import and assign all components
-let Components = componentsRegister || []
+let Components = []
 
-for (let i = 0; i < Components.length; i++) {
-  try {
-    // synchrounously require components, do this until new import supports dynamic loading
-    Components[componentsRegister[i].name] = require(componentsRegister[i].path).default
-  } catch (error) {
-    console.error(componentsRegister[i].name + ' - ' + error)
+if (componentsRegister) {
+  for (let i = 0; i < componentsRegister.length; i++) {
+    try {
+      // synchrounously require components, do this until new import supports dynamic loading
+      Components[componentsRegister[i].name] = require(componentsRegister[i].path).default
+    } catch (error) {
+      console.error(componentsRegister[i].name + ' - ' + error)
+    }
   }
 }
+
 // finds and renders a react component
 module.exports = function (ComponentName, data = {}) {
   let Component

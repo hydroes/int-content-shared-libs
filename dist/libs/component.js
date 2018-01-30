@@ -29,16 +29,19 @@ var _reactHelmet = require('react-helmet');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // import and assign all components
-var Components = _componentsRegister2.default || [];
+var Components = [];
 
-for (var i = 0; i < Components.length; i++) {
-  try {
-    // synchrounously require components, do this until new import supports dynamic loading
-    Components[_componentsRegister2.default[i].name] = require(_componentsRegister2.default[i].path).default;
-  } catch (error) {
-    console.error(_componentsRegister2.default[i].name + ' - ' + error);
+if (_componentsRegister2.default) {
+  for (var i = 0; i < _componentsRegister2.default.length; i++) {
+    try {
+      // synchrounously require components, do this until new import supports dynamic loading
+      Components[_componentsRegister2.default[i].name] = require(_componentsRegister2.default[i].path).default;
+    } catch (error) {
+      console.error(_componentsRegister2.default[i].name + ' - ' + error);
+    }
   }
 }
+
 // finds and renders a react component
 module.exports = function (ComponentName) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
